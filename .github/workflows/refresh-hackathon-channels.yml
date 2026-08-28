@@ -1,0 +1,69 @@
+name: refresh-hackathon-channels
+on:
+  schedule:
+    # 매일 03:00 KST = 18:00 UTC (전날)
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "Pages per channel"
+        default: "2"
+      max_detail:
+        description: "Max details per channel"
+        default: "30"
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m venv venv-a
+          source venv-a/bin/activate
+          pip install --upgrade pip
+          pip install curl_cffi==0.16.0 lzstring==1.0.4 requests==2.34.2 playwright==1.62.0
+          playwright install chromium
+      - name: Adapt devpost
+        run: |
+          source venv-a/bin/activate
+          python scripts/adapt_devpost.py
+      - name: Run refresh + ETL
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          source venv-a/bin/activate
+          python scripts/refresh_hackathon_channels.py \
+            --pages ${{ github.event.inputs.pages || 2 }} \
+            --max-detail ${{ github.event.inputs.max_detail || 30 }} \
+            --delay 1.5 \
+            --etl
+      - name: Load to DB
+        if: always()
+        env:
+          PG_DSN: ${{ secrets.PG_DSN }}
+        run: |
+          source venv-a/bin/activate
+          python scripts/load_hackathons.py --db data/market_dashboard.db
+      - name: Run analyze
+        if: always()
+        run: |
+          source venv-a/bin/activate
+          python scripts/analyze_hackathons.py
+      - name: Run unit tests
+        if: always()
+        run: |
+          source venv-a/bin/activate
+          cd etl/__tests__ && python -m unittest test_normalize -v
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawled-hackathons
+          path: |
+            crawled/
+          if-no-files-found: warn
+          retention-days: 30
