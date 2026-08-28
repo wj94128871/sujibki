@@ -239,3 +239,36 @@ def from_wishket(id_: str, detail_text: str) -> StandardProject:
     p.raw["description"] = desc[:3000]
     p.raw["recruit_condition"] = recruit[:1500]
     return p
+
+
+
+# ---------------- 해커톤/챌린지 (도메인 무관) ----------------
+def from_hackathon(item: dict) -> StandardProject:
+    """ETL 정규화 결과(hackathons_normalized.json 항목) → 표준.
+    source별: codeforces|hackerone|drivendata|zindi|hackerearth|herox|topcoder|openideo
+    """
+    p = StandardProject(
+        source="hackathon",                # 적재 시 source 컬럼은 "hackathon"으로 묶고
+        source_ref=f"{item.get('source','')}:{item.get('source_id','')}",  # 출처 구분용 prefix
+        group_type=HACKATHON,
+        title=(item.get("title") or "").strip(),
+        work_type=WORK_HACKATHON,
+        source_url=item.get("url") or "",
+        raw=dict(item),
+    )
+    # 카테고리: 1차 카테고리(있으면)
+    cat = item.get("category") or ""
+    p.category = cat if cat and cat != "competition" else None
+    p.category_sub = item.get("source") or None
+    # tech keywords = tags
+    tags = item.get("tags") or []
+    p.tech_keywords = normalize_keywords(tags)
+    # 마감
+    p.deadline = item.get("end_at") or None
+    # 등록일(없으면 None — 위조 금지)
+    p.registered_at = item.get("start_at") or None
+    # description
+    desc = (item.get("brief") or "").strip()
+    if desc:
+        p.raw["description"] = desc[:3000]
+    return p

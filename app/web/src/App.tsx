@@ -52,7 +52,7 @@ export default function App() {
               <SourcesTable source={source} />
               <AnalysisSection analysis={analysis} />
               <Features items={insights?.filter(item => item.type === "feature") ?? (insights ? [] : null)} error={insightsErr} />
-              <Insights items={insights?.filter(item => item.type === "market") ?? (insights ? [] : null)} error={insightsErr} />
+              <Insights items={insights?.filter(item => item.type === "market" || item.type === "keyword") ?? (insights ? [] : null)} error={insightsErr} />
               <Runs data={runs} error={runsErr} />
             </>
           )}

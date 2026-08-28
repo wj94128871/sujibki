@@ -25,12 +25,12 @@ export class NeonDataSource implements DataSource {
     return (r as any[]).map((x: any) => ({ key: x.source, label: labels[x.source] ?? x.source, group: groups[x.source] ?? "other", count: Number(x.c), lastRun: x.last ? String(x.last) : null }));
   }
   async analysis(source = "all"): Promise<AnalysisData> {
-    const cats = await this.sql`SELECT category, SUM(cnt) total FROM analysis_category GROUP BY category ORDER BY total DESC`;
+    const cats = await this.sql`WITH agg AS (SELECT category, SUM(cnt) total FROM analysis_category GROUP BY category) SELECT category, total, ROUND(total * 100.0 / SUM(total) OVER (), 1) share_pct FROM agg ORDER BY total DESC`;
     const bud = await this.sql`SELECT * FROM analysis_budget`;
     const kw = await this.sql`SELECT * FROM analysis_keyword ORDER BY cnt DESC LIMIT 30`;
     const monthly = await this.sql`SELECT to_char(date_trunc('month', registered_at),'YYYY-MM') m, COUNT(*) c FROM projects WHERE registered_at IS NOT NULL GROUP BY 1 ORDER BY 1`;
     return {
-      categories: (cats as any[]).map((c: any) => ({ source: "all", name: c.category, cnt: Number(c.total), sharePct: 0 })),
+      categories: (cats as any[]).map((c: any) => ({ source: "all", name: c.category, cnt: Number(c.total), sharePct: Number(c.share_pct) })),
       budget: { histogram: bud.filter((b: any) => !b.bucket.startsWith("(null")).map((b: any) => ({ bucket: b.bucket, count: Number(b.cnt) })),
         nullCount: bud.filter((b: any) => b.bucket.startsWith("(null")).reduce((a: number, b: any) => a + Number(b.cnt), 0), unit: "KRW" },
       period: { histogram: [], nullCount: 0 },

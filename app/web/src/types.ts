@@ -34,9 +34,11 @@ export interface RunItem {
 }
 export interface AnalysisItem {
   id: string; rank: number;
-  action: "add" | "reduce" | "pivot";
+  action: "add" | "reduce" | "pivot" | "watch";
   title: string; summary: string; opportunity: string; market: string;
   features: { name: string; desc: string; priority: "high" | "mid" | "low" }[];
   evidence: { metric: string; value: string }[];
   risks: string[]; confidence: Confidence;
+  direction_change?: string;
+  expected_effect?: string;
 }

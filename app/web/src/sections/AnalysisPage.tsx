@@ -123,7 +123,13 @@ export function AnalysisPage({ summary }: { summary?: Summary | null }) {
                   </table>
                 </div>
 
-                <h4 className="mt-5 mb-1.5 font-bold text-ink">📊 데이터 근거</h4>
+                <h4 className="mt-5 mb-1.5 font-bold text-ink">🔄 방향 변경</h4>
+              <p className="m-0 leading-relaxed text-ink whitespace-pre-line">{(item as any).direction_change ?? "—"}</p>
+
+              <h4 className="mt-5 mb-1.5 font-bold text-ink">📈 기대 효과</h4>
+              <p className="m-0 leading-relaxed text-ink whitespace-pre-line">{(item as any).expected_effect ?? "—"}</p>
+
+              <h4 className="mt-5 mb-1.5 font-bold text-ink">📊 데이터 근거</h4>
                 <div className="overflow-x-auto rounded-xl border border-line">
                   <table className="w-full border-collapse text-sm">
                     <tbody className="[&>tr:not(:last-child)]:border-b [&>tr]:border-line [&>tr>td]:px-4 [&>tr>td]:py-2.5">

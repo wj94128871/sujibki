@@ -83,6 +83,24 @@ export function AnalysisSection({ analysis }: { analysis: Analysis | null }) {
           <h3 className="m-0 text-lg font-bold tracking-tight text-ink">카테고리 수요 점유율</h3>
           <p className="mt-1 mb-0 text-sm text-ink-sub">상위 카테고리 기준 · 전체 {analysis.categories.reduce((sum, item) => sum + item.cnt, 0).toLocaleString()}건</p>
           <div className="mt-4"><DonutChart title="카테고리 수요 점유율" slices={categoryRows} /></div>
+          {analysis.categories.length > 0 && (() => {
+            const total = analysis.categories.reduce((sum, item) => sum + item.cnt, 0) || 1;
+            const top = analysis.categories.slice(0, 5);
+            return (
+              <ul className="mt-4 space-y-1.5">
+                {top.map(cat => {
+                  const pct = ((cat.cnt / total) * 100);
+                  return (
+                    <li key={cat.name} className="flex items-center gap-2 text-sm">
+                      <span className="min-w-0 flex-1 truncate text-ink">{cat.name}</span>
+                      <span className="tnum font-extrabold text-ink">{cat.cnt.toLocaleString()}</span>
+                      <span className="tnum w-14 text-right text-ink-sub">{pct.toFixed(1)}%</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            );
+          })()}
         </article>
         <article className="min-w-0 rounded-2xl border border-line bg-surface p-5 shadow-card">
           <h3 className="m-0 text-lg font-bold tracking-tight text-ink">상주 vs 도급</h3>

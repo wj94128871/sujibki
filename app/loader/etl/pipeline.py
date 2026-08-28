@@ -68,6 +68,25 @@ def collect_devpost(crawled_dir):
     return [from_devpost(x) for x in (d.get("details") or d.get("detail") or [])]
 
 
+def collect_hackathons(crawled_dir, runtime="normalized"):
+    """ETL 정규화 산출물(crawled/_runs/hackathons_normalized.json) → 표준.
+    runtime 인자는 컬렉션 단위 식별자(예: 'normalized', 'devpost')."""
+    fp = os.path.join(crawled_dir, "_runs", "hackathons_normalized.json")
+    if not os.path.exists(fp):
+        return []
+    with open(fp, encoding="utf-8") as f:
+        d = json.load(f)
+    items = d.get("items") or []
+    # runtime별로 묶어서 적재하기 위해 각 항목을 별도 group으로 표시
+    from .parsers import from_hackathon
+    out = []
+    for it in items:
+        sp = from_hackathon(it)
+        sp.runtime = f"hackathon/{it.get('source','unknown')}"
+        out.append(sp)
+    return out
+
+
 def collect_wishket(crawled_dir):
     """위시켓 도급 수집분(detail_<id>.html) → 표준 파싱.
     등록일자는 목록 list_task_*.html의 '등록일자' 매핑에서 주입하되,
@@ -110,6 +129,7 @@ SOURCES = {
     "u300/current": (collect_u300_current, "current"),
     "u300/past1": (collect_u300_past1, "past1"),
     "devpost": (collect_devpost, ""),
+    "hackathon": (collect_hackathons, "hackathon"),
 }
 
 
