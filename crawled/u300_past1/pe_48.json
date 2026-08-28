@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 48,
+    "pePart": "정보·통신",
+    "teamName": "치매극복",
+    "companyTitle": "어르신들의 정서함양 및 치매예방을 위한 IoT기기",
+    "companyContent": "<p><img style=\"width: 881px;\" src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5210).JPG\"></p><p><img style=\"width: 881px;\" src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5212).JPG\"><img style=\"width: 881px;\" src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5213).JPG\"><img style=\"width: 881px;\" src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5214).JPG\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_615113956.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_483.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 13373,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

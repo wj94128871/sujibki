@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1기_공개자료조사</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 1기_공개자료조사 · 생성: 2026-08-20 18:07</div>
+<h1>모두의 창업(Modoo Startup) 1기 — 공개 소스 조사 보고서</h1>
+<ul>
+<li><strong>조사일자</strong>: 2026-08-20 기준</li>
+<li><strong>조사 범위</strong>: 공개 소스(네이버 블로그, 액셀러레이터 블로그/공식 insights, 비공식 정보 포털, 언론 보도, 참여자 기술 블로그)만 수집. <strong>개인정보(이메일·실명·휴대전화)·불법 유출 데이터는 수집하지 않음.</strong></li>
+<li><strong>요청 배경</strong>: 1기 참여자가 공식 사이트(modoo.or.kr)의 출품작·심사평 데이터가 개인정보 유출 사고(2026-06) 후 전면 비공개 처리되어, 공개 소스로부터 본인·팀 정보를 복구하고자 함.</li>
+</ul>
+<hr />
+<h2>1. BLUF — 핵심 발견 요약</h2>
+<ol>
+<li>
+<p><strong>1기 수상자(파이널 우승팀)는 현재 공개 소스에 아직 존재하지 않는다.</strong> 1기는 2026-03 출범 → 아이디어 심사(2026-06) → 지역·권역 오디션(2026-08~11) → <strong>전국 파이널(2026-12, COMEUP 연계)</strong> 순서로 진행 중이며, 공식 파이널·데모데이가 아직 열리지 않았다. 따라서 "1기 수상작 최종 명단"은 지금 시점에 공개 소스로 확인 불가능하다(미확인).</p>
+</li>
+<li>
+<p><strong>지금까지 공개된 "진출 정보"의 상한선은 두 가지다.</strong><br />
+   - (a) <strong>본선 5,000명 선발</strong>(일반·기술 4,000 + 로컬 1,000, 경쟁률 약 12.6:1) — 중기부 공식 발표·언론 다수 보도.<br />
+   - (b) <strong>운영기관이 자진 공개한 "1라운드 아이디어 심사 진출 아이디어"</strong> — 예: 충북 운영기관 <strong>알파브라더스</strong>가 공식 블로그/insights에 진출(1라운드 통과) 아이디어 7건 + 대표 3명 인터뷰를 공개.</p>
+</li>
+<li>
+<p><strong>참여자 개인이 본인의 정보를 복구하는 최선의 경로</strong>는 (a) 본인 계정 로그인(modoo.or.kr), (b) 중기부·운영기관 발송 메일/문자, (c) 본인 소속 운영기관 공개 블로그·포트폴리오, (d) 1라운드 공개 아이템 목록(공개 약 2,908건) 검색 — 순이다. 자세한 내용은 7장 참고.</p>
+</li>
+<li>
+<p><strong>신뢰도 표기</strong>: 아래 모든 항목에 대해 [출처]와 [신뢰도: 높음/중간/낮음/미확인]을 병기했다. 본선 5,000명·통계는 정부/언론 복수 출처로 "높음". 운영기관 공개 아이디어는 해당 기관 자진 공개라 "중간~높음". 비공식 정보 포털(modoo.business)은 참고용 "중간".</p>
+</li>
+</ol>
+<hr />
+<h2>2. 수집한 공개 출품작·진출팀·수상작 정보</h2>
+<h3>2-1. 공식/언론 확인 — 본선 5,000명 선발 (수상 아님, 진출 단계)</h3>
+<ul>
+<li><strong>62,944명 지원</strong> → <strong>5,000명 본선 진출</strong>(일반·기술 4,000명, 로컬 1,000명), 경쟁률 약 12.6:1.</li>
+<li>[출처] 중기부·연합뉴스 보도: "중기부, '모두의 창업' 1기 출범…'창업 전 과정 뒷받침'" — https://www.yna.co.kr/view/AKR20260616083000030</li>
+<li>[출처] 뉴시스: "'12.6대1 뚫은 5000명'…'모두의창업' 닻 올렸다" — https://www.newsis.com/view/NISX20260616_0003671090</li>
+<li>[출처] 머니투데이: "'모두의 창업' 1기 5000명 선발…합격자 확인 어디서?" — https://www.mt.co.kr/future/2026/06/09/2026060910230894299</li>
+<li><strong>선정자 구성</strong>(중기부 발표, 언론 공통 인용): 39세 이하 청년층 68.4% / 지역 선정자 74%(일반·기술 70%, 로컬 90%) / 최연소 13세·최연장 78세(일반기술), 로컬 17세·72세.</li>
+<li>[출처] 위 머니투데이 기사 + 뉴스1 "'9세부터 90세까지 도전'…'모두의 창업'이 쓴 '62944'" — https://www.news1.kr/industry/sb-founded/6171008</li>
+<li><strong>분야별(일반·기술 트랙)</strong>: IT 32% &gt; 라이프스타일 17.8% &gt; 바이오·의료 10.1% &gt; 교육 6.8% / <strong>AI 키워드 포함 아이템 29.3%</strong>. 로컬 트랙: 생활 48.2% &gt; F&amp;B 37.3% &gt; 뷰티 9.3%.</li>
+<li>[출처] 머니투데이 기사(상동).</li>
+<li><strong>선정자 5,000명 전원 지원</strong>: 창업활동자금 200만 원 + 멘토링 + AI 솔루션(최대 100만 원 상당·2개월).</li>
+<li>[출처] 머니투데이 기사(상동), MVPIT 블로그 https://mvpit.dev/blog/modoo-startup-round1-confirmed</li>
+<li><strong>출범식</strong>(2026-06-16, 서울 스타트업벤처캠퍼스): 1기 선정자·멘토기관·선배창업가 120여 명 참석. 선발자 인터뷰 사례(공개 이름 없음): "인생 재정 계산기 서비스" 제출자. 멘토로 권도균 프라이머 대표 등.</li>
+<li>[출처] 뉴시스(상동).</li>
+</ul>
+<blockquote>
+<p><strong>판정</strong>: 위는 모두 <strong>본선 진출</strong>(아이디어 심사 통과) 단계의 공개 정보이며, <strong>수상작이 아님</strong>. 최종 우승은 파이널(2026-12) 이후에만 가능.</p>
+</blockquote>
+<hr />
+<h3>2-2. 운영기관 자진 공개 — "1라운드 아이디어 심사 진출 아이디어" (충북 운영기관 알파브라더스)</h3>
+<p>알파브라더스는 2026 모두의창업 <strong>충북 운영기관</strong>이며, 공식 블로그/insights에 <strong>1라운드(아이디어 심사)를 통과한 아이디어 중 일부와 대표 인터뷰를 자진 공개</strong>했다. 실명은 익명(A/B/C 대표) 처리되어 있어 개인정보 아님.</p>
+<p><strong>[공개된 1라운드 진출 아이디어 7건]</strong><br />
+| 분야 | 한 줄 소개 |<br />
+|---|---|<br />
+| 푸드테크 | 특허 공법으로 혈당 부담↓·맛·식감 유지한 스마트 국수 <strong>'Slow GI'</strong> |<br />
+| 에듀테크 | AI 매칭으로 학원·학부모·학생을 잇는 교육 매칭 OS |<br />
+| 멘탈헬스 | 심리학 기반 자기이해 서비스 <strong>'미닝렌즈'</strong> |<br />
+| 뷰티커머스 | 33,225종 성분 온톨로지 기반 AI 매칭 K-뷰티 구독 데이터 커머스 |<br />
+| 핀테크 | 3050 금융문맹 대상 AI 금융 문제해결·상담 매칭 <strong>'핀라이브'</strong> |<br />
+| B2B SaaS | 자영업자 도매업체 검색·AI 발주 플랫폼 <strong>'벤더업(Vendor-Up)'</strong> |<br />
+| 친환경 | 미세플라스틱 걸러주는 텀블러 <strong>'퓨리스퀴즈'</strong> |</p>
+<p><strong>[인터뷰 공개 진출 대표 3명]</strong><br />
+- A 대표 — 1인 가구 AI 라이프케어 <strong>'이음:Me'</strong> (대화형 일기 + 감정요약 + 루틴 제안)<br />
+- B 대표 — <strong>동애등에 기반 친환경 액침냉각유</strong> (음식물쓰레기 먹이 → 곤충 유래 냉각유)<br />
+- C 대표 — AI 기반 관광 실행 플랫폼 <strong>'모어이지투어'</strong> (4050 유럽 세미패키지 → K-컬쳐 방한 관광 확장)</p>
+<ul>
+<li>[출처] 알파브라더스 insights "모두의창업 | 1기 아이디어 심사 진출자는?" — https://www.alphabrothers.co.kr/insights/?bmode=view&amp;idx=172155687</li>
+<li>[출처] 동일 내용 네이버 공식블로그 — https://blog.naver.com/alpha_accelerator/224334106291 (m.버전: https://m.blog.naver.com/alpha_accelerator/224334106291)</li>
+<li>[신뢰도: 중간~높음] — 운영기관이 자사 마케팅 목적으로 자진 공개한 진출자 사례. <strong>"일부"</strong> 임을 본문이 명시(전체 1라운드 진출자 아님).</li>
+</ul>
+<blockquote>
+<p><strong>시사점(복구 관점)</strong>: 사용자가 충북/알파브라더스 소속이거나 위 7건 아이디어 중 하나가 본인 것이라면, 이 공개 자료가 본인 아이디어 복구·증빙의 <strong>직접 출처</strong>가 된다. 운영기관 블로그에 본인 아이템이 게재됐는지 우선 확인할 것.</p>
+</blockquote>
+<hr />
+<h3>2-3. 운영기관 자진 공개 — 모집 통계·아이디어 트렌드 분석</h3>
+<p>알파브라더스는 1기 접수 통계도 자진 공개했다(참고용 원문).</p>
+<ul>
+<li>누적 접속 1,418,600명 / 회원 가입 135,036명 / <strong>접수(도전) 완료 62,944명</strong></li>
+<li>연령: 20대 33.2% &gt; 30대 25.7% &gt; 40대 18.4% &gt; 50대 9.8% &gt; 10대 9.1% (청년 68%·중장년 32%)</li>
+<li>성별: 남 59.3% / 여 40.7%</li>
+<li><strong>분야별 접수</strong>: IT 14,728 / 라이프스타일 11,360 / 기타 4,876 / 교육 4,077 / 바이오·의료 2,996</li>
+<li>키워드: 일반·기술 = AI 29.3% &gt; 플랫폼 20.7% &gt; 데이터 7.8% / 로컬 = 로컬 24.2% &gt; 트렌드 16.2% &gt; 지역 13.7%</li>
+<li>[출처] 알파브라더스 insights "모두의창업 | 모창 1기 아이디어 접수 결과 살펴보기" — https://www.alphabrothers.co.kr/insights/?bmode=view&amp;idx=172001820</li>
+<li>[출처] 동일 내용 네이버 공식블로그 — https://m.blog.naver.com/alpha_accelerator/224326703305</li>
+<li>[신뢰도: 중간~높음]</li>
+</ul>
+<hr />
+<h3>2-4. 비공식 정보 포털 — 1기 본선 현황·라운드 구조 (참고용)</h3>
+<p>비공식 정보 포털 <code>modoo.business</code>가 공식 발표 자료 기반으로 라운드 구조를 정리(본인 주장 기준).</p>
+<ul>
+<li>1차 신청 62,944명 → 본선 5,000명, 경쟁률 12.5:1</li>
+<li><strong>기술 트랙(우승 상금 5억+α)</strong>: 1R 아이디어심사 전원→4,000 (2026-06) / 2R 관찰·서면 4,000→500 (2026-07) / 3R 지역 오디션 500→200 (2026-09) / 4R 권역 200→100 (2026-11) / FINAL 100→5 (2026-12)</li>
+<li><strong>로컬 트랙(우승 상금 1억)</strong>: 1R 아이디어심사 전원→1,000 (2026-06) / 2R 권역 오디션 1,000→600 (2026-07) / FINAL 600→13 (2026-12)</li>
+<li>파이널은 대규모 스타트업 행사 <strong>COMEUP 연계</strong> 대국민 공개 IR로 최종 우승자 선정 예정.</li>
+<li>[출처] https://modoo.business/audition (비공식 포털. 공식 정보는 modoo.or.kr)</li>
+<li>[신뢰도: 중간] — 비공식 정리본. 정확성·실제 운영과 차이 가능 명시됨.</li>
+</ul>
+<blockquote>
+<p><strong>판정</strong>: 이 라운드 구조상 <strong>2026-08 현재는 2R~3R 사이</strong>이며, 파이널(2026-12) 전이므로 <strong>수상작 존재 자체가 아직 성립하지 않는다.</strong> "1기 수상작" 은 일정상 추후 공개 예정.</p>
+</blockquote>
+<hr />
+<h3>2-5. 1라운드 "공개 아이템" 목록 분석 — 본인 아이템 복구의 핵심 단서</h3>
+<p>개인 블로거(aramjung13/tistory)가 <strong>1라운드 아이템 목록(전체 4,997건) 중 공개·수집 가능한 아이디어 요약 2,908건</strong>을 분석해 게재했다(2026-06-16).</p>
+<ul>
+<li>전체 4,997건 / 공개 요약 2,908건(58.2%) / 비공개 1,638건 / 공란·접근제한 451건</li>
+<li>카테고리(공개 2,908 기준): AI·데이터·자동화 473(16.3%) &gt; 로컬·관광·커뮤니티 336 &gt; 헬스케어·바이오 328 &gt; 기타·융합 291 &gt; 커머스 260 ...</li>
+<li>TECH 2,312건(79.5%) / LOCAL 596건(20.5%)</li>
+<li>[출처] https://aramjung13.tistory.com/9 "모두의 창업 1기 1라운드 공개 아이템 2,908건 분석"</li>
+<li>[신뢰도: 중간] — 개인 블로거의 자체 크롤링·분석. <strong>1라운드 아이템 일부가 당시 공개 상태였음을 시사</strong>하며, 사용자가 본인 아이템 요약을 공개 목록에서 찾아내는 데 직접 쓸 수 있는 단서.</li>
+</ul>
+<blockquote>
+<p><strong>복구 시사점</strong>: 일부 1라운드 아이템이 공개된 채 집계되었다는 이 분석은, <strong>사용자 본인 아이템 요약도 공개 목록에 포함되었을 가능성</strong>을 보여준다(58.2% 공개). 다만 현재 공식 플랫폼이 비공개 전환됨에 따라, 아래 7장의 "본인 계정/운영기관 경로"가 실제 복구의 주경로다.</p>
+</blockquote>
+<hr />
+<h3>2-6. 참여자 개인 블로그 후기(참고: 진출팀 개별 소개 자료)</h3>
+<p>검색으로 확인된 <strong>1기 참여자 개인 후기/공개 분석</strong>(참고용, 팀 개별 포트폴리오 성격).</p>
+<ul>
+<li>로컬 트랙 1라운드 권역 오디션 후기 — https://blog.naver.com/bucasam/224375661659 (본문 수집 실패, 링크만 확인)</li>
+<li>[모두의 창업] 1라운드 진출 후기 — https://blog.naver.com/wjsgp8585/224379973961</li>
+<li>모두의 창업 1기 1라운드 진출 후기 — https://blog.naver.com/jsj722/224318096407</li>
+<li>모두의 창업 로컬트랙 1기 합격 후기(유튜브) — https://www.youtube.com/watch?v=vyhO2f_PXPY</li>
+<li>[신뢰도: 중간(개인 후기)] — 진출팀 명단 전수는 아님, 흩어진 개인 사례만 확인됨.</li>
+</ul>
+<blockquote>
+<p>이들은 <strong>공식 "진출/수상 명단"이 아니라 개인 참여자들이 자발적으로 올린 후기</strong>다. 아래 3장에서 전수 명단 존재 여부를 명확히 정리한다.</p>
+</blockquote>
+<hr />
+<h2>3. 진출·수상 명단 "공개 존재 여부" 판정 요약</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>공개 상태</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1기 파이널 <strong>수상작/우승팀 명단</strong></td>
+<td>없음</td>
+<td>❌ <strong>미확인(미발표)</strong> — 파이널이 2026-12(COMEUP) 예정, 아직 공개 없음</td>
+</tr>
+<tr>
+<td>1기 <strong>본선 5,000명 명단</strong>(전수)</td>
+<td>비공개(로그인 필요·유출사고 후 차단)</td>
+<td>❌ 공개 확인 불가</td>
+</tr>
+<tr>
+<td>1기 <strong>1라운드 진출 아이디어</strong> 일부</td>
+<td>운영기관 자진 공개(알파브라더스 7건+인터뷰3)</td>
+<td>✅ 공개 확인(일부)</td>
+</tr>
+<tr>
+<td>1기 <strong>1라운드 아이템 요약 일부</strong></td>
+<td>개인 분석 기준 약 2,908건 공개 집계</td>
+<td>✅ 공개 확인(분석 자료로 간접)</td>
+</tr>
+<tr>
+<td>1기 개인 참여자 후기</td>
+<td>블로그·유튜브 개별 산재</td>
+<td>✅ 공개 확인(전수 아님)</td>
+</tr>
+<tr>
+<td>2기 모집(규모 2배·1만 명)</td>
+<td>공고됨</td>
+<td>✅ 공개 확인(본 보고서 대상 아님)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>결론</strong>: "1기 수상작 명단"과 "본선·수상 진출팀 전수 명단"은 <strong>공개 소스로는 현재 존재하지 않는다.</strong> 공개된 것은 (1) 본선 5,000명 선발 통계, (2) 운영기관 자진 공개 진출 아이디어 일부, (3) 개인 참여자 후기뿐이다.</p>
+<hr />
+<h2>4. 의도적으로 수집하지 않은 것 (제약 준수)</h2>
+<ul>
+<li>개인정보 유출 사고(2026-06) 관련 <strong>유출본·심사평·이메일·실명 데이터</strong> — 일절 수집·인용하지 않음. 사고 자체의 존재만 문맥(공식 불통 이유)으로 기록.</li>
+<li>비공식 포털·블로그 중 "유출 데이터 재배포" 성격 게시물 — 접근·수집하지 않음.</li>
+<li>(참고로 유출 사건 보도 링크는 존재: 조선비즈 https://biz.chosun.com/topics/topics_social/2026/06/18/… , 머니투데이 https://www.mt.co.kr/future/2026/06/19/202606181833264… — <strong>내용 수집 없이 링크만</strong> 기록)</li>
+</ul>
+<hr />
+<h2>5. 관련 원문 파일 저장 목록 (이 보고서와 함께 <code>crawled/modoo_1gi/</code> 하위에 보관)</h2>
+<table>
+<thead>
+<tr>
+<th>파일명</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>naver_alpha_1기_아이디어접수결과.txt</code></td>
+<td>네이버 알파브라더스 공식블로그</td>
+</tr>
+<tr>
+<td><code>naver_alpha_심사진출자.txt</code></td>
+<td>네이버 알파브라더스 공식블로그</td>
+</tr>
+<tr>
+<td><code>alpha_brothers_접수결과.txt</code></td>
+<td>alphabrothers.co.kr insights</td>
+</tr>
+<tr>
+<td><code>alpha_brothers_심사진출자.txt</code></td>
+<td>alphabrothers.co.kr insights</td>
+</tr>
+<tr>
+<td><code>modoo_business_audition.txt</code></td>
+<td>modoo.business (비공식 포털)</td>
+</tr>
+<tr>
+<td><code>mvpit_로드맵.txt</code></td>
+<td>mvpit.dev 블로그</td>
+</tr>
+<tr>
+<td><code>aramjung_1라운드_2908건_분석.txt</code></td>
+<td>aramjung13.tistory.com</td>
+</tr>
+<tr>
+<td><code>mt_합격자확인.txt</code></td>
+<td>머니투데이</td>
+</tr>
+<tr>
+<td><code>news1_62944.txt</code></td>
+<td>뉴스1</td>
+</tr>
+<tr>
+<td><code>newsis_닻올렸다.txt</code></td>
+<td>뉴시스</td>
+</tr>
+<tr>
+<td><code>etnews_선발.txt</code></td>
+<td>etnews</td>
+</tr>
+<tr>
+<td><code>wowtale_선발.txt</code></td>
+<td>wowtale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 참고 — 공식 정보 접근 현황 (왜 복구가 필요한가)</h2>
+<ul>
+<li>공식 사이트 <strong>https://www.modoo.or.kr</strong> — 1기 출품작·심사평 데이터는 2026-06 개인정보 유출 사고 후 <strong>전면 비공개(로그인 필수)</strong> 상태. 로그인 없이는 접근 불가. → 공개 소스로 대체 수집한 것이 본 보고서.</li>
+<li>공식 유튜브 채널: https://www.youtube.com/@modoo_startup_official (출범식·안내 영상)</li>
+<li>1기 출범식 공식 영상: https://www.youtube.com/watch?v=ZWm7imlzgiQ</li>
+</ul>
+<hr />
+<h2>7. 참여자 개인이 복구 가능한 경로 안내 (우선순위순)</h2>
+<ol>
+<li><strong>본인 계정 로그인 (modoo.or.kr)</strong> — 공식 데이터가 비공개 처리되어도 <strong>본인 계정으로는 본인이 제출한 아이디어·지원서·멘토 평가 의견에 접근할 수 있는 것이 가장 확실한 경로.</strong> 유출 사고 후 보안 인증(2FA 등)이 강화되었을 수 있으니 계정 접근 권한부터 복구할 것.</li>
+<li><strong>중기부·운영기관 발송 메일/문자/LMS</strong> — 아이디어 심사 결과, 선정 안내, 재도전 멘토링 안내, 2기 우대 안내 등이 메일로 발송됨. 본인 이메일함에서 "모두의창업/중소벤처기업부" 검색.</li>
+<li><strong>창업활동자금·AI 솔루션 이용 기록</strong> — 200만 원 창업활동자금 카드 발급 내역, AI 솔루션 신청(6/15~6/24) 내역으로 본인 선정·활동 기록 재구성 가능.</li>
+<li><strong>본인 소속 운영기관 확인 후 공개 자료 대조</strong> — 시스템에서 본인이 배정받은 운영기관(예: 충북=알파브라더스)을 확인하고, 해당 기관의 공개 블로그·insights·포트폴리오에 본인 아이템이 게재됐는지 검색. (2-2장의 알파브라더스 게시물이 대표 사례)</li>
+<li><strong>1라운드 공개 아이템 목록 검색</strong> — 2-5장의 공개 요약(약 2,908건) 흐름을 참고해, 당시 공개됐던 본인 아이템 요약·키워드를 검색 엔진이나 웹 아카이브(Wayback Machine)로 재확인.</li>
+<li><strong>웹 아카이브(Wayback Machine) 활용</strong> — modoo.or.kr 및 운영기관 페이지의 과거 스냅샷에서 본인 아이템 공개 흔적 확인 가능(https://web.archive.org).</li>
+<li><strong>재도전 멘토링·2기 우대 활용</strong> — 본인이 1기 미선정이었다면, 중기부가 제공한 재도전 멘토링과 2기(규모 2배·약 1만 명) 평가 가점을 통해 아이디어 재제출·기록 연속성 확보.</li>
+<li><strong>파이널(2026-12) 이후 공식 재공개 모니터링</strong> — 수상/최종 진출팀은 파이널·COMEUP 이후 공식 발표·보도가 예상되므로, 신문·포털·중기부 보도자료를 추적.</li>
+</ol>
+<hr />
+<h2>8. 한계·주의 (신뢰도 종합)</h2>
+<ul>
+<li><strong>수상작 명단은 현재 불가능</strong>(미발표). 시간이 지나 2026-12 파이널 후 갱신 필요.</li>
+<li><strong>본선/수상 진출팀 "전수" 명단은 공개 확인 불가.</strong> 개인정보 유출 사고로 공식 데이터가 차단된 상태라, 공개 소스만으로는 5,000명 전수를 재구성할 수 없음.</li>
+<li>운영기관 공개 아이디어(2-2)는 자사 마케팅 성격의 "일부" 공개 — 전체 대표가 아님.</li>
+<li>modoo.business·aramjung13 등은 비공식·개인 자료로, 공식과 수치에 소폭 차이(경쟁률 12.5 vs 12.6:1 등)가 있음. 공식 수치는 중기부·언론(2-1) 기준.</li>
+<li>유출 데이터·개인정보는 일절 수집·인용하지 않았음.</li>
+</ul>
+<hr />
+<p><em>본 조사는 공개 소스만을 대상으로 하였으며, 개인정보 보호 및 불법 유출 데이터 미수집 원칙을 준수했습니다.</em></p>
+</main>
+</body>
+</html>

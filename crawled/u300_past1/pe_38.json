@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 38,
+    "pePart": "정보·통신",
+    "teamName": "유니워시 (university+wash)",
+    "companyTitle": "세탁카드 잔액 확인 및 충전 어플리케이션",
+    "companyContent": "<p>해당 아이템은 일상생활에서 필요한 아이템입니다.</p><p><br></p><p>대학생으로서, 기숙사에 거주하는 대부분의 학생들은 <b>세탁카드의 잔액을 확인하기 위해 세탁실로 직접 가야</b>하고, 충전 또한 교통카드와 같이 <b>현금으로만 충전</b>할 수 있습니다. 이 부분에 대하여서는 대부분의 학생들이 불편하다고 느낄 수 있는 부분입니다.</p><p><br></p><p><b>기숙사에 거주하는 학생 대부분이 일상생활에서 불편한 부분에 대해 편리하게 변화시키기 위하여 '세탁카드 잔액 확인 및 충전 어플리케이션'을 제작하려고 합니다.</b></p><p><br></p><p>해당 플랫폼은 잔액조회 및 충전 시스템과 예약 및 종료 알람 서비스를 주 서비스로 진행할 예정이며, 자체 결제 시스템 하나만 가지고도 해당 플랫폼을 이용자들에게 편리함을 제공합니다. 예약 스케줄링의 경우, 세탁방에 직접 가지 않아도 사용 가능한 장비 유무와 사용 가능한 시간대, 종료 시간을 알 수 있어 세탁실에 갔을 때 자리가 없어 불편한 일이 없어집니다.</p><p><br></p><p>저희는 사용자 중심 서비스로, 사용자 경험 기반 핵심 서비스를 제공합니다. 세탁기의 사용 여부를 알고 간편하게 방에서 세탁카드를 충전하게 될 경우 <b><u>더욱 간편한 기숙사 생활이 가능</u></b>합니다.</p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_630101855.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_432.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12410,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 29,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "블루시그넘",
+    "companyTitle": "라이트하우스: 나를 기억하는 심리테라피 서비스 ",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15799).png\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56193141.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_495(1).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11496,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

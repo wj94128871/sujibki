@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 103,
+    "pePart": "정보·통신",
+    "teamName": "748호",
+    "companyTitle": "기프티콘 통합 관리 서비스 어플  '코드룸'",
+    "companyContent": "<p>1. 어플 실행 시 사진첩에 있는 기프티콘의 바코드 자동 인식 후 불러오기</p><p>2. 이곳저곳 흩어져 있는 기프티콘을 유효기간 순으로 정렬 ( 유효기간 알림 제도 )</p><p>3. 기프티콘 하나 클릭 시 자세한 정보 제공 ( 유효기간/ 잔액/ 분할 사용 혹은 다른 제품 대체 가능 여부 )</p><p>4. 안 쓰는 기프티콘 사용자끼리 교환 및 판매 거래 제도&nbsp;</p><p>5. 회사, 거래처, 통신사, 백화점 등에서 받은 쿠폰 관리&nbsp;</p><p><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_54231337.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_541.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 30131,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

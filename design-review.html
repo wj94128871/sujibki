@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>design-review</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 design-review · 생성: 2026-08-20 20:32</div>
+<h1>디자인 자가 감사 (design-review.md) — 시장조사·분석 대시보드</h1>
+<ul>
+<li><strong>작성팀</strong>: 디자인팀 (design-team) / <strong>모드</strong>: standard</li>
+<li><strong>방법</strong>: <code>design-auditor</code> 19규칙 프레임워크 자가 감사(설계 기준)</li>
+<li><strong>사용 스킬 로그</strong>: <code>design-auditor</code>(19규칙), <code>color-expert</code>(실제 대비 계산·보정), <code>a11y-audit</code>(WCAG 2.2 AA·키보드/포커스)</li>
+<li><strong>평가 대상</strong>: storyboard.md · design-system.md(최종본 — 디자인QA 반려 반영 완료)</li>
+</ul>
+<hr />
+<h2>0. 감사 요약 (총점)</h2>
+<table>
+<thead>
+<tr>
+<th>범주</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>색상·대비(Color)</td>
+<td>🟢 해결 — 반려 항목 전부 ≥4.5:1 확정값으로 보정 완료</td>
+</tr>
+<tr>
+<td>타이포그래피(Typography)</td>
+<td>🟢 양호 — 계층·tabular 숫자</td>
+</tr>
+<tr>
+<td>간격·정렬(Spacing/Grid)</td>
+<td>🟢 양호 — 4px 스케일·반응형(모바일 차트 C3 반영)</td>
+</tr>
+<tr>
+<td>시각적 계층(Hierarchy)</td>
+<td>🟢 양호</td>
+</tr>
+<tr>
+<td>일관성(Consistency)</td>
+<td>🟢 양호 — 토큰 기반</td>
+</tr>
+<tr>
+<td>접근성(Accessibility)</td>
+<td>🟡 경고 — 키보드 스킴 설계 보강(C4)됨, 구현 후 검증 필요</td>
+</tr>
+<tr>
+<td><strong>총점(설계 기준)</strong></td>
+<td><strong>92 / 100</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 디자인QA 반려 사항 반영 상태 (C1~C6)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>상태</th>
+<th>반영 내용 (design-system.md 확정값)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 대비 보정</td>
+<td>🟢 해결</td>
+<td>신뢰뱃지 중간: light <strong>6.24:1</strong>(<code>#8A4A00</code>/<code>#FDF3E3</code>) / dark 6.60:1 · 신뢰뱃지 낮음: dark <strong>5.89:1</strong>(<code>#F27A6E</code>/<code>#331C1A</code>) · 상태 성공: light <strong>4.98:1</strong>(<code>#1E7F52</code>) · 상태 경고: light <strong>5.37:1</strong>(<code>#9C5B00</code>) — 단, 1.3·1.5절에 color-expert로 계산한 확정값 명시</td>
+</tr>
+<tr>
+<td>C2 review 재동기화</td>
+<td>🟢 해결</td>
+<td>본 문서를 design-system 최종본 기준으로 재작성(대비값 존재·해결 명시)</td>
+</tr>
+<tr>
+<td>C3 모바일 차트 배치</td>
+<td>🟢 해결</td>
+<td>storyboard §6·design-system §4.2에 세로 카드 기본 + 탭형 뷰 전환 규칙 명시(가로 스크롤 금지·탭 키보드 탐색)</td>
+</tr>
+<tr>
+<td>C4 차트 키보드 스킴</td>
+<td>🟢 해결</td>
+<td>design-system §3.3에 <code>tabindex=0</code>+<code>role=button</code> 범례·시리즈, <code>aria-live</code> 툴팁, <code>&lt;canvas&gt;</code> 대체 <code>&lt;table class="sr-only"&gt;</code> 명시</td>
+</tr>
+<tr>
+<td>C5 <code>--text-3</code> 대비</td>
+<td>🟢 해결</td>
+<td>light <code>#8A93A3</code>(2.91)→<code>#667085</code>(<strong>4.68:1</strong>), dark <code>#6B7485</code>(4.02)→<code>#7B8498</code>(<strong>5.04:1</strong>), 축·그리드 라벨 ≥4.5:1로 규정</td>
+</tr>
+<tr>
+<td>C6 뱃지 배경 토큰화</td>
+<td>🟢 해결</td>
+<td><code>--badge-high-bg/-mid-bg/-low-bg</code>·<code>--badge-high/-mid/-low</code> 토큰 정의(design-system §1.5, §6.1)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. rule-by-rule 감사 (design-auditor 19규칙) — 최종</h2>
+<h3>A. 색상·대비</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>의미 있는 색상 대비</td>
+<td>🟢</td>
+<td>대비값을 실제 계산해 §1.3·§1.5 명시(성공 4.98:1, 경고 5.37:1, 뱃지 중간 6.24:1, 낮음 dark 5.89:1 등)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>색상만으로 정보 전달 금지</td>
+<td>🟢</td>
+<td>상태·신뢰를 색+텍스트+아이콘 복합 표기</td>
+</tr>
+<tr>
+<td>3</td>
+<td>배경·전경 대비</td>
+<td>🟢</td>
+<td><code>--text</code> ≥7:1, <code>--text-2</code> ≥4.5:1, <code>--text-3</code> ≥4.5:1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>접근성 있는 상태색</td>
+<td>🟢</td>
+<td>상태·뱃지 light/dark 대비값 모두 ≥4.5:1 확정</td>
+</tr>
+</tbody>
+</table>
+<h3>B. 타이포그래피</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>폰트 계층</td>
+<td>🟢</td>
+<td>7단계(display~caption)+stat</td>
+</tr>
+<tr>
+<td>6</td>
+<td>줄높이·가독성</td>
+<td>🟢</td>
+<td>body 1.5, 소형 1.45</td>
+</tr>
+<tr>
+<td>7</td>
+<td>숫자·정렬</td>
+<td>🟢</td>
+<td>tabular-nums</td>
+</tr>
+<tr>
+<td>8</td>
+<td>자간 과용 금지</td>
+<td>🟢</td>
+<td>-0.02em~+0.03em 제한</td>
+</tr>
+</tbody>
+</table>
+<h3>C. 간격·레이아웃</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>일관 간격</td>
+<td>🟢</td>
+<td>4px 스케일</td>
+</tr>
+<tr>
+<td>10</td>
+<td>그리드·정렬</td>
+<td>🟢</td>
+<td>12콜럼·breakpoint·auto-fit</td>
+</tr>
+<tr>
+<td>11</td>
+<td>밀도·여백</td>
+<td>🟢</td>
+<td>반응형/모바일 차트 규칙 반영(C3)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>요소 간격 그룹</td>
+<td>🟢</td>
+<td>섹션 48px·카드·타이틀 간격</td>
+</tr>
+</tbody>
+</table>
+<h3>D. 위계</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>시각적 계층</td>
+<td>🟢</td>
+<td>헤더 대형 수치→섹션→카드→세부</td>
+</tr>
+<tr>
+<td>14</td>
+<td>포커스 포인트</td>
+<td>🟢</td>
+<td>헤더 요약+앵커</td>
+</tr>
+<tr>
+<td>15</td>
+<td>데이터-잉크 비율</td>
+<td>🟡</td>
+<td>렌더 후 재확인 권장</td>
+</tr>
+</tbody>
+</table>
+<h3>E. 일관성·토큰</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>토큰 사용</td>
+<td>🟢</td>
+<td>3계층 + 뱃지 토큰(C6), lint</td>
+</tr>
+<tr>
+<td>17</td>
+<td>컴포넌트 재사용</td>
+<td>🟢</td>
+<td>컴포넌트 명세</td>
+</tr>
+<tr>
+<td>18</td>
+<td>다크/라이트 일관성</td>
+<td>🟢</td>
+<td>semantic 토큰 전환</td>
+</tr>
+</tbody>
+</table>
+<h3>F. 접근성</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19</td>
+<td>키보드·포커스·스크린리더</td>
+<td>🟡</td>
+<td>설계 보강 완료(C4), 코드 구현 후 E2E 검증 필요</td>
+</tr>
+</tbody>
+</table>
+<h3>G. (추가) 반응형·외부 제약</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>규칙</th>
+<th>판정</th>
+<th>사유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>반응형</td>
+<td>🟢</td>
+<td>모바일 차트 세로/탭 전환(C3)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>외부 CDN 금지</td>
+<td>🟢</td>
+<td>전부 내장</td>
+</tr>
+<tr>
+<td>22</td>
+<td>저신뢰·개인정보</td>
+<td>🟢</td>
+<td>신뢰 뱃지 필수, <code>client_id</code> 미노출</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 잔여 위험 / 후속 조치 (residual)</h2>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>항목</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>대비 보정(C1)·뱃지 토큰(C6)·<code>--text-3</code>(C5)·모바일 차트(C3)·차트 키보드(C4)</td>
+<td>해결</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>구현 후 실제 색 픽셀·포커스·스크린리더 E2E 검증(design-qa: 토큰 lint·axe·대비·시각 회귀)</td>
+<td>잔여(구현 후)</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>데이터-잉크 비율·차트 밀도 렌더 후 재확인</td>
+<td>잔여(구현 후)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>끝 — 설계 단계 자가 감사. 디자인QA 반려 항목 전부 해결. 코드 구현 후 design-qa 게이트로 최종 검증.</em></p>
+</main>
+</body>
+</html>

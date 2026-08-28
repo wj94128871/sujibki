@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 9,
+    "pePart": "정보·통신",
+    "teamName": "보윙",
+    "companyTitle": "말할수록 혜택이 쌓인다! AI 음성 리워드 애플리케이션, 보윙",
+    "companyContent": "<p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5505).jpg\" style=\"width: 840px;\"></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6944).JPG\" style=\"width: 840px;\"><br></p><p></p><p></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6945).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6947).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6948).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6950).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6952).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6953).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6956).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6957).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6959).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6961).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6962).JPG\" style=\"width: 840px;\"></p><p></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15821).png\" style=\"width: 881px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6964).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6965).JPG\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56122010.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_549(1).jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 6275,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

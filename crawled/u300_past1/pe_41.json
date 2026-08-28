@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 41,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "올리프",
+    "companyTitle": "곤충을 활용한 친환경 양식장 사료",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7216).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7217).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7218).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7219).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7220).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7221).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7222).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7223).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7224).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7225).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7226).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7548).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7228).JPG\" style=\"width: 840px;\"></p><p></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7547).JPG\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7231).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7232).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7233).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7234).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7235).JPG\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7236).JPG\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56181855.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_645(0).PNG",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12561,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

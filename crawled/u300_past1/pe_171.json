@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 171,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "LIPET (라이펫)",
+    "companyTitle": "반려동물과 함께 하는 한끼 식사 ‘Share food’",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5838).jpg\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_612175546.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_377(0).jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 31309,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

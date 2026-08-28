@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 40,
+    "pePart": "정보·통신",
+    "teamName": "UTWEEN",
+    "companyTitle": "국내 외국인/한국인 오프라인 모임 및 튜터링 서비스 [모헤이 MOHEY] ",
+    "companyContent": "<p><br></p><p style=\"text-align: center; \"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15455).png\" style=\"width: 892px;\"><br></p><p style=\"text-align: center; \">(클릭 가능)</p><p style=\"text-align: center; \"><a href=\"https://moaform.com/q/zM0Wah\" target=\"_blank\"><font color=\"#000000\" style=\"\"><b><span style=\"font-size: 24px;\"><u>https://moaform.com/q/zM0Wah</u></span></b></font></a></p><p style=\"text-align: center; \"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15450).png\" style=\"width: 892px;\"><b style=\"font-size: 18px;\"><u><br></u></b></p><p style=\"text-align: center; \"><b style=\"font-size: 18px;\"><u><br></u></b></p><p style=\"text-align: center; \"><a href=\"https://certain-feverfew-c29.notion.site/a92edbfcab1448898507e20d32be9976\" target=\"_blank\"><b><u><span style=\"font-size: 24px;\">노션 바로가기</span></u></b></a><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56104841.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_639.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12500,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

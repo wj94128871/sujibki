@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>design-system</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 design-system · 생성: 2026-08-20 20:32</div>
+<h1>디자인 시스템 (design-system.md) — 시장조사·분석 대시보드</h1>
+<ul>
+<li><strong>작성팀</strong>: 디자인팀 (design-team)</li>
+<li><strong>모드</strong>: standard (6단계 — 디자인)</li>
+<li><strong>기준</strong>: <code>storyboard.md</code>(화면·상태), <code>plan.md</code>(AC), <code>userflow.md</code>(전역 UX 규칙)</li>
+<li><strong>사용 스킬 로그</strong>: <code>design-system</code>(3계층 토큰·간격/타이포 스케일·컴포넌트 명세), <code>design-auditor</code>(19규칙 자가 감사 → design-review.md), <code>color-expert</code>(WCAG AA 대비 색 검증), <code>a11y-audit</code>(WCAG 2.2 AA·키보드/포커스), <code>md-to-html</code>(.html 생성).</li>
+</ul>
+<hr />
+<h2>0. 원칙</h2>
+<ol>
+<li><strong>데이터 우선</strong>: 장식보다 수치 가독성·비교·신뢰 표기가 우선.</li>
+<li><strong>한눈에</strong>: 6섹션 단일 스크롤, 계층(헤더&gt;카드&gt;차트&gt;상세)이 분명한 시각적 위계.</li>
+<li><strong>신뢰</strong>: 저신뢰 수치에 뱃지·주석, 단정 금지 표현은 디자인으로도 유지(절대확정 강조 금지).</li>
+<li><strong>접근성(WCAG AA)</strong>: 키보드 전용 사용 가능, 명확한 포커스, 충분한 대비.</li>
+<li><strong>토큰 기반</strong>: light/dark를 CSS 변수(primitive→semantic→component 3계층)로.</li>
+</ol>
+<hr />
+<h2>1. 컬러 팔레트</h2>
+<h3>1.1 컨셉</h3>
+<ul>
+<li>데이터 특성(시장지표·신뢰)을 살리는 <strong>중립 배경 + 시그니처 인디고/블루 + 한정적 상태색</strong>.</li>
+<li>차트는 categorical 순서열(카테고리 구분용) + status 신호색(성공/경고/위험)을 분리 사용.</li>
+</ul>
+<h3>1.2 Primitive → Semantic 토큰 (Light/Dark)</h3>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th>Light 토큰</th>
+<th>값</th>
+<th>Dark 토큰</th>
+<th>값</th>
+<th>대비(텍스트)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배경</td>
+<td><code>--bg</code></td>
+<td><code>#F7F8FA</code></td>
+<td><code>--bg</code></td>
+<td><code>#0F1115</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>표면(카드)</td>
+<td><code>--surface</code></td>
+<td><code>#FFFFFF</code></td>
+<td><code>--surface</code></td>
+<td><code>#1A1D24</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>표면-강조</td>
+<td><code>--surface-2</code></td>
+<td><code>#EEF1F6</code></td>
+<td><code>--surface-2</code></td>
+<td><code>#242834</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>경계</td>
+<td><code>--border</code></td>
+<td><code>#E1E5EC</code></td>
+<td><code>--border</code></td>
+<td><code>#2E3442</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>기본 텍스트</td>
+<td><code>--text</code></td>
+<td><code>#17191F</code></td>
+<td><code>--text</code></td>
+<td><code>#EFF2F7</code></td>
+<td>≥7:1</td>
+</tr>
+<tr>
+<td>이차 텍스트</td>
+<td><code>--text-2</code></td>
+<td><code>#5A6474</code></td>
+<td><code>--text-2</code></td>
+<td><code>#A7B0C0</code></td>
+<td>≥4.5:1</td>
+</tr>
+<tr>
+<td>비활성/자리·축/그리드 라벨</td>
+<td><code>--text-3</code></td>
+<td><code>#667085</code></td>
+<td><code>--text-3</code></td>
+<td><code>#7B8498</code></td>
+<td><strong>≥4.5:1</strong>(소형 라벨 포함)</td>
+</tr>
+<tr>
+<td>프라이머리(액센트)</td>
+<td><code>--primary</code></td>
+<td><code>#3456E0</code></td>
+<td><code>--primary</code></td>
+<td><code>#7B94FF</code></td>
+<td>텍스트: ≥4.5:1</td>
+</tr>
+<tr>
+<td>프라이머리-호버</td>
+<td><code>--primary-hover</code></td>
+<td><code>#2A47C0</code></td>
+<td><code>--primary-hover</code></td>
+<td><code>#8FA5FF</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>프라이머리-백그라운드</td>
+<td><code>--primary-bg</code></td>
+<td><code>#E9ECFE</code></td>
+<td><code>--primary-bg</code></td>
+<td><code>#232A55</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 상태색 (Status)</h3>
+<table>
+<thead>
+<tr>
+<th>의미</th>
+<th>Light</th>
+<th>Dark</th>
+<th>사용처</th>
+<th>대비(white 기준)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성공</td>
+<td><code>#1E7F52</code></td>
+<td><code>#2FB37A</code></td>
+<td>수집 성공·정상</td>
+<td>light 4.98:1 / dark 6.30:1</td>
+</tr>
+<tr>
+<td>경고/부분</td>
+<td><code>#9C5B00</code></td>
+<td><code>#E8A23D</code></td>
+<td>부분 실패·저신뢰·추이미확인</td>
+<td>light 5.37:1 / dark 7.76:1</td>
+</tr>
+<tr>
+<td>위험/실패</td>
+<td><code>#C0392B</code></td>
+<td><code>#E2554A</code></td>
+<td>수집 실패·에러</td>
+<td>light 5.44:1 / dark 4.52:1</td>
+</tr>
+<tr>
+<td>정보</td>
+<td><code>#2563EB</code></td>
+<td><code>#5B8CFF</code></td>
+<td>안내·링크</td>
+<td>light 5.17:1 / dark 5.33:1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>상태색은 <strong>아이콘/뱃지와 함께</strong> 사용(색상만으로 판단 불가하게) → 색맹/콘트라스트 대응. 텍스트·바탕색 조합은 항상 WCAG AA 대비(≥4.5:1 일반 텍스트) 유지, 대형 텍스트는 ≥3:1.</p>
+</blockquote>
+<h3>1.4 차트 categorical 팔레트 (색상 코드 순서, light/dark 공용 인식)</h3>
+<p><code>#3456E0</code> · <code>#24A0B5</code> · <code>#7B61FF</code> · <code>#3AA673</code> · <code>#E8862E</code> · <code>#D9458F</code> · <code>#B39C26</code> · <code>#6B7485</code> — 이 8색을 순환 사용, 구간 도우미(그리드 라인)·축 텍스트는 <code>--text-3</code> 사용.</p>
+<h3>1.5 신뢰 뱃지 색</h3>
+<table>
+<thead>
+<tr>
+<th>신뢰도</th>
+<th>배경(토큰)</th>
+<th>글자(토큰)</th>
+<th>대비(확정)</th>
+<th>표기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>높음</td>
+<td><code>--badge-high-bg</code> = <code>--primary-bg</code> (<code>#E9ECFE</code>/<code>#232A55</code>)</td>
+<td><code>--badge-high</code> = <code>--primary</code> (<code>#3456E0</code>/<code>#7B94FF</code>)</td>
+<td>light 5.91:1 / dark 6.60:1</td>
+<td><code>[신뢰: 높음]</code> ●</td>
+</tr>
+<tr>
+<td>중간</td>
+<td><code>--badge-mid-bg</code> = <code>#FDF3E3</code>/<code>#2E2A1C</code></td>
+<td><code>--badge-mid</code> = <code>#8A4A00</code>/<code>#E8A23D</code></td>
+<td>light 6.24:1 / dark 6.60:1</td>
+<td><code>[신뢰: 중간]</code> ◐</td>
+</tr>
+<tr>
+<td>낮음</td>
+<td><code>--badge-low-bg</code> = <code>#FCEBEA</code>/<code>#331C1A</code></td>
+<td><code>--badge-low</code> = <code>#C0392B</code>/<code>#F27A6E</code></td>
+<td>light 5.44:1 / dark 5.89:1</td>
+<td><code>[신뢰: 낮음]</code> ○</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 타이포그래피</h2>
+<ul>
+<li><strong>폰트</strong>: 시스템 폰트 스택(수치 가독성 최우선). 한글·라틴·숫자 혼용 시 <code>system-ui</code> 기반. 숫자는 tabular(고정폭) 정렬로 비교 가독성 확보. <em>(standalone HTML 산출 시 한글 서브셋 내장—기술팀과 협의)</em></li>
+<li><strong>숫자</strong>: 모든 지표 숫자는 고정폭(tabular-nums)으로 자릿수 정렬.</li>
+</ul>
+<h3>2.1 폰트 계층 (Type Scale)</h3>
+<table>
+<thead>
+<tr>
+<th>토큰</th>
+<th>용도</th>
+<th>크기</th>
+<th>줄높이</th>
+<th>자간(letter-spacing)</th>
+<th>두께</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--fs-display</code></td>
+<td>헤더 요약 대형 수치</td>
+<td>40/32px</td>
+<td>1.1</td>
+<td>-0.02em</td>
+<td>700</td>
+</tr>
+<tr>
+<td><code>--fs-h1</code></td>
+<td>섹션 타이틀</td>
+<td>26/22px</td>
+<td>1.2</td>
+<td>-0.01em</td>
+<td>700</td>
+</tr>
+<tr>
+<td><code>--fs-h2</code></td>
+<td>카드 타이틀</td>
+<td>18/17px</td>
+<td>1.3</td>
+<td>0</td>
+<td>600</td>
+</tr>
+<tr>
+<td><code>--fs-body</code></td>
+<td>본문</td>
+<td>15/14px</td>
+<td>1.5</td>
+<td>0</td>
+<td>400</td>
+</tr>
+<tr>
+<td><code>--fs-small</code></td>
+<td>보조·주석·이력</td>
+<td>13/12px</td>
+<td>1.45</td>
+<td>+0.01em</td>
+<td>400</td>
+</tr>
+<tr>
+<td><code>--fs-caption</code></td>
+<td>뱃지·라벨·footer</td>
+<td>12/11px</td>
+<td>1.3</td>
+<td>+0.03em(대문자용)</td>
+<td>500</td>
+</tr>
+<tr>
+<td><code>--fs-stat</code></td>
+<td>차트 내 수치 레이블</td>
+<td>20/18px</td>
+<td>1.2</td>
+<td>0</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>자간은 대형 타이틀에서 좁히고(-0.02~-0.01em), 소형 캡션은 넓혀(+0.01~0.03em) 가독·기능 구분.</li>
+<li>모바일(≤767)은 위 표의 <strong>축소값</strong>(표의 <code>/</code> 뒤) 사용.</li>
+</ul>
+<hr />
+<h2>3. 컴포넌트 규칙</h2>
+<h3>3.1 버튼</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>크기</th>
+<th>규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본(Primary)</td>
+<td>h:40(모바일 36), px:12/20</td>
+<td>배경 <code>--primary</code>, 글자 white/다크 <code>#10141C</code>, radius 8, hover <code>--primary-hover</code></td>
+</tr>
+<tr>
+<td>보조(Secondary)</td>
+<td>동일</td>
+<td>투명/표면, 1px <code>--border</code>, 글자 <code>--text</code>, hover 배경 <code>--surface-2</code></td>
+</tr>
+<tr>
+<td>텍스트(Link)</td>
+<td>동일</td>
+<td>배경 없음, 글자 <code>--primary</code>+밑줄 hover, 아이콘 옵션</td>
+</tr>
+<tr>
+<td>위험(Danger)</td>
+<td>동일</td>
+<td>배경 <code>#C0392B</code>/<code>#E2554A</code>, hover 짙게</td>
+</tr>
+<tr>
+<td>- 포커스: <code>outline: 2px solid var(--primary) + offset 2px</code> (모든 인터랙티브 요소 공통).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- disabled: 불투명도 40% + <code>cursor:not-allowed</code>, 포커스 불가.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 카드</h3>
+<ul>
+<li>표면 <code>--surface</code>, 1px <code>--border</code>, radius 12, padding 20/16(모바일).</li>
+<li>헤더 영역: 타이틀(<code>--fs-h2</code>) + 우측 액션(필터·더보기).</li>
+<li>상태 서브타입: 경고 카드(부분 실패), 성공 카드(완료), 정보 카드(null 주석).</li>
+<li>요약 카드: 대형 수치(<code>--fs-display</code>) + 라벨(<code>--fs-small</code>) + 상태 뱃지.</li>
+</ul>
+<h3>3.3 차트 (외부 CDN 금지 — 번들 내장)</h3>
+<ul>
+<li>도넛/파이: 카테고리 점유율, 상주vs도급 비중.</li>
+<li>바/히스토그램: 예산 구간, 키워드 랭킹.</li>
+<li>라인/영역: 월간 등록 추이(다크모드 축·그리드 토큰 반영).</li>
+<li><strong>공통 규칙</strong>: 축·그리드 <code>--text-3</code>, 데이터 순서 categorical 팔레트, <code>&lt;canvas&gt;</code>는 <code>aria-label</code>+대체 텍스트, 툴팁 키보드 접근, null은 "제외+건수 카운트" 주석, 범례 클릭→해당 시리즈 강조.</li>
+<li><strong>키보드 스킴(C4)</strong>: 차트마다 <code>&lt;canvas&gt;</code> 데이터를 대체하는 스크린리더 전용 <code>&lt;table class="sr-only"&gt;</code>(또는 상세 <code>&lt;dl&gt;</code>)를 비표시로 제공. 범례·시리즈 항목은 <code>tabindex="0"</code> + <code>role="button"</code>으로 노출해 Tab/SHIFT+Tab 탐색. <code>Enter</code>/<code>Space</code>로 범례 토글(해당 시리즈 강조). 툴팁은 <code>focus</code> 시 표시 + <code>aria-live="polite"</code>로 읽히고 포커스 유지(hover와 동일 데이터). <code>&lt;canvas&gt;</code>는 <code>aria-label</code> 병기.</li>
+<li>제공할 <code>aria-label</code> 예: "카테고리 수요 점유율 도넛 차트, 전체 66,000건".</li>
+</ul>
+<h3>3.4 신뢰 뱃지</h3>
+<ul>
+<li>최소 24px 높이, radius 999, 배경·글자색은 1.5절. 아이콘(●◐○) + 텍스트("[신뢰: 높음]") 형태.</li>
+<li><strong>반드시 텍스트 포함</strong>(색만으로 판단 불가), <code>title</code>/<code>aria-label</code>에 근거 기간·기준 명시.</li>
+<li>저신뢰/lower 시 "~로 추정/공지" 문구 함께 표기, 단정 표현 금지.</li>
+</ul>
+<h3>3.5 빈 상태 / 에러 상태 / 로딩</h3>
+<ul>
+<li><strong>빈 상태</strong>: 아이콘(🗂) + 제목(예: "아직 수집되지 않음") + 설명 + 행동(Call to Action: <code>수집 실행</code>). 섹션별 문구 분기(미수집/미분석/검색결과 없음).</li>
+<li><strong>에러 상태</strong>: ⚠ 아이콘 + "데이터를 불러오지 못했습니다" + (재시도)·(자세히: 원인). 재시도 후에도 실패 시 원인 텍스트("원인 미상" 허용).</li>
+<li><strong>로딩</strong>: section 별 스켈레톤(배경 <code>--surface-2</code>에 shimmer) — 전역 로더 금지. 300ms 이상일 때만 표시(깜빡임 방지).</li>
+</ul>
+<h3>3.6 테이블/목록</h3>
+<ul>
+<li>목록 행: 높이 56, hover <code>--surface-2</code>, 클릭 가능 시 캐럿. 필드 열 순서(제목·예산·기간·카테고리·등록일) 고정.</li>
+<li>금액은 tabular-nums, "만원→원/월" 정규화된 단위 표기, 예산 "협의 후"는 "협의 후" 라벨.</li>
+<li>페이징: ◀ 1 2 3 ▶ + "총 N건" 표시.</li>
+</ul>
+<h3>3.7 모달 (S-02)</h3>
+<ul>
+<li>오버레이 배경 40% dim, 패널 <code>--surface</code> radius 16, max-width 560px, 85vh 이내 스크롤.</li>
+<li>접근: 포커스 트랩, <code>Esc</code>·배경·(닫기)로 닫힘, <code>role="dialog" aria-modal="true"</code>.</li>
+<li>필드 null → "정보 없음" 회색.</li>
+</ul>
+<hr />
+<h2>4. 간격 &amp; 그리드</h2>
+<h3>4.1 간격 스케일 (spacing tokens)</h3>
+<table>
+<thead>
+<tr>
+<th>토큰</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--sp-1</code></td>
+<td>4px</td>
+</tr>
+<tr>
+<td><code>--sp-2</code></td>
+<td>8px</td>
+</tr>
+<tr>
+<td><code>--sp-3</code></td>
+<td>12px</td>
+</tr>
+<tr>
+<td><code>--sp-4</code></td>
+<td>16px</td>
+</tr>
+<tr>
+<td><code>--sp-5</code></td>
+<td>24px</td>
+</tr>
+<tr>
+<td><code>--sp-6</code></td>
+<td>32px</td>
+</tr>
+<tr>
+<td><code>--sp-7</code></td>
+<td>48px</td>
+</tr>
+<tr>
+<td><code>--sp-8</code></td>
+<td>64px</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>섹션 간: <code>--sp-7</code>(48px) 이상, 섹션 타이틀-콘텐츠: <code>--sp-4</code>(16px), 카드 내용: <code>--sp-4</code>~<code>--sp-5</code>, 카드 간: <code>--sp-4</code>.</li>
+<li>4px 단위 규칙으로 일관성 유지(배수만 사용).</li>
+</ul>
+<h3>4.2 그리드</h3>
+<ul>
+<li>컨테이너 max-width 1200px, 좌우 padding 24/16(모바일).</li>
+<li>카드 그리드: 데스크톱 4열 / 태블릿 2열 / 모바일 1열 (<code>repeat(auto-fit, minmax(240px,1fr))</code>).</li>
+<li>차트 그리드: 데스크톱 4열(상단) + 2열(하단: 키워드·추이), 태블릿 2열, 모바일 1열 세로 배치.</li>
+<li><strong>모바일(≤767px) 5종 차트 배치(C3)</strong>: 가로 스크롤 금지. ① 상단 4개 차트(카테고리·예산/기간·상주·키워드)는 <strong>세로 1열 카드</strong>를 기본으로 하고, 화면이 너무 길어지면 <strong>탭형 뷰</strong>(<code>[점유율 | 예산·기간 | 상주·키워드]</code>)로 전환. ② 하단 '월간 등록 추이'는 탭 밖 고정 세로 카드로 유지. ③ 탭은 <code>aria-label</code>+좌우 화살표 키 탐색, 활성 탭 포커스 유지.</li>
+<li>목록: 데스크톱 테이블, 모바일 카드형(테이블 대체)·가로 스크롤 최소화.</li>
+<li>12-콜럼 기반 / breakpoint: <code>≥1024</code> 데스크톱, <code>768–1023</code> 태블릿, <code>≤767</code> 모바일.</li>
+</ul>
+<hr />
+<h2>5. 아이콘 &amp; 이미지</h2>
+<ul>
+<li><strong>아이콘</strong>: 외부 CDN 금지 → 라이브러리를 번들 내장(SVG 인라인, <code>currentColor</code> 사용해 다크모드 자동 반영). 스트로크 2px, 16/20/24px 세 단계.</li>
+<li>필수 아이콘 세트: 새탭(↗ 외부링크), 검색·필터, 상태(✓성공/⚠경고/✕실패), 신뢰(●◐○), 스크롤 앵커, 다크모드(🌙), 원본, 에러/빈(⚠🗂), 스피너.</li>
+<li><strong>아이콘 접근성</strong>: 의미 있는 아이콘은 <code>aria-label</code>, 장식 아이콘은 <code>aria-hidden="true"</code>.</li>
+<li><strong>이미지</strong>: 본 대시보드에는 콘텐츠 이미지 없음(데이터·차트 중심). 로고는 SVG(텍스트+심볼). 외부 원본은 링크로만(이미지 미내장).</li>
+</ul>
+<hr />
+<h2>6. 접근성 (WCAG AA)</h2>
+<h3>6.1 대비 (1.1절 팔레트 준수)</h3>
+<ul>
+<li>일반 텍스트 ≥4.5:1, 대형 텍스트 ≥3:1. 상태·신뢰 뱃지는 색과 함께 텍스트/아이콘으로 구분.</li>
+</ul>
+<h3>6.2 키보드 내비게이션</h3>
+<ul>
+<li>전체 흐름이 Tab/SHIFT+Tab으로 탐색·조작 가능.</li>
+<li>모달: 열림 시 첫 요소 포커스 → 포커스 트랩 → <code>Esc</code> 닫힘 → 닫힘 시 트리거 요소로 포커스 복귀.</li>
+<li>차트/카드: 범례·시리즈·인사이트 카드를 Tab으로 선택, Enter/Space로 활성화(카테고리 클릭=필터링).</li>
+</ul>
+<h3>6.3 포커스 상태</h3>
+<ul>
+<li>모든 인터랙티브 요소: <code>outline: 2px solid var(--primary)</code>, <code>outline-offset: 2px</code>. <code>:focus-visible</code> 사용, 키보드 전용 표시.</li>
+<li>다크모드에서도 동일 대비 유지.</li>
+</ul>
+<h3>6.4 기타 WCAG AA</h3>
+<ul>
+<li><strong>시맨틱 랜드마크</strong>: <code>&lt;header&gt;&lt;nav&gt;&lt;main&gt;&lt;section aria-labelledby&gt;&lt;footer&gt;</code>.</li>
+<li><strong>목적지 앵커</strong>: 각 섹션에 <code>id</code>+<code>aria-labelledby</code>, 스킵 링크("본문으로 건너뛰기") 최상단.</li>
+<li><strong>동적 콘텐츠</strong>: 로딩 완료/에러를 <code>role="status"</code>/<code>aria-live="polite"</code>로 알림.</li>
+<li><strong>토스트</strong>: <code>role="alert"</code>(<code>aria-live="assertive"</code>).</li>
+<li><strong>터치 타겟</strong>: 최소 44×44px(모바일).</li>
+<li><strong>색상 의존 금지</strong>: 신뢰·상태는 색+텍스트+아이콘 복합 표기.</li>
+<li><strong>모션</strong>: 스크롤/전환 애니메이션은 <code>prefers-reduced-motion</code>에서 최소화(부드러운 스크롤 해제).</li>
+</ul>
+<hr />
+<h2>7. 다크모드 &amp; 반응형 (요약 규칙)</h2>
+<ul>
+<li>토큰 전환: <code>&lt;html data-theme="dark|light"&gt;</code> + CSS 변수 오버라이드. 초기값 OS 선호(auto), 이후 <code>localStorage</code> 우선.</li>
+<li>차트·뱃지·코드 모두 semantic 토큰으로, hard-coded 색 금지.</li>
+<li>반응형 규칙: 4.2절 그리드 + 타입 축소(2.1절), 터치 타겟 44px, 테이블→카드 변환.</li>
+</ul>
+<hr />
+<h2>8. 금지/준수 목록 (개발팀 전달)</h2>
+<ol>
+<li>외부 CDN·웹폰트·차트 CDN 사용 금지 → 전부 번들/내장.</li>
+<li>하드코딩 색·간격 금지 → 토큰 사용(design-qa lint로 검증).</li>
+<li>신뢰 뱃지 없이 저신뢰 수치 단정 금지.</li>
+<li><code>client_id</code>(이메일)·개인정보를 어떤 UI에도 노출 금지(NFR-06).</li>
+<li>로그인/권한 UI 없음(NG5), 색상 단독 신호 금지.</li>
+</ol>
+<hr />
+<p><em>끝 — storyboard.md의 화면·상태 설계를 이 시스템의 토큰·컴포넌트 규칙이 뒷받침한다.</em></p>
+</main>
+</body>
+</html>

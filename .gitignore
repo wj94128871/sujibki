@@ -1,0 +1,70 @@
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# --- Agent / IDE runtime ---
+.commandcode/
+.idea/
+.vscode/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+*.egg-info/
+.coverage
+htmlcov/
+.venv/
+venv/
+venv-*/
+.venv-*/
+env/
+
+# --- Node / TS / Vite / Wrangler ---
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+.wrangler/
+.cache/
+.turbo/
+*.tsbuildinfo
+
+# --- Wrangler / Cloudflare secrets ---
+.dev.vars
+.wrangler/
+
+# --- Crawled raw PII / detail payloads ---
+# (per README PII note; not for public repo)
+crawled/devpost/detail_*.json
+crawled/wishket_oauth/detail_*.json
+crawled/freemoa_oauth/detail_*.json
+crawled/u300/detail_*.json
+crawled/devpost/
+
+# --- Large seed data (GH13 push-protection triggers on long blobs) ---
+app/worker/src/seed_projects.json
+
+# --- Misc temp / local scratch ---
+*.log
+logs/
+*.tmp
+*.bak
+*.orig
+.cache/
+tmp/
+temp/
+
+# --- Windows-temp leak (literal path that ended up in repo) ---
+C:\Users\wj941\AppData\Local\Temp\devpost_refresh_test/

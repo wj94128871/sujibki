@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 107,
+    "pePart": "기계·소재(기계·재료)",
+    "teamName": "CycLeaf",
+    "companyTitle": "낙엽과 보릿대로 만든 친환경 소재 '새활목'",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14924).png\" style=\"width: 840px;\"><br></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6227).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6229).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6230).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6231).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6233).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6234).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6237).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6238).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6239).JPG\" style=\"width: 850.414px; height: 477.852px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14925).png\" style=\"width: 840px;\"><br></p><p><br></p><p></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6241).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6242).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6243).JPG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12822).png\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6245).JPG\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56165843.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_448(0).jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 30159,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

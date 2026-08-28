@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 42,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "플루오",
+    "companyTitle": "견주들의 걱정거리 알러지!  육류 섭취가 어려운 반려견을 위한 단백질 보충 간식",
+    "companyContent": "<p style=\"text-align: center; \"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7290).jpg\" style=\"width: 725px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_617161943.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_631(4).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 1,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12788,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

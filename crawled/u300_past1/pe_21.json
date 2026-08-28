@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 21,
+    "pePart": "정보·통신",
+    "teamName": "업사이플러스",
+    "companyTitle": "<업사이클링 플랫폼> 환경을 위한 자원순환을 ",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6829).jpg\" style=\"width: 832px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(826).jpeg\" style=\"width: 829px; height: 466.806px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6698).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(845).jpeg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6700).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(849).jpeg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6908).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6703).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(859).jpeg\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(857).jpeg\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(858).jpeg\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(854).jpeg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6709).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6778).jpg\" style=\"width: 830px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6714).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6779).jpg\" style=\"width: 830px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6717).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6719).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6722).jpg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(855).jpeg\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(856).jpeg\" style=\"width: 100%;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_616202036.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_486.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 9256,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

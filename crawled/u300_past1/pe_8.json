@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 8,
+    "pePart": "정보·통신",
+    "teamName": "네모감성",
+    "companyTitle": "비싼 코딩교구는 그만! 음악을 통해 배우는 코딩장난감, 컴트루 블럭",
+    "companyContent": "<p></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15740).PNG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15741).PNG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15742).PNG\" style=\"width: 840px;\"></p><p><br></p><p><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15743).PNG\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_5623444.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_531(2).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 6081,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 35,
+    "pePart": "전기·전자",
+    "teamName": "컴펫",
+    "companyTitle": "무지개다리 건너 외롭지 않도록, 반려동물 종합 장례 서비스 플랫폼",
+    "companyContent": "<p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13493).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13497).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13499).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13500).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13501).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13502).png\" style=\"width: 902px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(13504).png\" style=\"width: 902px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56132348.gif",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_638.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12363,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

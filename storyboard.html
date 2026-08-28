@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>storyboard</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 storyboard · 생성: 2026-08-20 20:32</div>
+<h1>스토리보드 (storyboard.md) — 시장조사·분석 대시보드</h1>
+<ul>
+<li><strong>작성팀</strong>: 디자인팀 (design-team)</li>
+<li><strong>모드</strong>: standard (6단계 — 디자인)</li>
+<li><strong>기준</strong>: <code>plan.md</code>(FR-05~11, AC-05~11), <code>userflow.md</code>(UJ-1~5), <code>test-design.md</code>(AC→TC 매핑)</li>
+<li><strong>산출물</strong>: storyboard.md / design-system.md / design-review.md (+ 각 .html)</li>
+<li><strong>사용 스킬 로그</strong>: <code>sequences</code>(여정별 화면 전환 시퀀스 프레임), <code>prototype</code>(와이어프레임·상태 설계), <code>design-system</code>(토큰/컴포넌트 규칙 정리), <code>md-to-html</code>(.html 생성). <em>design-system·접근성 세부는 design-system.md에서 규정한다.</em></li>
+</ul>
+<hr />
+<h2>0. 설계 방향 (요약)</h2>
+<ul>
+<li><strong>제품</strong>: 위시켓·프리모아(도급), u300 모두의창업(현재·1기), Devpost(해커톤) 안건을 크롤링·표준화 저장한 <strong>단일 페이지 스크롤 대시보드</strong>.</li>
+<li><strong>핵심 경험</strong>: 로그인 없이 URL로 접근해, 스크롤 한 번으로 "지금 시장에서 어느 영역이 유망한가"를 5~10초 안에 파악.</li>
+<li><strong>페이지 구조(6섹션, 고정 순서)</strong>: <code>헤더 요약 → 사이트별 수집 → 시장조사 분석 → 기능개선 방향 → 시장성 인사이트 → 수집 이력</code>.</li>
+<li><strong>동반 규칙</strong>: 빈·에러·로딩 상태 명확 구분, 저신뢰 수치 신뢰 뱃지, 반응형(모바일/데스크톱)·다크모드, 외부 CDN 금지(차트 번들 내장), 키보드 내비게이션.</li>
+</ul>
+<hr />
+<h2>1. 정보 구조 (IA) &amp; 페이지 목록</h2>
+<h3>1.1 페이지 목록</h3>
+<blockquote>
+<p>단일 페이지(Single Page Application) + 경량 상세(모달/오버레이). 외부 이동은 "원본 보기" 링크(새 탭).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>화면 ID</th>
+<th>화면명</th>
+<th>유형</th>
+<th>근거 여정</th>
+<th>관련 AC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S-01</td>
+<td><strong>대시보드 (단일 스크롤 페이지)</strong></td>
+<td>페이지</td>
+<td>UJ-1~4</td>
+<td>AC-09-1, AC-09-2, AC-11</td>
+</tr>
+<tr>
+<td>S-01a</td>
+<td>헤더 요약 섹션</td>
+<td>섹션</td>
+<td>UJ-1</td>
+<td>AC-09-1, AC-11-1</td>
+</tr>
+<tr>
+<td>S-01b</td>
+<td>사이트별 수집 섹션</td>
+<td>섹션</td>
+<td>UJ-2, UJ-5</td>
+<td>AC-05-1</td>
+</tr>
+<tr>
+<td>S-01c</td>
+<td>시장조사 분석 섹션</td>
+<td>섹션</td>
+<td>UJ-3</td>
+<td>AC-06-1~5</td>
+</tr>
+<tr>
+<td>S-01d</td>
+<td>기능개선 방향 섹션</td>
+<td>섹션</td>
+<td>UJ-4</td>
+<td>AC-07-1</td>
+</tr>
+<tr>
+<td>S-01e</td>
+<td>시장성 인사이트 섹션</td>
+<td>섹션</td>
+<td>UJ-4, UJ-5</td>
+<td>AC-08-1, AC-08-2</td>
+</tr>
+<tr>
+<td>S-01f</td>
+<td>수집 이력 섹션</td>
+<td>섹션</td>
+<td>UJ-1</td>
+<td>AC-11-1, AC-11-2</td>
+</tr>
+<tr>
+<td>S-02</td>
+<td><strong>안건 경량 상세 (모달)</strong></td>
+<td>오버레이</td>
+<td>UJ-2, UJ-5</td>
+<td>AC-05-2, AC-10-1, AC-10-2(S)</td>
+</tr>
+<tr>
+<td>S-03</td>
+<td><strong>전역 상태</strong> (로딩 / 에러 / 빈 상태)</td>
+<td>상태</td>
+<td>전 여정</td>
+<td>AC-09-1(빈/에러), AC-06-5, AC-07-1, AC-08-1</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 정보 구조 트리</h3>
+<pre><code>market-dashboard (S-01)
+├── ① 헤더 요약 카드 (S-01a)
+│     ├── 총 수집 건수 · 소스별 건수(위시켓/프리모아/u300/Devpost)
+│     ├── 최근 수집 시각 · 수집 상태 뱃지
+│     └── (퀵) 섹션 앵커 내비게이션
+├── ② 사이트별 수집 (S-01b)
+│     ├── 소스 탭/필터 (위시켓·프리모아·u300·Devpost·전체)
+│     ├── 안건 목록 (제목·예산·기간·카테고리·등록일)
+│     ├── 검색 · 페이징
+│     └── 항목 → S-02 경량 상세
+├── ③ 시장조사 분석 (S-01c)
+│     ├── 카테고리 수요 점유율 (도넛/바 차트)
+│     ├── 예산 분포 (히스토그램) · 기간 분포
+│     ├── 상주 vs 도급 비중 (파이/도넛)
+│     ├── 기술 키워드 랭킹 (바/태그 클라우드)
+│     └── 월간 등록 추이 (라인/영역 차트)
+├── ④ 기능개선 방향 (S-01d) — 후보 목록 + 근거(건수)
+├── ⑤ 시장성 인사이트 (S-01e) — 카드/표 + 신뢰 뱃지 + 근거기간
+└── ⑥ 수집 이력 (S-01f) — 최근 시각·소스별 건수·상태·실패
+</code></pre>
+<ul>
+<li>전역: 우상단 <strong>다크모드 토글</strong>, 좌상단 <strong>로고/타이틀</strong>, 하단 footer(데이터 출처·고지).</li>
+</ul>
+<hr />
+<h2>2. 여정별 화면 전환 맵 (UJ-1~5)</h2>
+<h3>2.1 전환 맵 (Mermaid)</h3>
+<pre><code class="language-mermaid">flowchart TD
+  A[&quot;진입: URL 접근 (S-01)&quot;] --&gt; B[&quot;S-01a 헤더 요약 
+(총 건수·소스별·최근수집)&quot;]
+  B --&gt; C[&quot;S-01b 사이트별 수집&quot;]
+  C --&gt; D[&quot;S-01c 시장조사 분석&quot;]
+  D --&gt; E[&quot;S-01d 기능개선 방향&quot;]
+  E --&gt; F[&quot;S-01e 시장성 인사이트&quot;]
+  F --&gt; G[&quot;S-01f 수집 이력&quot;]
+  C -- &quot;항목 클릭&quot; --&gt; H[&quot;S-02 경량 상세(모달)&quot;]
+  H -- &quot;원본 보기&quot; --&gt; I[&quot;외부 출처(새 탭)&quot;]
+  F -- &quot;카테고리 클릭&quot; --&gt; C2[&quot;S-01b 필터된 안건 목록 (UJ-5 추적)&quot;]
+  C2 -- &quot;항목 클릭&quot; --&gt; H
+  H -- &quot;닫기&quot; --&gt; B
+</code></pre>
+<h3>2.2 여정-화면 매핑 테이블</h3>
+<table>
+<thead>
+<tr>
+<th>여정</th>
+<th>목표</th>
+<th>화면</th>
+<th>핵심 요소</th>
+<th>전환</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UJ-1</td>
+<td>5초 안에 시장 요약</td>
+<td>S-01a → S-01f</td>
+<td>헤더 카드·소스별·수집이력</td>
+<td>상→하 스크롤, 앵커 점프</td>
+</tr>
+<tr>
+<td>UJ-2</td>
+<td>소스별 안건 탐색</td>
+<td>S-01b → S-02</td>
+<td>필터·목록·검색·페이징·상세</td>
+<td>탭 전환/항목 클릭</td>
+</tr>
+<tr>
+<td>UJ-3</td>
+<td>시장 분석 수치 확인</td>
+<td>S-01c</td>
+<td>분석 차트 5종</td>
+<td>스크롤/탭</td>
+</tr>
+<tr>
+<td>UJ-4</td>
+<td>기능 방향·시장성 도출</td>
+<td>S-01d → S-01e</td>
+<td>후보 목록·인사이트 카드·신뢰 뱃지</td>
+<td>스크롤</td>
+</tr>
+<tr>
+<td>UJ-5</td>
+<td>데이터 신뢰 검증(드릴다운)</td>
+<td>S-01e → S-01b → S-02 → 외부</td>
+<td>카테고리→근거 안건→원본</td>
+<td>클릭·새 탭</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 추적 경로 (UJ-5)</strong>: <code>인사이트 카드(카테고리 X) → [클릭] → S-01b에 source/category=X 자동 필터 → 안건 목록 → [항목 클릭] → S-02 경량 상세 → [원본 보기] → 출처 원문</code>. 이 경로로 "수치의 근거"를 원본에서 검증할 수 있어야 한다(SC-2 신뢰성).</p>
+<hr />
+<h2>3. 화면별 와이어프레임 (S-01 ~ S-03)</h2>
+<blockquote>
+<p>범례: <code>[ ]</code>=카드/컨테이너, <code>( )</code>=버튼·인터랙션, <code>▮</code>=차트 대체 영역, <code>…</code>=더보기. ASCII 와이어프레임 + 핵심요소/위치/규칙.</p>
+</blockquote>
+<h3>S-01a — 헤더 요약 섹션</h3>
+<pre><code>┌────────────────────────────────────────────────────────────┐
+│ [로고] 시장조사·분석 대시보드        🌙(다크모드) (수집 실행) │  ← GNB
+├────────────────────────────────────────────────────────────┤
+│  지금 시장 요약   ·  [최근 수집: 2026-08-13 09:00 · 상태ⓘ]  │
+│ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────┐ │
+│ │  총 수집 건  │ │ 위시켓 도급  │ │ 프리모아 도급│ │ u300 공모│ │ ← 요약 카드
+│ │    66,000+  │ │   66,000+  │ │    23,000+ │ │  357+   │ │   [높음]
+│ └─────────────┘ └─────────────┘ └─────────────┘ └─────────┘ │
+│ ┌─────────┐ ┌─────────┐ ┌──────────────────────────────┐  │
+│ │Devpost  │ │ 상주vs  │ │ [앵커: 사이트별|분석|기능|시장성] │  │
+│ │ 24+해커톤│ │ 도급 ▮  │ │    (빠른 이동 내비게이션)       │  │
+│ └─────────┘ └─────────┘ └──────────────────────────────┘  │
+└────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>요소/위치</strong>: GNB(로고·다크모드·수집 실행) → 인사이트 한 줄(마케팅 문구 아님, 수치 중심) → 요약 카드 4×2 그리드(총/소스별/상주비중/Devpost).</li>
+<li><strong>규칙</strong>: 카드 숫자는 큰 타입(디스플레이), "도급 기준" 단위 주석. 상태 뱃지는 성공(초록)/부분(주황)/실패(빨강).</li>
+<li><strong>빈 상태</strong>: 수집 이력 없으면 카드에 "아직 수집되지 않음" 대체.</li>
+</ul>
+<h3>S-01b — 사이트별 수집 섹션</h3>
+<pre><code>┌────────────────────────────────────────────────────────────┐
+│ [사이트별 수집]  (전체|위시켓|프리모아|u300|Devpost)  🔍검색 │
+├────────────────────────────────────────────────────────────┤
+│ [◀ 1 2 3 … ▶]  행당 표: 제목 | 예산 | 기간 | 카테고리 | 등록일 │
+│ ┌────────────────────────────────────────────────────────┐│
+│ │ B2B AI 구축 프로젝트   1,200만원  3개월  AI·데이터  08-03 ││ ← 목록행(클릭 가능)
+│ │ 원본 보기 ↗   [신뢰: 높음]                              ││
+│ └────────────────────────────────────────────────────────┘│
+│ …                                                            │
+│ (더 보기 / 페이지네이션)                                   │
+└────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>요소/위치</strong>: 섹션 타이틀 → 소스 탭(전체 기본) → 검색(우측) → 테이블/카드 목록(좌→우: 제목·예산·기간·카테고리·등록일) → 각 행 "원본 보기 ↗" 링크 → 페이징 하단.</li>
+<li><strong>규칙</strong>: 목록 밀도가 시장조사 차트와 혼재하지 않도록, 이 섹션만 별도 컨테이너. 행 hover 하이라이트, 클릭 시 S-02.</li>
+<li><strong>빈 상태</strong>: 소스 0건 → "이 소스의 안건이 아직 없습니다" + (수집 실행) 버튼.</li>
+<li><strong>에러 상태</strong>: API 실패 → 에러 배너 + (재시도).</li>
+</ul>
+<h3>S-02 — 안건 경량 상세 (모달 오버레이)</h3>
+<pre><code>┌─────────────────────────────────────┐
+│  B2B AI 구축 프로젝트            (✕) │ ← 모달 헤더
+│  ┌───────────────────────────────┐  │
+│  │ 카테고리: AI·데이터 │ 유형: 도급 │  │ ← DB 필드 그리드
+│  │ 예산: 1,200만원   │ 기간: 3개월 │  │    (null → &quot;정보 없음&quot;)
+│  │ 지역: 서울        │ 등록일: 08-03│ │
+│  │ 기술키워드: LangChain, RAG     │  │
+│  └───────────────────────────────┘  │
+│  (원본 보기 ↗)  (닫기)              │ ← 행동
+└─────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>접근성</strong>: 모달 열림 시 포커스 이동·<code>Esc</code> 닫기·배경 클릭 닫기·포커스 트랩.</li>
+<li><strong>빈 필드</strong>: 필드값 없으면 "정보 없음" 회색 텍스트(AC-10-1).</li>
+<li><strong>원본 링크 실패</strong>: 외부 삭제/변경 시 "(현재 해당 원본을 찾을 수 없음)" 안내(AC-05-2 edge).</li>
+</ul>
+<h3>S-01c · S-01d · S-01e · S-01f — 하단 분석 섹션</h3>
+<pre><code>┌────────────────────────────────────────────────────────────┐
+│ [S-01c 시장조사 분석]  (전체|소스별)                         │
+│ ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐│
+│ │카테고리 점유 ▮│ │예산 분포 ▮  │ │기간 분포 ▮ │ │상주vs도급 ▮ ││ ← 차트 그리드
+│ └────────────┘ └────────────┘ └────────────┘ └────────────┘│
+│ ┌──────────────────────────┐ ┌──────────────────────────┐ │
+│ │ 기술 키워드 랭킹 ▮          │ │ 월간 등록 추이 ▮            │ │
+│ └──────────────────────────┘ └──────────────────────────┘ │
+├────────────────────────────────────────────────────────────┤
+│ [S-01d 기능개선 방향]  후보 1..N + 근거(건수) [근거 부족→분석 미실행]│
+├────────────────────────────────────────────────────────────┤
+│ [S-01e 시장성 인사이트]  카드: 카테고리명·건수·▲추이·근거기간│
+│    [신뢰: 높음] [신뢰: 중간] [신뢰: 낮음] ← 신뢰 뱃지 필수      │
+├────────────────────────────────────────────────────────────┤
+│ [S-01f 수집 이력]  최근 시각·소스별 건수·상태  [실패: 건수/원인]│
+└────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>S-01c</strong>: 분석 차트 5종을 그리드로, 각 차트 카드에 타이틀 + 데이터 범위·null 주석 표기. 소스/기간 필터 공유.</li>
+<li><strong>S-01d</strong>: 기능개선 후보는 "수요 많고 공급 부족" 영역을 목록+근거(건수·추이)로. 근거 부족 시 "분석 미실행" 안내(단정 금지).</li>
+<li><strong>S-01e</strong>: 인사이트 카드는 <code>카테고리명 · 추정 건수 · ▲증가율/추이 · 근거기간</code> + <strong>신뢰 뱃지(높음/중간/낮음)</strong> 필수. "~로 추정/공지" 표현, 절대 확정 수치·단정 금지(AC-08-1).</li>
+<li><strong>S-01f</strong>: 수집 이력 테이블(시각·소스·건수·상태). 부분 실패 시 실패 건수·원인("원인 미상" 허용). 이력 없으면 "아직 수집 없음".</li>
+</ul>
+<h3>S-03 — 전역 상태 (로딩 / 에러 / 빈 상태)</h3>
+<pre><code>[로딩]   ▸ 스켈레톤/스피너 + &quot;데이터를 불러오는 중…&quot; (섹션별 독립 로딩)
+[에러]   ▸ [⚠ 오류] &quot;데이터를 불러오지 못했습니다&quot; + (재시도) + (자세히: 원인)
+[빈 상태] ▸ [🗂] &quot;아직 수집되지 않음 / 분석 미실행 / 데이터 없음&quot; + (안내 문구)
+</code></pre>
+<ul>
+<li>로딩은 전역 로더가 아닌 <strong>섹션별 스켈레톤</strong>(다른 섹션은 즉시 보임).</li>
+<li>에러는 재시도 가능하게, 원인 표시(TC-34 원인 미상 허용).</li>
+<li>빈 상태는 "없음"의 원인(미수집/미분석/검색결과 없음)을 구분해 안내.</li>
+</ul>
+<hr />
+<h2>4. 인터랙션 &amp; 상태 정의</h2>
+<h3>4.1 주요 인터랙션</h3>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>인터랙션</th>
+<th>피드백</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소스 탭</td>
+<td>클릭 → 목록/차트 필터</td>
+<td>활성 탭 하이라이트, 콘텐츠 갱신</td>
+</tr>
+<tr>
+<td>안건 행</td>
+<td>hover → 배경 강조 / 클릭 → S-02</td>
+<td>hover: 캐럿, row highlight</td>
+</tr>
+<tr>
+<td>원본 보기</td>
+<td>새 탭 오픈</td>
+<td>아이콘 ↗, 새 탭 안내</td>
+</tr>
+<tr>
+<td>다크모드 토글</td>
+<td>클릭 → theme 전환</td>
+<td>즉시 전환, localStorage 저장</td>
+</tr>
+<tr>
+<td>차트 카테고리</td>
+<td>클릭 → S-01b 필터(추적, UJ-5)</td>
+<td>필터 반영 + 스크롤 이동</td>
+</tr>
+<tr>
+<td>인사이트 카드</td>
+<td>클릭 → 근거 안건 목록 연동</td>
+<td>S-01b 필터 + 하이라이트</td>
+</tr>
+<tr>
+<td>수집 실행</td>
+<td>GNB 버튼 → 배치 트리거</td>
+<td>진행 로딩 → 완료 토스트</td>
+</tr>
+<tr>
+<td>앵커 내비게이션</td>
+<td>클릭 → 해당 섹션 스크롤</td>
+<td>부드러운 스크롤, 섹션 강조</td>
+</tr>
+<tr>
+<td>검색/페이징</td>
+<td>입력/클릭</td>
+<td>목록 갱신, 결과 건수 표시</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 상태 매트릭스 (로딩/에러/빈)</h3>
+<table>
+<thead>
+<tr>
+<th>화면/컴포넌트</th>
+<th>로딩</th>
+<th>에러</th>
+<th>빈</th>
+<th>정상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>헤더 요약 (S-01a)</td>
+<td>스켈레톤 카드</td>
+<td>에러 배너+재시도</td>
+<td>"아직 수집되지 않음"</td>
+<td>숫자·상태 뱃지</td>
+</tr>
+<tr>
+<td>소스 목록 (S-01b)</td>
+<td>스켈레톤 행</td>
+<td>에러 배너+재시도</td>
+<td>"0건 안내"+(수집 실행)</td>
+<td>목록·페이징</td>
+</tr>
+<tr>
+<td>분석 차트 (S-01c)</td>
+<td>스켈레톤 차트</td>
+<td>차트 카드 에러</td>
+<td>"분석 미실행"</td>
+<td>차트+null주석</td>
+</tr>
+<tr>
+<td>기능방향 (S-01d)</td>
+<td>로딩</td>
+<td>에러</td>
+<td>"분석 미실행"</td>
+<td>후보+근거</td>
+</tr>
+<tr>
+<td>시장성 (S-01e)</td>
+<td>로딩</td>
+<td>에러</td>
+<td>"분석 미실행"</td>
+<td>카드+신뢰뱃지</td>
+</tr>
+<tr>
+<td>수집이력 (S-01f)</td>
+<td>로딩</td>
+<td>에러</td>
+<td>"아직 수집 없음"</td>
+<td>이력 테이블+실패</td>
+</tr>
+<tr>
+<td>상세 모달 (S-02)</td>
+<td>스켈레톤</td>
+<td>에러+재시도</td>
+<td>"정보 없음" 필드</td>
+<td>DB 필드+원본링크</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 화면별 수용 기준(AC) 매핑</h2>
+<table>
+<thead>
+<tr>
+<th>화면/컴포넌트</th>
+<th>매핑 AC</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S-01 (전체 단일 페이지 6섹션)</td>
+<td>AC-09-1</td>
+<td>헤더→소스→분석→기능→시장성→이력 한 화면</td>
+</tr>
+<tr>
+<td>S-01 (반응형·차트)</td>
+<td>AC-09-2</td>
+<td>모바일/데스크톱 반응형, 짧은 데이터도 깨짐 없음</td>
+</tr>
+<tr>
+<td>S-01a 헤더 요약</td>
+<td>AC-09-1, AC-11-1</td>
+<td>총건수·소스별·최근수집·상태</td>
+</tr>
+<tr>
+<td>S-01b 소스별 목록</td>
+<td>AC-05-1</td>
+<td>필터·목록·원본URL·건수·페이징·빈상태</td>
+</tr>
+<tr>
+<td>S-02 경량 상세</td>
+<td>AC-05-2, AC-10-1</td>
+<td>DB필드 상세 + "원본 보기" + null="정보 없음"</td>
+</tr>
+<tr>
+<td>S-01c 카테고리 점유율</td>
+<td>AC-06-1</td>
+<td>카테고리별 건수·점유율, "기타" 집계</td>
+</tr>
+<tr>
+<td>S-01c 예산/기간 분포</td>
+<td>AC-06-2</td>
+<td>히스토그램, null 제외+카운트 표기</td>
+</tr>
+<tr>
+<td>S-01c 상주vs도급</td>
+<td>AC-06-3</td>
+<td>비중 차트, 값없으면 "기타"</td>
+</tr>
+<tr>
+<td>S-01c 키워드 랭킹</td>
+<td>AC-06-4</td>
+<td>상위 키워드·월간 변화, 없으면 공백</td>
+</tr>
+<tr>
+<td>S-01c 월간 추이</td>
+<td>AC-06-5</td>
+<td>월별 시계열, 부족 시 안내</td>
+</tr>
+<tr>
+<td>S-01d 기능개선 방향</td>
+<td>AC-07-1</td>
+<td>후보+근거(건수), 부족 시 "분석 미실행"</td>
+</tr>
+<tr>
+<td>S-01e 시장성 인사이트</td>
+<td>AC-08-1, AC-08-2</td>
+<td>성장 카테고리·근거·신뢰뱃지·단정 금지·추이 미확인</td>
+</tr>
+<tr>
+<td>S-01f 수집 이력</td>
+<td>AC-11-1, AC-11-2</td>
+<td>시각·건수·상태, 실패/원인(미상 허용), 없으면 안내</td>
+</tr>
+<tr>
+<td>S-03 전역 상태</td>
+<td>AC-09-1(빈/에러), AC-06-5, AC-07-1, AC-08-1</td>
+<td>로딩·에러·빈 상태 명확 구분</td>
+</tr>
+<tr>
+<td>S-02 원본 링크 실패</td>
+<td>AC-05-2(edge), TC-32</td>
+<td>원본 삭제/변경 시 안내</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>전체 AC(AC-01~11)는 데이터·API 영역(테스트 TC-01~34)과 함께 <code>test-design.md</code>에서 E(End-to-End)로 검증하며, 본 storyboard는 화면 단위 기여분(AC-05~11 화면 요소)을 담당한다.</p>
+</blockquote>
+<hr />
+<h2>6. 반응형 &amp; 다크모드 전략 (요약)</h2>
+<ul>
+<li><strong>반응형</strong>: 데스크톱(≥1024)은 4열 차트 그리드·테이블 목록, 태블릿(768~1023) 2열, 모바일(≤767) 1열 카드형 목록·세로 카드 차트.</li>
+<li><strong>모바일(≤767px) 5종 차트(C3)</strong>: 가로 스크롤 금지. 상단 4개 차트(카테고리·예산/기간·상주·키워드)는 세로 1열 카드 기본, 과다 시 <strong>탭형 뷰</strong>(<code>[점유율|예산·기간|상주·키워드]</code>) 전환(탭=좌우 화살표 키 탐색·포커스 유지). 하단 '월간 등록 추이'는 탭 밖 고정 카드. 차트 키보드 스킴(<code>tabindex</code>범례·툴팁·대체 테이블)은 design-system §3.3·§6.2 준수(C4).</li>
+<li><strong>다크모드</strong>: 디자인 토큰(<code>--bg</code>,<code>--surface</code>,<code>--text</code> 등 CSS 변수)으로 light/dark 전환, <code>localStorage</code> 저장 + OS 선호 감지. 차트·신뢰 뱃지 색도 토큰 기반.</li>
+<li><strong>외부 CDN 금지</strong>: 차트·아이콘 번들은 빌드 시 번들링/내장(standalone HTML 산출).</li>
+<li>세부 색·타이포·간격·접근성 규칙은 <strong>design-system.md</strong>에서 확정.</li>
+</ul>
+<hr />
+<p><em>끝 — 화면 단위 설계는 design-system.md의 토큰·컴포넌트 규칙을 따른다.</em></p>
+</main>
+</body>
+</html>

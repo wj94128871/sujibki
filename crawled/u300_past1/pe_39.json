@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 39,
+    "pePart": "전기·전자",
+    "teamName": "도담도담",
+    "companyTitle": "4~7세 아이의 즐겁고 건강한 식사시간을 만드는 실시간 APP 연동 스마트 식판, 아이잘먹어",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6705).jpg\" style=\"width: 840px;\"><br></p><p><br></p><p><br><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7005).jpg\" style=\"width: 840px;\"></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56165511.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_626.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12486,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

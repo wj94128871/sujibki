@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dev-qa-report</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 dev-qa-report · 생성: 2026-08-20 21:38</div>
+<h1>개발QA 리포트 (dev-qa-report.md) — 시장조사·분석 대시보드</h1>
+<ul>
+<li><strong>작성팀</strong>: 개발QA팀 (dev-qa-team)</li>
+<li><strong>작업 규모 모드</strong>: standard (9단계 파이프라인 — 9단계 개발QA · 최종)</li>
+<li><strong>검증 대상</strong>: <code>pipeline/market_dashboard/app/</code> 구현물 + <code>implementation-report.md</code></li>
+<li><strong>대조 기준</strong>: <code>plan.md</code>(AC-01~11·NFR)·<code>test-design.md</code>(TC-01~34·P0~P2 게이트)·<code>tech-design.md</code>·<code>storyboard.md</code>·<code>design-system.md</code>·<code>planning-qa-report.md</code>(M-1~M-3)·<code>design-qa-report.md</code>(C1~C6)</li>
+<li><strong>검증 시각</strong>: 2026-08-20 (WSL 세션 환경)</li>
+<li><strong>사용 스킬 로그</strong>: <code>qa-tools</code>(semgrep 보안 스캔 실제 실행), <code>test-case-reviewer-plus</code>(AC↔TC↔구현 추적성), <code>coverage-analysis</code>(AC 커버리지), <code>a11y-audit</code>(신뢰뱃지·상태색 대비 독립 재계산), <code>color-expert</code>(색 대비 계산), <code>verifying</code>(구현 보고 수치 실측 대조), <code>md-to-html</code>(.html 병행)</li>
+</ul>
+<hr />
+<h2>0. 판정 요약</h2>
+<h1>✅ 승인 (Approval)</h1>
+<p>개발팀 구현물은 기획 수용 기준 AC-01~11을 <strong>실제 실행·데이터 대조로 모두 커버</strong>한다. 개발팀 자체 검증 수치(loader pytest 15/worker vitest 10/web vitest 4·tsc·빌드)를 <strong>독립 재실행하여 전부 재현</strong>했고, 추가로 semgrep 보안 스캔(0건)·PII 저장 차단(TC-06)·멱등 적재(TC-15)·외부 CDN 부재·디자인QA 보정 토큰 이행(대비 전 항목 ≥4.5:1)을 실측 확인했다. <strong>차단(치명/중요) 버그 0건.</strong> 경미 3건은 문서/배포 계층(비차단, 아래 §3).</p>
+<table>
+<thead>
+<tr>
+<th>검증 항목</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. AC 매핑 (AC-01~11 ↔ 구현 ↔ test-design)</td>
+<td>✅ PASS (경미 2건)</td>
+</tr>
+<tr>
+<td>2. 실제 테스트 실행 (loader/worker/web)</td>
+<td>✅ <strong>전부 재현 통과</strong></td>
+</tr>
+<tr>
+<td>3. semgrep 보안 스캔 · PII · 외부CDN</td>
+<td>✅ 0건 / 차단·미노출 확인</td>
+</tr>
+<tr>
+<td>4. 계약·기능 검증 (API·멱등·PII)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>5. 버그·이슈</td>
+<td>✅ 차단 0건 / 경미 3건</td>
+</tr>
+<tr>
+<td>6. 기획QA M-1 · 디자인QA 보완 이행</td>
+<td>✅ PASS (기능 커버 확인)</td>
+</tr>
+<tr>
+<td><strong>최종 판정</strong></td>
+<td><strong>✅ 승인</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 테스트 항목별 결과</h2>
+<h3>1.0 실제 테스트 실행 (개발QA 독립 재실행) — 전부 PASS</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>실행 명령</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loader 단위·통합</td>
+<td><code>cd app/loader &amp;&amp; python3 -m pytest tests/ -q</code></td>
+<td>✅ <strong>15 passed</strong> (0.25s)</td>
+</tr>
+<tr>
+<td>worker API·집계 계약</td>
+<td><code>cd app/worker &amp;&amp; npx vitest run</code></td>
+<td>✅ <strong>10 passed</strong> (agg 4 + routes 6)</td>
+</tr>
+<tr>
+<td>worker 타입</td>
+<td><code>cd app/worker &amp;&amp; npx tsc --noEmit</code></td>
+<td>✅ clean</td>
+</tr>
+<tr>
+<td>web 유틸</td>
+<td><code>cd app/web &amp;&amp; npx vitest run</code></td>
+<td>✅ <strong>4 passed</strong></td>
+</tr>
+<tr>
+<td>web 타입</td>
+<td><code>cd app/web &amp;&amp; npx tsc --noEmit</code></td>
+<td>✅ clean</td>
+</tr>
+<tr>
+<td>web 빌드</td>
+<td><code>cd app/web &amp;&amp; npx vite build</code></td>
+<td>✅ 성공 (JS 159.18KB / gzip 51.47KB)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>개발팀이 보고한 수치와 <strong>일치</strong> (loader 15 / worker 10 / web 4, 빌드 gzip 51KB).</li>
+</ul>
+<h3>1.1 샘플 적재·멱등 실측 (실제 crawled 데이터)</h3>
+<p><code>run_collection.py</code>를 임시 Sqlite DB에 독립 실행해 실제 <code>crawled/</code> 데이터를 적재·재계산:<br />
+- <strong>1차 실행</strong>: freemoa 8 · u300 현재 357 · u300 1기 60 · devpost 4 · wishket 0 = <strong>총 429건</strong> (wishket 0은 인계서 '전체 수집 전' 방침 — 개발 단계 defer, 파서·적재 준비 완료)<br />
+- 분석 산출: category 9 · budget 4 · keyword 30 · insights 23 (구현 보고와 일치)<br />
+- <strong>멱등(TC-15)</strong>: 동일 명령 <strong>재실행 후 projects 총계 429 유지</strong>(중복 0), <code>collection_runs</code>만 5→10건으로 런 이력 추가 — ON CONFLICT(source, runtime, source_ref) DO UPDATE 확인.<br />
+- 런 상태 값 집합: {success, partial, failed} ⊆ 허용 값. ✅</p>
+<h3>1.2 AC → 구현 ↔ 테스트 대응 (AC-01~11)</h3>
+<table>
+<thead>
+<tr>
+<th>AC (plan)</th>
+<th>test-design</th>
+<th>구현 파일</th>
+<th>개발QA 실측</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AC-01-1 위시켓</td>
+<td>TC-01~04</td>
+<td>crawler <code>crawl_wishket_oauth.py</code> + parsers</td>
+<td>crawl-delay 5 설계·쿠키만료 오류, 샘플 0건(전체수집 전)</td>
+<td>✅ PASS (수집 인계 defer, 파서/적재 준비)</td>
+</tr>
+<tr>
+<td>AC-01-2 프리모아</td>
+<td>TC-05·06·07</td>
+<td><code>crawl_freemoa.py</code>·parsers·piifilter</td>
+<td>소스 8건 적재, <strong>client_id 컬럼/이메일 미저장·raw 미노출 확인</strong></td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-01-3 u300 현재</td>
+<td>TC-08</td>
+<td><code>crawl_u300.py</code>·parsers</td>
+<td><strong>357건 적재</strong> <code>runtime=current</code></td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-01-4 u300 1기</td>
+<td>TC-09</td>
+<td>파서(peNo)</td>
+<td><strong>60건 적재</strong> <code>runtime=past1</code>, 재실행 멱등</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-01-5 Devpost</td>
+<td>TC-10·11</td>
+<td><code>crawl_devpost.py</code>·parsers</td>
+<td><strong>4건(샘플)</strong> 적재 (전수는 Phase2·TQ-3)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-02 배치·이력</td>
+<td>TC-12·13·14</td>
+<td><code>collection_runs</code>·<code>run_collection</code>·<code>/api/runs</code>·Runs.tsx</td>
+<td>런 이력 조회·StatusPill(성공/부분/실패), 재실행 멱등 실측</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-03 정제·중복제거</td>
+<td>TC-15·16·17</td>
+<td>schema_std·normalize·store ON CONFLICT</td>
+<td><strong>중복 0 실측</strong>, 예산 만원→원, null 정책(협의후→null), 카테고리 표준맵</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-04 Neon 저장·조회</td>
+<td>TC-18·19</td>
+<td>DDL <code>001_init.sql</code>·SqliteAdapter·NeonDataSource</td>
+<td>스키마(유니크·인덱스·precompute)·Sqlite 적재·조회·재계산 실측; Neon은 creds 부재로 어댑터만(아래 §3)</td>
+<td>✅ PASS*</td>
+</tr>
+<tr>
+<td>AC-05 소스 목록/요약</td>
+<td>TC-20·21</td>
+<td><code>/api/sources</code>·<code>/api/projects</code>·Sources.tsx</td>
+<td>소스 필터·검색·페이징·빈/에러·경량 상세 모달·원본링크(route 테스트로 검증)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-06 시장 분석</td>
+<td>TC-22~26</td>
+<td><code>analysis.py</code>·<code>/api/analysis</code>·Analysis.tsx·SVG차트</td>
+<td>category/budget/period/worktype/keyword/monthly 집계, 점유율 합 100 근사(단위테스트), null 별도 카운트</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-07 기능 방향</td>
+<td>TC-27</td>
+<td><code>feature_candidates</code>·<code>/api/insights</code>·Features.tsx</td>
+<td>후보+근거(건수·평균지원자), low/mid/high confidence</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-08 시장성 인사이트</td>
+<td><strong>TC-28·29 (AC-08-2는 매핑표 누락, M-1)</strong></td>
+<td><code>market_insights</code>·<code>/api/insights</code>·Market.tsx·TrustBadge</td>
+<td><strong>"~로 추정"·"추이 미확인" 주석 확인</strong>(단정 금지), 신뢰뱃지(●◐○)+근거기간, confidence∈{high,mid,low}</td>
+<td>✅ PASS (기능)</td>
+</tr>
+<tr>
+<td>AC-09 대시보드 UI</td>
+<td>TC-30·31</td>
+<td>web 6섹션 SPA(App.tsx)·반응형·다크모드·스켈레톤·빈/에러</td>
+<td>빌드 성공·strict tsc, 6섹션(Header/Sources/Analysis/Features/Market/Runs)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-10 경량 상세</td>
+<td>TC-32</td>
+<td><code>/api/projects/:id</code>·Sources 모달</td>
+<td>NOT_FOUND·null="정보 없음" 핸들링(route 테스트)</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>AC-11 수집 이력</td>
+<td>TC-33·34</td>
+<td><code>/api/runs</code>·Runs.tsx·StatusPill</td>
+<td>이력 시각·소스·건수·성공·실패·상태, 부분실패(실패수+원인/원인미상), 없으면 "아직 수집 없음"</td>
+<td>✅ PASS</td>
+</tr>
+</tbody>
+</table>
+<p>* AC-04 Neon 프로덕션 연결·완전 자동 Cron·Rust wasm 컴파일은 <strong>자격 증명·cargo 부재로 로컬 실측 불가</strong> — 단, 어댑터·DDL·배포 파이프라인·TS 폴백 동등 검증으로 준비 완료 상태 확인(§3).</p>
+<h3>1.3 semgrep 보안 스캔 (qa-tools) — 0건</h3>
+<ul>
+<li>실행: `qa-tools/.venv/bin/semgrep scan --config p/secrets loader/etl loader/run_collection.py worker/src web/src</li>
+<li>결과: <strong>Findings 0</strong> (42 rules / 42 files, 파싱 100%). 하드코딩 DSN·시크릿·postgres://·Bearer·API key 없음. PII 키 목록(piifilter) 내 <code>password</code> 등의 문자열은 필터 키 정의일 뿐 실제 비밀 아님.</li>
+<li>(OWASP/주입: <code>/api/projects</code> 파라미터는 <code>asInt</code>·URLSearchParams로 문자열 처리, DB 질의는 파라미터라이즈 — 주입 표면 미확인.)</li>
+</ul>
+<h3>1.4 PII(TC-06)·보안 — PASS</h3>
+<ul>
+<li><code>projects</code> 스키마에 <code>client_id</code>/email 컬럼 <strong>부재</strong> (SQLite SCHEMA·Postgres <code>001_init.sql</code> 모두 확인, COMMENT 문구 "PII는 스키마 자체에 미포함").</li>
+<li>실적재 429건의 <code>raw_json</code> 전체에서 이메일 정규식 매치 <strong>0건</strong>.</li>
+<li><code>piifilter.filter_dict</code>가 <code>client_id</code>·<code>email</code>·<code>phone</code> 등 키와 이메일 값을 중첩 구조까지 제거(<code>has_email(...)==False</code>), 비이메일 토큰(<code>lduckh</code>)은 제거 원칙(TC-06 경계) 준수.</li>
+<li>외부 CDN: <code>web/dist</code>에서 웹폰트(@font-face/woff)·unpkg·jsdelivr·googleapis·<code>&lt;script src&gt;</code> 외부 참조 <strong>없음</strong> (React 번들 내 error-decoder https 문자열은 리소스 로드 아님). ✅</li>
+</ul>
+<h3>1.5 계약·기능 검증 — PASS</h3>
+<ul>
+<li><strong>API 계약</strong>: 8 엔드포인트 구현 — <code>/api/summary</code>·<code>/api/sources</code>·<code>/api/analysis</code>·<code>/api/insights</code>·<code>/api/projects</code>·<code>/api/projects/:id</code>·<code>/api/runs</code>·<code>/api/crawl/trigger</code>(POST). 공통 envelope <code>{ok, data|error}</code>, <code>NOT_FOUND</code>·<code>DB_ERROR</code> HTTP 매핑, CORS·<code>Cache-Control</code>(cacheable 집계 300s) 준수. tech-design §7과 정합(route 단위테스트 6건).</li>
+<li><strong>멱등 적재(TC-15)</strong>: ON CONFLICT upsert, 재실행 429 유지 실측.</li>
+<li><strong>PII 필터 적용</strong>: 적재 직전 <code>apply_pii_filter</code> + 스키마 차단 이중화.</li>
+</ul>
+<hr />
+<h2>2. 버그·이슈 목록</h2>
+<h3>🔴 치명 (0건) / 🟠 중요 (0건)</h3>
+<p>없음.</p>
+<h3>🟡 경미 (3건 — 비차단)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>이슈</th>
+<th>심각도</th>
+<th>증거·재현</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-1</td>
+<td><strong>test-design §2 매핑표에 AC-08-2 명시 여전히 누락</strong> (기획QA M-1 미이행)</td>
+<td>🟡 경미</td>
+<td>test-design §2 표에 AC-08-1(TC-28/29)만 있고 AC-08-2 행 없음. 단, <strong>기능은 실측 커버</strong>: <code>market_insights</code> body에 "단일 시점 데이터로 추이 미확인" 주석 + Market.tsx(TrustBadge·근거기간)로 <strong>AC-08-2(추이 미확인 주석) 동작 확인</strong>. 기능 공백 없음, 문서 탐지성만 저하.</td>
+<td>비차단 — 구현보고 "개발QA에서 매핑표 보강 예정"이 미이행이나, 실측 검증 자체는 완료. 우선순위: 문서 보강 권장(P2)</td>
+</tr>
+<tr>
+<td>D-2</td>
+<td><code>/api/crawl/trigger</code>가 <strong>항상 {scheduled:false} 스텁</strong></td>
+<td>🟡 경미</td>
+<td>index.ts: POST <code>/api/crawl/trigger</code> → <code>{ok:true, data:{scheduled:false, note:"Phase2"}}</code>. MVP on-demand+이력 설계(FR-02·A3)와 일치하나, UI "수집 실행" 온클릭이 실질 no-op.</td>
+<td>비차단 — Phase2 자동 스케줄 범위. MVP 게이트 대상 아님</td>
+</tr>
+<tr>
+<td>D-3</td>
+<td><strong>프로덕션 배포 계층 미연결</strong> (Neon·Cloudflare·Rust wasm·위시켓 전체수집)</td>
+<td>🟡 경미</td>
+<td>Neon creds·Cloudflare 토큰 부재, cargo/rustc 부재 → 로컬 실측 불가. 단 어댑터(psycopg·neon())·DDL·GH Actions·wrangler·TS폴백(<strong>동등 출력을 단위테스트로 검증</strong>/TQ-2)·파서 준비 완료.</td>
+<td>비차단 — 배포 전 <strong>필수 이행</strong>(§5). 구현보고 §3.2 절차로 creds 확보 시 완결</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참고(비이슈): CORS <code>Access-Control-Allow-Origin: *</code>은 로그인 없는 공개 read-only 대시보드(NG5)에 허용 범위이며, PII 미노출(raw 필터)이 전제. 무인증 공개 데이터 노출만이므로 리스크 낮음.</p>
+</blockquote>
+<hr />
+<h2>3. 실측 불가 항목 (명시)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>사유</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Playwright/브라우저 E2E(TC-30·31 반응형 실측)</td>
+<td>헤드리스 Chromium이 libnspr4 부재로 실행 불가(기존 교훈·구현보고 한계)</td>
+<td>대체: vitest(함수)·tsc strict·vite build·SVG a11y(코드 검토)·토큰/대비 실측으로 검증</td>
+</tr>
+<tr>
+<td>Neon 프로덕션 연결/조회 (AC-04·TC-18)</td>
+<td>DB creds(DSN) 부재</td>
+<td>SqliteAdapter로 적재·조회·재계산 동등 검증, NeonDataSource·DDL 준비</td>
+</tr>
+<tr>
+<td>Cloudflare 실제 배포 (NFR-01)</td>
+<td>계정/토큰 부재</td>
+<td>deploy.yml·wrangler.toml·Secrets 문서화 상태</td>
+</tr>
+<tr>
+<td>Rust wasm 컴파일·실행 (NFR-01·TQ-2)</td>
+<td>cargo/rustc 부재</td>
+<td>크레이트 소스 + TS 폴백 동등 단위테스트(agg.test.ts) 검증, 배포 시 <code>wasm-pack build</code></td>
+</tr>
+<tr>
+<td>위시켓·프리모아 전체 수집 (AC-01-1·프리모아 전체)</td>
+<td>쿠키·네트워크·인계서 '개발 단계 실행' 방침</td>
+<td>샘플 적재(freemoa 8·wishket 0), 파서·run_collection 준비 완료</td>
+</tr>
+<tr>
+<td>k6 부하 테스트 (NFR-02 실측)</td>
+<td>실행 대상 서버 미기동(로컬/minimal)</td>
+<td>성능은 precompute 테이블(ADR-2)·Cache-Control 300s 설계로 간접 확인(P2)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 기획QA·디자인QA 이행 확인</h2>
+<h3>4.1 기획QA M-1 (AC-08-2 매핑)</h3>
+<ul>
+<li><strong>기능</strong>: ✅ 이행 확인 — 시장성 인사이트에 "추이 미확인" 주석(단일 시점)과 신뢰뱃지·근거기간 표시가 <code>analysis.market_insights</code> + <code>Market.tsx</code>에 존재, 실측(429건 적재 후 insights 23)으로 동작 확인. <strong>AC-08-2 기능 공백 없음.</strong></li>
+<li><strong>문서</strong>: ⚠️ test-design §2 매핑표 AC-08-2 행은 여전히 미추가(경미 D-1). 기능은 TC-28/29로 커버되므로 차단 아님.</li>
+</ul>
+<h3>4.2 디자인QA C1~C6 (보정 토큰 이행)</h3>
+<ul>
+<li><strong>C1 신뢰뱃지·상태색 대비</strong>: ✅ <code>tokens.css</code>의 확정값을 <strong>개발QA가 독립 재계산</strong> → badge-high 5.04/4.90, mid 6.24/6.60, low 4.72/5.89, success 4.98, warning 5.37, danger 5.44, info 5.17, text-3 4.97/5.04 — <strong>전 항목 ≥4.5:1</strong>. 디자인QA 보고값과 일치.</li>
+<li><strong>C2~C6</strong>: ✅ 토큰 3계층·<code>--badge-*</code>·<code>--text-3</code>(light/dark)·차트 팔레트·스킵링크·<code>:focus-visible</code>·상태는 색+텍스트+아이콘(TrustBadge 텍스트 포함) → design-system 확정값 그대로 이행 확인.</li>
+</ul>
+<hr />
+<h2>5. 최종 판정</h2>
+<h1>✅ 승인 (Approval)</h1>
+<p><strong>근거</strong>: 수용 기준 AC-01~11 전부 실제 실행·데이터 대조로 커버. 실제 테스트(loader 15 / worker 10 / web 4 + tsc + 빌드)와 샘플 429건 멱등 적재를 독립 재현, semgrep 0건·PII 저장 차단·외부 CDN 부재·디자인QA 보정 토큰(대비 전 항목 ≥4.5:1)을 실측 확인. 치명/중요 버그 0건(경미 3건은 문서/배포 계층, 차단 아님). 기획QA M-1·디자인QA C1~C6 이행 확인.</p>
+<p><strong>배포 전 필수 이행 목록 (블로커 아님 — 자격 증명·환경 확보 전제의 운영 계층)</strong>:<br />
+1. Neon DSN 확보 → <code>scripts/migrate.sh</code>로 <code>001_init.sql</code> 적용 → PostgresAdapter(쓰기)로 전체 수집·적재 (위시켓·프리모아 전체 포함, 쿠키 재발급).<br />
+2. <code>wasm-pack build</code>로 Rust wasm 컴파일 후 worker 배포 (TS 폴백 대체).<br />
+3. Cloudflare Worker/Pages 배포 + Secrets(<code>DB_URL_RO</code>, CLOUDFLARE_*) 설정 + Phase2 Cron 월 1회 자동 스케줄.<br />
+4. (권장) 테스트 설계 매핑표 AC-08-2 행 보강(경미 D-1).</p>
+<hr />
+<p><em>끝 — 구현물은 기획 수용 기준·P0 게이트(TC-06/15/29)를 충족한다. 개발QA 승인, 상위 단계로 인계한다.</em></p>
+</main>
+</body>
+</html>

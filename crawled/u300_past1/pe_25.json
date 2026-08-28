@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 25,
+    "pePart": "기계·소재(기계·재료)",
+    "teamName": "Larva",
+    "companyTitle": "곤충으로 음식물 쓰레기 수십 톤 처리 '동 to the 애 to the 등에'",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5880).jpg\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_61623160.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_414(0).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 10246,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

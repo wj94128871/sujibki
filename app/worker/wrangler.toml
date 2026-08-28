@@ -1,0 +1,10 @@
+name = "market-dashboard-worker"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+workers_dev = true
+
+# DB_URL_RO는 Secret으로 주입 (wrangler secret put DB_URL_RO)
+
+# Phase2 Cron (월 1회 자동 수집 트리거 → 외부 러너)
+# [triggers]
+# crons = ["0 3 1 * *"]

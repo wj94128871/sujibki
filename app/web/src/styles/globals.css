@@ -1,0 +1,197 @@
+/* 볼드 컬러 대시보드 — 디자인 토큰 단일 기준 (design-system.md §컬러/타이포와 동기화) */
+@import "tailwindcss";
+
+/* data-theme 속성 기반 다크모드 (util/theme.ts 유지) */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  /* surfaces */
+  --app-bg: #eef0fa;
+  --app-surface: #ffffff;
+  --app-surface-2: #e4e7f7;
+  --app-border: #d5daef;
+  --app-border-strong: #b6bede;
+
+  /* text */
+  --text-1: #171a2e;
+  --text-2: #565d80;
+  --text-3: #6b7294;
+
+  /* accent */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-soft: #e3e2fd;
+
+  /* status — 볼드 톤 */
+  --success: #0e9f6e;
+  --warning: #c27803;
+  --danger: #e02424;
+  --info: #1c64f2;
+  --positive: var(--success);
+  --negative: var(--danger);
+  --neutral: var(--text-3);
+
+  /* confidence badges */
+  --badge-high-bg: #e3e2fd;
+  --badge-high: #4338ca;
+  --badge-mid-bg: #fdf0d2;
+  --badge-mid: #925b02;
+  --badge-low-bg: #fde3e1;
+  --badge-low: #c81e1e;
+
+  /* categorical chart palette — 채도 높은 볼드 8색 */
+  --chart-1: #4f46e5;
+  --chart-2: #0891b2;
+  --chart-3: #9333ea;
+  --chart-4: #059669;
+  --chart-5: #f97316;
+  --chart-6: #db2777;
+  --chart-7: #ca8a04;
+  --chart-8: #64748b;
+
+  /* source identity — 데이터 정체성 색 (변경 금지) */
+  --source-wishket: #3456e0;
+  --source-freemoa: #f59e0b;
+  --source-u300: #10b981;
+  --source-devpost: #f43f5e;
+  --source-idea: #8b5cf6;
+
+  /* sidebar — 라이트/다크 무관 딥 네이비 고정 */
+  --sidebar-from: #101332;
+  --sidebar-to: #191d45;
+}
+
+[data-theme="dark"] {
+  --app-bg: #0b0e1e;
+  --app-surface: #151a38;
+  --app-surface-2: #1e244a;
+  --app-border: #262d5c;
+  --app-border-strong: #39427a;
+
+  --text-1: #eef1ff;
+  --text-2: #a6add6;
+  --text-3: #7c84b2;
+
+  --primary: #818cf8;
+  --primary-hover: #93a1fa;
+  --primary-soft: #232a55;
+
+  --success: #2fbf8a;
+  --warning: #eab308;
+  --danger: #f87171;
+  --info: #60a5fa;
+  --positive: var(--success);
+  --negative: #f87171;
+  --neutral: var(--text-3);
+
+  --badge-high-bg: #232a55;
+  --badge-high: #a5b4fc;
+  --badge-mid-bg: #33290f;
+  --badge-mid: #fbbf24;
+  --badge-low-bg: #3d1a1a;
+  --badge-low: #fca5a5;
+
+  --chart-1: #818cf8;
+  --chart-2: #22d3ee;
+  --chart-3: #c084fc;
+  --chart-4: #34d399;
+  --chart-5: #fb923c;
+  --chart-6: #f472b6;
+  --chart-7: #facc15;
+  --chart-8: #94a3b8;
+}
+
+@theme inline {
+  --color-canvas: var(--app-bg);
+  --color-surface: var(--app-surface);
+  --color-surface2: var(--app-surface-2);
+  --color-line: var(--app-border);
+  --color-line-strong: var(--app-border-strong);
+
+  --color-ink: var(--text-1);
+  --color-ink-sub: var(--text-2);
+  --color-ink-faint: var(--text-3);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --font-sans: "Pretendard Variable", Pretendard, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@theme {
+  --shadow-card: 0 1px 3px rgba(23, 22, 62, 0.06), 0 4px 16px rgba(23, 22, 62, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(23, 22, 62, 0.1), 0 12px 32px rgba(23, 22, 62, 0.14);
+  --ease-out-soft: cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--app-bg);
+    color: var(--text-1);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    z-index: 1000;
+    padding: 8px 12px;
+    border-radius: 0 0 8px 0;
+    background: var(--primary);
+    color: #fff;
+  }
+  .skip-link:focus {
+    left: 8px;
+    top: 8px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 34,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "KSO-042",
+    "companyTitle": "반려견의 알러지를 예방하고 소화,흡수가 쉬운 곤충 화식사료",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(5535).jpg\" style=\"width: 860px;\"></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_615143516(0).pdf",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_498.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 1,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11681,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 173,
+    "pePart": "에너지·자원(환경·에너지)",
+    "teamName": "제주:무해",
+    "companyTitle": "이번 가족여행 해수욕장 재밌게 즐기고 오셨나요?",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14832).png\" style=\"width: 879px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_61717756.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_399(4).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 31313,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

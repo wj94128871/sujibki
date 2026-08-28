@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 169,
+    "pePart": "전기·전자",
+    "teamName": "KOLY",
+    "companyTitle": "어린이 보호구역 교통사고, 일어나기 전에 예방하세요!",
+    "companyContent": "<div style=\"text-align: justify;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15034).png\" style=\"width: 840px;\"><br></div>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_67171435.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_565(3).jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 31270,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

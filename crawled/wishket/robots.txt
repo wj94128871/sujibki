@@ -1,0 +1,19 @@
+User-agent: *
+Crawl-delay: 5
+Sitemap: https://www.wishket.com/sitemap-project.xml
+Sitemap: https://www.wishket.com/sitemap-static.xml
+Sitemap: https://www.wishket.com/sitemap-store.xml
+Sitemap: https://www.wishket.com/sitemap-wishket_package.xml
+Sitemap: https://www.wishket.com/sitemap-renewal.xml
+Allow: /project/
+Disallow: /partners/p/
+Disallow: /partners/match/
+Disallow: /media/
+Disallow: /media/project_files/
+Disallow: /media/project_attachment/
+Disallow: /media/contract/
+Disallow: /media/seal/
+Disallow: /media/agreement/
+Disallow: /media/contract_files/
+Disallow: /w/
+

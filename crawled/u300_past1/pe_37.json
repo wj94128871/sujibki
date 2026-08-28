@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 37,
+    "pePart": "정보·통신",
+    "teamName": "콘콘",
+    "companyTitle": "굿즈 제작 오픈마켓 & 커뮤니티, 오즈의 제작소",
+    "companyContent": "<p style=\"user-select: auto;\"><b style=\"user-select: auto;\"><span style=\"font-size: 36px; user-select: auto;\">오즈의 제작소 기사</span></b></p><p style=\"user-select: auto;\"><a href=\"https://www.edaily.co.kr/news/read?newsId=02581366632364344&amp;mediaCodeNo=257\" target=\"_blank\" style=\"user-select: auto;\"><span style=\"font-size: 18px; user-select: auto;\">[Zoom in 스타트업] 누구나 참여하고 싶은 굿즈 빌리지, 여기는 '오즈의 제작소' 입니다</span></a></p><p style=\"user-select: auto;\"><a href=\"https://post.naver.com/viewer/postView.naver?volumeNo=32287581&amp;memberNo=5899174&amp;vType=VERTICAL\" target=\"_blank\" style=\"user-select: auto;\"><span style=\"font-size: 14px; user-select: auto;\">[이슈메이커] 히든챔피언 콘콘</span></a></p><p style=\"user-select: auto;\"><br style=\"user-select: auto;\"></p><p style=\"user-select: auto;\">----------------------------------------------------------------------------------------------------------------------------------</p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11380).PNG\" style=\"width: 840px; user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11381).PNG\" style=\"width: 840px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11386).PNG\" style=\"width: 690px; user-select: auto;\"><br style=\"user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11387).PNG\" style=\"width: 690px; user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11388).PNG\" style=\"width: 690px; user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11389).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11390).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11399).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11400).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11401).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11402).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><br style=\"user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11404).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11405).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11406).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11407).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11445).png\" style=\"width: 840px; user-select: auto;\"><br style=\"user-select: auto;\"></p><p style=\"user-select: auto;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(11409).PNG\" style=\"width: 690px; user-select: auto;\"></p><p style=\"user-select: auto;\"><br style=\"user-select: auto;\"></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56152046.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_582.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12400,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 105,
+    "pePart": "정보·통신",
+    "teamName": "소파(sofa)",
+    "companyTitle": "중고 노트북 시장의 정보비대칭 문제를 해결한 중고 노트북 거래 플랫폼",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14938).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14939).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14940).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14941).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14942).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14943).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14944).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14945).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14946).png\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_617191124.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_378(1).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 30143,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 7,
+    "pePart": "정보·통신",
+    "teamName": "TEAM MUFI",
+    "companyTitle": "나를 알아보는 무인매장 솔루션 MUFI",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12601).png\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12610).png\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12788).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12664).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12792).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12794).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12795).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12796).png\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12801).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12798).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12799).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12800).png\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12803).png\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56125258.PNG",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_444(0).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 5817,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

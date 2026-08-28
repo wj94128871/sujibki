@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 106,
+    "pePart": "정보·통신",
+    "teamName": "Dalton",
+    "companyTitle": "색각이상자를 위한 맞춤형 서비스 'ColorFull'",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15827).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15828).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15829).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15830).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15831).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15832).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15833).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15834).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15835).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15836).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15837).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15838).png\" style=\"width: 100%;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_5523319.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_635(3).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 30145,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

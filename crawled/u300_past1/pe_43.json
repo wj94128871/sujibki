@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 43,
+    "pePart": "정보·통신",
+    "teamName": "lio",
+    "companyTitle": "IT 프리랜서를 위한 아웃소싱 프로젝트 매칭 및 자동화 관리 플랫폼",
+    "companyContent": "<p>\n<iframe width=\"auto\" height=\"auto\" src=\"https://www.youtube.com/embed/xsPsuZu2Cfk?autoplay=1&amp;mute=1\" title=\"리오영상\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>\n\n<br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15869).png\" style=\"width: 840px;\"></p><p><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_52153811.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_646.gif",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 12821,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

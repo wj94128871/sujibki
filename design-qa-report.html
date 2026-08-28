@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>design-qa-report</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 design-qa-report · 생성: 2026-08-20 20:35</div>
+<h1>디자인QA 리포트 (design-qa-report.md) — 재검증 최종판</h1>
+<ul>
+<li><strong>작성팀</strong>: 디자인QA팀 (design-qa-team)</li>
+<li><strong>작업 규모 모드</strong>: standard (9단계 파이프라인 — 7단계 디자인QA)</li>
+<li><strong>검증 대상(디자인 산출물 3종, 수정본)</strong>: <code>storyboard.md</code> / <code>design-system.md</code> / <code>design-review.md</code></li>
+<li><strong>대조 기준</strong>: <code>plan.md</code>(FR-05~11·AC-05~11), <code>userflow.md</code>(UJ-1~5·전역 UX 규칙), <code>planning-qa-report.md</code></li>
+<li><strong>배경</strong>: 1차 디자인QA 반려(C1~C6) → 디자인팀 수정 완료 → <strong>재검증</strong></li>
+<li><strong>검증 시각</strong>: 2026-08-20 (세션 환경 기준)</li>
+<li><strong>사용 스킬 로그</strong>: <code>a11y-audit</code>(WCAG 2.2 AA 대비 실측 재검증), <code>color-expert</code>(보정 색값 독립 재계산), <code>design-auditor</code>(자가감사 최종본 대조), <code>product-designer</code>(휴리스틱), <code>coverage-analysis</code>(AC 매핑), <code>md-to-html</code>(.html 병행)</li>
+</ul>
+<hr />
+<h2>0. 판정 요약</h2>
+<h1>✅ 승인 (Approval)</h1>
+<p>디자인QA 반려 사항 <strong>C1~C6 전부 해결</strong>을 확인했다. 특히 반려의 핵심인 <strong>신뢰 뱃지·상태색 WCAG AA 대비</strong>를 디자인QA가 <strong>독립 재계산한 결과 전 항목 ≥4.5:1</strong>로 보정되어 자체 규정(§6.1 "일반 텍스트 ≥4.5:1")을 충족한다. design-review도 design-system 최종본과 재동기화되어(총점 92/100) 산출물 최종성이 확보됐다. <strong>개발팀 인계 가능.</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>1차</th>
+<th>재검증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 기획 정합성</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>2. AC 매핑</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>3. 스토리보드 품질</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>4. 디자인 시스템 완성도</td>
+<td>⚠️ FAIL</td>
+<td><strong>✅ PASS</strong> (대비 보정 완료)</td>
+</tr>
+<tr>
+<td>5. 디자인 퀄리티</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>6. 개발 가능성</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>7. 품질 규칙</td>
+<td>✅ PASS</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>최종 판정</td>
+<td>❌ 반려</td>
+<td><strong>✅ 승인</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 반려 사항 해결 검증 (C1~C6)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>반려 항목</th>
+<th>상태</th>
+<th>재검증 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>신뢰 뱃지·상태색 WCAG AA 대비 미달</td>
+<td>🟢 <strong>해결</strong></td>
+<td><strong>디자인QA 독립 재계산으로 전부 ≥4.5:1 확정</strong> (아래 §1.1)</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>design-review↔design-system 내부 불일치</td>
+<td>🟢 <strong>해결</strong></td>
+<td>design-review를 design-system 최종본 기준으로 재작성·동기화(총점 92/100, §1 반려사항 표·확정값 명시)</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>모바일 차트 탭/세로배치 대안 미확정</td>
+<td>🟢 <strong>해결</strong></td>
+<td>storyboard §6·design-system §4.2에 세로 1열 카드 기본 + 과다 시 탭형 뷰 전환(+좌우 화살표 키 탐색·포커스 유지, 가로 스크롤 금지) 명시</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>차트 키보드 스킴 상세 미정</td>
+<td>🟢 <strong>해결</strong></td>
+<td>design-system §3.3에 <code>tabindex=0</code>+<code>role=button</code> 범례/시리즈, <code>focus</code> 툴팁+<code>aria-live</code>, <code>&lt;canvas&gt;</code> 대체 <code>&lt;table class="sr-only"&gt;</code>·<code>aria-label</code> 명시</td>
+</tr>
+<tr>
+<td>C5</td>
+<td><code>--text-3</code> 다크 대비 미달 소지</td>
+<td>🟢 <strong>해결</strong></td>
+<td>light <code>#667085</code>(<strong>4.97:1</strong>), dark <code>#7B8498</code>(<strong>5.04:1</strong>), 축·그리드 라벨 ≥4.5:1로 규정</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>뱃지 배경 리터럴 hex 미토큰화</td>
+<td>🟢 <strong>해결</strong></td>
+<td><code>--badge-high-bg/-mid-bg/-low-bg</code>·<code>--badge-high/-mid/-low</code> 토큰 정의(design-system §1.5)</td>
+</tr>
+</tbody>
+</table>
+<h3>1.1 C1 대비 재실측 (디자인QA 독립 계산, light/dark)</h3>
+<table>
+<thead>
+<tr>
+<th>토큰/용도</th>
+<th>결합</th>
+<th>실측 대비</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신뢰 뱃지 높음</td>
+<td><code>#3456E0</code>/<code>#E9ECFE</code></td>
+<td>5.04:1</td>
+<td>✅ ≥4.5</td>
+</tr>
+<tr>
+<td>신뢰 뱃지 높음(dark)</td>
+<td><code>#7B94FF</code>/<code>#232A55</code></td>
+<td>4.90:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>신뢰 뱃지 중간</td>
+<td><code>#8A4A00</code>/<code>#FDF3E3</code></td>
+<td><strong>6.24:1</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>신뢰 뱃지 중간(dark)</td>
+<td><code>#E8A23D</code>/<code>#2E2A1C</code></td>
+<td>6.60:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>신뢰 뱃지 낮음</td>
+<td><code>#C0392B</code>/<code>#FCEBEA</code></td>
+<td>4.72:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>신뢰 뱃지 낮음(dark)</td>
+<td><code>#F27A6E</code>/<code>#331C1A</code></td>
+<td><strong>5.89:1</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>상태 성공(light)</td>
+<td><code>#1E7F52</code>/white</td>
+<td><strong>4.98:1</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>상태 경고(light)</td>
+<td><code>#9C5B00</code>/white</td>
+<td><strong>5.37:1</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>상태 위험(light/dark)</td>
+<td><code>#C0392B</code>/white · <code>#E2554A</code>/bg</td>
+<td>5.44 / 5.07:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>상태 정보</td>
+<td><code>#2563EB</code>/white · <code>#5B8CFF</code>/bg</td>
+<td>5.17 / 5.97:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>--text-3</code>(light/dark)</td>
+<td><code>#667085</code>/white · <code>#7B8498</code>/bg</td>
+<td>4.97 / 5.04:1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>--text</code>·<code>--text-2</code> 대비</td>
+<td>light/dark</td>
+<td>5.98~16.84:1</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>전 항목 ≥4.5:1 충족 확인. design-system §1.2(대비 열)·§1.3(상태색)·§1.5(뱃지)에 명시된 값과 <strong>실측값이 일치</strong>하며, 자체 규정("상태색···항상 ≥4.5:1") 위반 없음.</p>
+</blockquote>
+<hr />
+<h2>2. 7개 검증 항목 재실행</h2>
+<p><strong>1. 기획 정합성 — ✅ PASS</strong>: plan FR-05~11·userflow 전역규칙(단일 6섹션·빈에러·저신뢰뱃지·반응형·로그인없음·외부CDN금지)이 storyboard에 누락(변경) 없음.</p>
+<p><strong>2. AC 매핑 — ✅ PASS</strong>: AC-05~11 전부 화면에 정확·완전 매핑(§5). S-01e=AC-08-1·08-2(추이미확인 주석 포함) — 기획QA M-1 유지. S-02=AC-10-2(S) 표기 유지.</p>
+<p><strong>3. 스토리보드 품질 — ✅ PASS</strong>: UJ-1~5 반영, ASCII 와이어프레임 구체, 로딩/에러/빈 상태매트릭스 전수 정의.</p>
+<p><strong>4. 디자인 시스템 완성도 — ✅ PASS (1차 FAIL→해결)</strong>: 토큰 3계층·컴포넌트 상태·간격/타이포·그리드 일관. <strong>대비 전 항목 ≥4.5:1 독립 확인</strong>(§1.1). C3(모바일 차트)·C4(키보드 스킴)·C5(축라벨)·C6(뱃지 토큰) 해결.</p>
+<p><strong>5. 디자인 퀄리티 — ✅ PASS</strong>: Nielsen 10·AI-슬롭 회피·브랜드 일관성 유지. design-review 총점 86→<strong>92/100</strong>로 상향(대비·반응형·토큰 반영).</p>
+<p><strong>6. 개발 가능성 — ✅ PASS</strong>: IA·전환맵·와이어프레임·토큰·가드레일(외부CDN금지·하드코딩금지·신뢰뱃지·client_id미노출) 구체. 보정 색값 확정으로 개발팀이 올바른 토큰으로 구현 가능.</p>
+<p><strong>7. 품질 규칙 — ✅ PASS</strong>: 한국어 유지, <strong>.html 3종 재생성·동기화 확인</strong>(마크다운의 수정 신호가 .html에 반영), design-review가 system 최종본과 재동기화(C2 해결).</p>
+<hr />
+<h2>3. 문제 목록 (최종)</h2>
+<ul>
+<li>🔴 치명: <strong>0건</strong></li>
+<li>🟠 중요: <strong>0건</strong> (1차 C1·C2 반려 항목 전부 해결)</li>
+<li>🟡 경미(잔여, 비차단): </li>
+<li>design-review §3의 잔여 항목은 <strong>구현 후 조치</strong>(P1: 토큰 lint·axe·대비·시각회귀 E2E, P2: 데이터-잉크 비율 렌더 재확인)로, 디자인 단계 차단 없음. 개발QA에서 <code>design-qa</code> 스킬로 실측 재검증 병행 권고.</li>
+</ul>
+<hr />
+<h2>4. 최종 판정</h2>
+<h1>✅ 승인 (Approval)</h1>
+<ul>
+<li><strong>판정 근거</strong>: 반려 사유였던 신뢰 뱃지·상태색 AA 대비를 디자인QA가 <strong>독립 재계산으로 전 항목 ≥4.5:1</strong> 확인(C1), 자가감사 재동기화(C2), 모바일 차트·키보드 스킴·축라벨·뱃지 토큰화(C3~C6) 모두 해결. 기획 정합성·AC 매핑·스토리보드 품질·개발 인계성은 1차부터 PASS 유지.</li>
+<li><strong>인계 가능</strong>: ✅ <strong>개발팀 인계 가능.</strong> 색 토큰 확정값 포함한 design-system·storyboard를 테크설계 기준으로 전달. 개발QA 단계에서 design-qa 게이트(토큰 lint·axe·대비·시각 회귀)로 구현물 실측 재검증 권고(잔여 P1/P2).</li>
+</ul>
+<hr />
+<p><em>끝 — 디자인 산출물 3종에 대한 디자인QA 재검증 최종판. 반려 C1~C6 전부 해결로 승인, 개발팀 인계를 허용한다.</em></p>
+</main>
+</body>
+</html>

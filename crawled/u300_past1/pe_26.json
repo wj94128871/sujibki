@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 26,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "아든",
+    "companyTitle": "효율적인 식단관리의 첫걸음, 개인맞춤형 밥 추천 서비스 I'm 더든든",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6710).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6713).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6716).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6718).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6721).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6723).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6725).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6727).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6728).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6729).JPG\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6730).JPG\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_617195059.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_600(0).JPG",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11193,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+dist/
+loader/data/*.db
+crawler/**/cookies_*.json
+*.key
+*.pem
+.wrangler/

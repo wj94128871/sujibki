@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 22,
+    "pePart": "정보·통신",
+    "teamName": "페이버핏",
+    "companyTitle": "AI로 전문 사진작가보다 10배 빠르고 저렴하게 매력적인 제품사진 만들기 Favorfit ",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6915).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6916).jpg\" style=\"width: 100%;\"></p><p></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7553).jpg\" style=\"width: 840px;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6918).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6919).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6920).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6921).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6922).jpg\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(6923).jpg\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7561).jpg\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56183951.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_632.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 9533,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

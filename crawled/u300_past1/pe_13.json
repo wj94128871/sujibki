@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 13,
+    "pePart": "정보·통신",
+    "teamName": "주식회사 퍼스텝컴퍼니",
+    "companyTitle": "중고등학생들의 진로설계를 위한 포트폴리오 통합관리 솔루션",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9606).png\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9607).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9608).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9609).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9610).png\" style=\"width: 840px;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9614).png\" style=\"width: 840px;\"><br></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9615).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9616).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9617).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9618).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9619).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9620).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9621).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9622).png\" style=\"width: 840px;\"><br></p><p><br></p><p><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_54174632.jpg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_434.png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 7539,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

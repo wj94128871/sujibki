@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 104,
+    "pePart": "에너지·자원(환경·에너지)",
+    "teamName": "ZERO",
+    "companyTitle": "나도 환경 지키고 싶은데... 뭐부터 해야하지? 우리가 알려줄게! 친환경 버티컬 플랫폼, ZERO",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9645).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9646).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9647).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9648).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9673).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9674).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9675).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9676).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9677).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9680).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9681).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9683).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9684).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9686).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9688).png\" style=\"width: 840px;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(9689).png\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_56143818(0).png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_459.jpg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 30141,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

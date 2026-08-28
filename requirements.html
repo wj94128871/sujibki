@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>requirements</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 requirements · 생성: 2026-08-20 15:44</div>
+<h1>요구사항 정의서 (Requirements)</h1>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로젝트명</td>
+<td>시장조사·분석 대시보드 (Market Dashboard)</td>
+</tr>
+<tr>
+<td>산출 팀</td>
+<td>요구사항팀 (requirements-team)</td>
+</tr>
+<tr>
+<td>요청 원문</td>
+<td>"수집 크롤링을 통한 자료취합 후 시장조사와 분석등을 통한 내용들을 한눈에 볼수있는 대시보드페이지가 필요해"</td>
+</tr>
+<tr>
+<td>작업 규모 모드</td>
+<td><strong>standard</strong> (판정 근거는 §9 참고)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 개요 (배경)</h2>
+<p>SI(외주/프리랜서 매칭) 사이트 — 대표적으로 <strong>위시켓, 프리모아</strong> 등 — 에 올라오는 프로젝트 의뢰(안건)를 월 단위로 크롤링하여 수집한다.<br />
+수집된 안건 내용을 바탕으로 <strong>시장조사와 기능 추가·개선 방향 분석</strong>을 수행하고,<br />
+이를 통해 <strong>플랫폼을 오픈했을 때 시장성이 있는 내용</strong>을 도출하여 한눈에 보기 쉬운 대시보드 페이지로 제공하는 시스템을 구축한다.</p>
+<p>"데이터 수집(크롤링) → 분석(시장조사·기능 개선 방향) → 시장성 인사이트 도출 → 시각화 대시보드"의 파이프라인 전체를 대상으로 한다.</p>
+<hr />
+<h2>2. 목표 / 비목표</h2>
+<h3>2.1 목표 (Goals)</h3>
+<ul>
+<li>G1. SI 매칭 사이트(위시켓·프리모아 등)의 프로젝트 안건을 <strong>월 단위 주기</strong>로 자동 수집한다.</li>
+<li>G2. 수집 데이터를 정제·저장하여 각 사이트별 안건 목록/요약을 제공한다.</li>
+<li>G3. 수집 내용을 기반으로 시장조사(수요·트렌드·공급 동향)와 <strong>기능 추가·개선 방향</strong>을 분석한다.</li>
+<li>G4. 플랫폼 오픈 시 시장성이 있을 만한 내용(인사이트)을 도출한다.</li>
+<li>G5. G2~G4 결과를 <strong>한눈에 보기 쉬운 대시보드 페이지</strong>로 시각화·요약 제공한다.</li>
+</ul>
+<h3>2.2 비목표 (Non-Goals)</h3>
+<ul>
+<li>NG1. 의뢰·프로젝트의 <strong>입찰/계약/매칭 자동화</strong> 기능은 만들지 않는다. (수집·분석·시각화에 한정)</li>
+<li>NG2. 외주사/개발자 <strong>계정·프로필 관리·메신저</strong> 기능은 만들지 않는다.</li>
+<li>NG3. 실시간(분/초 단위) 수집·반영은 하지 않는다. (월 단위 배치)</li>
+<li>NG4. 수집 대상이 아닌 사이트(위시켓·프리모아 외 일반 웹 전역)의 광범위 크롤링은 제외.</li>
+<li>NG5. 사용자 로그인/권한 관리, 멀티테넌시(사용자별 데이터 격리)는 만들지 않는다.</li>
+</ul>
+<hr />
+<h2>3. 타깃 사용자</h2>
+<ul>
+<li><strong>주 사용자</strong>: 요청 팀(팀 단위 사용). 개인/관리자 1명 이상이 대시보드를 열람.</li>
+<li>성격: 비개발·개발자가 함께 볼 수 있는 <strong>직관적인 시각화 요약</strong>을 선호.</li>
+<li>접근: 별도 로그인/권한 <strong>없이</strong> 웹 페이지(URL)로 접근.</li>
+</ul>
+<hr />
+<h2>4. 범위</h2>
+<h3>4.1 포함 (In Scope)</h3>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 수집</td>
+<td>위시켓·프리모아 등 SI 매칭 사이트의 안건(프로젝트 의뢰) 크롤링</td>
+</tr>
+<tr>
+<td>수집 주기</td>
+<td>월 1회(월 단위) 자동 배치 수집</td>
+</tr>
+<tr>
+<td>데이터 관리</td>
+<td>수집 데이터 정제, 중복 제거, 표준화, 저장(DB)</td>
+</tr>
+<tr>
+<td>시장 분석</td>
+<td>수집 안건 기반 시장조사(수요·트렌드·카테고리·예산·기간 분포), 기능 추가·개선 방향 분석</td>
+</tr>
+<tr>
+<td>인사이트 도출</td>
+<td>플랫폼 오픈 시 시장성이 있는 내용(신규 수요 카테고리, 고성장 키워드 등) 도출</td>
+</tr>
+<tr>
+<td>대시보드</td>
+<td>사이트별 수집 목록/요약, 분석 결과, 시장성 인사이트를 한눈에 보는 시각화 페이지</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 제외 (Excluded)</h3>
+<ul>
+<li>입찰/계약/결제/매칭 자동화</li>
+<li>회원가입/로그인/권한/관리자 기능</li>
+<li>실시간 수집 및 밀리초 단위 갱신</li>
+<li>수집 대상 외 사이트의 무분별한 크롤링</li>
+</ul>
+<hr />
+<h2>5. 기능 요구사항 (Functional Requirements)</h2>
+<p>우선순위: <strong>M</strong>=필수(Must) / <strong>S</strong>=선택(Should) / <strong>C</strong>=고려(Could)</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>우선순위</th>
+<th>요구사항</th>
+<th>수용 기준(AC) 초안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-01</td>
+<td>M</td>
+<td>위시켓·프리모아 등 SI 사이트의 안건(프로젝트 의뢰) 크롤링</td>
+<td>대상 사이트 목록의 안건이 정기 수집되어 DB에 저장된다</td>
+</tr>
+<tr>
+<td>FR-02</td>
+<td>M</td>
+<td>월 1회(월 단위) 자동 수집 배치</td>
+<td>월 단위 스케줄로 크롤러가 자동 실행되고 결과가 기록된다</td>
+</tr>
+<tr>
+<td>FR-03</td>
+<td>M</td>
+<td>수집 데이터 정제·표준화·중복 제거</td>
+<td>동일 안건 중복 저장되지 않고, 필드(제목·예산·기간·카테고리 등)가 표준화된다</td>
+</tr>
+<tr>
+<td>FR-04</td>
+<td>M</td>
+<td>수집 데이터 저장(DB)</td>
+<td>정제된 데이터가 Neon 등의 관계형 DB에 저장·조회 가능하다</td>
+</tr>
+<tr>
+<td>FR-05</td>
+<td>M</td>
+<td>사이트별 수집 안건 목록/요약 제공</td>
+<td>사이트별로 안건 목록과 핵심 요약을 보여준다</td>
+</tr>
+<tr>
+<td>FR-06</td>
+<td>M</td>
+<td>시장조사(수요·트렌드·분포 분석)</td>
+<td>수집 안건 기반 시장 지표(카테고리별 수요, 예산·기간 분포, 트렌드 등)를 산출·제공한다</td>
+</tr>
+<tr>
+<td>FR-07</td>
+<td>M</td>
+<td>기능 추가·개선 방향 분석</td>
+<td>수집 내용으로부터 플랫폼에 필요한 기능 추가/개선 방향을 도출·제공한다</td>
+</tr>
+<tr>
+<td>FR-08</td>
+<td>M</td>
+<td>시장성 인사이트 도출</td>
+<td>플랫폼 오픈 시 시장성이 있을 내용(신규 수요·고성장 영역)을 도출해 보여준다</td>
+</tr>
+<tr>
+<td>FR-09</td>
+<td>M</td>
+<td>한눈에 보기 쉬운 대시보드 UI/UX</td>
+<td>시각화 요약(차트·카드·표) 중심의 직관적 단일 페이지를 제공한다</td>
+</tr>
+<tr>
+<td>FR-10</td>
+<td>S</td>
+<td>대시보드 상세 드릴다운</td>
+<td>요약에서 개별 안건 상세/원문·출처 조회 가능 (필요 시)</td>
+</tr>
+<tr>
+<td>FR-11</td>
+<td>S</td>
+<td>수집 이력/실행 상태 표시</td>
+<td>최근 수집 시점, 수집 건수, 실패 안내를 보여준다</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 비기능 요구사항 (NFR)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>구분</th>
+<th>요구사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-01</td>
+<td>기술 스택</td>
+<td>Cloudflare(Workers/Pages) + Neon(PostgreSQL) + Rust + Python 기반으로 구성</td>
+</tr>
+<tr>
+<td>NFR-02</td>
+<td>성능</td>
+<td>대시보드 페이지 로딩이 빠르며(최대한 빠르게), 데이터 크기에 관계없이 실용적 응답</td>
+</tr>
+<tr>
+<td>NFR-03</td>
+<td>실행 환경</td>
+<td>배포 가능한 <strong>웹 페이지</strong> 형태로 제공 (로그인/권한 없이 URL 접근)</td>
+</tr>
+<tr>
+<td>NFR-04</td>
+<td>유지보수</td>
+<td>수집 대상 사이트 변경·분석 로직 변경이 용이한 구조</td>
+</tr>
+<tr>
+<td>NFR-05</td>
+<td>견고성</td>
+<td>크롤링 실패(사이트 구조 변경 등) 시 무한 재시도·중복 저장 방지, 오류 기록</td>
+</tr>
+<tr>
+<td>NFR-06</td>
+<td>보안/법적</td>
+<td>크롤링 대상 사이트 이용약관·로봇 규약(robots.txt), 과도한 요청·개인정보 수집 최소화 고려</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 데이터 요구사항</h2>
+<ul>
+<li><strong>수집 대상</strong>: SI(외주/프리랜서 매칭) 관련 사이트 — 위시켓, 프리모아 등 (대상 후보는 리서치팀이 확정)</li>
+<li><strong>수집 항목(추정)</strong>: 안건 제목, 내용/요약, 카테고리/업종, 예산, 기간, 모집 인력/기술 스택, 등록일 등</li>
+<li><strong>수집 주기</strong>: 월 1회 (월 단위 배치)</li>
+<li><strong>저장</strong>: Neon(PostgreSQL)에 정제·표준화하여 저장</li>
+<li><strong>분석 대상</strong>: 수집된 안건 텍스트·속성 기반 시장조사 및 기능 개선 방향, 시장성 인사이트</li>
+</ul>
+<hr />
+<h2>8. 성공 기준 (Success Criteria)</h2>
+<p>사용자 명시: <strong>"제대로 된 수집"</strong> 과 <strong>"제대로 된 분석"</strong> 이 핵심.</p>
+<ul>
+<li>SC-1. <strong>제대로 된 수집</strong>: 대상 SI 사이트의 안건이 월 단위로 누락 없이(또는 실패 내역이 명확히 기록되며) 수집되고, 중복·정제 오류 없이 DB에 저장된다.</li>
+<li>SC-2. <strong>제대로 된 분석</strong>: 수집 데이터를 근거로 한 시장조사 지표와 기능 추가·개선 방향, 시장성 인사이트가 산출·대시보드에 표시된다.</li>
+<li>SC-3. <strong>한눈에 보기</strong>: 사이트별 수집 요약, 분석 결과, 시장성 인사이트를 한 화면에서 직관적으로 확인 가능하다.</li>
+<li>SC-4. <strong>접근성</strong>: 로그인 없이 웹 URL로 팀원이 접근하여 대시보드를 열람할 수 있다.</li>
+</ul>
+<hr />
+<h2>9. 작업 규모 모드 판정</h2>
+<ul>
+<li><strong>판정: standard</strong></li>
+<li>근거:</li>
+<li>신규 서비스(대시보드 플랫폼) 구축에 해당.</li>
+<li>요구사항 수: 핵심 기능 11개(FR-01~11) + NFR·데이터 요구로 5~20개 범위에 해당.</li>
+<li><strong>조사 필요</strong>: 수집 대상 사이트(위시켓·프리모아 등) 접근성·구조·robots 규약, 경쟁·유사 대시보드, 시장조사 방법론 등 리서치 필요.</li>
+<li>9단계 전체 파이프라인(리서치→기획→디자인→개발→QA)을 적용.</li>
+<li>(small 아님: 단일 기능이 아니며 조사·분석·시각화 다단계 내재 · full 아님: 출시급 대형·요구 20개+ 미만)</li>
+</ul>
+<hr />
+<h2>10. 제약 사항</h2>
+<ul>
+<li>기술 스택 고정: Cloudflare + Neon + Rust + Python (가능한 빨리 구축)</li>
+<li>별도 로그인/권한 인프라 없음</li>
+<li>월 단위 데이터 특성상 대용량·실시간 요구 없음</li>
+<li>외주·프리랜서 매칭 사이트의 이용약관/로봇 규약 준수 필요</li>
+</ul>
+<hr />
+<h2>11. 가정 (Assumptions)</h2>
+<ul>
+<li>A1. 크롤링은 <strong>Python</strong> 기반으로 구현하고, 백엔드/API·배포는 <strong>Cloudflare(+Rust)</strong> 로 구성하는 것을 전제로 한다 (기술 배분은 개발팀 세부 설계 시 확정).</li>
+<li>A2. "한눈에 보기"는 단일 웹 대시보드 페이지의 <strong>시각적 요약(차트·카드·표)</strong> 를 의미한다.</li>
+<li>A3. 수집 대상 사이트는 위시켓·프리모아 외 유사 SI 매칭 사이트 포함 가능 (리서치팀이 확정).</li>
+<li>A4. 분석은 수집 안건 데이터 기반 정량(분포·추이) + 정성(기능 개선 방향)을 결합한다.</li>
+</ul>
+<hr />
+<h2>12. 오픈 질문 (Open Questions)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>질문</th>
+<th>담당/귀결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-1</td>
+<td>수집 출처 사이트 확정 목록(위시켓·프리모아 외 추가 여부)</td>
+<td>리서치팀 확인</td>
+</tr>
+<tr>
+<td>OQ-2</td>
+<td>크롤링 대상 사이트의 접근성(로그인 필요 여부)·robots 허용 범위</td>
+<td>리서치팀 확인</td>
+</tr>
+<tr>
+<td>OQ-3</td>
+<td>대시보드 상세 드릴다운(FR-10)을 MVP에 포함할지 여부</td>
+<td>기획팀 우선순위 결정</td>
+</tr>
+<tr>
+<td>OQ-4</td>
+<td>분석 결과를 제시할 구체 지표(카테고리 수요 점유율, 예산 분포 등) 확정</td>
+<td>기획팀/리서치팀 확정</td>
+</tr>
+<tr>
+<td>OQ-5</td>
+<td>월 1회 수집 시점·배치 실행 환경(스케줄러) 지정</td>
+<td>개발팀 설계</td>
+</tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>

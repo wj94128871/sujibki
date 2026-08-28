@@ -1,0 +1,783 @@
+<!DOCTYPE html><!--[if IE 6]><html lang="ko" class="no-js old ie6"><![endif]--><!--[if IE 7]><html lang="ko" class="no-js old ie7"><![endif]--><!--[if IE 8]><html lang="ko" class="no-js old ie8"><![endif]--><html class="no-js modern" lang="ko"><head><meta charset="utf-8"/><meta content="593258114025512" property="fb:app_id"/><meta content="website" property="og:type"/><meta content="[프로젝트 개요]
+PCS-ESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하" name="description"/><meta content="2026-08-27" name="date"/><meta content="noodp" name="robots"/><meta content="PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발 | 위시켓" property="og:title"/><meta content="[프로젝트 개요]
+PCS-ESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하" property="og:description"/><meta content="https://www.wishket.com/project/157793/" property="og:url"/><meta content="website" property="og:type"/><meta content="https://www.wishket.com/static/img/project/ogimage/development/etc.png" property="og:image"/><meta content="ko_KR" property="og:locale"/><meta content="summary" name="twitter:card"/><meta content="[프로젝트 개요]
+PCS-ESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하" name="twitter:description"/><meta content="PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발 | 위시켓" name="twitter:title"/><meta content="https://www.wishket.com/static/img/project/ogimage/development/etc.png" name="twitter:image"/><meta content="https://www.wishket.com/project/157793/" name="twitter:url"/><meta content="" name="keywords"/><script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "BreadcrumbList",
+	    "itemListElement": [{
+	      "@type": "ListItem",
+	      "position": 1,
+	      "name": "위시켓",
+	      "item": "https://www.wishket.com"
+	    },{
+	      "@type": "ListItem",
+	      "position": 2,
+	      "name": "프로젝트 찾기",
+	      "item": "https://www.wishket.com/project/"
+	    },{
+	      "@type": "ListItem",
+	      "position": 3,
+	      "name": "PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발",
+	      "item": "https://www.wishket.com/project/157793/"
+	    }]
+		}
+		</script><script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type" : "JobPosting",
+        "title" : "PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발 전문가",
+        "description": "[프로젝트 개요]\u000D\u000APCS\u002DESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하고 위험도를 예측하는 AI 시스템을 개발합니다. 임계값 초과 후 경보하는 사후 대응 방식이 아니라, 센서 간 상관관계와 변화 추세를 분석해 사고 이전 단계에서 선제적으로 예지진단하는 것이 목표입니다. 화면(UI)은 본 과업에 포함되지 않으며, AI 판정 결과를 외부 시스템이 사용할 수 있도록 인터페이스 형태로 제공합니다.\u000D\u000A\u000D\u000A[프로젝트 배경 및 목표]\u000D\u000A\u002D 절연저항, 부분방전(TEV), 아크, 누설전류, 온도, 상대습도 6종 센서가 서로 다른 주기로 데이터를 생성하며, 이를 단일 모델에서 통합 분석해야 합니다.\u000D\u000A\u002D 정상(0)·주의(1)·위험(2) 3단계 라벨을 활용한 지도학습 기반 다변량 분류·예측 모델을 개발하고, 학습 라벨 3단계를 운영정책의 4단계 표시등급으로 매핑합니다.\u000D\u000A\u002D AI 판정 결과는 WEB 통합 모니터링 시스템으로 전달되며, 이상이 심화되면 PCS\u002DESS 보호연동 장치로 경보·보호동작 트리거 신호를 출력합니다.\u000D\u000A\u002D 검출 정확도, 조기 감지시간, 보호연동 응답시간에 대한 정량 목표가 설정되어 있으며, GS 인증 및 공인시험 대응이 과업에 포함됩니다.\u000D\u000A\u000D\u000A[과업 범위]\u000D\u000A1. 수행 범위 (요약)\u000D\u000A\u002D 기획: AI 요구사항정의서, 성능 기준선 및 시험조건, 시스템 아키텍처 설계서, 연계 인터페이스 명세, 데이터 수집·라벨링 방향 제안서\u000D\u000A\u002D 개발: 데이터 수집·정제·특징추출 파이프라인, 학습·검증·추론 시스템, 실시간 추론 서비스, 보호연동 신호 출력, 외부 시스템 연동 인터페이스, 모델 운영·재학습 자동화\u000D\u000A\u002D 연구: 이상징후 검출·분류 모델, 위험도 산정 알고리즘, 추세 기반 조기탐지 알고리즘, 성능 목표 도달을 위한 반복 개선\u000D\u000A\u002D 검수: 통합시험 시나리오 수립 및 수행, 성능지표 검증·재시험, GS 인증 및 공인시험 대응자료 작성, 산출물 이중 백업\u000D\u000A발주기관 및 타 수행 주체가 담당하는 범위 \u000D\u000A\u000D\u000A2. 상세 기능 요구사항 (첨부된 과업지시서, 개발계획서 필독)\u000D\u000A① 요구사항 정의 및 데이터 수집 체계 설계\u000D\u000A\u002D 예측 대상, 판정 단위, 운영 모드, 경보 정책, 성능 산식 및 시험조건을 포함한 AI 요구사항 기준선 정의\u000D\u000A\u002D 학습·추론 환경을 포함한 AI 시스템 아키텍처 제안서 및 상세설계서 작성\u000D\u000A\u002D 6종 센서의 항목명·단위·측정범위·수집주기·결측처리 기준을 정의한 센서 맵 및 데이터 사전\u000D\u000A\u002D 센서\u002D게이트웨이\u002D전송구간\u002D클라우드 DB 수집 구조, 시간동기화, 장치·채널 식별체계, 재전송 및 중복방지 방식 설계\u000D\u000A\u002D 데이터 품질관리 규칙 및 품질등급·검수 샘플링·수집률 산정 기준, 조건별 수집 시나리오, 라벨링 가이드, 원천/가공/학습 데이터 분리 저장·보안·백업 체계\u000D\u000A② 데이터 처리 파이프라인\u000D\u000A\u002D 멀티센서 시계열 데이터 수신 및 적재, 서로 다른 수집주기의 시간동기화 및 중복 제거\u000D\u000A\u002D 결측·이상값·센서오류·단위불일치·시간역전 자동 검출 및 정제 처리\u000D\u000A\u002D 부분방전·아크 등 이벤트성 신호의 1초 단위 피크·카운트·에너지·지속시간 특징값 추출\u000D\u000A\u002D 센서 간 상관관계, 변화율, 누적 패턴을 반영한 시계열 윈도우링 및 특징벡터 생성\u000D\u000A\u002D 학습데이터셋 버전관리 및 시간축 기준 Train/Validation/Test 분리\u000D\u000A③ AI 이상징후 검출·진단 모델 개발\u000D\u000A\u002D 규칙기반 기준모델과 통계·머신러닝·시계열 모델 후보를 비교하고 정확도·조기탐지·오탐률·추론지연을 함께 고려한 최종 구조 선정\u000D\u000A\u002D 멀티모달 센서 시계열 통합 학습 기반 다변량 분류·예측 모델 개발\u000D\u000A\u002D 센서별 상태와 센서 간 상관관계·변화율·누적패턴을 반영한 위험도 확률 및 상태 산출\u000D\u000A\u002D 판독 구간의 추세를 분석해 사고 이전 단계를 예측하는 조기탐지 알고리즘\u000D\u000A\u002D 혼동행렬 및 오탐·미탐 분석에 기반한 성능 목표 도달 반복 개선\u000D\u000A④ 실시간 추론 및 시스템 연계\u000D\u000A\u002D 모델 버전, 입력 스키마, 타임아웃, 장애 시 대체판정, 로그 및 재현정보를 포함하는 실시간 추론 서비스\u000D\u000A\u002D AI 학습 라벨 3단계를 운영정책 4단계로 매핑하는 임계값 및 예외규칙 적용\u000D\u000A\u002D 이상 심화 시 보호연동 장치로 경보·보호동작 트리거 신호 출력\u000D\u000A\u002D WEB 시스템 연동 인터페이스를 통한 판정등급, 위험도, 예지메시지, 모델 버전, 판정근거 제공\u000D\u000A\u002D 센서 게이트웨이, 보호연동 장치, WEB 시스템 간 데이터·제어 인터페이스 명세 작성 및 추론 이력·판정근거 저장·조회\u000D\u000A⑤ 모델 운영 및 성능 관리\u000D\u000A\u002D 학습 실행, 실험 추적, 모델 레지스트리, 재학습 트리거를 포함한 모델 학습 자동화 파이프라인\u000D\u000A\u002D 데이터 및 모델 드리프트 모니터링과 재학습 절차 수립\u000D\u000A\u002D 정밀도·재현율·F1, 오탐·미탐, 조기탐지시간을 산출하는 성능평가 자동화\u000D\u000A⑥ 성능 검증 및 인증 지원\u000D\u000A\u002D 통신지연, 데이터누락, 센서고장, 모델오류, 서버장애, 복구 상황을 포함한 통합시험 시나리오 수립 및 결과 증적\u000D\u000A\u002D 시험계획서, 시험케이스, 테스트데이터, 실행로그, 결함·조치 이력 작성\u000D\u000A\u002D 제품설명서, 기능명세서, 아키텍처·인터페이스·DB 설계서, 매뉴얼 및 요구사항 추적표 작성\u000D\u000A\u002D 인증기관·공인시험기관 질의 대응, 재현환경 구성, 결함 수정·재빌드·재시험 지원\u000D\u000A\u002D 전체 소스, 모델 파일, 설치본, 시험증적의 이중 백업 및 복구시험, 월간 진도보고 및 단계별 중간·최종보고\u000D\u000A\u000D\u000A[기술 스택]\u000D\u000A\u002D 언어·프레임워크: Python 기반 개발을 전제로 하며, 학습 프레임워크(PyTorch, TensorFlow 등)와 모델 계열(트리계열, 시계열 딥러닝 등)은 성능 목표 달성에 적합한 구성으로 제안 요청\u000D\u000A\u002D 추론 서비스: REST API 형태의 실시간 추론 서비스 (FastAPI, Flask 등 자유 제안)\u000D\u000A\u002D 데이터 저장: 시계열 데이터 저장소 및 학습데이터 버전관리 방식 제안 요청\u000D\u000A\u002D 배포·운영: 컨테이너 기반 배포(Docker 등), 모델·소스·설정 버전관리\u000D\u000A\u002D 학습 인프라: GPU 자원 구성안 및 폐쇄망 운영 가능 여부를 포함한 제안 요청\u000D\u000A\u000D\u000A[지원 자격 및 우대 사항]\u000D\u000A1. 지원 자격\u000D\u000A\u002D 다변량 시계열 데이터 기반 이상탐지 또는 예측 모델 개발 및 상용 적용 경험\u000D\u000A\u002D 학습·검증·추론 파이프라인 구축 및 실시간 추론 서비스 운영 경험\u000D\u000A\u002D 모델 버전관리, 재학습 자동화, 성능 모니터링 등 MLOps 구축 경험\u000D\u000A\u002D 정량 성능지표가 계약 조건으로 설정된 프로젝트의 수행 및 검증 경험\u000D\u000A2. 우대 사항\u000D\u000A\u002D 전력·에너지 설비, ESS/PCS, 배전반 등 산업 설비 데이터 분석 경험\u000D\u000A\u002D 센서 게이트웨이 또는 산업용 제어·보호 장치와의 인터페이스 연동 경험\u000D\u000A\u002D GS 인증 또는 공인시험기관 시험 대응 및 관련 문서 작성 경험\u000D\u000A\u002D 폐쇄망 환경에서의 AI 시스템 구축 및 운영 경험\u000D\u000A\u000D\u000A[산출물]\u000D\u000A\u002D 학습·검증·추론 전체 소스코드 및 실행 환경 구성 파일\u000D\u000A\u002D 학습된 모델 파일, 모델카드, 성능평가 및 오류분석 보고서\u000D\u000A\u002D 데이터 수집·라벨링 방향 제안서, 요구사항정의서, 시스템 아키텍처 설계서\u000D\u000A\u002D API 명세, DB 스키마, 연계 인터페이스 명세서\u000D\u000A\u002D 배포 패키지, 설치·복구·롤백 절차, 운영 매뉴얼\u000D\u000A\u002D 통합시험계획·케이스·결과, 요구사항 추적표, 결함·조치 이력, 성능 증적\u000D\u000A\u002D GS 인증 및 공인시험 지원자료, 소스·빌드·설치·시험증적 이중 백업본\u000D\u000A\u002D 월간 진도보고서, 단계별 중간보고서, 최종보고서\u000D\u000A\u000D\u000A[유지보수]\u000D\u000A\u002D 유지보수 범위·조건(대응 범위·기간·비용 등)은 계약 시 협의합니다. AI 모델은 운영 데이터 변화에 따라 성능이 변동하므로, 재학습 및 성능 재검증의 포함 여부를 제안서에 명시해 주시기 바랍니다.\u000D\u000A\u000D\u000A[계약 관련 특이사항]\u000D\u000A\u002D 발주처 과업 일정은 2026년 9월부터 2027년 9월까지 예정되어 있으며, 1차년도 기준모델 개발과 2차년도 고도화로 구분해 수행합니다. 단계별 수행을 제안하는 경우 단계별 견적을 병기해 주시기 바랍니다.\u000D\u000A\u002D 학습용 데이터는 발주기관이 수집·라벨링해 제공합니다. 데이터의 제공 시점·수량·품질에 대해 제안서에서 전제한 조건을 명시해 주시기 바랍니다.\u000D\u000A\u002D 검출 정확도, 조기 감지시간, 보호연동 응답시간에 대한 정량 목표가 설정되어 있습니다. 목표 미달 시 원인분석·보완개발·재시험의 수행 범위와 회차 조건을 견적에 명시해 주시기 바랍니다.\u000D\u000A\u002D WEB 통합 모니터링 시스템은 별도 수행 주체가 개발합니다. 인터페이스 규격 협의 및 통합시험 참여 범위를 제안에 포함해 주시기 바랍니다.\u000D\u000A\u002D 센서 게이트웨이 및 보호연동 장치의 통신 규격은 하드웨어 공급 주체와 협의해 확정합니다. 규격 미확정 구간에 대한 전제와 대응 방안을 제안해 주시기 바랍니다.\u000D\u000A\u002D GPU 학습 인프라의 조달 주체와 폐쇄망 운영 요건에 따라 구성이 달라집니다. 해당 조건별 구성안과 소요 자원을 제안에 포함해 주시기 바랍니다.\u000D\u000A\u002D GS 인증은 발주기관이 신청하며, 수행사는 대응자료 작성·기술지원·산출물 백업을 담당합니다.\u000D\u000A\u002D 구현상 제약이나 대안이 필요한 항목이 있으면 견적서에 그 내용과 대안을 함께 명시해 주시기 바랍니다.",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "project",
+          "value": "157793"
+        },
+        "datePosted" : "2026-08-20",
+        "validThrough" : "2026-08-27T23:59",
+        "employmentType" : "CONTRACTOR",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "위시켓",
+          "sameAs": "https://www.wishket.com/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.wishket.com/static/renewal/img/landing/symbol.png"
+          }
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            
+            "streetAddress": "전라북도 전주시 덕진구",
+            "addressLocality": "전주시 덕진구",
+            "addressRegion": "전라북도",
+            
+            "addressCountry": "대한민국",
+            "postalCode": "06141"
+          }
+        },
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "KRW",
+          "value": {
+            "@type": "QuantitativeValue",
+            "value": 0,
+            "unitText": "MONTH"
+          }
+        },
+        "directApply": "true"
+      }
+      </script><meta content="위시켓" property="product:brand"/><meta content="in stock" property="product:availability"/><meta content="new" property="product:condition"/><meta content="0" property="product:price:amount"/><meta content="KRW" property="product:price:currency"/><meta content="157793" property="product:retailer_item_id"/><meta content="None" property="product:custom_label_0"/><meta content="recruiting" property="product:custom_label_1"/><meta content="False" property="product:custom_label_2"/><link href="https://www.wishket.com/project/157793/" rel="canonical"/><link href="https://www.wishket.com/project/feed/" rel="alternate" title="위시켓 » 피드" type="application/rss+xml"/><script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "위시켓",
+      "alternateName" : "Wishket",
+      "url" : "https://www.wishket.com/",
+      "inLanguage" : "ko-KR"
+    }
+  </script><meta content="172b2b1927aceaac9b686d648cda3fb3a77fcb6f" name="naver-site-verification"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta content="Wishket Inc,." name="author"/><meta content="k6UITCIVaYG0YtRsN8g4GF2T4qg7Z3M6JD2mLJte_n4" name="google-site-verification"/><meta content="ca-pub-9638585542349332" name="google-adsense-account"/><title>PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발 · 위시켓(Wishket) - 프로젝트</title><script>(function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NBHDMPB');</script><script src="https://www.googleoptimize.com/optimize.js?id=OPT-KWCTZK3"></script><script src="/static/renewal/js/json2.min.js"></script><link href="/static/renewal/thirdparty/fontawesome/css/all.min.css" rel="stylesheet"/><link href="/static/css/general/general.css?250602" rel="stylesheet"/><link href="/static/renewal/thirdparty/wishket-component/css/component.css" rel="stylesheet"/><link href="/static/css/thirdparty/facebook.css" media="all" rel="stylesheet"/><link href="/static/css/operation/operation.css" rel="stylesheet"/><link href="/static/css/project/detail/detail.css?250528" rel="stylesheet"/><link href="/static/css/project/analytics/proposals-analytics.css" rel="stylesheet"/><script src="//wcs.naver.net/wcslog.js" type="text/javascript"></script><script type="text/javascript">
+    if (typeof Promise !== "function") {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"><\/script>');
+    }
+  </script><link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon"/><link href="/static/favicon.ico" rel="icon" type="image/x-icon"/><link href="/static/touch-icon-ipad.png" rel="apple-touch-icon" sizes="76x76"/><link href="/static/touch-icon-iphone-retina.png" rel="apple-touch-icon" sizes="120x120"/><link href="/static/touch-icon-ipad-retina.png" rel="apple-touch-icon" sizes="152x152"/><script src="/static/renewal/js/jquery.min.js" type="text/javascript"></script><script src="/static/renewal/js/wishket_utility.js" type="text/javascript"></script><script src="/static/renewal/js/wishket_component.js?230926" type="text/javascript"></script><script src="/static/renewal/js/moment.min.js" type="text/javascript"></script><script crossorigin="anonymous" integrity="sha384-davt05dZyy9wSVcYU+nxmOaNugUmN7v0WYFUlbE6d6kVDbYxqWKzJXY7ZM04YbJf" src="https://browser.sentry-cdn.com/7.8.0/bundle.tracing.min.js"></script><script src="/static/renewal/js/component/wishket-multiselect.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/select.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/input.js?250205" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/radiocheck.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/toggle.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/tooltip.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/modal.js" type="text/javascript"></script><script src="/static/renewal/thirdparty/wishket-component/js/autocomplete.js?220914" type="text/javascript"></script><script src="/static/renewal/js/lodash-4.17.15.min.js" type="text/javascript"></script><link href="https://dev.visualwebsiteoptimizer.com" rel="preconnect"/><script data-cfasync="false" id="vwoCode" type="text/javascript">
+    window._vwo_code ||
+    (function () {
+    var w=window,
+    d=document;
+    var account_id=1158293,
+    version=2.2,
+    settings_tolerance=2000,
+    hide_element='body',
+    hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important';
+    /* DO NOT EDIT BELOW THIS LINE */
+    if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')||w._vwo_code)return;try{var e=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=e&&'object'==typeof e?e:{}}catch(e){}function r(t){try{return decodeURIComponent(t)}catch(e){return t}}var s=function(){var e={combination:[],combinationChoose:[],split:[],exclude:[],uuid:null,consent:null,optOut:null},t=d.cookie||'';if(!t)return e;for(var n,i,o=/(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g;null!==(n=o.exec(t));)try{n[1]?e.combination.push({id:n[2],value:r(n[3])}):n[4]?e.combinationChoose.push({id:n[5],value:r(n[6])}):n[7]?e.split.push({id:n[8],value:r(n[9])}):n[10]?e.exclude.push({id:n[11]}):n[12]?e.optOut=r(n[13]):n[14]?e.optOut=!0:n[15]?e.uuid=r(n[16]):n[17]&&(i=r(n[18]),e.consent=i&&3<=i.length?i.substring(0,3):null)}catch(e){}return e}();function i(){var e=function(){if(w.VWO&&Array.isArray(w.VWO))for(var e=0;e<w.VWO.length;e++){var t=w.VWO[e];if(Array.isArray(t)&&('setVisitorId'===t[0]||'setSessionId'===t[0]))return!0}return!1}(),t='a='+account_id+'&u='+encodeURIComponent(w._vis_opt_url||d.URL)+'&vn='+version+'&ph=1'+('undefined'!=typeof platform?'&p='+platform:'')+'&st='+w.performance.now();e||((n=function(){var e,t=[],n={},i=w.VWO&&w.VWO.appliedCampaigns||{};for(e in i){var o=i[e]&&i[e].v;o&&(t.push(e+'-'+o+'-1'),n[e]=!0)}if(s&&s.combination)for(var r=0;r<s.combination.length;r++){var a=s.combination[r];n[a.id]||t.push(a.id+'-'+a.value)}return t.join('|')}())&&(t+='&c='+n),(n=function(){var e=[],t={};if(s&&s.combinationChoose)for(var n=0;n<s.combinationChoose.length;n++){var i=s.combinationChoose[n];e.push(i.id+'-'+i.value),t[i.id]=!0}if(s&&s.split)for(var o=0;o<s.split.length;o++)t[(i=s.split[o]).id]||e.push(i.id+'-'+i.value);return e.join('|')}())&&(t+='&cc='+n),(n=function(){var e={},t=[];if(w.VWO&&Array.isArray(w.VWO))for(var n=0;n<w.VWO.length;n++){var i=w.VWO[n];if(Array.isArray(i)&&'setVariation'===i[0]&&i[1]&&Array.isArray(i[1]))for(var o=0;o<i[1].length;o++){var r,a=i[1][o];a&&'object'==typeof a&&(r=a.e,a=a.v,r&&a&&(e[r]=a))}}for(r in e)t.push(r+'-'+e[r]);return t.join('|')}())&&(t+='&sv='+n)),s&&s.optOut&&(t+='&o='+s.optOut);var n=function(){var e=[],t={};if(s&&s.exclude)for(var n=0;n<s.exclude.length;n++){var i=s.exclude[n];t[i.id]||(e.push(i.id),t[i.id]=!0)}return e.join('|')}();return n&&(t+='&e='+n),s&&s.uuid&&(t+='&id='+s.uuid),s&&s.consent&&(t+='&consent='+s.consent),w.name&&-1<w.name.indexOf('_vis_preview')&&(t+='&pM=true'),w.VWO&&w.VWO.ed&&(t+='&ed='+w.VWO.ed),t}code={nonce:v&&v.nonce,library_tolerance:function(){return'undefined'!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':'string'==typeof cc.hE?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){var t;f||(f=!0,(t=d.getElementById('_vis_opt_path_hides'))&&t.parentNode.removeChild(t),e&&((new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e))},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript',e.src?t.src=e.src:t.text=e.text,v&&t.setAttribute('nonce',v.nonce),d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){t=t||{};var n=new XMLHttpRequest;n.open('GET',e,!0),n.withCredentials=!t.dSC,n.responseType=t.responseType||'text',n.onload=function(){if(t.onloadCb)return t.onloadCb(n,e);200===n.status?_vwo_code.addScript({text:n.responseText}):_vwo_code.finish('&e=loading_failure:'+e)},n.onerror=function(){if(t.onerrorCb)return t.onerrorCb(e);_vwo_code.finish('&e=loading_failure:'+e)},n.send()},init:function(){var e,t=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish()},t),'body'!==this.hide_element()?(n=d.createElement('style'),e=(t=this.hide_element())?t+this.hide_element_style():'',t=d.getElementsByTagName('head')[0],n.setAttribute('id','_vis_opt_path_hides'),v&&n.setAttribute('nonce',v.nonce),n.setAttribute('type','text/css'),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(d.createTextNode(e)),t.appendChild(n)):(n=d.getElementsByTagName('head')[0],(e=d.createElement('div')).style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;',e.setAttribute('id','_vis_opt_path_hides'),e.classList.add('_vis_hide_layer'),n.parentNode.insertBefore(e,n.nextSibling));var n='https://dev.visualwebsiteoptimizer.com/j.php?'+i();-1!==w.location.search.indexOf('_vwo_xhr')?this.addScript({src:n}):this.load(n+'&x=true',{l:1})}};w._vwo_code=code;code.init();})();
+    </script><script src="/static/js/wishket_guide.js" type="text/javascript"></script><script type="text/javascript">
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+</script><script>
+  mixpanel.init("6219ed30d4fc1112d125847a66534fa4", { debug: false, track_pageview: true, persistence: 'localStorage' });
+  
+    mixpanel.identify("233574");
+    mixpanel.people.set({
+      "$name": "spacecl",
+      "Signup date": "2023년 3월 24일 4:11:45 오후",
+      "$email": "admin@spacecl.com",
+      
+        "Usage": "partners",
+        "Company Name": "스페이스씨엘",
+      
+    });
+  
+</script><script src="/static/thirdparty/modern/type_two/plugins/bootstrap/js/bootstrap.min.js"></script><script src="/static/card_admin/js/jquery.cookie.js"></script></head><body class="project-view"><noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NBHDMPB" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--[if lte IE 9]><div style="background-color: #fcf8e3; color: #fff; width: 100%; height: 121px; top: 0; padding-top: 0; border-bottom: 2px solid #ffc200;"> <div style="margin-left: auto; margin-right: auto; min-width: 1080px; *width: 1080px; display: table; padding-bottom: 23px; padding-top: 23px;"> <img style="float:left; margin-left: 15px; margin-right: 25px;" src="/static/img/ie_shield.png"> <div style="color: #333;"> <p style="margin: 4px 0 7px; *margin-top: 8px; *padding-top: 8px; line-height: 1.0;">최신 브라우저로 업그레이드하여 더 원활하게 위시켓을 이용해 보세요.</p> <p style="margin: 0 0 12px; line-height: 1.0; font-weight: bold;">브라우저가 최신 버전이 아닐 경우, 위시켓 웹사이트가 정상 작동하지 않을 수 있습니다.</p> <p style=" line-height: 1.0;">최신 버전의 <a target="_blank" href="https://support.microsoft.com/ko-kr/help/17621/internet-explorer-downloads">Internet Explorer</a> 또는 <a target="_blank" href="https://www.google.com/chrome/">Chrome</a>을 다운로드하세요.</p> </div> </div> </div><![endif]--><div class="term-preference-register-modal"><meta content="TFGGEL2DZ3Yv3lRcTFeffO0Rsga53fmruAD8yAOihJQNIJVmSvnEYGKuUihtDR1f" name="csrf-token"/><div class="term-modal"><div class="manager-profile-container"><img class="manager-profile" src="/static/renewal/img/profile/manager_sumin.png" srcset="/static/renewal/img/profile/manager_sumin.png 1x, /static/renewal/img/profile/manager_sumin@2x.png 2x,/static/renewal/img/profile/manager_sumin@3x.png 3x"/></div><div class="manager-greeting subtitle-2-medium text900 mb8">안녕하세요.<br/>담당 매니저 김수민입니다.</div><div class="help-text body-2 text900 mb24">기간제(상주) 프로젝트 희망 근무 시작일을<br/>등록해 주시면, 파트너님의 일정에 맞는<br/>적합한 프로젝트를 추천해 드려요.</div><div class="form date-input-form"><input class="partner-input smart-matching-input mini-string-input calendar-input body-2 mb24" data-toggle="datepicker_" id="date_can_get_in_input" name="date_can_get_in" placeholder="년.월.일.부터 근무 시작 가능" readonly="" style="width: 256px;" type="text"/><div class="form-center-actions"><button class="submit-btn body-2" disabled="" type="submit">희망 근무 시작일 등록</button></div></div></div></div><script defer="" src="/static/renewal/js/air-datepicker.js"></script><link href="/static/css/thirdparty/air-datepicker.css" rel="stylesheet"/><script>
+  $(document).ready(function () {
+    const startDate = new Date();
+    $.createDatePicker('#date_can_get_in_input', {
+      startDate: startDate,
+      minDate: 0,
+      maxDate: 1028,
+      theme: 'partner',
+      dateFormat: 'yyyy.mm.dd. 부터 근무 시작 가능'
+    });
+    $('input[name="date_can_get_in"]').on('change', function () {
+      const date_can_get_in = $('*[name="date_can_get_in"]');
+      if (date_can_get_in) {
+        $('button[type="submit"]').prop('disabled', false);
+      } else {
+        $('button[type="submit"]').prop('disabled', true);
+      }
+    })
+    $('.submit-btn').on('click', function(event) {
+      const csrfToken = $('meta[name=csrf-token]').attr('content');
+      event.preventDefault();
+      if ($('input[name="date_can_get_in"]').length > 0) {
+        const date_can_get_in = $('*[name="date_can_get_in"]').val();
+        $.ajax({
+          type: 'POST',
+          url: `/partners/date_can_get_in_update/`,
+          data: {
+            date_can_get_in: date_can_get_in,
+          },
+          headers: {
+            'X-CSRFToken': csrfToken,
+          },
+          success: function() {
+            $('.term-preference-register-modal').remove();
+            $('#date_can_get_in_profile_header').load(location.href + ' #date_can_get_in_profile_header>');
+          },
+          error: function(msg) {
+            alert(msg.responseJSON.error);
+            $('.term-preference-register-modal').remove();
+          }
+        })
+      }
+    })
+  });
+  </script><header class="header"><section class="base-nav-partner-renewal"><div class="header-service-nav"><div class="container"><div class="btn-service-link wishket" onclick="location.href='https://wishket.com/'"><img src="/static/renewal/img/global/gnb_wishket.svg"/><div class="service-name caption-1">위시켓</div></div><div class="divider"></div><div class="btn-service-link yozmit" onclick="location.href='https://yozm.wishket.com/'"><img src="/static/renewal/img/global/gnb_yozmit.svg"/><div class="service-name text700 caption-1">요즘IT</div></div><div class="divider"></div><div class="btn-service-link aidp" onclick="location.href='https://ax.ai-delivery.work/'"><img src="/static/renewal/img/global/gnb_aidp.svg"/><div class="service-name text700 caption-1">AIDP - AX</div></div><div class="divider"></div><div class="btn-service-link rise" onclick="location.href='https://rise.ai-delivery.work/'"><img height="14" src="/static/renewal/img/global/gnb_rise.svg" width="14"/><div class="service-name text700 caption-1">Rise ERP</div></div></div></div><div class="container"><a href="/"><div class="nav-logo-wrapper"><div class="nav-logo"></div></div></a><div class="left-nav"><a href="/project/#clear"><div class="left-nav-menu pr-12 body-2 text900">프로젝트 찾기<div class="img-container"><img src="/static/renewal/img/global/Arrow.png" srcset="/static/renewal/img/global/Arrow.png 1x, /static/renewal/img/global/Arrow@2x.png 2x,/static/renewal/img/global/Arrow@3x.png 3x"/></div></div></a> <a href="/partners/#clear"><div class="left-nav-menu body-2 text900">파트너스 찾기</div></a> <a href="/customer-support/partner/use-guide"><div class="left-nav-menu pr-12 body-2 text900">이용방법<div class="img-container"><img src="/static/renewal/img/global/Arrow.png" srcset="/static/renewal/img/global/Arrow.png 1x, /static/renewal/img/global/Arrow@2x.png 2x,/static/renewal/img/global/Arrow@3x.png 3x"/></div></div></a> <a href="/partners/wishket-portfolio/"><div class="left-nav-menu pr-12 body-2 text900">포트폴리오<div class="img-container"><img src="/static/renewal/img/global/Arrow.png" srcset="/static/renewal/img/global/Arrow.png 1x, /static/renewal/img/global/Arrow@2x.png 2x,/static/renewal/img/global/Arrow@3x.png 3x"/></div></div></a><div class="nav-divider"></div><a href="/store/wishket-packages/"><div class="left-nav-menu pr-12 body-2 text900">비즈니스 솔루션<div class="img-container"><img src="/static/renewal/img/global/new-sign.png" srcset="/static/renewal/img/global/new-sign.png 1x, /static/renewal/img/global/new-sign@2x.png 2x,/static/renewal/img/global/new-sign@3x.png 3x"/><img src="/static/renewal/img/global/Arrow.png" srcset="/static/renewal/img/global/Arrow.png 1x, /static/renewal/img/global/Arrow@2x.png 2x,/static/renewal/img/global/Arrow@3x.png 3x"/></div></div></a></div><div class="right-nav"><a href="/partners/p/spacecl/"><div class="right-nav-menu body-2 text900">내 프로필</div></a><div class="nav-divider"></div><div class="my-project-container"><div class="right-nav-menu body-2 text900">내 프로젝트 관리<div class="img-container"><img src="/static/renewal/img/global/Arrow.png" srcset="/static/renewal/img/global/Arrow.png 1x, /static/renewal/img/global/Arrow@2x.png 2x,/static/renewal/img/global/Arrow@3x.png 3x"/></div><div class="my-project-dropdown"><div class="before-apply"><a href="/partners/manage/interest/"><div class="drop-down-menu-1 body-2 text900">관심 프로젝트</div></a> <a href="/partners/manage/apply_request/"><div class="drop-down-menu-1 body-2 text900">지원 요청</div></a></div><div class="divider"></div><div class="my-project"><div class="sub-headline caption-2 text400">내 프로젝트</div><a href="/partners/manage/proposal/"><div class="drop-down-menu-2"><img src="/static/renewal/img/global/process-bar-1.png" srcset="/static/renewal/img/global/process-bar-1.png 1x, /static/renewal/img/global/process-bar-1@2x.png 2x,/static/renewal/img/global/process-bar-1@3x.png 3x"/><div class="cap body-2 text900">지원 내역</div></div></a> <a href="/partners/manage/meeting/"><div class="drop-down-menu-2"><img src="/static/renewal/img/global/process-bar-2.png" srcset="/static/renewal/img/global/process-bar-2.png 1x, /static/renewal/img/global/process-bar-2@2x.png 2x,/static/renewal/img/global/process-bar-2@3x.png 3x"/><div class="cap body-2 text900">미팅</div></div></a> <a href="/partners/manage/current/"><div class="drop-down-menu-2"><img src="/static/renewal/img/global/process-bar-2.png" srcset="/static/renewal/img/global/process-bar-2.png 1x, /static/renewal/img/global/process-bar-2@2x.png 2x,/static/renewal/img/global/process-bar-2@3x.png 3x"/><div class="cap body-2 text900">진행 중인 프로젝트</div></div></a> <a href="/partners/manage/past/"><div class="drop-down-menu-2"><img src="/static/renewal/img/global/process-bar-3.png" srcset="/static/renewal/img/global/process-bar-3.png 1x, /static/renewal/img/global/process-bar-3@2x.png 2x,/static/renewal/img/global/process-bar-3@3x.png 3x"/><div class="cap body-2 text900">완료한 프로젝트</div></div></a></div></div></div></div><a href="/accounts/notifications/"><div class="noti-bell-container"><img class="noti-bell" src="/static/renewal/img/global/noti-bell.png" srcset="/static/renewal/img/global/noti-bell.png 1x, /static/renewal/img/global/noti-bell@2x.png 2x,/static/renewal/img/global/noti-bell@3x.png 3x"/></div></a><div class="profile-img-container"><img alt="spacecl사진" class="user-img" src="https://cdn.wishket.com/profiles/233574_20230417_83f6956471d52be9.png"/><div class="profile-dropdown"><div class="section-1"><div class="user-profile" onclick="show_img_edit_modal()"><img alt="spacecl사진" class="user-img" src="https://cdn.wishket.com/profiles/233574_20230417_83f6956471d52be9.png"/><div class="edit-profile-img-icon"></div></div><div class="user-info"><div class="body-2-medium text900 mb4">spacecl</div><div class="body-3 text600 email-info">admin@spacecl.com</div></div></div><div class="section-2"><a href="/mywishket/partners/"><div class="section-2-btn body-2 text600">마이위시켓</div></a> <a href="/partners/p/spacecl/info/update/"><div class="section-2-btn green body-2 text600">프로필 관리</div></a></div><div class="divider"></div><a href="/accounts/settings/profile/"><div class="drop-down-menu body-2 text900">파트너 정보</div></a> <a href="/store/myhistory/"><div class="drop-down-menu body-2 text900">마이스토어</div></a><div class="divider"></div><a href="https://auth.wishket.com/"><div class="drop-down-menu gray body-2 text600">계정 설정</div></a> <a href="https://auth.wishket.com/logout?next=/"><div class="drop-down-menu gray body-2 text600">로그아웃</div></a></div></div></div></div><div class="dropdown-nav-container"><div class="dropdown-nav"><div class="dropdown-menu-container"><div class="dropdown-menu-list" style="width: 109px;"><div class="dropdown-menu-item"></div></div><div class="dropdown-menu-list" style="width: 128px;"><a class="dropdown-menu-item" href="/project/#clear">프로젝트 찾기</a> <a class="dropdown-menu-item" href="/project/similar-case-search/">유사사례 검색 AI</a></div><div class="dropdown-menu-list" style="width: 112px;"><div class="dropdown-menu-item"></div></div><div class="dropdown-menu-list" style="width: 98px;"><a class="dropdown-menu-item" href="/customer-support/client/use-guide">이용방법</a> <a class="dropdown-menu-item" href="/customer-support/partner/grade/">파트너 등급</a> <a class="dropdown-menu-item" href="/customer-support/price/">이용요금</a> <a class="dropdown-menu-item" href="/customer-support/client/">고객센터</a></div><div class="dropdown-menu-list" style="width: 118px;"><a class="dropdown-menu-item" href="/partners/wishket-portfolio/">포트폴리오</a> <a class="dropdown-menu-item" href="/postscript/">이용후기</a></div><div class="dropdown-menu-list" style="width: 110px;"><a class="dropdown-menu-item" href="/store/wishket-packages/">솔루션 마켓</a> <a class="dropdown-menu-item" href="/store/">스토어</a></div></div><div class="dropdown-banner partners"><div class="dropdown-banner-subtitle body-3 text500">프로필을 완성하고</div><div class="dropdown-banner-title body-1-medium text700" style="line-height: 26px;">더 많은 프로젝트를<br/>수주받아보세요</div><a class="dropdown-banner-link body-3" href="/partners/p/spacecl/">내 프로필 입력하기<svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 11L8.99844 7L5.00078 3" stroke="#3BA3C7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a><img alt="광고 배너" src="/static/renewal/img/global/dropdown-banner-2.svg"/></div></div></div></section></header><a class="advertisement" id="nav_advertisement"></a><div class="gaia"><div class="project-detail-view"><div class="container"><div class="project-detail-nav"><div class="container"><div class="project-detail-nav-bar"><div class="project-detail-nav-item"><a class="body-2 text600" href="#info">개요</a></div><div class="project-detail-nav-item"><a class="body-2 text600" href="#description">업무 내용</a></div><div class="project-detail-nav-item"><a class="body-2 text600" href="#recruit_condition">모집 요건</a></div><div class="project-detail-nav-item"><a class="body-2 text600" href="#pre_question">지원 전 질문</a></div><div class="project-detail-nav-item"><a class="body-2 text600" href="#meeting">미팅</a></div><div class="project-detail-nav-item"><a class="body-2 text600" href="#comment">프로젝트 문의</a></div></div></div></div><section class="detail-section"><div class="project-section"><a id="info" name="info"></a><div class="project-content-layer mb24"><div class="project-content-title"><div class="status-guide mb8"><div class="project-status-label recruiting-status"><div style="display: flex;"><div class="status-mark private-mark">프라이빗 매칭<div class="status-mark-tooltip"><img class="tooltip-arrow" src="/static/renewal/img/project/search/tooltip_arrow.svg"/>PRIME·PRO·BOOST 파트너에게만<br/>공개되는 비공개 프로젝트입니다.</div></div><div class="status-mark recruiting-mark">모집 중</div><div class="status-mark new-mark">NEW</div><div class="status-mark project-type-mark with-img"><img class="project-type-mark-img" src="/static/renewal/img/project/search/task-based-icon.svg"/>외주</div></div><p class="project-recruit-guide body-3 text300">등록 일자 2026.08.20.</p></div></div><h1 class="subtitle-1-medium mb8 text900">PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발</h1><div class="project-classification mb24"><p class="project-category body-2 text400"><span class="category-wrapper body-2 text400">개발</span> <span class="category-divider text200"></span></p><p class="project-category body-2 text400"><span class="category-wrapper body-2 text400">기타</span></p><p class="project-category body-2 text400"><span class="category-divider text200"></span> <span class="category-wrapper body-2 text400">AI 모델 구축,</span> <span class="category-wrapper body-2 text400">머신러닝ㆍ딥러닝,</span> <span class="category-wrapper body-2 text400">기타(AIㆍ머신러닝)</span></p></div></div><div class="layer-divider mb24"></div><div class="project-content-condition"><div class="project-important-condition task_based"><div class="project-condition-box project-budget"><div class="project-condition-data-wrapper"><div class="condition-box-title"><img class="condition-box-icon" src="/static/mobile/img/project/detail/icon_project_features_1.png" srcset="/static/mobile/img/project/detail/icon_project_features_1.png 1x, /static/mobile/img/project/detail/icon_project_features_1@2x.png 2x,/static/mobile/img/project/detail/icon_project_features_1@3x.png 3x"/><p class="condition-box-name body-2 text500">예상 금액</p></div><p class="project-condition-data body-1-medium text900">협의 후 결정</p></div></div><div class="project-condition-box project-term"><div class="project-condition-data-wrapper"><div class="condition-box-title"><img class="condition-box-icon" src="/static/mobile/img/project/detail/icon_project_features_2.png" srcset="/static/mobile/img/project/detail/icon_project_features_2.png 1x, /static/mobile/img/project/detail/icon_project_features_2@2x.png 2x,/static/mobile/img/project/detail/icon_project_features_2@3x.png 3x"/><p class="condition-box-name body-2 text500">예상 기간</p></div><p class="project-condition-data body-1-medium text900">390일</p></div></div><div class="project-condition-box project-applicant"><div class="project-condition-data-wrapper"><div class="condition-box-title"><img class="condition-box-icon" src="/static/mobile/img/project/detail/icon_project_features_3.png" srcset="/static/mobile/img/project/detail/icon_project_features_3.png 1x, /static/mobile/img/project/detail/icon_project_features_3@2x.png 2x,/static/mobile/img/project/detail/icon_project_features_3@3x.png 3x"/><p class="condition-box-name body-2 text500">지원자 수</p></div><p class="project-condition-data body-1-medium text900">비공개</p></div></div></div><div class="mb16"></div><div id="proposals_analytics_section"></div><script>
+    
+    $(document).ready(function() {
+        refreshPrice();
+    });
+
+    $(document).on('click', '.btn-refresh-price', function() {
+        if(!$(this).hasClass('loading')) {
+            $(this).addClass('loading');
+            setTimeout(function() {
+                refreshPrice();
+            }, 1000);
+        }
+    });
+    function refreshPrice() {
+        $.ajax({
+            url: '/project/api/157793/analytics/',
+            type: 'GET',
+            success: function(response) {
+                $('#proposals_analytics_section').html(response.data);
+                $(this).removeClass('loading').html('');
+            }
+        });
+    }  
+    
+</script><div class="mb32"></div><div class="project-detail-condition task_based mb40"><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">모집 마감일</p></div><p class="condition-data body-2 text900">2026년 08월 27일<img class="class-splitter" src="/static/renewal/img/project/detail/icon_project_category_dot_14.png"/><span class="condition-accent body-3">마감 6일 13시간 전</span></p></div><div style="position: relative"><div class="divide task-based"><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">예상 시작일</p></div><p class="condition-data body-2 text900">계약 체결 이후, 즉시 시작</p></div></div><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">진행 분류</p></div><p class="condition-data body-2 text900">신규 프로젝트를 진행하려 합니다.</p></div><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">기획 상태</p></div><p class="condition-data body-2 text900">필요한 내용을 간단히 정리한 상태</p></div><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">프로젝트 경험</p></div><p class="condition-data body-2 text900">IT 프로젝트 관리 경험 있음</p></div><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">협업 예정 인력</p></div><p class="condition-data body-2 text900">WEB 시스템 개발팀</p></div><div class="project-detail-condition-row"><div class="condition-title"><span class="condition-icon"></span><p class="condition-label body-2 text500">우선 순위</p></div><div class="condition-data-split flex-box"><span class="condition-data body-2 text900">[1순위] 산출물 완성도</span> <span class="condition-data body-2 text900">[2순위] 일정 준수</span> <span class="condition-data body-2 text900">[3순위] 금액</span></div></div></div></div></div><a id="description" name="description"></a><div class="layer-divider mt40mb32"></div><div class="project-description"><h2 class="subtitle-2-medium text900 mb16">업무 내용</h2><div class="project-description-box body-2 mb8 text900">[프로젝트 개요]<br/>PCS-ESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하고 위험도를 예측하는 AI 시스템을 개발합니다. 임계값 초과 후 경보하는 사후 대응 방식이 아니라, 센서 간 상관관계와 변화 추세를 분석해 사고 이전 단계에서 선제적으로 예지진단하는 것이 목표입니다. 화면(UI)은 본 과업에 포함되지 않으며, AI 판정 결과를 외부 시스템이 사용할 수 있도록 인터페이스 형태로 제공합니다.<br/><br/>[프로젝트 배경 및 목표]<br/>- 절연저항, 부분방전(TEV), 아크, 누설전류, 온도, 상대습도 6종 센서가 서로 다른 주기로 데이터를 생성하며, 이를 단일 모델에서 통합 분석해야 합니다.<br/>- 정상(0)·주의(1)·위험(2) 3단계 라벨을 활용한 지도학습 기반 다변량 분류·예측 모델을 개발하고, 학습 라벨 3단계를 운영정책의 4단계 표시등급으로 매핑합니다.<br/>- AI 판정 결과는 WEB 통합 모니터링 시스템으로 전달되며, 이상이 심화되면 PCS-ESS 보호연동 장치로 경보·보호동작 트리거 신호를 출력합니다.<br/>- 검출 정확도, 조기 감지시간, 보호연동 응답시간에 대한 정량 목표가 설정되어 있으며, GS 인증 및 공인시험 대응이 과업에 포함됩니다.<br/><br/>[과업 범위]<br/>1. 수행 범위 (요약)<br/>- 기획: AI 요구사항정의서, 성능 기준선 및 시험조건, 시스템 아키텍처 설계서, 연계 인터페이스 명세, 데이터 수집·라벨링 방향 제안서<br/>- 개발: 데이터 수집·정제·특징추출 파이프라인, 학습·검증·추론 시스템, 실시간 추론 서비스, 보호연동 신호 출력, 외부 시스템 연동 인터페이스, 모델 운영·재학습 자동화<br/>- 연구: 이상징후 검출·분류 모델, 위험도 산정 알고리즘, 추세 기반 조기탐지 알고리즘, 성능 목표 도달을 위한 반복 개선<br/>- 검수: 통합시험 시나리오 수립 및 수행, 성능지표 검증·재시험, GS 인증 및 공인시험 대응자료 작성, 산출물 이중 백업<br/>발주기관 및 타 수행 주체가 담당하는 범위 <br/><br/>2. 상세 기능 요구사항 (첨부된 과업지시서, 개발계획서 필독)<br/>① 요구사항 정의 및 데이터 수집 체계 설계<br/>- 예측 대상, 판정 단위, 운영 모드, 경보 정책, 성능 산식 및 시험조건을 포함한 AI 요구사항 기준선 정의<br/>- 학습·추론 환경을 포함한 AI 시스템 아키텍처 제안서 및 상세설계서 작성<br/>- 6종 센서의 항목명·단위·측정범위·수집주기·결측처리 기준을 정의한 센서 맵 및 데이터 사전<br/>- 센서-게이트웨이-전송구간-클라우드 DB 수집 구조, 시간동기화, 장치·채널 식별체계, 재전송 및 중복방지 방식 설계<br/>- 데이터 품질관리 규칙 및 품질등급·검수 샘플링·수집률 산정 기준, 조건별 수집 시나리오, 라벨링 가이드, 원천/가공/학습 데이터 분리 저장·보안·백업 체계<br/>② 데이터 처리 파이프라인<br/>- 멀티센서 시계열 데이터 수신 및 적재, 서로 다른 수집주기의 시간동기화 및 중복 제거<br/>- 결측·이상값·센서오류·단위불일치·시간역전 자동 검출 및 정제 처리<br/>- 부분방전·아크 등 이벤트성 신호의 1초 단위 피크·카운트·에너지·지속시간 특징값 추출<br/>- 센서 간 상관관계, 변화율, 누적 패턴을 반영한 시계열 윈도우링 및 특징벡터 생성<br/>- 학습데이터셋 버전관리 및 시간축 기준 Train/Validation/Test 분리<br/>③ AI 이상징후 검출·진단 모델 개발<br/>- 규칙기반 기준모델과 통계·머신러닝·시계열 모델 후보를 비교하고 정확도·조기탐지·오탐률·추론지연을 함께 고려한 최종 구조 선정<br/>- 멀티모달 센서 시계열 통합 학습 기반 다변량 분류·예측 모델 개발<br/>- 센서별 상태와 센서 간 상관관계·변화율·누적패턴을 반영한 위험도 확률 및 상태 산출<br/>- 판독 구간의 추세를 분석해 사고 이전 단계를 예측하는 조기탐지 알고리즘<br/>- 혼동행렬 및 오탐·미탐 분석에 기반한 성능 목표 도달 반복 개선<br/>④ 실시간 추론 및 시스템 연계<br/>- 모델 버전, 입력 스키마, 타임아웃, 장애 시 대체판정, 로그 및 재현정보를 포함하는 실시간 추론 서비스<br/>- AI 학습 라벨 3단계를 운영정책 4단계로 매핑하는 임계값 및 예외규칙 적용<br/>- 이상 심화 시 보호연동 장치로 경보·보호동작 트리거 신호 출력<br/>- WEB 시스템 연동 인터페이스를 통한 판정등급, 위험도, 예지메시지, 모델 버전, 판정근거 제공<br/>- 센서 게이트웨이, 보호연동 장치, WEB 시스템 간 데이터·제어 인터페이스 명세 작성 및 추론 이력·판정근거 저장·조회<br/>⑤ 모델 운영 및 성능 관리<br/>- 학습 실행, 실험 추적, 모델 레지스트리, 재학습 트리거를 포함한 모델 학습 자동화 파이프라인<br/>- 데이터 및 모델 드리프트 모니터링과 재학습 절차 수립<br/>- 정밀도·재현율·F1, 오탐·미탐, 조기탐지시간을 산출하는 성능평가 자동화<br/>⑥ 성능 검증 및 인증 지원<br/>- 통신지연, 데이터누락, 센서고장, 모델오류, 서버장애, 복구 상황을 포함한 통합시험 시나리오 수립 및 결과 증적<br/>- 시험계획서, 시험케이스, 테스트데이터, 실행로그, 결함·조치 이력 작성<br/>- 제품설명서, 기능명세서, 아키텍처·인터페이스·DB 설계서, 매뉴얼 및 요구사항 추적표 작성<br/>- 인증기관·공인시험기관 질의 대응, 재현환경 구성, 결함 수정·재빌드·재시험 지원<br/>- 전체 소스, 모델 파일, 설치본, 시험증적의 이중 백업 및 복구시험, 월간 진도보고 및 단계별 중간·최종보고<br/><br/>[기술 스택]<br/>- 언어·프레임워크: Python 기반 개발을 전제로 하며, 학습 프레임워크(PyTorch, TensorFlow 등)와 모델 계열(트리계열, 시계열 딥러닝 등)은 성능 목표 달성에 적합한 구성으로 제안 요청<br/>- 추론 서비스: REST API 형태의 실시간 추론 서비스 (FastAPI, Flask 등 자유 제안)<br/>- 데이터 저장: 시계열 데이터 저장소 및 학습데이터 버전관리 방식 제안 요청<br/>- 배포·운영: 컨테이너 기반 배포(Docker 등), 모델·소스·설정 버전관리<br/>- 학습 인프라: GPU 자원 구성안 및 폐쇄망 운영 가능 여부를 포함한 제안 요청<br/><br/>[지원 자격 및 우대 사항]<br/>1. 지원 자격<br/>- 다변량 시계열 데이터 기반 이상탐지 또는 예측 모델 개발 및 상용 적용 경험<br/>- 학습·검증·추론 파이프라인 구축 및 실시간 추론 서비스 운영 경험<br/>- 모델 버전관리, 재학습 자동화, 성능 모니터링 등 MLOps 구축 경험<br/>- 정량 성능지표가 계약 조건으로 설정된 프로젝트의 수행 및 검증 경험<br/>2. 우대 사항<br/>- 전력·에너지 설비, ESS/PCS, 배전반 등 산업 설비 데이터 분석 경험<br/>- 센서 게이트웨이 또는 산업용 제어·보호 장치와의 인터페이스 연동 경험<br/>- GS 인증 또는 공인시험기관 시험 대응 및 관련 문서 작성 경험<br/>- 폐쇄망 환경에서의 AI 시스템 구축 및 운영 경험<br/><br/>[산출물]<br/>- 학습·검증·추론 전체 소스코드 및 실행 환경 구성 파일<br/>- 학습된 모델 파일, 모델카드, 성능평가 및 오류분석 보고서<br/>- 데이터 수집·라벨링 방향 제안서, 요구사항정의서, 시스템 아키텍처 설계서<br/>- API 명세, DB 스키마, 연계 인터페이스 명세서<br/>- 배포 패키지, 설치·복구·롤백 절차, 운영 매뉴얼<br/>- 통합시험계획·케이스·결과, 요구사항 추적표, 결함·조치 이력, 성능 증적<br/>- GS 인증 및 공인시험 지원자료, 소스·빌드·설치·시험증적 이중 백업본<br/>- 월간 진도보고서, 단계별 중간보고서, 최종보고서<br/><br/>[유지보수]<br/>- 유지보수 범위·조건(대응 범위·기간·비용 등)은 계약 시 협의합니다. AI 모델은 운영 데이터 변화에 따라 성능이 변동하므로, 재학습 및 성능 재검증의 포함 여부를 제안서에 명시해 주시기 바랍니다.<br/><br/>[계약 관련 특이사항]<br/>- 발주처 과업 일정은 2026년 9월부터 2027년 9월까지 예정되어 있으며, 1차년도 기준모델 개발과 2차년도 고도화로 구분해 수행합니다. 단계별 수행을 제안하는 경우 단계별 견적을 병기해 주시기 바랍니다.<br/>- 학습용 데이터는 발주기관이 수집·라벨링해 제공합니다. 데이터의 제공 시점·수량·품질에 대해 제안서에서 전제한 조건을 명시해 주시기 바랍니다.<br/>- 검출 정확도, 조기 감지시간, 보호연동 응답시간에 대한 정량 목표가 설정되어 있습니다. 목표 미달 시 원인분석·보완개발·재시험의 수행 범위와 회차 조건을 견적에 명시해 주시기 바랍니다.<br/>- WEB 통합 모니터링 시스템은 별도 수행 주체가 개발합니다. 인터페이스 규격 협의 및 통합시험 참여 범위를 제안에 포함해 주시기 바랍니다.<br/>- 센서 게이트웨이 및 보호연동 장치의 통신 규격은 하드웨어 공급 주체와 협의해 확정합니다. 규격 미확정 구간에 대한 전제와 대응 방안을 제안해 주시기 바랍니다.<br/>- GPU 학습 인프라의 조달 주체와 폐쇄망 운영 요건에 따라 구성이 달라집니다. 해당 조건별 구성안과 소요 자원을 제안에 포함해 주시기 바랍니다.<br/>- GS 인증은 발주기관이 신청하며, 수행사는 대응자료 작성·기술지원·산출물 백업을 담당합니다.<br/>- 구현상 제약이나 대안이 필요한 항목이 있으면 견적서에 그 내용과 대안을 함께 명시해 주시기 바랍니다.</div><div class="project-files mb40"><h3 class="project-files-title body-2-bold mb8">참고 자료 <span class="project-files-count body-2-bold">2</span></h3><div class="project-files-box"><a href="https://www.wishket.com/w/c6ZpSXvELs"><div class="project-file-row mb4"><img class="project-file-icon" src="/static/mobile/img/project/submit/attachment_file_icon.png" srcset="/static/mobile/img/project/submit/attachment_file_icon.png 1x, /static/mobile/img/project/submit/attachment_file_icon@2x.png 2x,/static/mobile/img/project/submit/attachment_file_icon@3x.png 3x"/><p class="project-file-name body-3 text600">과업지시서_PCS-ESS_AI예측진단시스템개발.pdf</p><p class="project-file-size body-3 text400">500.34 KB</p><img class="project-file-download-icon" src="/static/mobile/img/project/detail/chip_btn_down_normal.png" srcset="/static/mobile/img/project/detail/chip_btn_down_normal.png 1x, /static/mobile/img/project/detail/chip_btn_down_normal@2x.png 2x,/static/mobile/img/project/detail/chip_btn_down_normal@3x.png 3x"/></div></a> <a href="https://www.wishket.com/w/PfYpRYqwcO"><div class="project-file-row"><img class="project-file-icon" src="/static/mobile/img/project/submit/attachment_file_icon.png" srcset="/static/mobile/img/project/submit/attachment_file_icon.png 1x, /static/mobile/img/project/submit/attachment_file_icon@2x.png 2x,/static/mobile/img/project/submit/attachment_file_icon@3x.png 3x"/><p class="project-file-name body-3 text600">PCS-ESS_AI예측진단시스템_개발계획서.pdf</p><p class="project-file-size body-3 text400">649.38 KB</p><img class="project-file-download-icon" src="/static/mobile/img/project/detail/chip_btn_down_normal.png" srcset="/static/mobile/img/project/detail/chip_btn_down_normal.png 1x, /static/mobile/img/project/detail/chip_btn_down_normal@2x.png 2x,/static/mobile/img/project/detail/chip_btn_down_normal@3x.png 3x"/></div></a></div></div></div><a id="recruit_condition" name="recruit_condition"></a><div class="layer-divider mt40mb32"></div><div class="project-recruit-condition"><h2 class="recruit-condition-title subtitle-2-medium text900 mb16">모집 요건</h2><div class="recruit-condition-detail-box mb24"><h3 class="body-2-bold text900 mb8">지원자 필수 요건</h3><div class="recruit-condition-row"><img class="recruit-condition-icon" src="/static/renewal/img/project/detail/icon_check_w.png" srcset="/static/renewal/img/project/detail/icon_check_w.png 1x, /static/renewal/img/project/detail/icon_check_w@2x.png 2x,/static/renewal/img/project/detail/icon_check_w@3x.png 3x"/><p class="recruit-condition-data body-2 text900">법인사업자 가능</p></div></div></div><a id="pre_question" name="pre_question"></a><div class="layer-divider mt40mb32"></div><div class="project-prequestion-condition"><h2 class="prequestion-condition-title subtitle-2-medium text900 mb4">사전 검증 질문</h2><p class="prequestion-condition-guide body-2 mb24">지원서 작성시 클라이언트의 질문에 답변해 주세요.</p><div class="prequestion-condition-box"><div class="prequestion-condition-row mb8"><img class="prequestion-condition-icon" src="/static/renewal/img/project/detail/icon_project_question_w.png" srcset="/static/renewal/img/project/detail/icon_project_question_w.png 1x, /static/renewal/img/project/detail/icon_project_question_w@2x.png 2x,/static/renewal/img/project/detail/icon_project_question_w@3x.png 3x"/><p class="prequestion-condition-data body-2 text900">첨부된 과업지시서, 개발계획서를 확인하셨습니까?</p></div></div></div><a id="meeting" name="meeting"></a><div class="layer-divider mt40mb32"></div><div class="project-meeting-condition" style="position: relative"><h2 class="meeting-condition-title subtitle-2-medium text900 mb16">미팅</h2><div class="meeting-condition-box"><div class="meeting-condition-row mb8"><p class="meeting-condition-title body-2 text500">사전 미팅 방식</p><p class="meeting-condition-data body-2 text900">온라인 (화상, 전화미팅 등)</p></div><div class="meeting-condition-row mb8"><p class="meeting-condition-title body-2 text500">클라이언트 위치</p><p class="meeting-condition-data body-2 text900">전라북도 전주시 덕진구</p></div><div style="clear:both;"></div></div></div></div><a id="comment" name="comment"></a><div class="project-comment-layer mb40"><p class="comment-layer-title subtitle-2-medium text900">프로젝트 문의 <span class="comment-layer-count subtitle-2-medium">2</span></p><div class="project-comment-group comment-data-box"><div class="comment-row"><p class="comment-body body-2 text600 mb4">비밀 댓글입니다.</p><div class="comment-info caption-1 text300">2026.08.20. 오후 21:45</div></div><div class="comment-row"><p class="comment-body body-2 text600 mb4">비밀 댓글입니다.</p><div class="comment-info caption-1 text300">2026.08.21. 오전 09:44</div></div><form action="." class="comment-form" method="post"><input name="csrfmiddlewaretoken" type="hidden" value="TFGGEL2DZ3Yv3lRcTFeffO0Rsga53fmruAD8yAOihJQNIJVmSvnEYGKuUihtDR1f"/><div class="comment-create-box-wrapper"><div class="flex-box comment-alert"><p class="body-3 text600">이 프로젝트가 마음에 드시나요? <span class="body-3-bold">[프로젝트 지원하기]</span> 버튼을 눌러 프로젝트에 지원하세요!</p><img alt="icon" class="close-icon" src="/static/mobile/img/component/alert/alert_icon_close.png" srcset="/static/mobile/img/component/alert/alert_icon_close.png 1x, /static/mobile/img/component/alert/alert_icon_close@2x.png 2x,/static/mobile/img/component/alert/alert_icon_close@3x.png 3x"/></div><div class="comment-create-box"><div class="comment-writer"><img class="comment-writer-img" src="https://cdn.wishket.com/profiles/233574_20230417_83f6956471d52be9.png"/><p class="comment-writer-username body-2-medium">spacecl</p></div><textarea class="comment-create-textarea theme-wishket body-2" data-monitoring-guard="" data-monitoring-warning-target="#comment-warn" name="comment_description" placeholder="프로젝트 문의를 2,000자 이내로 작성해주세요." rows="4"></textarea><div class="comment-create-guide"><p class="caption-1 mb4 comment-create-guide-warning" hidden="" id="comment-warn">· 안전한 거래를 위해 연락처 또는 회사명을 삭제해 주세요.</p><p class="caption-1 text500 mb4">· 작성한 내용은 수정 및 삭제가 불가합니다.</p><p class="caption-1 text500 mb4">· 이메일, 전화번호, 회사명, 회사 홈페이지 등 외부 연락 수단을 게시하면 해당 내용은 삭제되며, 서비스 이용이 제한될 수 있습니다.</p></div><div class="comment-create-action"><div class="secret-comment-option"><input class="theme-wishket wishket-checkbox" name="secret" type="checkbox" value="secret"/><label class="body-2 text900">비밀글</label></div><button class="btn btn-wishket btn-4-16 btn-right" type="submit">작성하기</button></div></div></div></form></div></div><h2 class="project-similar-layer-title subtitle-2-medium text900 mb16">모집 중인 다른 프로젝트</h2><div class="project-similar-layer"><div class="similar-project-card"><div class="project-unit-heading"><i class="interest-button interest-off" onclick="toggle_interest(this);" project-id="157578"><div class="tooltip-container"><p class="subtext body-3 text900">'관심 프로젝트'에 추가하기</p></div></i><div class="project-status-label recruiting-status mb12"><div class="status-mark recruiting-mark">모집 중</div></div><h3 class="project-title"><a class="subtitle-1-half-medium project-link" href="/project/157578/">채용 플랫폼 공고 상세페이지 디자인 제작</a></h3></div><div class="project-unit-body"><section class="project-unit-info"><div class="project-sub-data-wrap flex-box gap10 mb10"><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 금액</span><span class="estimated-data">2,000,000원</span></div><div class="pipe"></div><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 기간</span><span class="estimated-data">14일</span></div></div><div class="project-sub-data-wrap flex-box mb32"><p class="project-sub-data project-category-or-role body-2 text600">디자인 · 기획</p><p class="project-sub-data project-field body-2 text600">기타</p><p class="project-sub-data project-field-subcategory body-2 text600">기타</p></div><div class="project-sub-data-wrap flex-box"><div class="project-status-label recruiting-status"><div class="status-mark project-type-mark"><span>📔</span>외주</div></div><div class="divider"></div><div class="client-location-tag"><span class="client-location caption-1">서울특별시 영등포구</span></div><div class="date-tag body-3 text300"><span class="date-info body-3 text300">·  등록일자 2026.08.11.</span></div></div></section></div></div><div class="similar-project-card"><div class="project-unit-heading"><div class="project-status-label recruiting-status mb12"><div class="status-mark private-mark">프라이빗 매칭<div class="status-mark-tooltip"><img class="tooltip-arrow" src="/static/renewal/img/project/search/tooltip_arrow.svg"/>PRIME·PRO·BOOST 파트너에게만<br/>공개되는 비공개 프로젝트입니다.</div></div><div class="status-mark recruiting-mark">모집 중</div></div><h3 class="project-title"><a class="subtitle-1-half-medium project-link" href="/project/157595/">전기차 충전기 관제(CSMS) 백엔드 시스템 및 VPP 연동 API 구축</a></h3></div><div class="project-unit-body"><section class="project-unit-info"><div class="project-sub-data-wrap flex-box gap10 mb10"><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 금액</span><span class="estimated-data">45,000,000원</span></div><div class="pipe"></div><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 기간</span><span class="estimated-data">160일</span></div></div><div class="project-sub-data-wrap flex-box mb32"><p class="project-sub-data project-category-or-role body-2 text600">개발</p><p class="project-sub-data project-field body-2 text600">웹 외 2개</p><p class="project-sub-data project-field-subcategory body-2 text600">기타(IT 서비스 구축)</p></div><div class="project-sub-data-wrap flex-box"><div class="project-status-label recruiting-status"><div class="status-mark project-type-mark"><span>📔</span>외주</div></div><div class="divider"></div><div class="project-skills-info project-sub-data text600"><span class="skill-chip body-3 text600">mqtt</span><span class="skill-chip body-3 text600">WebSocket</span><span class="skill-chip body-3 text600">jpa</span><span class="skill-chip body-3 text600">Spring Boot</span><span class="skill-chip body-3 text600">PostgreSQL</span><span class="skill-chip body-3 text600">OCPP</span><span class="skill-chip body-3 text600">RDBMS</span><span class="skill-chip body-3 text600">Java</span></div><div class="client-location-tag"><span class="client-location caption-1">경기도 성남시 분당구</span></div><div class="date-tag body-3 text300"><span class="date-info body-3 text300">·  등록일자 2026.08.11.</span></div></div></section></div></div><div class="similar-project-card"><div class="project-unit-heading"><i class="interest-button interest-off" onclick="toggle_interest(this);" project-id="157641"><div class="tooltip-container"><p class="subtext body-3 text900">'관심 프로젝트'에 추가하기</p></div></i><div class="project-status-label recruiting-status mb12"><div class="status-mark recruiting-mark">모집 중</div></div><h3 class="project-title"><a class="subtitle-1-half-medium project-link" href="/project/157641/">상용 소프트웨어 수준의 코드 난독화 방법론 자문 및 코드 분석</a></h3></div><div class="project-unit-body"><section class="project-unit-info"><div class="project-sub-data-wrap flex-box gap10 mb10"><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 금액</span><span class="estimated-data">협의 후 결정</span></div><div class="pipe"></div><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 기간</span><span class="estimated-data">7일</span></div></div><div class="project-sub-data-wrap flex-box mb32"><p class="project-sub-data project-category-or-role body-2 text600">개발</p><p class="project-sub-data project-field body-2 text600">기타</p><p class="project-sub-data project-field-subcategory body-2 text600">기술 자문ㆍ가이드 외 1개</p></div><div class="project-sub-data-wrap flex-box"><div class="project-status-label recruiting-status"><div class="status-mark project-type-mark"><span>📔</span>외주</div></div><div class="divider"></div><div class="client-location-tag"><span class="client-location caption-1">해외 해외</span></div><div class="date-tag body-3 text300"><span class="date-info body-3 text300">·  등록일자 2026.08.13.</span></div></div></section></div></div><div class="similar-project-card"><div class="project-unit-heading"><div class="project-status-label recruiting-status mb12"><div class="status-mark private-mark">프라이빗 매칭<div class="status-mark-tooltip"><img class="tooltip-arrow" src="/static/renewal/img/project/search/tooltip_arrow.svg"/>PRIME·PRO·BOOST 파트너에게만<br/>공개되는 비공개 프로젝트입니다.</div></div><div class="status-mark recruiting-mark">모집 중</div></div><h3 class="project-title"><a class="subtitle-1-half-medium project-link" href="/project/157751/">복지관 이용자 통합관리 배리어프리 키오스크 프로그램 개발</a></h3></div><div class="project-unit-body"><section class="project-unit-info"><div class="project-sub-data-wrap flex-box gap10 mb10"><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 금액</span><span class="estimated-data">25,000,000원</span></div><div class="pipe"></div><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 기간</span><span class="estimated-data">60일</span></div></div><div class="project-sub-data-wrap flex-box mb32"><p class="project-sub-data project-category-or-role body-2 text600">개발 · 디자인 · 기획</p><p class="project-sub-data project-field body-2 text600">임베디드 외 1개</p><p class="project-sub-data project-field-subcategory body-2 text600">POSㆍ키오스크 외 1개</p></div><div class="project-sub-data-wrap flex-box"><div class="project-status-label recruiting-status"><div class="status-mark project-type-mark"><span>📔</span>외주</div></div><div class="divider"></div><div class="project-skills-info project-sub-data text600"><span class="skill-chip body-3 text600">C++</span><span class="skill-chip body-3 text600">voice recognition sdk</span><span class="skill-chip body-3 text600">Node.js</span><span class="skill-chip body-3 text600">JavaScript</span><span class="skill-chip body-3 text600">SQLite</span><span class="skill-chip body-3 text600">Payment Gateway Integration</span><span class="skill-chip body-3 text600">Rest api</span><span class="skill-chip body-3 text600">React</span><span class="skill-chip body-3 text600">Python</span></div><div class="client-location-tag"><span class="client-location caption-1">경기도 부천시 오정구</span></div><div class="date-tag body-3 text300"><span class="date-info body-3 text300">·  등록일자 2026.08.19.</span></div></div></section></div></div><div class="similar-project-card"><div class="project-unit-heading"><div class="project-status-label recruiting-status mb12"><div class="status-mark private-mark">프라이빗 매칭<div class="status-mark-tooltip"><img class="tooltip-arrow" src="/static/renewal/img/project/search/tooltip_arrow.svg"/>PRIME·PRO·BOOST 파트너에게만<br/>공개되는 비공개 프로젝트입니다.</div></div><div class="status-mark recruiting-mark">모집 중</div><div class="status-mark new-mark">NEW</div></div><h3 class="project-title"><a class="subtitle-1-half-medium project-link" href="/project/157783/">여행 커머스 사이트 재구축 (WordPress → Next.js)</a></h3></div><div class="project-unit-body"><section class="project-unit-info"><div class="project-sub-data-wrap flex-box gap10 mb10"><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 금액</span><span class="estimated-data">30,000,000원</span></div><div class="pipe"></div><div class="project-sub-data body-1-medium text700"><span class="body-1 text700">예상 기간</span><span class="estimated-data">120일</span></div></div><div class="project-sub-data-wrap flex-box mb32"><p class="project-sub-data project-category-or-role body-2 text600">개발</p><p class="project-sub-data project-field body-2 text600">웹 외 1개</p><p class="project-sub-data project-field-subcategory body-2 text600">자사몰 구축 외 2개</p></div><div class="project-sub-data-wrap flex-box"><div class="project-status-label recruiting-status"><div class="status-mark project-type-mark"><span>📔</span>외주</div></div><div class="divider"></div><div class="project-skills-info project-sub-data text600"><span class="skill-chip body-3 text600">TypeScript</span><span class="skill-chip body-3 text600">결제연동</span><span class="skill-chip body-3 text600">PostgreSQL</span><span class="skill-chip body-3 text600">Node.js</span><span class="skill-chip body-3 text600">woocommerce</span><span class="skill-chip body-3 text600">next.js</span><span class="skill-chip body-3 text600">React</span><span class="skill-chip body-3 text600">WordPress</span><span class="skill-chip body-3 text600">Data Migration</span></div><div class="client-location-tag"><span class="client-location caption-1">서울특별시 광진구</span></div><div class="date-tag body-3 text300"><span class="date-info body-3 text300">·  등록일자 2026.08.20.</span></div></div></section></div></div></div></div><div class="client-section-wrap"><div class="client-section"><div class="action-layer partners"><div><a class="btn btn-partner btn-8-16 btn-block mb8" href="/project/157793/proposal/apply/">프로젝트 지원하기</a><button class="btn btn-white btn-block btn-8-16 interest-button interest-off" onclick="toggle_interest(this)" project-id="157793">관심 프로젝트</button></div><div class="project-popularity-info"><div class="project-popularity-unit"><img class="project-popularity-img" src="/static/mobile/img/project/detail/post_icon_view.png" srcset="/static/mobile/img/project/detail/post_icon_view.png 1x, /static/mobile/img/project/detail/post_icon_view@2x.png 2x,/static/mobile/img/project/detail/post_icon_view@3x.png 3x" title="조회 수가 아주 높은 프로젝트 입니다."/><span class="project-popularity-value">아주 높음</span></div><div class="project-popularity-unit"><img class="project-popularity-img" src="/static/renewal/img/project/search/post-icon-comment.png" srcset="/static/renewal/img/project/search/post-icon-comment.png 1x, /static/renewal/img/project/search/post-icon-comment@2x.png 2x,/static/renewal/img/project/search/post-icon-comment@3x.png 3x" title="2개의 프로젝트 문의가 있습니다."/><span class="project-popularity-value">2</span></div></div></div><div class="client-layer"><div class="client-account-info mb12"><img class="client-account-info-img" src="/static/img/default_avatar_c.png"/><div><div class="client-account-info-base mb8" style="padding-top: 12px;"><p class="client-account-info-base-username body-2-bold">wm******</p><span class="client-account-info-base-label caption-1-medium user-type-label client-label">클라이언트</span></div><div class="client-account-info-badge"><div style="clear:both;"></div></div></div></div><p class="caption-1 text500 mb16"></p><div class="layer-divider"></div><div class="client-rating-info"><div class="client-rating-star-box"><div class="client-rating-star"><i class="rating-icon icon-ic-star-m-empty"></i> <i class="rating-icon icon-ic-star-m-empty"></i> <i class="rating-icon icon-ic-star-m-empty"></i> <i class="rating-icon icon-ic-star-m-empty"></i> <i class="rating-icon icon-ic-star-m-empty"></i></div></div><p class="client-rating-point body-2-bold text900">0.0 <span class="client-rating-count caption-1-medium text400">(0)</span></p></div><div class="layer-divider"></div><div class="client-project-info"><div class="client-project-info-row mb8"><p class="client-project-info-title body-2 text600">프로젝트 등록</p><p class="client-project-info-data body-2-medium text900">2건</p></div><div class="client-project-info-row mb8"><p class="client-project-info-title body-2 text600">계약한 프로젝트</p><p class="client-project-info-data body-2-medium text900">0건</p></div><div class="client-project-info-sub mb12"><div class="client-project-info-sub-row mb8"><p class="client-project-info-title body-3 text400">진행 중인 프로젝트</p><p class="client-project-info-data body-3-medium text600">0건</p></div><div class="client-project-info-sub-row"><p class="client-project-info-title body-3 text400">완료한 프로젝트</p><p class="client-project-info-data body-3-medium text600">0건</p></div></div><div class="client-project-info-row mb8"><p class="client-project-info-title body-2 text600">프로젝트 계약률</p><p class="client-project-info-data body-2-medium text900">0%</p></div><div class="client-project-info-row"><p class="client-project-info-title body-2 text600">누적 완료 금액</p><p class="client-project-info-data body-2-medium text900">0 만원</p></div></div></div></div></div><div style="clear:both;"></div></section></div></div></div><footer class="footer"><div class="container"><div class="footer-service-menu-list"><div class="footer-service-menu"><div class="footer-service-menu-title">서비스 전체보기</div><a class="footer-service-menu-item" href="https://www.wishket.com/"><img src="/static/renewal/img/news/img_service_symbol_1.png" srcset="/static/renewal/img/news/img_service_symbol_1.png 1x, /static/renewal/img/news/img_service_symbol_1@2x.png 2x,/static/renewal/img/news/img_service_symbol_1@3x.png 3x"/>위시켓</a> <a class="footer-service-menu-item" href="/magazine/"><img src="/static/renewal/img/news/img_service_symbol_3.png" srcset="/static/renewal/img/news/img_service_symbol_3.png 1x, /static/renewal/img/news/img_service_symbol_3@2x.png 2x,/static/renewal/img/news/img_service_symbol_3@3x.png 3x"/>요즘IT</a> <a class="footer-service-menu-item" href="https://ax.ai-delivery.work/"><img src="/static/renewal/img/global/footer_aidp.svg"/>AIDP - AX</a> <a class="footer-service-menu-item" href="https://rise.ai-delivery.work/"><img height="24" src="/static/renewal/img/global/gnb_rise.svg" width="24"/>Rise ERP</a></div><div class="footer-company-info-sns"><a class="sns-icon" href="https://www.facebook.com/wishket" target="_blank"><img src="/static/renewal/img/global/icon-footer-sns-facebook.png" srcset="/static/renewal/img/global/icon-footer-sns-facebook.png 1x, /static/renewal/img/global/icon-footer-sns-facebook@2x.png 2x,/static/renewal/img/global/icon-footer-sns-facebook@3x.png 3x"/></a> <a class="sns-icon" href="https://blog.wishket.com/" target="_blank"><img src="/static/renewal/img/global/icon-footer-sns-blog.png" srcset="/static/renewal/img/global/icon-footer-sns-blog.png 1x, /static/renewal/img/global/icon-footer-sns-blog@2x.png 2x,/static/renewal/img/global/icon-footer-sns-blog@3x.png 3x"/></a> <a class="sns-icon" href="https://blog.naver.com/wishket/" target="_blank"><img src="/static/renewal/img/global/icon-footer-sns-naver.png" srcset="/static/renewal/img/global/icon-footer-sns-naver.png 1x, /static/renewal/img/global/icon-footer-sns-naver@2x.png 2x,/static/renewal/img/global/icon-footer-sns-naver@3x.png 3x"/></a></div></div><div class="footer-main"><div class="footer-menu-list footer-contact"><p class="footer-menu-title flex-box"><img src="/static/renewal/img/news/icon_service_customer.png" srcset="/static/renewal/img/news/icon_service_customer.png 1x, /static/renewal/img/news/icon_service_customer@2x.png 2x,/static/renewal/img/news/icon_service_customer@3x.png 3x"/>고객 문의</p><a class="footer-cs-tel" href="tel:02-6925-4849">02-6925-4849</a><div class="footer-cs-info"><div class="footer-cs-item">10:00-18:00</div><div class="footer-cs-subitem">주말·공휴일 제외</div><br/> <a class="footer-cs-item email" href="mailto:help@wishket.com">help@wishket.com</a></div></div><div class="footer-menu-list"><p class="footer-menu-title">위시켓</p><a class="footer-menu-item" href="/company-intro/">위시켓 소개</a> <a class="footer-menu-item" href="/trust-safety/">신뢰와 안전</a></div><div class="footer-menu-list"><p class="footer-menu-title">이용방법</p><a class="footer-menu-item" href="/customer-support/client/use-guide">클라이언트 이용방법</a> <a class="footer-menu-item" href="/customer-support/partner/use-guide">파트너스 이용방법</a> <a class="footer-menu-item" href="/customer-support/partner/grade/">파트너 등급</a> <a class="footer-menu-item" href="/customer-support/price/">이용요금</a></div><div class="footer-menu-list"><p class="footer-menu-title">고객센터</p><a class="footer-menu-item" href="/customer-support/client/">클라이언트 고객센터</a> <a class="footer-menu-item" href="/customer-support/partner/">파트너스 고객센터</a></div><div class="footer-menu-list"><a class="footer-menu-title link-title" href="/news-center/all/">뉴스센터</a> <a class="footer-menu-title link-title" href="/store/">위시켓 스토어</a> <a class="footer-menu-title link-title" href="/store/wishket-packages/">솔루션 마켓</a> <a class="footer-menu-title link-title" href="/unity_bill/">통합빌링 서비스</a></div></div><div class="footer-service-policy"><a class="footer-service-policy-item" href="https://auth.wishket.com/terms/service">이용약관</a><div class="divider"></div><a class="footer-service-policy-item" href="https://auth.wishket.com/terms/privacy">개인정보 처리방침</a></div><div class="footer-company-info"><div class="footer-company-info-list"><div class="footer-company-info-item">㈜위시켓</div><div class="divider"></div><div class="footer-company-info-item">대표이사 : 박우범</div><div class="divider"></div><div class="footer-company-info-item">서울특별시 강남구 테헤란로 211 한국고등교육재단빌딩 3층 ㈜위시켓</div></div><div class="footer-company-info-list"><div class="footer-company-info-item">사업자등록번호 : 209-81-57303</div><div class="divider"></div><div class="footer-company-info-item">통신판매업신고 : 제2018-서울강남-02337 호</div><div class="divider"></div><div class="footer-company-info-item">직업정보제공사업 신고번호 : J1200020180019</div></div><div class="footer-company-info-copyright">© 2013 Wishket Corp.</div></div></div></footer><div class="project-register-inspection-modal"><div class="project-modal-container"><div class="project-modal-header"><div class="subtitle-2-medium text900">비슷한 내용으로 상담받기</div><img class="project-modal-close-btn" src="/static/renewal/img/project/detail/close-modal-X.svg"/></div><div class="project-modal-body"><div class="modal-body-title subtitle-1-light text900"><span class="subtitle-1-medium">해당 내용으로 프로젝트 등록 후 상담</span>받으시겠습니까?</div><div class="project-detail-container"><div class="project-detail-title subtitle-2-medium text900 mb16">PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발</div><div class="project-detail-numbers body-2-medium text900 mb4"><div class="project-detail-numbers-header body-2 text500"><img src="/static/renewal/img/project/detail/project-icon-price.svg"/>예상 금액</div>협의 후 결정</div><div class="project-detail-numbers body-2-medium text900 mb16"><div class="project-detail-numbers-header body-2 text500"><img src="/static/renewal/img/project/detail/project-icon-time.svg"/>예상 기간</div>390일</div><div class="project-detail-details body-3 text500">[프로젝트 개요] PCS-ESS(전력변환장치·에너지저장장치) 설비에 부착된 멀티센서에서 수집되는 시계열 데이터를 학습해 이상징후를 검출·분류하고 위험도를 예측하는 AI 시스...</div></div></div><div class="project-modal-guidance"><img src="/static/renewal/img/project/detail/icon-meeting-manager.svg"/><div class="body-3 project-modal-guidance-text">등록한 프로젝트는 바로 공개되지 않으며, [검수 중] 메뉴에서 수정가능합니다.</div></div><div class="project-successfully-submitted"><img class="mb20" src="/static/renewal/img/project/detail/icon_finish_project.svg"/><div class="subtitle-1-medium text900">PCS-ESS 이상징후 AI 예측진단 모델 및 실시간 추론 시스템 개발</div><div class="subtitle-1-light text900 mb20">프로젝트를 등록 완료했습니다.</div><div class="body-2 text600">위시켓 매니저가 상담을 위해 24시간 내 유선 및 이메일 연락을 드릴 예정입니다.<br/> 등록된 프로젝트는 [검수 중] 메뉴에서 내용 확인 및 수정이 가능합니다.</div></div><div class="project-modal-footer"><div class="pilsuhangmok-please-check body-2">필수 항목을 선택해 주세요.</div><div class="project-register-btn btn btn-8-16 body-2">프로젝트 등록 후 상담받기</div><div class="close-btn btn btn-8-16 body-2">닫기</div><a href="/client/manage/project/submitted/"><div class="submitted-project-btn btn btn-8-16 body-2">프로젝트 수정하기</div></a></div></div></div><script>
+  function submit_similar_project() {
+    var projectId = '157793';
+    $.ajax({
+      url: "/project/add/same/" + projectId + "/",
+      method: "POST",
+      success: function() {
+        $('.project-modal-body, .project-modal-guidance, .project-register-btn').hide();
+        // $('.project-successfully-submitted, .close-btn, .submitted-project-btn').show();
+        if(getCookie('history_project_id') === projectId) {
+          deleteCookie('history_project_id')
+        }
+        window.location.href = "/project/add/thank-you/"
+      },
+      error: function(error) {
+        alert(error.responseJSON.message)
+      }
+    })
+  }
+  function getCookie(name) {
+      const cookieName = `${name}=`;
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const cookies = decodedCookie.split(';');
+
+      for (const cookie of cookies) {
+        const trimmedCookie = cookie.trim();
+        if (trimmedCookie.startsWith(cookieName)) {
+          return trimmedCookie.substring(cookieName.length);
+        }
+      }
+
+      return null;
+    }
+
+  function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  $(document).ready(function() {
+    $('.project-modal-close-btn, .close-btn, .submitted-project-btn').on('click', function() {
+      $('.project-register-inspection-modal').hide();
+    })
+
+    const already_submitted = false;
+    if (already_submitted) {
+      $('.project-modal-body, .project-modal-guidance, .project-register-btn').hide();
+      $('.project-successfully-submitted, .close-btn, .submitted-project-btn').show();
+    }
+
+    $('.project-register-btn').on('click', function() {
+        submit_similar_project();
+    })
+  })
+</script><div class="comment-row template-sample" id="create_reply_form" style="display: none"><div class="flex-box comment-alert"><p class="body-3 text600">이 프로젝트가 마음에 드시나요? <span class="body-3-bold">[프로젝트 지원하기]</span> 버튼을 눌러 프로젝트에 지원하세요!</p><img alt="icon" class="close-icon" src="/static/mobile/img/component/alert/alert_icon_close.png" srcset="/static/mobile/img/component/alert/alert_icon_close.png 1x, /static/mobile/img/component/alert/alert_icon_close@2x.png 2x,/static/mobile/img/component/alert/alert_icon_close@3x.png 3x"/></div><div class="comment-box"><img class="comment-row-reply-icon" src="/static/renewal/img/project/detail/icon_comment_reply.png"/><div class="comment-reply-wrapper"><form action="." class="comment-form" method="post" onsubmit="$(this).find(':input[type=submit]').prop('disabled', true);"><input name="csrfmiddlewaretoken" type="hidden" value="TFGGEL2DZ3Yv3lRcTFeffO0Rsga53fmruAD8yAOihJQNIJVmSvnEYGKuUihtDR1f"/><input name="target_type" type="hidden"/><input name="target_id" type="hidden"/><div class="comment-create-box"><div class="comment-writer"><img class="comment-writer-img" src="https://cdn.wishket.com/profiles/233574_20230417_83f6956471d52be9.png"/><p class="comment-writer-username body-2-medium">spacecl</p></div><textarea class="comment-create-textarea theme-wishket body-2" data-monitoring-guard="" data-monitoring-warning-target="#reply-warn" name="comment_description" placeholder="프로젝트 문의를 2,000자 이내로 작성해주세요." rows="4"></textarea><div class="comment-create-guide"><p class="caption-1 mb4 comment-create-guide-warning" hidden="" id="reply-warn">· 안전한 거래를 위해 연락처 또는 회사명을 삭제해 주세요.</p><p class="caption-1 text500 mb4">· 작성한 내용은 수정 및 삭제가 불가합니다.</p><p class="caption-1 text500 mb4">· 이메일, 전화번호, 회사명, 회사 홈페이지 등 외부 연락 수단을 게시하면 해당 내용은 삭제되며, 서비스 이용이 제한될 수 있습니다.</p></div><div class="comment-create-action"><div class="secret-comment-option"><input class="theme-wishket wishket-checkbox" name="secret" type="checkbox" value="secret"/><label class="body-2 text900">비밀글</label></div><button class="btn btn-wishket btn-4-16 btn-right" type="submit">작성하기</button><button class="btn btn-gray btn-4-16 btn-right" data-comment-action="cancel" style="margin-top: -4px; margin-right: 12px;" type="button">작성 취소</button></div></div></form></div></div></div><script src="/static/renewal/js/partner/cropper.js"></script><link href="/static/css/general/profile_image_edit_modal.css?220801ver4" rel="stylesheet"/><script src="/static/renewal/js/profile/profile_image_edit_modal.js?240731" type="text/javascript"></script><script>
+  $(document).ready(function () {
+    $('.profile-image-edit-modal').uiModal();
+  });
+</script><button class="open__modal theme-wishket" hidden="" id="btn_profile_img_edit"></button><div class="profile-image-edit-modal ui-modal size-s" id="profile_image_edit_modal"><div id="cropper-img-box" style="display: none;"><img class="cropper-img" hidden=""/></div><div class="profile-image-edit-modal-wrapper"><form enctype="multipart/form-data" id="profile_image_edit_form"><input name="csrfmiddlewaretoken" type="hidden" value="TFGGEL2DZ3Yv3lRcTFeffO0Rsga53fmruAD8yAOihJQNIJVmSvnEYGKuUihtDR1f"/><div class="modal__title">프로필 사진 등록<div class="close_modal" onclick="close_image_modal()"><img class="modal-close-image-button" src="/static/renewal/img/profile/icon_modal_close.png" srcset="/static/renewal/img/profile/icon_modal_close.png 1x, /static/renewal/img/profile/icon_modal_close@2x.png 2x,/static/renewal/img/profile/icon_modal_close@3x.png 3x"/></div></div><div class="modal__body"><div class="modal-body-wrapper" id="profile_image_edit_modal_body"><div class="modal-content">클라이언트가 신뢰감을 느낄 수 있도록 프로필 사진을<br/>등록해 주세요.</div><img class="user-profile-img" id="modal_user_img"/><img class="temp-user-img user-profile-img"/><img class="user-img-default user-profile-img" src="/static/img/default_avatar_p.png"/><div class="loading-circle user-profile-img"><div class="sk-fading-circle theme-partner"><div class="sk-circle1 sk-circle"></div><div class="sk-circle2 sk-circle"></div><div class="sk-circle3 sk-circle"></div><div class="sk-circle4 sk-circle"></div><div class="sk-circle5 sk-circle"></div><div class="sk-circle6 sk-circle"></div><div class="sk-circle7 sk-circle"></div><div class="sk-circle8 sk-circle"></div><div class="sk-circle9 sk-circle"></div><div class="sk-circle10 sk-circle"></div><div class="sk-circle11 sk-circle"></div><div class="sk-circle12 sk-circle"></div></div></div><div class="body-btn-group"><input accept=".jpg, .jpeg, .png, .gif" class="img-temp-file" hidden="" type="file"/><input hidden="" id="profile_remove_image_file" name="remove_image_file" type="checkbox"/><button class="body-btn" onclick="upload_image()" type="button"><img src="/static/renewal/img/profile/icon_profile_upload.png" srcset="/static/renewal/img/profile/icon_profile_upload.png 1x, /static/renewal/img/profile/icon_profile_upload@2x.png 2x,/static/renewal/img/profile/icon_profile_upload@3x.png 3x"/>사진 올리기</button><button class="body-btn" onclick="remove_image()" type="button"><img src="/static/renewal/img/profile/icon_profile_delete.png" srcset="/static/renewal/img/profile/icon_profile_delete.png 1x, /static/renewal/img/profile/icon_profile_delete@2x.png 2x,/static/renewal/img/profile/icon_profile_delete@3x.png 3x"/>사진 지우기</button></div></div><div class="modal-info-body"><div class="base-dot-list"><div class="dot-line"><div class="dot">·</div>프로필 사진은 위시켓 서비스에 표시됩니다.</div><div class="dot-line"><div class="dot">·</div>.jpg, .jpeg, .png, .gif 파일만 업로드 가능합니다.</div></div></div></div><div class="modal__footer"><div class="modal__button group-block-button"><button class="button theme-indigo close__modal" id="btn_profile_img_modal_close" type="button">닫기</button><button class="button theme-partner" id="btn_profile_img_modal_submit" onclick="submit_form('/profile/api/profile-image/')" type="button">등록 완료</button></div></div></form></div></div><script>
+  $(document).ready(function () {
+    $('.wishket-tree').uiRadioCheck({type: "tree"});
+    $('.wishket-radio').uiRadioCheck();
+    $('.wishket-checkbox').uiRadioCheck();
+    $('.wishket-chip').uiRadioCheck({type: "chip"});
+    $('.wishket-toggle').uiToggle();
+    $('.wishket-text').uiInput();
+    $('.wishket-textarea').uiInput({inputType: "textArea"});
+    $('.wishket-select').uiSelect();
+    $('.wishket-label-select').uiSelect({type: 'label'});
+    $('.wishket-label-input').uiInput();
+  })
+</script><script>
+  if (window.location.host.indexOf("www") > -1) {
+    document.cookie = 'csrftoken=; path=/; secure=true; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+</script><script>
+  $(document).ready(function() {
+    const need_date_can_get_in_update = ''
+    if (need_date_can_get_in_update) {
+        $('.term-preference-register-modal').css({ display: "block" })
+      }
+    $('header .container .left-nav, .dropdown-nav-container').hover(
+      function() {
+          $('.dropdown-nav-container').addClass("active");
+      },
+      function() {
+          $('.dropdown-nav-container').removeClass("active");
+      });
+  })
+</script><script src="/static/js/wishket_abtest.js" type="text/javascript"></script><link href="/static/css/thirdparty/floating.css" rel="stylesheet"/><script>
+  
+  // informationFields의 Boolean 값 사용을 위한 변수들
+  var False = false;
+  var True = true;
+  var informationFields = [];
+  
+  var link_target = ['#info', '#description'];
+    
+  
+    link_target.push('#recruit_condition')
+  
+  
+    link_target.push('#pre_question')
+  
+  
+    link_target.push('#meeting')
+  
+  
+    link_target.push('#comment')
+  
+  let projectDetailNavHeight = 59.31 // 높이 값이 변하기 때문에 직접 대입
+  $('.project-detail-nav-item a[href^="#"]').click(function (e) {
+    e.preventDefault();
+    window.scrollTo(0, $(this.getAttribute("href")).offset().top - projectDetailNavHeight + 2);
+  });
+  function sync_nav() {
+    $('.project-detail-nav-item').removeClass('active')
+    let scrollTop = $(window).scrollTop() + projectDetailNavHeight
+    for(i=0; i<link_target.length; i++) {
+      if (i==0 && scrollTop >= $('a[name="info"]').offset().top && scrollTop < $('a[name="description"]').offset().top) {
+        $('a[href="#info"]').parent().addClass('active');
+      } else if(i+1==link_target.length && scrollTop >= $('a[name="comment"]').offset().top) {
+        $('a[href="#comment"]').parent().addClass('active');
+      } else if (scrollTop >= $('a[name="' + link_target[i].replace('#', '') + '"]').offset().top && scrollTop < $('a[name="' + link_target[i+1].replace('#', '') + '"]').offset().top) {
+        $('a[href="'+link_target[i]+'"]').parent().addClass('active');
+      }
+    }
+  }
+
+  $(document).click(function (e) {
+    if (e.target === $('#mandatoryModal')[0] && $('body').hasClass('modal-open')) {
+      $('#mandatoryModal').modal('hide');
+    }
+  })
+  function setMandatoryModal() {
+    $('#mandatoryModal').on('shown.bs.modal', function () {
+      $('body').css('overflow', 'hidden');
+    }).on('hidden.bs.modal', function () {
+      $('body').css('overflow', 'auto');
+    });
+    const totalLength = informationFields.length;
+    const count = informationFields.filter(function(info) {return info.active === False}).length;
+    const perc = ((count / totalLength) * 100).toFixed(0);
+    $('#mandatoryPGB').css("width", perc + "%");
+    if (perc === '0') {
+      $('#MandatoryTooltip').text('지원 필수 정보를 등록해주세요!');
+    } else {
+      $('#completeAmount').text(perc)
+    }
+
+    const tooltipBox = $('#statusTooltip');
+    if (perc === '0') {
+      tooltipBox.addClass('middle center');
+    } else if (perc === '25') {
+      tooltipBox.addClass('row');
+    } else if (perc === '50') {
+      tooltipBox.addClass('middle left');
+    } else if (perc === '75') {
+      tooltipBox.addClass('middle right');
+    } else {
+      tooltipBox.addClass('high');
+    }
+  }
+
+  $('button[data-action="open_reply_form"]').on('click', function() {
+    var target_id = $(this).attr('data-target-id'),
+        target_type = $(this).attr('data-target-type'),
+        target_secret = $(this).attr('data-target-secret'),
+        target_username = $(this).parent().parent().find('.comment-writer-username').text();
+    if(target_type === 'comment') {
+      var $target = $(this).parent().parent();
+    } else {
+      var $target = $(this).parent().parent().parent();
+    }
+
+    $('.project-comment-group #create_reply_form').remove();
+
+    var replyClone = $('#create_reply_form').clone();
+    replyClone.removeClass('template-sample');
+    replyClone.insertAfter($target)
+    replyClone.find('.comment-tooltip').uiTooltip({
+      position: "bottomleft",
+      width: "360px"
+    });
+
+    var $replyForm = $target.next();
+    $replyForm.css('display', 'block');
+    $replyForm.find('input[name="target_id"]').val(target_id);
+    $replyForm.find('input[name="target_type"]').val(target_type);
+    $replyForm.find('textarea').prop('placeholder', target_username + '님에게 답글 달기')
+    if (window.WishketMonitoringGuard) { window.WishketMonitoringGuard.init({scope: $replyForm[0]}); }
+    if(target_secret === '0') {
+      $replyForm.find('input[name="secret"]').prop('checked', true);
+      $replyForm.find('input[name="secret"]').prop('disabled', true);
+    } else {
+      $replyForm.find('input[name="secret"]').prop('checked', false);
+      $replyForm.find('input[name="secret"]').prop('disabled', false);
+    }
+  })
+  $(document).on('click', '[data-comment-action="cancel"]', function() {
+    $(this).closest('.comment-row').remove()
+  })
+
+  $(document).ready(function() {
+    if (false) {
+      setMandatoryModal();
+    }
+    setCommentAlert();
+    $('.interest-button').uiTooltip({
+        position: "bottomleft",
+      });
+    $('.project-tooltip').uiTooltip({
+      position: "bottomright",
+    });
+    $('.comment-tooltip').uiTooltip({
+      position: "bottomleft",
+      width: "360px"
+    });
+    $(".modal-resubmit-project").uiModal();
+    var diff_pos = $('.client-section').offset().top;
+    var max_height = $('.project-section').outerHeight();
+    var pos = $(window).scrollTop();
+
+    
+
+    $('.project-description-box').html($('.project-description-box').html().replace(/__/gi, ""))
+
+  $('button[data-href]').on('click', function() {
+    window.location.href = $(this).attr('data-href');
+  })
+
+    function follow() {
+      if ($(window).scrollTop() + projectDetailNavHeight > $('a[name="info"]').offset().top) {
+        sync_nav()
+        $('.project-detail-nav').slideDown('slow');
+      } else {
+        $('.project-detail-nav').slideUp("slow");
+      }
+      if (pos === $(window).scrollTop()) {
+        return
+      } else if (max_height - $('.client-section').outerHeight() < $(window).scrollTop() - diff_pos + 75) {
+        return
+      }
+    }
+    window.setInterval(follow, 300);
+  })
+
+  function toggle_interest(obj) {
+    let project_id = obj.getAttribute('project-id');
+    let $obj = $(obj);
+    let projectBox = $('.action-layer');
+    let interestBox = projectBox.find('.interest-unit');
+    const ifSimilarCard = $obj.closest('.project-similar-layer').length > 0;
+
+    if ($obj.hasClass('interest-on')) {
+      $obj.toggleClass('interest-on interest-off');
+      if (!ifSimilarCard) {
+        let interestCount = interestBox.data('count') - 1;
+        interestBox.data('count', interestCount);
+
+        if (interestCount === 0) {
+          if (projectBox.find('.project-popularity-unit:not(.interest-unit)').length > 0) {
+            interestBox.remove();
+          } else {
+            interestBox.parent().remove();
+          }
+        } else {
+          interestBox.find('.interest-img').attr('title', interestCount + '명의 파트너가 관심 프로젝트로 추가했습니다.');
+          interestBox.find('.interest-count').text(interestCount < 100 ? interestCount : '99+');
+        }
+      }
+      $obj.find('.subtext').text('\'관심 프로젝트\'에 추가하기');
+    } else {
+      $obj.toggleClass('interest-off interest-on');
+      if (!ifSimilarCard) {
+        if (interestBox.length) {
+          let interestCount = interestBox.data('count') + 1;
+          interestBox.data('count', interestCount);
+
+          interestBox.find('.interest-img').attr('title', interestCount + '명의 파트너가 관심 프로젝트로 추가했습니다.');
+          interestBox.find('.interest-count').text(interestCount < 100 ? interestCount : '99+');
+        } else {
+          let interestBoxHtml =
+            '<div class="project-popularity-unit interest-unit" data-count="1">' +
+            '  <img class="project-popularity-img interest-img"' +
+            '    src="/static/renewal/img/project/detail/btn_icon_like_s_off.png"' +
+            '    title="1명의 파트너가 관심 프로젝트로 추가했습니다.">' +
+            '  <span class="project-popularity-value interest-count">1</span>' +
+            '</div>';
+
+          let popularityBox = projectBox.find('.project-popularity-info');
+          if (popularityBox.length > 0) {
+            popularityBox.append(interestBoxHtml);
+          } else {
+            projectBox.append(
+              '<div class="project-popularity-info">' + interestBoxHtml + '</div>',
+            );
+          }
+        }
+      }
+      $obj.find('.subtext').text('\'관심 프로젝트\'에서 삭제하기');
+    }
+
+    $.ajax({
+      url: "/partners/toggle_interest/" + project_id + "/",
+      success: function (data) {
+        let $subnav = $('a[href="/partners/manage/interest/"]')
+        if (data.notify === 'true') {
+          if ($subnav.find('.nav-notice').length == 0) {
+            $subnav.find('.drop-down-menu-1').append('<span class="nav-notice" style="display: inline-block;"></span>');
+          }
+        } else {
+          $subnav.find('.nav-notice').remove();
+        }
+      },
+      error: function (data) {
+      }
+    });
+  }
+
+  // 이하 프로젝트 재등록 관련 기능
+  $.ajaxSetup({
+    beforeSend: function (xhr, settings) {
+      function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
+      if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+        // Only send the token to relative URLs i.e. locally.
+        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+      }
+    }
+  });
+
+  $('#resubmitBoxTitle').click(function () {
+    const $this = $('.textarea-toggle');
+    const toggleBox = $('.toggle-box');
+    if ($this.hasClass('closed')) {
+      $this.removeClass('closed').addClass('opend');
+      toggleBox.show();
+    } else {
+      $this.removeClass('opend').addClass('closed');
+      toggleBox.hide();
+    }
+  });
+
+  $('#resubmitReason').keyup(function () {
+    $('#textAreaStatus').text($(this).val().length + '/100');
+  });
+
+  $('#projectResubmitRequest').click(function () {
+    $(this).prop('disabled', true);
+    const projectId = $(this).data('project-id');
+    const data = {
+      project_id: projectId,
+      reason: $('#resubmitReason').val()
+    };
+    const formData = new FormData();
+    for (let key in data) {
+      formData.append(key, data[key]);
+    }
+    $.ajax({
+      url: "/project/resubmit/",
+      method: "post",
+      processData: false,
+      contentType: false,
+      data: formData,
+      success: function (data) {
+        if (data.success) {
+          $("#resubmitModal").modal("hide");
+          window.location.href = "/project/add/thank-you/"
+        } else {
+          alert("재등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+          $(this).prop('disabled', false);
+        }
+      },
+      error: function (data) {
+        alert("재등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+        $(this).prop('disabled', false);
+      },
+    });
+  });
+  $('body').on('click', '.close-icon', function () {
+    $('.comment-alert').addClass('close')
+    // 최대 설정 값
+    $.cookie('closeCommentAlert', 'true', {expires: 20*365});
+  })
+  function setCommentAlert() {
+    if ($.cookie('closeCommentAlert') === 'true') {
+      $('.comment-alert').addClass('close')
+    }
+  }
+  $('.comment-form').on('submit', function () {
+	  $(this).find(':input[type=submit]').prop('disabled', true);
+    return true;
+  })
+  </script><script>
+      fbq('track', 'ViewContent', {
+          content_ids: ['157793'],
+          content_type: 'product',
+          value: 0,
+          currency: 'KRW',
+          content_category: 'None',
+        });
+    </script><script>
+    let pause = false, pauseTimeout;
+
+    function rolling_banner() {
+      let startTime;
+      const viewport = $(".banner-viewport");
+      function animate(time) {
+        if (!startTime) {
+          startTime = time;
+        }
+        let progress = time - startTime
+        if (progress > 5000 && !pause) {
+          viewport.css({ transition: 'transform 1.0s ease', transform: 'translateX(-100%)'});
+          startTime = time;
+          setTimeout(function() {
+            viewport.append($(".banner-viewport").find("img").eq(0));
+            viewport.css({ transition: 'none', transform: 'translateX(0)'});
+            $('.banner-dot').each(function(idx, obj) {
+              $(obj).removeClass('active');
+            });
+            let activate =  $(".banner-viewport").find("img").eq(0).attr("id")
+            $('div[name="' + activate + '"]').addClass('active');
+          }, 1000)
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate)
+    }
+
+    $('.banner-dot').on('click', function() {
+      let viewport = $(".banner-viewport")
+      $('.banner-dot').each(function(idx, obj) {
+        $(obj).removeClass('active');
+      });
+      $this = $(this)
+      $this.addClass('active')
+      $banner = $("img[id='" + $this.attr('name') + "']");
+      const position = $banner.position().left;
+      viewport.css({ transition: 'transform 1.0s ease', transform: 'translateX(-' + position + 'px)'})
+
+      pause = true;
+      clearTimeout(pauseTimeout);
+      pauseTimeout = setTimeout(function() {
+        pause = false;
+      }, 3000);
+    })
+
+    $(document).ready(function() {
+      rolling_banner();
+    })
+  </script><script>
+    function banner_rolling() {
+      const prices = $('.viewport-container-price'), days = $('.viewport-container-days');
+      let startTime;
+      function animate(time) {
+        if (!startTime) {
+          startTime = time;
+        }
+        let progress = time - startTime;
+        if (prices.children().length > 1) {
+          if (progress > 2000) {
+          startTime = time;
+          prices.css({ transition: 'transform 1.0s ease-in-out', transform: 'translateY(-20px)'});
+          days.css({ transition: 'transform 1.0s ease-in-out', transform: 'translateY(-20px)'});
+          let price = prices.find('div').eq(0), day = days.find('div').eq(0);
+          setTimeout(function() {
+            price.remove();
+            day.remove();
+            prices.css({ transition: 'none', transform: 'translateY(0)'});
+            days.css({ transition: 'none', transform: 'translateY(0)'});
+          }, 1000)
+        }
+        }
+        requestAnimationFrame(animate)
+      }
+      requestAnimationFrame(animate)
+    }
+
+    $(document).ready(function() {
+      banner_rolling()
+    })
+  </script><script>
+  function setHistoryCookie(name, value) {
+    const date = new Date();
+    date.setTime(date.getTime() + (3 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+    $(document).ready(function() {
+      $('.trigger-project-register-inspection-modal').on('click', function() {
+        $('.project-register-inspection-modal').show();
+      })
+
+      
+    })
+  </script><style>.monitoring-guide-static { display: flex; align-items: flex-start; gap: 12px; background: #fff9f5; border: 1px solid #ffd6bf; border-radius: 4px; margin: 16px 0 24px; font-family: 'NotoSansKR', sans-serif; font-weight: 400; } .monitoring-guide-static--pc { padding: 13px 21px; } .monitoring-guide-static--mobile { padding: 9px 17px; border: 0; } .monitoring-guide-static__icon { flex-shrink: 0; width: 16px; height: 16px; margin-top: 4px; display: inline-flex; align-items: center; justify-content: center; } .monitoring-guide-static__icon svg { display: block; } .monitoring-guide-static__text { margin: 0; color: #616161; font-size: 14px; line-height: 24px; font-weight: 400; } .monitoring-warning-box { margin-top: 8px; padding-left: 13px; color: #ff6b21; font-size: 13px; line-height: 20px; font-family: 'NotoSansKR', sans-serif; font-weight: 400; } /* label-textarea (성과/진행단계/핵심기능 의 설명) wrapper 내부 layout 은 label(absolute) + word-length(inline) + textarea__border(float:left) 라 wrapper 의 첫 in-flow block child 가 곧 warning. wrapper top 에 border/ padding 이 없어 warning 의 margin-top 이 wrapper outer 로 collapse 누수 (성과명↔설명 행간이 벌어짐). 대신 textarea__border 에 margin-bottom 을 줘서 textarea box 자체가 spacing 을 책임지게 함. warning 의 margin-top 은 0 으로 비활성화. monitoring-guard--warning 클래스가 wrapper 에 toggle 되 므로 warning 노출 시에만 16px gap 적용. */ .ui-textarea-wishket.label-textarea > .monitoring-warning-box, .ui-textarea-partner.label-textarea > .monitoring-warning-box, .ui-textarea-client.label-textarea > .monitoring-warning-box { margin-top: 0; } .ui-textarea-wishket.label-textarea.monitoring-guard--warning > .textarea__border, .ui-textarea-partner.label-textarea.monitoring-guard--warning > .textarea__border, .ui-textarea-client.label-textarea.monitoring-guard--warning > .textarea__border { margin-bottom: 8px; } /* 지원 내용 textarea (#apply-body-warn / #apply-body-warn-term) 는 .guide-block-textarea.mb16 직후에 형제로 위치. mb16(16px) + 기본 margin-top(8px) 가 인접 margin collapse 로 16px gap 이 되어 너무 떨어져 보임. margin-top -8px 로 16 + (-8) = 8px gap 으로 좁힘. (다른 monitoring-warning-box 들은 wrapper 내부 또는 다른 컨텍스트라 영향 없음) */ #apply-body-warn, #apply-body-warn-term { margin-top: -8px; } /* PC 클라이언트 소개 (accounts/settings/profile/) 의 #client-intro-warn 은 textarea 직후 sibling 으로 textarea 좌측 정렬 라인과 맞춰야 시안과 일치. 기본 .monitoring-warning-box 의 padding-left: 13px 제거. */ #client-intro-warn { padding-left: 0; } /* wishket-component .ui-textarea-* wrapper 는 word-length(float:right) + helper-text(float:left) 를 같은 row 에 두는 float layout 사용. wrapper 자체에 display: flex 등을 강제하면 float 가 깨지므로 default block 유지하고, warning 은 guard.js 가 .textarea__border 바로 뒤에 삽입해 자기 row 를 차지하게 한다. warning 자체 spacing 은 .monitoring-warning-box 의 margin-top: 8px 로 처리. */ .monitoring-guard--warning { border-color: #ff6b21 !important; border-radius: 4px; } /* wishket-component textarea: border lives on inner .textarea__border */ .ui-textarea-wishket.monitoring-guard--warning > .textarea__border, .ui-textarea-partner.monitoring-guard--warning > .textarea__border, .ui-textarea-client.monitoring-guard--warning > .textarea__border { border-color: #ff6b21 !important; } /* guide-block-textarea: helper area (.guide-block) default 배경 — Figma 시안 (Indigo/10 #f7fafc). default/warning 모두 동일한 회색 톤 유지. specificity 0,5,0 + !important 로 apply.css 의 .proposal-view ... .guide-block (0,4,0 + !important) 흰색 override 를 이김 */ .proposal-view .form-group-light-box-wrapper .form-group-light-box-content .guide-block-textarea > .guide-block, .guide-block-textarea > .guide-block { background-color: #f7fafc !important; } /* textarea 와 helper 사이 분할선 제거 — Figma 시안에 textarea+helper 가 한 박스로 이어져 있고 사이에 inner divider 없음. textarea 의 border-bottom 만 제거하여 좌/우/위 textarea border + 좌/우/아래 helper border 로 외곽 1박스 형태 유지 */ .guide-block-textarea > textarea { border-bottom: 0 !important; } /* guide-block-textarea: textarea + sibling .guide-block 가 합쳐 한 박스 효과를 내므로 warning 시 두 element 의 border 모두 오렌지로 변경 */ .guide-block-textarea.monitoring-guard--warning > textarea, .guide-block-textarea.monitoring-guard--warning > .guide-block { border-color: #ff6b21 !important; } /* 댓글/답글 카드: warning 시 카드 외곽 border + 통합 안내 박스 배경 오렌지 톤 */ .comment-create-box.monitoring-guard--warning { border-color: #ff6b21 !important; } .comment-create-box.monitoring-guard--warning .comment-create-guide { background-color: #fff9f5; } /* 통합 안내 박스 안 첫 줄 (경고) — warning 시만 노출되며 오렌지 텍스트 */ .comment-create-guide-warning { color: #ff6b21 !important; } /* mobile _comment.scss 가 .comment-create-guide p:before 에 회색 명시 → warning 줄도 bullet 만 회색으로 남는 mismatch. orange 로 override. PC 는 :before content 가 없어 HTML &centerdot; 가 부모 text color (orange) 를 상속하므로 별도 처리 불필요. */ .comment-create-guide-warning::before { color: #ff6b21 !important; } /* mobile 은 bullet inline 정렬 위해 .flex-box baseline 클래스를 warning <p> 에도 부여. .flex-box { display: flex } 가 user agent 의 [hidden] { display: none } 와 specificity 동률(0,1,0) 이지만 author CSS 라 cascade 에서 우위, hidden 속성이 무력화되어 warning 이 항상 보임. specificity 0,2,0 + !important 로 명시적으로 숨김 처리. */ .comment-create-guide-warning[hidden] { display: none !important; } /* portfolio_add: floating footer + 자연 footer 안에 안내 문구 통합 */ #portfolio-footer-moving.active { height: auto !important; } #portfolio-footer-moving.active .portfolio-footer-wrapper, .portfolio-footer { flex-direction: column !important; align-items: stretch !important; border-top: 0 !important; } .portfolio-footer-controls { display: flex; align-items: center; border-top: 1px solid #e0e0e0; margin-left: -32px; margin-right: -32px; padding: 16px 32px 0; } /* row: wrapper outer edge 까지 확장 (negative margin 으로 padding + border 영역 침범) */ #portfolio-footer-moving.active .portfolio-footer-wrapper > .monitoring-guide-footer-row { margin: -20px -32px 0; } .portfolio-footer > .monitoring-guide-footer-row { margin: -16px -32px 0; } /* 안내 박스 자체는 border 없이 orange 배경만 */ .monitoring-guide-footer-row .monitoring-guide-static { margin: 0; border: 0; border-radius: 0; } /* portfolio_add 모바일: 안내 + 완성도 + (토글+저장+버튼) 3-row 통합 (sticky 는 부모 .profile_edit_view_bottom 이 담당, 시안 Figma 325:24167) */ .monitoring-guide-mobile-footer { background: #fff9f5; /* 시안: Orange/10 wrapper bg */ border-radius: 12px 12px 0 0; /* 시안: rounded-tl/tr-12px */ overflow: hidden; /* 자식 모서리를 wrapper rounded 에 맞춰 자르기 */ } .monitoring-guide-mobile-footer .monitoring-guide-static { margin: 0; /* 자체 padding: 9px 17px (.monitoring-guide-static--mobile default) — 시안 match */ } .monitoring-guide-mobile-footer .portfolio-footer-bottom-row { display: flex; align-items: center; padding: 17px; /* 시안: row padding 17px */ background: #fff; /* 시안: row 3 bg White (wrapper #fff9f5 cover) */ } .monitoring-guide-mobile-footer .portfolio-footer-bottom-row .button-box { margin-left: auto; } /* 원본 partner_profile.css 의 body.partner_profile .portfolio-container .portfolio-form-progress (specificity 0,3,1) 무력화. !important 사용 — 통합 컨테이너 안에서는 일반 block 으로 stack */ .monitoring-guide-mobile-footer .portfolio-form-progress, .monitoring-guide-mobile-footer .portfolio-form-progress.active { position: static !important; width: auto !important; height: auto !important; bottom: auto !important; left: auto !important; padding: 0 !important; }</style><script>
+  window.WISHKET_MONITORING_COMPANY_NAMES = ["스페이스씨엘", "주식회사 스페이스씨엘"];
+</script><script src="/static/renewal/js/monitoring/guard.js?v=20260430"></script><script>
+  let hostName = window.location.hostname;
+  let hostNameKor = '위시켓';
+  let profile;
+
+  if(hostName.indexOf('jobs') != -1) {
+    hostNameKor = '위시켓 잡스';
+  }else if (hostName.indexOf('account') != -1){
+    hostNameKor = '통합 계정';
+  }else {
+    
+      profile = hostNameKor + '-';
+      
+        profile += '파트너';
+      
+    
+  }
+
+  ;window.channelPluginSettings = {
+    "pluginKey": "8a4be838-8802-4674-b32f-f65122dcf605",
+    
+      "userId": "spacecl",
+      "profile": {
+        "name": "박희원",
+        "email": "admin@spacecl.com",
+        "mobileNumber": "01073930619",
+        "구분": (profile) ? profile : hostNameKor
+        
+      }
+      
+  };
+
+  (function () {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function () {
+      })('ChannelIO script included twice.');
+    }
+    var d = window.document;
+    var ch = function () {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function (args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+</script><script type="text/javascript">
+  try{
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "s_3225afd5bb50";
+    if (!_nasa) var _nasa = {};
+    wcs.inflow();
+    wcs_do(_nasa);
+  }
+  catch (e) {
+    console.log(e.message)
+  }
+</script></body></html>

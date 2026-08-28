@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>planning-qa-report</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 planning-qa-report · 생성: 2026-08-20 19:49</div>
+<h1>기획QA 리포트 (planning-qa-report.md)</h1>
+<ul>
+<li><strong>작성팀</strong>: 기획QA팀 (planning-qa-team)</li>
+<li><strong>작업 규모 모드</strong>: standard (9단계 파이프라인 — 5단계 기획QA)</li>
+<li><strong>검증 대상</strong>: <code>pipeline/market_dashboard/</code> 기획 문서 패키지 5종</li>
+<li><code>plan.md</code> / <code>trd.md</code> / <code>userflow.md</code> / <code>tasks.md</code> / <code>test-design.md</code></li>
+<li><strong>대조 기준</strong>: <code>requirements.md</code>(요구사항), <code>research-report.md</code>(리서치), <code>crawler_status_인계.md</code>(크롤러 인계)</li>
+<li><strong>검증 시각</strong>: 2026-08-20 (세션 환경 기준)</li>
+<li><strong>사용 스킬 로그</strong>: <code>requirement-gap-finder</code>(요구사항 누락·왜곡 점검), <code>plan-tests</code>(AC→테스트 매핑 추적성), <code>test-case-reviewer-plus</code>(수용기준·케이스 검토), <code>ai-qa-review</code>(AI 산출물 누락·과잉·단정 검토), <code>coverage-analysis</code>(AC 커버리지·추적성), <code>md-to-html</code>(.html 생성)</li>
+</ul>
+<hr />
+<h2>0. 판정 요약</h2>
+<h1>✅ 승인 (Approval)</h1>
+<p>기획 문서 패키지 5종은 요구사항·리서치·크롤러 인계와 정합하며, 오케스트레이터가 요청한 특별 확인 항목(5종 데이터소스 결정, 개인정보 제한 NG6·NG7, 저신뢰 뱃지 일관성)이 모두 누락 없이 반영되었다. <strong>디자인팀 인계 가능.</strong> 치명 문제 0건 / 중요 문제 0건(차단 아님) / 경미 문제 3건.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 요구사항 정합성</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>2. 문서 패키지 완성도</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>3. 수용 기준 품질</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>4. 추적성(AC→tasks·test)</td>
+<td>✅ PASS (경미 2건)</td>
+</tr>
+<tr>
+<td>5. TRD 정합성</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>6. userflow 완성도</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>7. 품질 규칙</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>특별1. 5종 데이터소스 결정</td>
+<td>✅ PASS (범위 경계 명시 권고)</td>
+</tr>
+<tr>
+<td>특별2. 개인정보 제한 NG6·NG7</td>
+<td>✅ PASS</td>
+</tr>
+<tr>
+<td>특별3. 저신뢰 뱃지 일관성</td>
+<td>✅ PASS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. 요구사항 정합성 — ✅ PASS</h2>
+<ul>
+<li><strong>목표(G)</strong>: requirements G1~G5 → plan §2.1 G1~G6로 전부 유지·구체화. G5(시장성 인사이트)와 G6(한눈에)로 분리했으나 요구 해석에 부합(추가 분리이지 누락/왜곡 아님).</li>
+<li><strong>비목표(NG)</strong>: NG1~NG5 전부 plan §2.2에 명시 유지. 여기에 <strong>NG6(프리모아 <code>client_id</code>·<code>/m7</code> 파트너 프로필 비수집), NG7(위시켓 상세 로그인 항목 MVP 미수집)</strong>을 리서치 발견(NFR-06)에 근거하여 추가 — 요구사항 강화 방향으로 정당.</li>
+<li><strong>기능(FR)</strong>: FR-01~11 전부 plan §4에 동일 ID로 존재, M/S/C 우선순위 일치(requirements FR-01~09=M, FR-10·11=S → plan FR-01~09=M, FR-10·11=S 동일).</li>
+<li><strong>NFR</strong>: NFR-01~06 → trd §4에 전부 반영(NFR-01 스택, NFR-02 성능 수치, NFR-03 배포, NFR-04 유지보수, NFR-05 견고성, NFR-06 보안/개인정보).</li>
+<li><strong>성공기준(SC)</strong>: SC-1~4 → plan §8 KPI에 매핑(수집 완료율·중복률·분석 지표·가용·데이터 신뢰).</li>
+<li><strong>데이터 요구(§7)</strong>: 위시켓·프리모아 주 대상, 표준 스키마, 월 1회, Neon 저장 — plan §3·trd §3.3 반영.</li>
+<li><strong>오픈 질문(OQ-1~5)</strong>: plan §7.3에서 전부 결정/이관 처리(5종 확정, 목록 기반, 경량 드릴다운, 분석 지표, 스케줄러 개발팀 이관).</li>
+</ul>
+<blockquote>
+<p>⚠️ 관찰(비차단): requirements는 수집 대상을 "위시켓·프리모아 <strong>등 SI 매칭 사이트</strong>"로 서술(FR-01·§7). 기획팀은 여기에 <strong>u300(스타트업 공모)·Devpost(해커톤)</strong> 을 추가해 5종으로 확정. 이는 A3(유사 사이트 포함 가능)와 크롤러 인계서(5종 크롤러 이미 완성·테스트 통과)에 근거해 정합하다고 판단하나, NG4 "외부 사이트 무분별 크롤링 제외"와의 경계를 위해 "특정 타깃 5종으로 한정"임을 명시할 것을 권고.</p>
+</blockquote>
+<h2>2. 문서 패키지 완성도 — ✅ PASS</h2>
+<ul>
+<li><strong>5종 전부 실재</strong>: plan.md / trd.md / userflow.md / tasks.md / test-design.md 모두 존재, 크기 3.5KB~13KB로 실질 내용 보유.</li>
+<li><strong>필수 섹션</strong>:</li>
+<li>plan.md: 제품개요/목표·비목표/범위/FR·우선순위/AC(G-W-T+Edge)/MVP·Phase/리스크·가정·오픈이슈/KPI/다음단계 인계 — 기획서 요건 충족.</li>
+<li>trd.md: 기술스택/아키텍처/컴포넌트 명세/테이블/API/ADR/NFR/성능·보안·데이터/배포·운영/오픈이슈.</li>
+<li>userflow.md: 여정 5개(UJ-1~5) + FR/AC trace + 전역 UX 규칙.</li>
+<li>tasks.md: Epic 5개 + Story + 태스크(규모 S/M/L + DoD) + 의존성 그래프 + 실행 순서.</li>
+<li>test-design.md: 전략/AC→TC 매핑/상세 케이스/비기능·회귀/P0~P2 게이트.</li>
+<li><strong>HTML 병행</strong>: 패키지 5종 모두 <code>*.html</code> 동일본 생성 확인(plan/trd/userflow/tasks/test-design 각각 존재). 요구사항·리서치도 .html 병행 성립.</li>
+</ul>
+<h2>3. 수용 기준 품질 — ✅ PASS</h2>
+<ul>
+<li>plan §5의 모든 AC가 <strong>Given/When/Then</strong> 3단 구조로 작성됨.</li>
+<li>각 AC에 <strong>Edge Case</strong> 명시(쿠키 만료, crawl-delay, 구조 변경, null/0 예산, 멱등, 부분 실패 등).</li>
+<li><strong>M/S/C 우선순위</strong> 유지, MVP 포함 여부 명기.</li>
+<li><strong>NFR→AC 전환</strong>: NFR-06(개인정보) → AC-01-2(<code>client_id</code> 저장 제외)·AC-03-1(개인정보 필터)로 전환, NFR-05(견고성) → AC-01~02 Edge Case로 전환, NFR-02(성능)는 trd §5.1 수치 + test §4 회귀 포인트로 반영. 개인정보·견고성 중심의 전환이 특히 충실.</li>
+</ul>
+<h2>4. 추적성 — ✅ PASS (경미 2건)</h2>
+<p><strong>tasks.md → AC 커버리지</strong>: Epic1~5가 AC-01~11 전부 커버<br />
+- FR-01(AC-01-1~5): T1.1.2(5종 재실행) 에픽1 수집/적재 계열<br />
+- FR-02(AC-02): T1.3.1~1.3.3(이력·트리거·스케줄 골격)<br />
+- FR-03(AC-03): T1.2.1~T1.2.4(스키마·정규화·멱등·개인정보)<br />
+- FR-04(AC-04): T1.2.1·T3.1.1·T5.1.2(DDL·커넥션·마이그레이션)<br />
+- FR-05(AC-05): T3.2.1·T3.2.2·T4.1.3(소스 목록·API·UI)<br />
+- FR-06(AC-06-1~5): T2.1.1~2.1.5, FR-07: T2.2.1~2.2.2, FR-08: T2.3.1~2.3.3<br />
+- FR-09: Epic4, FR-10 경량: T3.2.3, FR-11: T1.3.1·T3.2.4·T4.1.6<br />
+- Phase2 항목(AC-10-2 전체 상세, 자동 스케줄)은 태스크가 Phase2로 분리되어 정합.<br />
+- ✅ 태스크 누락 없음.</p>
+<p><strong>test-design.md → AC 커버리지</strong>: AC 25개 중 23개가 매핑표에 명시, TC-01~34 배정<br />
+- ⚠️ [경미] <strong>AC-08-2</strong>(시장성 인사이트 카드/표 표시, 단일 시점 "추이 미확인" 주석)가 매핑표에 <strong>명시 누락</strong>. 단 TC-28(시장성 인사이트)·TC-29(저신뢰)·TC-31(반응형)에 함의적으로 흡수되어 <strong>기능 공백은 아님</strong>. 매핑표 명시 보완 권장.<br />
+- ⚠️ [경미] <strong>AC-10-2</strong>(Phase2 전체 상세)는 매핑표 미출현 — 그러나 Phase2(비MVP)라 MVP 게이트에는 해당하지 않음. Phase2 계획 시 매핑 필요.</p>
+<h2>5. TRD 정합성 — ✅ PASS</h2>
+<ul>
+<li><strong>리서치 기술 조사와 모순 없음</strong>: 프리모아 비로그인 JSON API <code>/m4a/s41a</code>(trd §3.1 크롤러), <code>client_id</code> 저장 제외, <code>/m7</code> 파트너 프로필 비수집, 위시켓 crawl-delay 5·목록 기반 원천 — 리서치 §3.1·§6.2 결정과 일치.</li>
+<li><strong>크롤러 실행환경 정합</strong>: 인계서의 <code>curl_cffi</code>(프리모아·Devpost)/<code>lzstring</code>(위시켓·u300) venv A/B 분리 → trd §1·§3.1·§7에 그대로 반영(ADR-1).</li>
+<li><strong>데이터/API 구체성</strong>: Neon 테이블(projects·collection_runs·analysis_*) 명세, API 엔드포인트 8종(/api/summary·sources·analysis·insights·projects·runs 등)+메서드+응답 제공, 성능 수치(NFR-02) 및 보안(읽기/쓰기 계정 분리, Secrets) 구체.</li>
+<li><strong>ADR 4건</strong>(크롤러 격리·집계 precompute·API 배치·MVP 트리거)이 기획 단계 결정으로 일관.</li>
+<li>⚠️ [경미] trd §6 ADR-2/§8 TQ-2에서 "MVP는 JS Worker로 충분하되 Rust 경계 명시"로 Rust 범위를 후행 결정으로 유보 — 요구사항 NFR-01(Rust 포함)과 충돌은 아니나, 개발팀 tech-design에서 명확화 필요함을 이관사항으로 기록.</li>
+</ul>
+<h2>6. userflow 완성도 — ✅ PASS</h2>
+<ul>
+<li><strong>여정 5개</strong>: UJ-1(진입·전체요약) / UJ-2(사이트별 탐색) / UJ-3(시장조사 분석) / UJ-4(기능·시장성 인사이트) / UJ-5(개별 드릴다운·신뢰 검증) — "3~5개" 요건 충족.</li>
+<li><strong>요구사항 대상·시나리오 커버</strong>: FR-05~11 전부 여정에 매핑, trace 표(여정↔FR/AC) 제공.</li>
+<li>전역 UX 규칙 5종(단일 스크롤·빈/에러·저신뢰 뱃지·반응형·로그인 없음)이 디자인팀 전달용으로 명시 — 하위 단계 인계에 충분.</li>
+</ul>
+<h2>7. 품질 규칙 — ✅ PASS</h2>
+<ul>
+<li><strong>저신뢰 수치 미인용</strong>: plan·trd가 research-report의 저신뢰/상충 수치(프리랜서 400만명, 프리시 견적 중앙값 38만원, Mordor TAM 상충)를 <strong>확정 사실로 인용하지 않음</strong>. 고성장 키워드(예: B2B AI 371%)는 "후보/예시"로만 언급하고 단정 금지 원칙을 AC-08-1·KPI·userflow UJ-4에 반복 명시.</li>
+<li><strong>한국어</strong>: 전 문서 한국어 작성 확인.</li>
+<li><strong>HTML 병행</strong>: 패키지 5종 .html 동일본 생성 확인(§2).</li>
+</ul>
+<hr />
+<h2>8. 특별 확인 — 오케스트레이터 관심</h2>
+<h3>8.1 MVP 데이터소스 5종 결정 정합 — ✅ PASS</h3>
+<p>크롤러 인계서(위시켓·프리모아 도급, u300 현재·1기, Devpost 5종 크롤러 완성·테스트 통과)와 plan G1·§3.1이 일치. 5종 모두 MVP에 M으로 포함. requirements의 SI 위주 프레임 대비 u300/Devpost 확장은 A3·크롤러 인계 근거로 정합하다고 판단(§1 관찰 참조, NG4 경계 명시만 권고).</p>
+<h3>8.2 개인정보 제한 NG6·NG7 반영 누락 없음 — ✅ PASS</h3>
+<ul>
+<li><strong>NG6(프리모아 <code>client_id</code>)</strong>: plan §2.2·§3.2, AC-01-2(① 저장 제외 ② raw_json에도 미포함), trd §3.1·§4·§5.2, tasks T1.2.4, test <strong>TC-06(P0 차단 게이트)</strong> — 전 계층에 일관 반영. 경계(비이메일 토큰까지 포함 여부 결정)까지 기술.</li>
+<li><strong>NG7(위시켓 상세 로그인 항목)</strong>: plan §2.2·§3.2, AC-01-1(목록 필드 원천)·AC-10-2(Phase2), trd §3.1 제약, tasks 계열 — 일관 반영. 목록 필드 기반 원천(리서치 OQ-2 권장)과 정합.</li>
+</ul>
+<h3>8.3 저신뢰 수치 뱃지 적용 일관 — ✅ PASS</h3>
+<p>plan AC-08-1("저신뢰 수치는 신뢰도 주석과 함께 표기, 단정 금지"), trd §3.5(시장성 인사이트 신뢰 뱃지 UI), userflow UJ-4(신뢰 뱃지 높음/중간/낮음), test TC-29(P0)**가 동일한 "신뢰 뱃지 + 단정 금지" 규칙을 일관 적용. 신뢰도 체계(high/mid/low)도 trd <code>analysis_insights.confidence</code>로 통일.</p>
+<hr />
+<h2>9. 문제 목록 (심각도)</h2>
+<h3>🔴 치명 (0건)</h3>
+<p>없음.</p>
+<h3>🟠 중요 (0건 — 차단 없음)</h3>
+<p>없음. (아래 2건은 범위 결정의 문서화 보완이며 차단 사유 아님)</p>
+<h3>🟡 경미 (3건)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>문제</th>
+<th>위치</th>
+<th>영향</th>
+<th>권고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-1</td>
+<td>AC-08-2가 test-design AC→TC 매핑표에 명시 누락(TC-28/29/31로 함의 흡수)</td>
+<td>test-design §2</td>
+<td>탐지성 저하(개발QA 놓칠 가능)</td>
+<td>매핑표에 AC-08-2 · TC(추이 미확인 주석) 행 추가</td>
+</tr>
+<tr>
+<td>M-2</td>
+<td>AC-10-2(Phase2 전체 상세) 매핑표 미출현</td>
+<td>test-design §2</td>
+<td>Phase2 계획 시 공백 지적 소지</td>
+<td>Phase2 스코프 문서에 명시</td>
+</tr>
+<tr>
+<td>M-3</td>
+<td>MVP 데이터소스 5종(u300·Devpost)이 requirements의 SI 위주 프레임보다 확장 — 범위 경계(NG4) 문서화 권고</td>
+<td>plan §3.1</td>
+<td>오해 소지</td>
+<td>"특정 타깃 5종 한정, 광범위 크롤링 아님" 각주 추가</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>M-1·M-2는 차단 아님(테스트 커버리지 실제 공백 없음). M-3은 범위 명확화 권고. 반려 사유 해당 없음.</p>
+</blockquote>
+<hr />
+<h2>10. 최종 판정 및 다음 단계</h2>
+<h1>✅ 승인 (Approval)</h1>
+<ul>
+<li><strong>판정 근거</strong>: 요구사항·리서치·크롤러 인계와의 정합, 문서 패키지 완성, AC G/W/T 품질, tasks·test-design의 AC 추적성, NG6·NG7 개인정보 제한 전 계층 반영, 저신뢰 뱃지 일관성 — 모든 검증 항목 PASS, 치명/중요 문제 없음(경미 3건은 차단 아님).</li>
+<li><strong>수정 요청(비차단)</strong>: 개발QA 명세 시 M-1(AC-08-2 매핑)을 반드시 보강하고, plan §3.1에 M-3(범위 한정 각주)을 추가 권장.</li>
+<li><strong>인계 가능</strong>: ✅ <strong>디자인팀·개발팀 인계 가능.</strong> userflow.md·plan.md §6은 디자인팀 storyboard 전달, trd.md·tasks.md·test-design.md는 개발팀 tech-design 전달 가능. M-1 매핑 보강은 인계와 병행해 개발QA 단계에 반영하면 됨.</li>
+</ul>
+<hr />
+<p><em>끝 — 본 리포트는 기획 문서 패키지 5종에 대한 정합성·추적성 검증 결과이며, 개발QA 단계에서 test-design.md를 실측 검증한다.</em></p>
+</main>
+</body>
+</html>

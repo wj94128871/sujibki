@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 32,
+    "pePart": "정보·통신",
+    "teamName": "(주)노리스페이스",
+    "companyTitle": "NoriS 지능형 보험업무 자동화 엔진",
+    "companyContent": "<p style=\"text-align: center; \"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(14868).png\" style=\"width: 750px;\"></p><p style=\"text-align: center; \"><br></p><p style=\"text-align: center; \"><br></p><p style=\"text-align: center; \"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_55175416.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_560(0).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11578,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

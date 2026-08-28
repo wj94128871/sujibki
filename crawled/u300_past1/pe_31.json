@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 31,
+    "pePart": "정보·통신",
+    "teamName": "프리뷰",
+    "companyTitle": "취업 준비생들의 면접 준비를 도와주는 서비스, 프리뷰",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15560).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15562).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15565).png\" style=\"width: 100%;\"></p><p><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15566).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15567).png\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15568).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15577).png\" style=\"width: 100%;\"><br></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15570).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15571).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15572).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15573).png\" style=\"width: 100%;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15574).png\" style=\"width: 100%;\"></p><p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(15576).png\" style=\"width: 100%;\"><br></p><p><br></p><p><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_5189833.peg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_608(0).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11556,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

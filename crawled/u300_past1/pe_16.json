@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 16,
+    "pePart": "정보·통신",
+    "teamName": "마이네일",
+    "companyTitle": "네일샵의 공간 및 재료와 셀프네일러를 연결시켜주는 플랫폼 '마이네일'",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(7632).jpg\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_9214275.peg",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_527.jpeg",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 0,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 7783,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

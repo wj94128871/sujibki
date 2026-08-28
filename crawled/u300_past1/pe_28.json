@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "message": "동문회전시관 기업 상세정보 조회 성공",
+  "data": {
+    "peNo": 28,
+    "pePart": "바이오·의료(생명·식품)",
+    "teamName": "나의 작은 가족",
+    "companyTitle": "알러지 보유 반려견을 위한 안전하고 맛있는 step 간식 ‘Stop Allergen’",
+    "companyContent": "<p><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12334).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12335).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12336).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12337).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12338).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12339).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12361).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12360).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12357).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12358).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12344).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12345).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12346).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12347).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12348).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12349).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12352).png\" style=\"width: 840px;\"><img src=\"https://qubiton.xyz/upload/festival/u300_festival_editor(12353).png\" style=\"width: 840px;\"><br></p>",
+    "logoFileModifyName": "https://qubiton.xyz/upload/u300_54111159.png",
+    "thumbnailFileModifyName": "https://qubiton.xyz/upload/festival/u300_festival_thumbnail_481(3).png",
+    "recruitmentStatus": "BASIC",
+    "recruitmentStatusLabel": "기본",
+    "hashTags": [],
+    "likeCnt": 1,
+    "isLike": null,
+    "commentCnt": 0,
+    "passYearList": [],
+    "createUserNo": 11415,
+    "uploadFiles": null,
+    "previewFile": null,
+    "isCreator": false
+  }
+}

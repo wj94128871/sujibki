@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>userflow</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 userflow · 생성: 2026-08-20 19:45</div>
+<h1>사용자 여정 (userflow.md) — 시장조사·분석 대시보드</h1>
+<ul>
+<li><strong>작성팀</strong>: 기획팀 (planning-team) · <strong>모드</strong>: standard</li>
+<li><strong>기준</strong>: plan.md(FR-05~09, AC), requirements.md(FR-09 한눈에)</li>
+<li><strong>사용자</strong>: 요청 팀(비개발·개발 혼재, 로그인 없이 URL 접근)</li>
+<li><strong>사용 스킬 로그</strong>: <code>sequences</code>(여정 흐름 프레임), <code>product-designer</code>(PM 관점 여정 설계), <code>specify</code>(화면 구성), <code>md-to-html</code>(.html 생성)</li>
+</ul>
+<hr />
+<h2>0. 여정 개요</h2>
+<p>주 사용자는 <strong>대시보드 단일 페이지</strong>에서 ① 전체 요약 → ② 소스별 데이터 → ③ 분석(시장조사·기능방향) → ④ 시장성 인사이트 순으로 내려보며 "현재 시장에서 어느 영역이 유망한가"를 파악한다. 필요 시 소스별 안건 목록·원본 링크로 드릴다운한다.</p>
+<p><strong>핵심 여정 흐름 (총 5개)</strong>:<br />
+1. <strong>대시보드 진입·전체 요약 확인</strong> — UJ-1<br />
+2. <strong>사이트별 수집 데이터 탐색</strong> — UJ-2<br />
+3. <strong>시장조사 분석(수요·트렌드) 확인</strong> — UJ-3<br />
+4. <strong>기능 개선 방향·시장성 인사이트 도출</strong> — UJ-4<br />
+5. <strong>개별 안건 드릴다운(원본) — 데이터 신뢰 검증</strong> — UJ-5</p>
+<blockquote>
+<p>아래 여정은 텍스트 시나리오. 화면 단위 스토리보드는 디자인팀(storyboard.md)이 작성.</p>
+</blockquote>
+<hr />
+<h2>UJ-1. 대시보드 진입 · 전체 요약 확인</h2>
+<p><strong>목표</strong>: 5초 안에 "지금 시장 상황 요약"을 파악.<br />
+<strong>시작</strong>: 팀원이 공유받은 대시보드 URL 접근(로그인 없음).</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용자 행동</th>
+<th>시스템 동작</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>URL 접근(브라우저)</td>
+<td>Pages 로드, 헤더 요약 카드 표시</td>
+<td>총 수집 건수·소스별 건수·최근 수집 시각·상태</td>
+</tr>
+<tr>
+<td>2</td>
+<td>스크롤 없이 요약 확인</td>
+<td>소스별 현황 카드(위시켓/프리모아/u300/Devpost)</td>
+<td>각 소스 건수·최근 수집·상태</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"수집 이력" 확인</td>
+<td>최근 수집 시각·성공/실패 표시</td>
+<td>수집이 신뢰 있음을 확인</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성공 기준</strong>: 총 건수·소스별·최근 수집이 한 화면에 보인다. · <strong>빈 상태</strong>: 데이터 없으면 "아직 수집되지 않음" 안내.<br />
+<strong>실패 처리</strong>: 로딩 스피너 → 에러 메시지 + 재시도.</p>
+<hr />
+<h2>UJ-2. 사이트별 수집 데이터 탐색</h2>
+<p><strong>목표</strong>: 출처(위시켓 도급, 프리모아 도급, u300 공모, Devpost 해커톤)별로 안건을 파악.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용자 행동</th>
+<th>시스템 동작</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>소스 선택/필터(예: 위시켓)</td>
+<td><code>/api/projects?source=wishket</code></td>
+<td>해당 소스 안건 목록(제목·예산·기간·카테고리·등록일)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>페이지 탐색/검색</td>
+<td>페이징·키워드 검색</td>
+<td>목록 갱신</td>
+</tr>
+<tr>
+<td>3</td>
+<td>항목 클릭</td>
+<td><code>/api/projects/:id</code> 경량 상세</td>
+<td>DB 필드 기반 상세 + "원본 보기" 링크</td>
+</tr>
+<tr>
+<td>4</td>
+<td>원본 보기 클릭</td>
+<td>새 탭에서 출처 사이트 원문(외부)</td>
+<td>출처에서 상세 확인(로그인 항목 포함 시 사용자 판단)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성공 기준</strong>: 소스별로 안건을 필터·조회·드릴다운 가능. · <strong>빈 상태</strong>: 해당 소스 0건 시 안내.</p>
+<hr />
+<h2>UJ-3. 시장조사 분석 확인 (수요·트렌드)</h2>
+<p><strong>목표</strong>: 카테고리·예산·기간·기술 키워드·월간 추이로 "시장 수요가 어디에 있는가"를 수치로 확인.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용자 행동</th>
+<th>시스템 동작</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>목록→"시장조사 분석" 섹션 이동(스크롤)</td>
+<td><code>/api/analysis</code></td>
+<td>카테고리 수요 점유율 차트 표시</td>
+</tr>
+<tr>
+<td>2</td>
+<td>예산/기간 분포 확인</td>
+<td>집계 차트</td>
+<td>예산 히스토그램·기간 분포(null 제외+카운트)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>상주vs도급 비중 확인</td>
+<td>비중 차트</td>
+<td>도급/기간제/상주 비율</td>
+</tr>
+<tr>
+<td>4</td>
+<td>기술 키워드 트렌드 확인</td>
+<td>키워드 랭킹</td>
+<td>상위 키워드·월간 변화</td>
+</tr>
+<tr>
+<td>5</td>
+<td>월간 등록 추이 확인</td>
+<td>시계열 차트</td>
+<td>월별 신규 등록 추이</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성공 기준</strong>: 5개 분석 차트가 데이터 기반으로 표시. 저신뢰·null은 주석. · <strong>빈 상태</strong>: 분석 데이터 부족 시 "분석 미실행" 안내.</p>
+<hr />
+<h2>UJ-4. 기능 개선 방향 · 시장성 인사이트 도출</h2>
+<p><strong>목표</strong>: "플랫폼/사업을 열면 어느 영역이 시장성 있는가"의 근거 확보.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용자 행동</th>
+<th>시스템 동작</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"기능 개선 방향" 섹션 확인</td>
+<td><code>/api/insights?type=feature</code></td>
+<td>수요 많고 공급 부족한 영역/요구 패턴 + 근거(건수)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"시장성 인사이트" 섹션 확인</td>
+<td><code>/api/insights?type=market</code></td>
+<td>고성장 카테고리/키워드(예: B2B AI 구축) + 추이·근거기간</td>
+</tr>
+<tr>
+<td>3</td>
+<td>신뢰도 확인</td>
+<td>인사이트 신뢰 뱃지(높음/중간/낮음)</td>
+<td>저신뢰 수치는 주석과 함께 판단</td>
+</tr>
+<tr>
+<td>4</td>
+<td>(선택) 참고·기록</td>
+<td>복사/메모(외부)</td>
+<td>의사결정에 활용</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성공 기준</strong>: 기능 방향·시장성 인사이트가 수치 근거로 제시되고, 저신뢰 수치가 주석 표기됨(단정 금지). · <strong>빈 상태</strong>: 근거 부족 시 "분석 미실행".</p>
+<hr />
+<h2>UJ-5. 개별 안건 드릴다운 — 데이터 신뢰 검증 (UJ-2 심화)</h2>
+<p><strong>목표</strong>: 대시보드 요약/인사이트의 근거가 되는 개별 안건을 원본에서 검증.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용자 행동</th>
+<th>시스템 동작</th>
+<th>반응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>인사이트/차트에서 특정 카테고리 클릭</td>
+<td>해당 카테고리 안건 목록 필터</td>
+<td>관련 안건 목록 표시</td>
+</tr>
+<tr>
+<td>2</td>
+<td>항목 클릭</td>
+<td>경량 상세</td>
+<td>DB 필드 + 원본URL</td>
+</tr>
+<tr>
+<td>3</td>
+<td>원본 보기 클릭</td>
+<td>외부 출처 새 탭</td>
+<td>원문에서 신뢰 검증</td>
+</tr>
+</tbody>
+</table>
+<p><strong>성공 기준</strong>: 인사이트 → 근거 안건 → 원본으로 이어지는 추적 경로 제공. (SC-2 제대로 된 분석의 신뢰성 지원)</p>
+<hr />
+<h2>여정 대응 기능 요약 (trace)</h2>
+<table>
+<thead>
+<tr>
+<th>여정</th>
+<th>관련 FR/AC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UJ-1</td>
+<td>FR-09(AC-09), FR-11(AC-11)</td>
+</tr>
+<tr>
+<td>UJ-2</td>
+<td>FR-05(AC-05), FR-10 경량(AC-10-1)</td>
+</tr>
+<tr>
+<td>UJ-3</td>
+<td>FR-06(AC-06-1~5)</td>
+</tr>
+<tr>
+<td>UJ-4</td>
+<td>FR-07(AC-07), FR-08(AC-08)</td>
+</tr>
+<tr>
+<td>UJ-5</td>
+<td>FR-05·FR-10(원본 링크), FR-08 근거 추적</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>전역 UX 규칙 (디자인팀 전달)</h2>
+<ol>
+<li><strong>단일 페이지 스크롤</strong> 구조 — 헤더→소스→분석→기능방향→시장성→이력 순.</li>
+<li><strong>빈 상태·에러 상태</strong>를 명확히 — "데이터 없음", "분석 미실행", "로딩/에러" 구분.</li>
+<li><strong>저신뢰 수치 주석</strong> — 시장성 인사이트에 신뢰 뱃지(높음/중간/낮음), 단정 표현 금지.</li>
+<li><strong>반응형</strong> — 모바일/데스크톱, 차트·카드·표 레이아웃 유지.</li>
+<li><strong>로그인 없음</strong> — URL로 즉시 접근.</li>
+</ol>
+<p><em>끝 — 디자인팀이 storyboard.md에서 화면 단위로 구체화한다.</em></p>
+</main>
+</body>
+</html>

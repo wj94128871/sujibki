@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>research-report</title>
+<style>
+:root { --accent:#2B5FDB; --bg:#ffffff; --fg:#1a1a2e; --muted:#666; --border:#e2e8f0; --code-bg:#f6f8fa; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1117; --fg:#e6e6e6; --muted:#9ca3af; --border:#2a2f3a; --code-bg:#161b26; }
+}
+* { box-sizing: border-box; }
+body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; background:var(--bg);
+       color:var(--fg); line-height:1.7; margin:0; padding:2rem 1rem; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size:1.9rem; border-bottom:3px solid var(--accent); padding-bottom:.4rem; }
+h2 { font-size:1.4rem; margin-top:2.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; }
+h3 { font-size:1.15rem; margin-top:1.6rem; }
+h4 { font-size:1rem; margin-top:1.2rem; color:var(--accent); }
+a { color:var(--accent); }
+code { background:var(--code-bg); padding:.15em .4em; border-radius:4px; font-size:.9em;
+       font-family:'JetBrains Mono','D2Coding',Consolas,monospace; }
+pre { background:var(--code-bg); padding:1rem; border-radius:8px; overflow-x:auto; border:1px solid var(--border); }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.93rem; }
+th, td { border:1px solid var(--border); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+th { background:var(--code-bg); font-weight:600; }
+tr:nth-child(even) td { background:rgba(127,127,127,.05); }
+blockquote { border-left:4px solid var(--accent); margin:1rem 0; padding:.5rem 1rem;
+             background:rgba(43,95,219,.06); border-radius:0 6px 6px 0; }
+blockquote p { margin:.3rem 0; }
+hr { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+li { margin:.25rem 0; }
+strong { font-weight:700; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="meta">📄 research-report · 생성: 2026-08-20 15:53</div>
+<h1>시장조사·분석 대시보드 — 리서치 리포트 (research-report.md)</h1>
+<ul>
+<li><strong>작성팀</strong>: 리서치팀 (research-team)</li>
+<li><strong>작업 규모 모드</strong>: standard (9단계 파이프라인 — 리서치)</li>
+<li><strong>조사 기준 문서</strong>: <code>pipeline/market_dashboard/requirements.md</code></li>
+<li><strong>조사 시각/크롤링 시각</strong>: 2026-08-20 (세션 환경 기준)</li>
+<li><strong>사용 도구</strong>: 무료 공개 엔드포인트(DuckDuckGo HTML), requests/curl_cffi(TLS impersonation), Scrapling, 파싱(BeautifulSoup), robots.txt 실접속 검증 — 외부 API 키(Serper 등) 미사용</li>
+</ul>
+<hr />
+<h2>1. BLUF — 핵심 발견 5가지 (요약)</h2>
+<ol>
+<li><strong>수집 대상 사이트 2곳 확정·실크롤 성공</strong>: <strong>위시켓(wishket.com)</strong>과 <strong>프리모아(freemoa.net)</strong> 모두 비로그인으로 프로젝트(안건) 목록을 받을 수 있고, 각각 <code>robots.txt</code>가 목록 경로를 허용한다. 실제 샘플(각 10건)을 <code>crawled/</code>에 저장했다.<br />
+   - 위시켓: <code>Allow /project/</code> + <strong>crawl-delay 5</strong> → 목록 페이지에서 제목·예산·기간·카테고리·레벨·등록일·지원자 수 비로그인 가시. 상세 페이지의 예산·모집요건·근무환경은 <strong>로그인 게이트</strong>(목록 필드로 충분).<br />
+   - 프리모아: <code>Allow /m4/s41</code>(목록)·<code>/m4a/s41a</code>(목록 JSON API). <strong>POST <code>/m4a/s41a</code>가 비로그인으로 안건 목록 JSON을 반환</strong>하며 상세 내용(<code>txt</code>)까지 포함 → 크롤링이 가장 용이. 단 접속 시 TLS 핑거프린트 우회 필요.</li>
+<li><strong>시장 규모(게스티메이션) — TAM~SOM</strong>: 한국 <strong>IT 서비스 시장(TAM) 2025년 약 270조 원 규모</strong>라는 2차 추정(Mordor)이 있으나 범위 차이 존재. 대시보드가 실제로 덮는 <strong>SOM(월간 수집 가능 안건)</strong>은 위시켓 표기 모집중 프로젝트 <strong>약 6.6만 건</strong>, 프리모아 누적 등록 <strong>약 2.3만 건</strong>의 신규 유입분으로, <strong>월 수백~수천 건</strong> 수준이다(직접 크롤 원천값).</li>
+<li><strong>수요 트렌드(공급·수요 양쪽 핵심 신호)</strong>: 위시켓 기준 <strong>B2B AI 프로젝트 의뢰금액이 전년 동분기 대비 371% 급증</strong>(2025, 마케팅 보도). 수집 안건 샘플에서도 <strong>AI·LLM·백엔드/데이터(Airflow, k8s)·금융/공공(Electronic Gov, WebSquare5)</strong> 계열이 다수 포착 — "AI 전환/구축형"이 고성장 키워드 후보.</li>
+<li><strong>프리모아 목록 API에 <code>client_id</code>(이메일)가 포함</strong> — NFR-06(개인정보 수집 최소화) 관점에서 DB/대시보드 저장 시 해당 컬럼을 <strong>제외</strong>해야 한다(리서치QA·기획·개발 주의).</li>
+<li><strong>후보 추가 사이트 중 크롤링 가능성 차등</strong>: <strong>크몽(kmong, robots 전체 허용)</strong>, <strong>Freemo(freemo.work, robots 전체 허용)</strong>, <strong>CyanNest(cyannest, robots 전체 허용)</strong>, <strong>아임잡(imjob, robots 허용·EUC-KR)</strong> 는 후보로 적합. <strong>원티드긱스(wanted.co.kr/gigs)는 로봇 403으로 봇 차단 → 제외 권장</strong>(현 시점).</li>
+</ol>
+<hr />
+<h2>2. 조사 질문 &amp; 방법론</h2>
+<h3>2.1 조사 질문 (요구사항 OQ 연계)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>조사 질문</th>
+<th>귀결되는 요구사항/오픈질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RQ-1</td>
+<td>수집 대상 SI 매칭 사이트는 무엇이며, 접근성(로그인 필요)·robots·크롤링 가능성은?</td>
+<td>FR-01, NFR-06, OQ-1, OQ-2</td>
+</tr>
+<tr>
+<td>RQ-2</td>
+<td>안건(프로젝트 의뢰)별 <strong>수집 필드</strong>는 무엇인가?</td>
+<td>FR-03, §7 데이터 요구</td>
+</tr>
+<tr>
+<td>RQ-3</td>
+<td>유사 대시보드/시장조사 방법론·경쟁 분석 프레임워크는?</td>
+<td>FR-06~FR-08, A4</td>
+</tr>
+<tr>
+<td>RQ-4</td>
+<td>한국 SI/프리랜서 외주 시장 규모(TAM/SAM/SOM)·성장률은?</td>
+<td>FR-08(시장성 인사이트), A4</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 방법론 &amp; 사용 스킬 (본 작업 적용)</h3>
+<ul>
+<li><strong>analyst-research</strong> — 투자/시장 분석 워크플로우 참조, "light(메모)" 스케일로 보고서 구조화(framing→sourcing→analysis→insight). 적용: 전체 보고서 골격·발견 정리.</li>
+<li><strong>management-consultant</strong> — TAM/SAM/SOM 게스티메이션: issue tree + "So what/Why so/Now what" + 수치 스파인. 적용: §4 시장 규모, §6 인사이트.</li>
+<li><strong>research-tools + Scrapling + curl_cffi(TLS impersonation)</strong> — 차단(프리모아 SSL/WAF) 우회 실크롤, robots 검증. 적용: crawled/ 원천데이터.</li>
+<li><strong>insane-search / research-tools의 DDG-free-search</strong> — 외부 API 키 없이 일반 검색·차단 우회 전략. 적용: 사이트 확정·경쟁사 탐색.</li>
+<li><strong>verifying</strong> — 수치/주장을 1차 출처로 교차 검증, 검증 불가 항목 표기. 적용: §5 교차 검증.</li>
+<li><strong>md-to-html</strong> — 본 산출물의 <code>.html</code> 동일본 생성. 적용: 최종 산출물 변환.</li>
+<li>(미사용 관련 스킬 사유: <code>profile-competitor</code>·<code>analyze-five-forces</code> 같은 Porter 심화는 수집 데이터 기반 정량 분석이 주인 이번 1차 조사에는 과도하여 차용만 하고 2차(기획 분석)에서 확장 예정.)</li>
+</ul>
+<hr />
+<h2>3. 주요 발견</h2>
+<h3>3.1 수집 대상 사이트 확정 &amp; 접근성 (RQ-1 / OQ-1·OQ-2)</h3>
+<table>
+<thead>
+<tr>
+<th>사이트</th>
+<th>URL</th>
+<th>모델</th>
+<th>목록 접근(비로그인)</th>
+<th>robots.txt (목록 경로)</th>
+<th>크롤링 판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>위시켓</strong></td>
+<td>wishket.com</td>
+<td>IT 프로젝트 플랫폼(외주/기간제/상주, 에스크로)</td>
+<td>✅ <code>/project/</code> 목록(제목·예산·기간·카테고리·지원자 등)</td>
+<td><code>Allow /project/</code>, <strong>crawl-delay 5</strong>, 사이트맵 제공</td>
+<td>✅ <strong>대상1 · 실크롤 성공</strong></td>
+</tr>
+<tr>
+<td><strong>프리모아</strong></td>
+<td>freemoa.net</td>
+<td>아웃소싱 중개(개발/디자인/기획, 비교견적, 상주)</td>
+<td>✅ 목록 JSON <strong>POST <code>/m4a/s41a</code></strong> (상세 txt 포함)</td>
+<td><code>Allow /m4/s41</code>, <code>/m4a/s41a</code></td>
+<td>✅ <strong>대상2 · 실크롤 성공(항목 최다)</strong></td>
+</tr>
+<tr>
+<td>크몽</td>
+<td>kmong.com</td>
+<td>검증·매칭/외주</td>
+<td>✅ 홈 정상</td>
+<td><code>Allow /</code>(부분)</td>
+<td>🟡 후보(추가 검증 필요)</td>
+</tr>
+<tr>
+<td>Freemo</td>
+<td>freemo.work</td>
+<td>30분 프리랜서 즉시 매칭</td>
+<td>✅</td>
+<td><code>Allow /</code> 전체</td>
+<td>🟡 후보</td>
+</tr>
+<tr>
+<td>CyanNest</td>
+<td>cyannest.com</td>
+<td>외주/프리랜서 무료 매칭</td>
+<td>✅</td>
+<td><code>Allow /</code>, sitemap 제공</td>
+<td>🟡 후보</td>
+</tr>
+<tr>
+<td>아임잡</td>
+<td>imjob.co.kr</td>
+<td>IT 프리랜서 매칭</td>
+<td>✅</td>
+<td><code>Allow /</code></td>
+<td>🟡 후보(EUC-KR 인코딩 주의)</td>
+</tr>
+<tr>
+<td>원티드긱스</td>
+<td>wanted.co.kr/gigs</td>
+<td>IT 프리랜서 외주</td>
+<td>목록 가능하나 봇 차단</td>
+<td>robots <strong>403</strong>(봇 차단)</td>
+<td>❌ 제외 권장(현 시점)</td>
+</tr>
+<tr>
+<td>숨고</td>
+<td>soomgo.com</td>
+<td>일반(비IT) 서비스 매칭</td>
+<td>✅</td>
+<td>부분 허용</td>
+<td>⚪ 범위 외(NG4, IT 외주 초점 아님)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 메모</strong><br />
+- <strong>위시켓</strong>: 목록 페이지는 비로그인으로 안건 목록·핵심 필드를 노출하지만, <strong>상세 페이지의 예산 상세·모집요건·근무환경은 로그인 게이트</strong>("로그인하고 ~ 확인하기")이다. → 크롤러는 <strong>목록 페이지 필드를 원천</strong>으로 하는 것이 안전하며, 그 필드만으로도 분석에 충분하다.<br />
+- <strong>프리모아</strong>: 목록을 <strong>비로그인 JSON API</strong>(<code>/m4a/s41a</code>)로 받을 수 있어 가장 크롤링이 쉬움. robots 상 <code>/m4/s41</code> 허용, 개별 파트너 프로필(<code>/m7/freelance_detail</code>)은 <strong>Disallow</strong>(프리랜서 개인정보·이용약관 관점에서 수집 금지). 상주 프로젝트 모집은 별도(홈 표기 "약 150명 · 파트너 추천형").<br />
+- <strong>모든 사이트 공통</strong>: NFR-06에 따라 과도 요청 금지(위시켓 crawl-delay 5 준수), 개인정보 최소 수집. 프리모아의 <code>client_id(이메일)</code>은 저장 제외.</p>
+<h3>3.2 수집 항목(안건 필드) 파악 (RQ-2 / FR-03)</h3>
+<p>직접 크롤로 확인한 실제 필드:</p>
+<p><strong>위시켓(목록 카드)</strong> — <code>crawled/wishket/project_sample_wishket_202608.csv|json</code><br />
+| 필드 | 예시 |<br />
+|---|---|<br />
+| 안건ID/URL | /project/157729/ |<br />
+| 제목 | "React/antd 기반 운영 서비스 프론트엔드 추가 개발" |<br />
+| 예상 금액(단가 제시형) | "월 금액 5,800,000원 / 월" 또는 "예상 금액 협의 후 결정" |<br />
+| 예상 기간 | 90일 / 45일 / 360일 |<br />
+| 근무 시작일 | 2026.09.17. / "즉시 시작" |<br />
+| 카테고리/역할 | 프론트엔드 개발자 / 백엔드 / 기획자 / 풀스택 / 모바일 앱 / 퍼블리셔 / PM / 개발·디자인·기획 |<br />
+| 레벨 | 미드 레벨 / 시니어 / 테크 리드 |<br />
+| 프로젝트 유형 | 외주(도급) / 기간제(상주) |<br />
+| 지역 | 서울특별시 관악구, 경기도 성남시 분당구 등 |<br />
+| 등록일 | 2026.08.18. |<br />
+| 마감 | 3주 5일 전 |<br />
+| 지원자 수 | 없음 / 1명 / 34명 |<br />
+| 조회 강도 | 아주 높음 |<br />
+| 클라이언트 신뢰 | 인증 완료, 평점 4.7 |</p>
+<p><strong>프리모아(목록 JSON, <code>/m4a/s41a</code>)</strong> — <code>crawled/freemoa/project_sample_freemoa_202608.csv|json</code><br />
+| 필드 | 예시 |<br />
+|---|---|<br />
+| proj_idx / edate | 48384 / 2026-09-12 |<br />
+| title | "중고 명품 매입 견적 비교 웹앱 신규 구축" |<br />
+| fld / fld_nm_2nd | 개발 / 웹 (총괄/프로그램/모바일웹/Android앱 등) |<br />
+| cost_min / cost_max (만원) | 2500 / 3500 (≒2,500~3,500만 원) |<br />
+| during(기간일) | 90 |<br />
+| INS_TIME(등록일) | 2026-08-20 14:25:51 |<br />
+| pv_smallnm(지역) | 서울 / 광주 |<br />
+| BEGIN_EXPECT | "9월 2째주" |<br />
+| proj_language/키워드 | "웹앱, 플랫폼, 중고명품, 관리자" |<br />
+| workType | 도급/기간제/상주 |<br />
+| txt(상세 내용) | 계약방식·개발구분·작업방식·범위·현황 등 전문 |<br />
+| 부가 | 지원자수(APPLY_COUNT), 스크로 유무, 신규여부, 팀/개인구분 |</p>
+<p><strong>표준화(FR-03) 제안</strong>: 두 사이트 필드를 공통 스키마(제목, 카테고리/업종, 예산_min/max, 기간(일), 등록일, 마감일, 지역, 유형(도급/기간제/상주), 역할/레벨, 기술 키워드, 원본URL, 수집시각)로 매핑. 프리모아 예산 단위는 <strong>만원</strong>, 위시켓은 <strong>원/월</strong> 등 단위 정규화 필요.</p>
+<h3>3.3 유사 대시보드 &amp; 시장조사 방법론 (RQ-3 / FR-06~08)</h3>
+<p><strong>유사·선례(대시보드/분석 도구)</strong><br />
+- <strong>wishket-report.com</strong> — 위시켓의 "AI 프로젝트 견적·일정·리스크 무료 분석" 도구(안건 입력 → 시장성 분석). 가장 가까운 선례(외부 접속은 402로 제한 확인). 단일 출처.<br />
+- <strong>위시켓 블로그 산업리포트·프리랜서 플랫폼 비교</strong> — 외주 시장 수요·단가·플랫폼 비교를 정리해 제공(2차 콘텐츠, 신뢰 중간).<br />
+- <strong>프리모아 상주 프로젝트 추천</strong>(부가 기능) — "현재 등록 상주 모집 약 150명"을 별도 노출 → 상주(기간제) 수요가 별도 시장 축임을 시사.</p>
+<p><strong>시장조사 방법론(대시보드 분석 로직 후보, A4)</strong><br />
+1. <strong>수요·트렌드</strong>: 안건 제목/내용 텍스트 → 키워드·카테고리 빈도/점유율, 월간 신규 등록 추이(FR-06).<br />
+2. <strong>예산·기간 분포</strong>: cost_min/max·during → 시장 단가 분포·프로젝트 규모 히스토그램(FR-06).<br />
+3. <strong>공급 동향</strong>: 클라이언트 인증/등급, 지원자 수(경쟁강도), 상주 vs 도급 비중.<br />
+4. <strong>시장성 인사이트(FR-08)</strong>: 고성장 카테고리(예: AI/B2B 구축, 금융/공공 규제 준수, 데이터 플랫폼) 식별, 유망 기술 키워드 wrangling.<br />
+5. <strong>경쟁 분석 프레임워크</strong>: Porter 5-Forces·전략그룹 매핑(심화 단계에서 적용 예정).</p>
+<h3>3.4 시장 규모·게스티메이션 TAM/SAM/SOM (RQ-4 / FR-08)</h3>
+<blockquote>
+<p>표기는 [게스티메이션]=추정, [2차집계]=타사 집계, [원천크롤]=직접 크롤. 낮은 신뢰 수치는 명시.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>규모</th>
+<th>근거/출처</th>
+<th>신뢰도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TAM</strong> 한국 IT 서비스 시장(2025)</td>
+<td><strong>약 21.3B USD (≒27조 원)</strong> · 2030 ≈ 37~53B USD · CAGR 11.9~12.4%</td>
+<td>Mordor Intelligence <em>South Korea IT Services</em>, 2025 [2차집계]</td>
+<td>중간 (수치 상충 → 교차검증 §5)</td>
+</tr>
+<tr>
+<td>TAM(글로벌) 아웃소싱 시장(2025)</td>
+<td>729.9B USD · 2035 ≈ 1,552B · CAGR 8.5%</td>
+<td>Business Research Insights [2차집계]</td>
+<td>중간</td>
+</tr>
+<tr>
+<td><strong>SAM</strong> 한국 온라인 IT 외주·프리랜서 매칭 플랫폼 거래 시장</td>
+<td>연간 <strong>수백억~수천억 원</strong> 수준 [게스티메이션]</td>
+<td>위시켓 누적 거래액 1,800억(2024.01)→2,250억(2025.07) 성장분(약 450억/18개월)을 연 단위로 본산 [2차집계+게스티메이션]</td>
+<td>낮음~중간</td>
+</tr>
+<tr>
+<td><strong>SOM(MVP)</strong> 대시보드가 실제 수집·분석 가능한 안건 풀</td>
+<td>위시켓 표기 모집중 <strong>약 66,172건</strong> + 프리모아 누적 <strong>22,911건</strong> → 월 신규 수백~수천 건</td>
+<td>[원천크롤] 사이트 표기·list JSON totalRows (2026-08-20)</td>
+<td>높음(직접 계측)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>수치 요약(위시켓, 1차 보도/공개 자료)</strong><br />
+- 누적 거래액: <strong>1,800억 원</strong>(2024.01, 머니투데이) → <strong>2,250억 원 돌파</strong>(2025.07, 리서치뉴스·뉴스와이어). 2021년 1,000억.<br />
+- 2025 상반기 매출 122억 원(전년 연간 119억 원 초과) / 2025 연간 추정 매출 239억 원(openbizdata, 2차 집계), 영업이익 -12억, 누적 투자 102억(Series B 2022-10).<br />
+- 파트너 풀: 13만(2024.01) → 프리랜서 12만+개발사 1.9만(2025.07). 홈페이지 표기 "11만 프리랜서+1만 개발회사".<br />
+- 고객: 1.2만+ 기업 고객(2025.07) / 10만 기업·개인(홈). 70개 IT 카테고리. 2012년 설립.<br />
+- <strong>B2B AI 구축 의뢰금액: 전년 동분기 대비 371% 증가</strong>(2025). AI 전문 개발사 230개 선별.</p>
+<p><strong>프리랜서 시장(배경)</strong>: 국내 프리랜서 약 <strong>400만명</strong>으로 널리 인용(조선일보 2024.03 "노동법 밖의 노동자, 프리랜서 400만명") — 원문 URL 이관으로 404 확인되어 신뢰 중간, 리서치QA에서 1차 재확인 권장.</p>
+<hr />
+<h2>4. 출처 목록 (URL + 신뢰도)</h2>
+<p><strong>신뢰도 높음(1차/직접)</strong><br />
+- 위시켓 robots.txt <code>https://www.wishket.com/robots.txt</code><br />
+- 위시켓 프로젝트 목록(모집중) <code>https://www.wishket.com/project/</code> (+ 사이트맵 <code>sitemap-project.xml</code>)<br />
+- 프리모아 robots.txt <code>https://www.freemoa.net/robots.txt</code><br />
+- 프리모아 프로젝트 목록 API <code>https://www.freemoa.net/m4a/s41a</code> (비로그인 JSON, totalRows 22,911)<br />
+- 크몽 robots <code>https://kmong.com/robots.txt</code> · Freemo <code>https://www.freemo.work/robots.txt</code> · CyanNest <code>https://cyannest.com/robots.txt</code> · 아임잡 <code>https://www.imjob.co.kr/robots.txt</code> · 숨고 <code>https://soomgo.com/robots.txt</code></p>
+<p><strong>신뢰도 중간(언론/2차 집계)</strong><br />
+- 머니투데이 위시켓 누적 거래액 1,800억 <code>https://www.mt.co.kr/future/2024/01/25/2024012516073960567</code> (높음~중간)<br />
+- 리서치뉴스 위시켓 2025 상반기 매출·B2B AI 371% <code>http://press.researchnews.or.kr/newsRead.php?no=1014633</code> (보도자료 기반, 중간)<br />
+- Mordor Intelligence <em>South Korea IT Services</em> <code>https://www.mordorintelligence.com/industry-reports/south-korea-it-services-market</code> (2차 집계, 중간)<br />
+- Business Research Insights(글로벌 아웃소싱) <code>https://www.businessresearchinsights.com/ko/market-reports/outsourcing-market</code> (2차 집계, 중간)<br />
+- openbizdata 위시켓 재무(2025 매출 239억 추정) <code>https://www.openbizdata.com/wishket/</code> (2차 집계, 중간)</p>
+<p><strong>신뢰도 낮음 / 검증 필요</strong><br />
+- 프리랜서 400만명 — 조선일보 2024.03 기사, 원문 404 확인 <code>https://www.chosun.com/national/national_general/2024/03/09/CI522ZAT7H3QD2SLVSF76ZBL5Y</code> (낮음~중간, QA 재확인 필요)<br />
+- 위시켓 홈페이지 마케팅 문구(11만 프리랜서·누적 프로젝트 6.6만 등) <code>https://www.wishket.com/</code> (광고성, 낮음)<br />
+- 프리시(freesi)가 인용한 "소규모 소프트웨어 외주 견적 중앙값 38만 원" <code>https://freesi.net/blog/outsourcing-quote-report-2026</code> (개별 벤더 데이터·단위 모호, 낮음 — 미인용 권장)</p>
+<hr />
+<h2>5. 교차 검증 결과</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>표본 A</th>
+<th>표본 B</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>위시켓 누적 거래액</td>
+<td>1,800억(2024.01, 머니투데이)</td>
+<td>2,250억(2025.07, 리서치뉴스)</td>
+<td>일관(증가 추세) ✅</td>
+</tr>
+<tr>
+<td>위시켓 매출</td>
+<td>2024 연간 119억(리서치뉴스)</td>
+<td>2025 상반기 122억 / 연간추정 239억(openbizdata)</td>
+<td>일관(급성장) ✅</td>
+</tr>
+<tr>
+<td>위시켓 파트너 수</td>
+<td>12만 프리랜서+1.9만 개발사(2025.07)</td>
+<td>홈 "11만 프리랜서+1만 개발사", 2024 "13만 풀"</td>
+<td>상이(마케팅 문구 단계별) ⚠️ 신뢰 중간</td>
+</tr>
+<tr>
+<td>B2B AI 증가율</td>
+<td>리서치뉴스: 371%</td>
+<td>조선일보·네이버블로그 미러 동일 수치</td>
+<td>일관(단일 원류) ✅</td>
+</tr>
+<tr>
+<td>프리모아 총 등록</td>
+<td>totalRows 22,911(직접 크롤)</td>
+<td>(개별 상세 전수 미검증)</td>
+<td>원천값, 신뢰 높음 ✅</td>
+</tr>
+<tr>
+<td>위시켓 모집중 프로젝트</td>
+<td>사이트 표기 66,172건(직접 크롤)</td>
+<td>(마감 제외 의미 확인)</td>
+<td>원천값, 의미 해석 주의 ⚠️</td>
+</tr>
+<tr>
+<td>Mordor 한국 IT서비스 규모</td>
+<td>기사 내 21.28B USD·CAGR 11.87%</td>
+<td>동일 보고서 53.63B USD·12.38% 표기 공존</td>
+<td><strong>상충</strong> ⚠️ → TAM은 범위로 제시, 저신뢰 처리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>교차 검증 결론</strong>: 핵심 시장 신호(위시켓 누적거래·매출·AI 급증)는 복수 1차 보도에서 일관. 다만 <strong>마케팅성 수치(파트너 수, 모집중 프로젝트 수의 의미)</strong>는 해석에 주의 필요. Mordor TAM 수치 상충은 "2차 집계±"로 표기.</p>
+<hr />
+<h2>6. 기획팀을 위한 인사이트 &amp; 오픈 질문</h2>
+<h3>6.1 인사이트 (→ FR-06~08·시장성)</h3>
+<ul>
+<li><strong>고성장 영역(시장성 후보)</strong>: B2B AI 전환/구축(371% 성장), 금융·공공 규제 준수 UI(Electronic Gov·WebSquare5), 데이터 플랫폼/ETL(Airflow·k8s·Spark), 상주(기간제) 인력 수요 — 안건 샘플과 보도가 일치.</li>
+<li><strong>대시보드 가치(차별화)</strong>: 두 사이트 안건을 <strong>표준 스키마로 통합·정규화</strong>해 카테고리·예산·기간·지역·기술 키워드 분포를 한눈에 보여주고, 월간 추이로 <strong>어느 카테고리가 커지는지</strong>를 수치로 제시 → "플랫폼 오픈 시 시장성 있는 영역" 근거 제공(성공기준 SC-2).</li>
+<li><strong>크롤링 설계 시사점</strong>: 프리모아(JSON API, 상세 포함)가 가장 구현 대가가 낮고, 위시켓은 목록 필드(비로그인)에 의존. 원티드긱스는 봇 차단으로 제외가 현실적.</li>
+<li><strong>운영/법적</strong>: 위시켓 crawl-delay 5 준수 + 사이트맵 활용, 프리모아 <code>client_id</code> 이메일 제외, <code>/m7</code> 파트너 프로필 비수집(NFR-06).</li>
+</ul>
+<h3>6.2 기획팀 오픈 질문(우선 결정 필요)</h3>
+<ol>
+<li><strong>OQ-1(수집 대상 확정)</strong>: MVP는 <strong>위시켓+프리모아 2곳</strong>으로 시작하고, 크몽·Freemo·CyanNest·아임잡은 Phase2 확장 후보(현 시점 원티드긱스 제외) — 기획팀 범위 결정 필요.</li>
+<li><strong>OQ-2(접근성)</strong>: 위시켓 상세 로그인 게이트 때문에 "목록 필드 기반"으로 수집 스키마를 고정할지, 아니면 상세(로그인)까지 확장할지 — <strong>목록 기반 권장</strong>(더 단순·합리적).</li>
+<li><strong>OQ-3(드릴다운 FR-10)</strong>: 원문 상세(특히 위시켓 로그인 항목)를 MVP에 포함할지 — MVP에서는 원본URL 링크 제공 수준으로 제안.</li>
+<li><strong>OQ-4(분석 지표)</strong>: 카테고리 수요 점유율, 예산/기간 분포, 상주 vs 도급 비중, 기술 키워드 트랜드, 월간 신규 등록 추이 권장.</li>
+<li><strong>OQ-5(수집 주기·환경)</strong>: 월 1회 배치 + 위시켓 crawl-delay 5 감안한 실행 환경(개발팀 설계).</li>
+</ol>
+<hr />
+<h2>7. 산출물·원천 데이터</h2>
+<ul>
+<li><strong>본 리포트</strong>: <code>pipeline/market_dashboard/research-report.md</code> (+ <code>.html</code>)</li>
+<li><strong>원천(crawled/)</strong>: <code>crawled/README.md</code>, <code>crawled/wishket/</code>(robots.txt·project_list.html·sample csv/json), <code>crawled/freemoa/</code>(robots.txt·home.html·project_list.html·s41.js·s41a_page1.json·sample csv/json) — 수집 시각 2026-08-20, 외부 API 키 없음, robots 허용 범위 준수.</li>
+</ul>
+</main>
+</body>
+</html>
