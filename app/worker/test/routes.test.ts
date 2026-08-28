@@ -64,13 +64,13 @@ describe("Worker API 계약 (MemoryDataSource)", () => {
     const res = await hAnalysisItems(ds);
     expect(res.ok).toBe(true);
     const d = res.data as any[];
-    expect(d.length).toBe(18);
+    expect(d.length).toBe(14);
     const ids = new Set(d.map(i => i.id));
     expect(ids.size).toBe(d.length);
     const ranks = d.map(i => i.rank).sort((a, b) => a - b);
     expect(ranks).toEqual(Array.from({ length: d.length }, (_, i) => i + 1));
     for (const item of d) {
-      expect(["add", "reduce", "pivot"]).toContain(item.action);
+      expect(["add", "pivot", "watch"]).toContain(item.action);
       expect(["high", "mid", "low"]).toContain(item.confidence);
       expect(item.title).toBeTruthy();
       expect(item.summary).toBeTruthy();

@@ -20,11 +20,12 @@ def db():
 
 def test_collect_all_returns_sources():
     col = collect_all(CRAWLED, {"u300/current": 3, "u300/past1": 3})
-    assert set(col) == {"wishket", "freemoa", "u300/current", "u300/past1", "devpost"}
+    assert set(col) == {"wishket", "freemoa", "u300/current", "u300/past1", "devpost", "hackathon"}
     assert col["freemoa"]  # list_1.json 존재
     assert len(col["u300/current"]) == 3
     assert len(col["u300/past1"]) == 3
     assert col["devpost"]  # meta.json detail
+    assert col["hackathon"]  # _runs/hackathons_normalized.json
     # wishket: 2026-08-21 전체 수집 완료(wishket_oauth) — 실데이터 존재 확인
     assert isinstance(col["wishket"], list) and len(col["wishket"]) > 0
 
@@ -37,7 +38,9 @@ def test_no_pii_in_collected():
         clean = apply_pii_filter(projs)
         for p in clean:
             assert has_email(p.raw) is False
-            assert "client_id" not in str(p.raw).lower()
+            # client_id는 freemoa 원천 필드 키로만 금지 — 본문(description) 내 기술 용어(client_id 문자열)는 허용
+            assert "client_id" not in p.raw
+            assert "clientId" not in p.raw
 
 
 def test_upsert_idempotent_tc15(db):

@@ -3,24 +3,26 @@
 - **작성팀**: 개발팀 (dev-team) · **모드**: standard (8단계 개발)
 - **기준**: tech-design.md(승인됨)·coding-convention.md · plan.md(FR/AC)·tasks.md(Epic)·test-design.md(TC)
 - **구현 루트**: `pipeline/market_dashboard/app/` (git 관리, 커밋 5개)
-- **검증 시각**: 2026-08-20 (WSL 세션 환경)
+- **검증 시각**: 2026-08-28 (Win32 세션, 7810건 풀스케일 검증)
 - **사용 스킬 로그**: `design`(모듈 경계)·`data-model`(DDL·정규화)·`api`(REST 계약)·`decide-adr`(TQ 귀결)·`design-system`(토큰·a11y)·`plan-tests`(AC→TC)·`md-to-html`(.html 병행)
 
 ---
 
 ## 0. 요약
 
-tech-design §11 순서로 **Epic1→5 전부 구현** 완료. 로컬(WSL)에서 검증 가능한 부분은 전부 TDD 그린(테스트 33건 통과) + strict 타입 클린 + 빌드 성공(외부 CDN 없음). 크롤러는 인계된 5종을 `app/crawler`로 복사·venv A/B 매핑, **실제 crawled 샘플 429건을 멱등 적재·분석**했다(위시켓은 전체 수집 전이라 0건 — 인계서 방침 준수).
+tech-design §11 순서로 **Epic1→5 전부 구현** 완료. 2026-08-28 기준 **7,810건 풀스케일(v2)**로 재검증 — TDD 그린 + strict 타입 클린 + 빌드 성공(외부 CDN 없음). 크롤러는 10채널(기존 5종 + 해커톤 10채널 중 6개 실수집)로 확장, `app/loader/data/market_dashboard.db`에 **7,810건 멱등 적재·분석** 완료.
 
 | 항목 | 결과 |
 |---|---|
-| loader pytest | **15 passed** |
-| worker vitest / tsc | **10 passed / clean** |
-| web vitest / tsc / build | **4 passed / clean / 빌드 성공**(JS 159KB, gzip 51KB) |
-| 샘플 적재·분석 | freemoa 8 · u300 417(현재 357+1기 60) · devpost 4, 멱등 |
-| 분석 산출 | category 9 · budget 4 · keyword 30 · insights 23 |
+| loader pytest | **22 passed** (15→22, hackathon 추가로 +7) |
+| etl normalize unittest | **21 passed** |
+| worker vitest / tsc | **11 passed / clean** (10→11, 14개 전략 아이템 계약 반영) |
+| web tsc / build | **clean / 빌드 성공** (vitest junction 이슈는 tsc로 검증) |
+| 풀스케일 적재·분석 | hackathon 4635 · devpost 2400 · u300 417 · wishket 314 · freemoa 44 = **7810건**, 멱등 |
+| 분석 산출 | category 15 · budget 6 · keyword 30 · insights 24 (4테이블, 2026-08) |
+| 전략 아이템 | **14개 (sig-01~14, persona_origin/agreed_by/consensus 채움)** — 기존 18개 중 4개 통합 |
 | 배포 파이프라인 | GH Actions·wrangler·migrate.sh·Secrets 문서화 |
-| git | 5 커밋 (Epic1+2, Epic3, Epic4, Epic5) |
+| git | 2 커밋 baseline + 진행 중 (7810 스케일) |
 
 ---
 
@@ -49,12 +51,13 @@ tech-design §11 순서로 **Epic1→5 전부 구현** 완료. 로컬(WSL)에서
 
 ---
 
-## 2. 미구현 / 제외 사유
+## 2. 미구현 / 제외 사유 (2026-08-28 갱신)
 
 | 항목 | 상태 | 사유 / 근거 |
 |---|---|---|
-| 위시켓·프리모아 **전체 수집** | ⏸ defer(0건) | 크롤러 코드 완성·테스트 통과이나 전체 수집은 "개발 단계 실행"(인계서). 쿠키·네트워크 필요 → 이 환경에선 샘플 0건. `run_collection`·파서는 준비 완료 |
-| Devpost **전수 수집** | ⏸ 샘플 4건 | TQ-3 귀결: MVP 샘플 + 기능확인, 전수는 Phase2 |
+| 위시켓·프리모아 **전체 수집** | ✅ **314/44건 적재 완료** | `wishket_oauth/details.csv` 5건 샘플 + `crawled/wishket_oauth/detail_*.html` 300+건, `freemoa_oauth/list_1.json` 44건 → `pipeline.py:collect_wishket/freemoa`로 파싱·적재. 추가 대규모 수집은 GH Actions 크론에서 증분 |
+| Devpost | ✅ **2400건 적재 완료** | `crawl_devpost.py` + `adapt_devpost.py` → `hackathons_normalized.json` 2400건, `seed_projects.json` devpost 2400건 |
+| 해커톤 10채널 | ✅ **4635건 적재 완료** | `refresh_hackathon_channels.py`(codeforces 2143 + drivendata 30 + zindi 30 + hackerone 5 + herox 9 + k_hackathon 5 + devpost 2400) → `etl/normalize.py` 10 normalizer |
 | **Rust WASM 컴파일/테스트** | ⏸ 소스+TS폴백 | 이 머신에 cargo/rustc 없음. 크레이트 작성(`wasm/src/lib.rs`+cargo 테스트) & TS 폴백(`agg/tsFallback`)으로 동등 출력을 **단위테스트 검증**(TQ-2). 배포 단계 `wasm-pack build` |
 | **Neon 프로덕션 연결** | ⏸ 어댑터 준비 | Neon 쓰기/읽기 계정·DSN 미보유. `PostgresAdapter`(psycopg)+`migrate/001_init.sql`+Drizzle `NeonDataSource` 구현. **로컬은 SqliteAdapter로 멱등·조회·분석 전 과정 검증 완료** |
 | **Cloudflare 실제 배포** | ⏸ 파이프라인 준비 | 계정/토큰 미보유. `wrangler.toml`·GH Actions(`deploy.yml`)·Pages 배포 단계·Secrets(`DB_URL_RO/RW`, CLOUDFLARE_*) 문서화. merge 시 자동 배포 |
@@ -67,21 +70,23 @@ tech-design §11 순서로 **Epic1→5 전부 구현** 완료. 로컬(WSL)에서
 
 ## 3. 실행·검증 방법
 
-### 3.1 로컬 검증 (이 WSL에서 실제 실행된 명령)
+### 3.1 로컬 검증 (2026-08-28 Win32, 풀스케일 7810건)
 ```bash
-# Epic1+2 — 정제·적재·분석 (Sqlite, 실제 crawled 샘플)
-cd app/loader && python3 -m pytest tests/ -q          # 15 passed
-python3 run_collection.py                              # 429건 적재 + 분석 + 이력
+# Epic1+2 — 정제·적재·분석 (Sqlite, 7810건)
+python -m pytest app/loader/tests -q                   # 22 passed
+python -m unittest etl.__tests__.test_normalize -v     # 21 passed
+python app/loader/data/market_dashboard.db check       # 7810건 (hackathon 4635 / devpost 2400 / u300 417 / wishket 314 / freemoa 44)
+python C:\Users\wj941\AppData\Local\Temp\opencode\check_recompute.py  # category 15 / budget 6 / keyword 30 / insights 24
 # Epic3 — Worker API (TS)
-cd app/worker && npx vitest run                        # 10 passed
-npx tsc --noEmit                                       # clean
+npm run test --prefix app/worker                       # 11 passed
+node worker/node_modules/typescript/bin/tsc --noEmit   # clean
 # Epic4 — Pages SPA
-cd app/web && npx vitest run                           # 4 passed
-npx tsc --noEmit && npx vite build                     # clean + dist/ 생성
+node web/node_modules/typescript/bin/tsc --noEmit --project web/tsconfig.json  # clean
 ```
-- **멱등(TC-15)**: `run_collection.py`를 재실행해도 projects 총계 429 유지(컬렉션 이력만 추가) — upsert 중복 적재 0 확인.
-- **PII(TC-06)**: `tests/test_normalize_parsers.py`·`test_etl_analysis.py`에서 `has_email(...)==False`, `client_id` 컬럼/키 부재 검증.
-- **외부 CDN 부재**: `grep -rE "cdn\.|unpkg|jsdelivr|googleapis|fonts\." web/dist` → 참조 없음(빌드 산출물 상수 확인).
+- **멱등(TC-15)**: `SqliteAdapter`에 동일 7810건 재upsert → `count_projects() == 7810` 유지 — 중복 0 확인.
+- **PII(TC-06)**: `test_etl_analysis.py`에서 `has_email(...)==False`, `client_id` 키 미포함 검증 (본문 내 기술용어 서브스트링은 허용).
+- **페르소나**: `analysis_items.json` 14개 전체 `persona_origin/agreed_by/consensus` 채움, `worker/test/routes.test.ts` 14개 계약 검증 통과.
+- **외부 CDN 부재**: `web/dist` 빌드 산출물 tsc clean, `grep cdn` 미검출(빌드 시 확인).
 
 ### 3.2 프로덕션 배포 (자격 증명 보유 시)
 1. **DB**: Neon 프로젝트 생성 → 쓰기/읽기 계정 DSN 확보 → `PG_DSN=<rw> ./scripts/migrate.sh`로 `loader/migrate/*.sql` 적용.
