@@ -23,6 +23,9 @@ jobs:
         working-directory: app/worker
         run: |
           npm ci
+          # seed_projects.json은 .gitignore로 누락될 수 있어 CI에서 더미 생성 (프로덕션은 Neon 사용)
+          if [ ! -f src/seed_projects.json ]; then echo '[]' > src/seed_projects.json; echo "created dummy seed_projects.json"; fi
+          if [ ! -f src/seed_keywords.json ]; then echo '{"period":"2026-08","keywords":[]}' > src/seed_keywords.json; echo "created dummy seed_keywords.json"; fi
           npm run test
           npm run typecheck
 
