@@ -1,1 +1,305 @@
-{"period": "2026-08", "keywords": [{"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "next.js", "cnt": 418, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 361, "prevCnt": null, "growthRate": null}, {"keyword": "fastapi", "cnt": 360, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 349, "prevCnt": null, "growthRate": null}, {"keyword": "vite", "cnt": 348, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "ai", "cnt": 311, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 260, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "vercel", "cnt": 259, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 212, "prevCnt": null, "growthRate": null}, {"keyword": "api", "cnt": 211, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind", "cnt": 194, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 184, "prevCnt": null, "growthRate": null}, {"keyword": "tailwindcss", "cnt": 183, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "supabase", "cnt": 179, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "cockroachdb", "cnt": 167, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "claude", "cnt": 121, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "gemini-api", "cnt": 108, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "tailwind-css", "cnt": 103, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "llm", "cnt": 92, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "rest-api", "cnt": 91, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "mcp", "cnt": 90, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "streamlit", "cnt": 81, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "google-gemini", "cnt": 78, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "openai", "cnt": 77, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 76, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "aws-lambda", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "firestore", "cnt": 75, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "rest", "cnt": 73, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "pydantic", "cnt": 72, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 67, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "vitest", "cnt": 66, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "amazon-bedrock", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "render", "cnt": 65, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "rag", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "zod", "cnt": 63, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "pytest", "cnt": 62, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}, {"keyword": "uvicorn", "cnt": 60, "prevCnt": null, "growthRate": null}]}
+{
+  "period": "2026-08",
+  "keywords": [
+    {
+      "keyword": "cf",
+      "cnt": 1555,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "next.js",
+      "cnt": 836,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "fastapi",
+      "cnt": 720,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "vite",
+      "cnt": 696,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "ai",
+      "cnt": 576,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "icpc",
+      "cnt": 543,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "vercel",
+      "cnt": 520,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "api",
+      "cnt": 422,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "tailwind",
+      "cnt": 388,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "tailwindcss",
+      "cnt": 366,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "supabase",
+      "cnt": 358,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "cockroachdb",
+      "cnt": 334,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "claude",
+      "cnt": 242,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "gemini-api",
+      "cnt": 216,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "tailwind-css",
+      "cnt": 206,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "llm",
+      "cnt": 184,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "rest-api",
+      "cnt": 182,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "mcp",
+      "cnt": 180,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "streamlit",
+      "cnt": 162,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "google-gemini",
+      "cnt": 156,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "openai",
+      "cnt": 154,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "aws-lambda",
+      "cnt": 150,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "firestore",
+      "cnt": 150,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "pydantic",
+      "cnt": 146,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "rest",
+      "cnt": 146,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "vitest",
+      "cnt": 134,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "amazon-bedrock",
+      "cnt": 130,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "render",
+      "cnt": 130,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "zod",
+      "cnt": 126,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "rag",
+      "cnt": 124,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "pytest",
+      "cnt": 124,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "uvicorn",
+      "cnt": 120,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "generative",
+      "cnt": 120,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "cloud",
+      "cnt": 116,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "vertex-ai",
+      "cnt": 116,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "google-cloud-run",
+      "cnt": 104,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "computer-vision",
+      "cnt": 102,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "prisma",
+      "cnt": 98,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "langchain",
+      "cnt": 98,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "learning",
+      "cnt": 96,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "langgraph",
+      "cnt": 96,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "playwright",
+      "cnt": 94,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "google-ai-studio",
+      "cnt": 90,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "github-actions",
+      "cnt": 90,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "machine",
+      "cnt": 90,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "cloud-run",
+      "cnt": 88,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "recharts",
+      "cnt": 88,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "pwa",
+      "cnt": 86,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "vector-search",
+      "cnt": 84,
+      "prevCnt": null,
+      "growthRate": null
+    },
+    {
+      "keyword": "ai-agents",
+      "cnt": 84,
+      "prevCnt": null,
+      "growthRate": null
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "generated_at": "2026-08-28T22:59:39+0900",
+  "items_total": 4635,
+  "category_count": {
+    "Healthcare": 95,
+    "NLP": 166,
+    "Education": 323,
+    "Computer Vision": 142,
+    "Other": 491,
+    "Data Science": 153,
+    "IoT/Hardware": 37,
+    "Climate": 55,
+    "AI/ML": 1324,
+    "Finance": 69,
+    "Smart City": 20,
+    "Agriculture": 20,
+    "Retail/E-commerce": 54,
+    "Security": 53,
+    "Competitive Programming": 2165,
+    "Mobile": 111,
+    "Backend/API": 1002,
+    "Public/Social": 95,
+    "Web/Frontend": 916,
+    "DevOps": 402
+  },
+  "category_by_source": {
+    "Healthcare": {
+      "drivendata": 6,
+      "zindi": 5,
+      "hackerone": 3,
+      "devpost": 79,
+      "herox": 2
+    },
+    "NLP": {
+      "drivendata": 1,
+      "zindi": 1,
+      "codeforces": 8,
+      "hackerone": 4,
+      "devpost": 152
+    },
+    "Education": {
+      "drivendata": 2,
+      "codeforces": 204,
+      "devpost": 117
+    },
+    "Computer Vision": {
+      "drivendata": 5,
+      "hackerone": 2,
+      "devpost": 135
+    },
+    "Other": {
+      "drivendata": 14,
+      "zindi": 12,
+      "hackerearth": 1,
+      "devpost": 459,
+      "herox": 5
+    },
+    "Data Science": {
+      "drivendata": 2,
+      "zindi": 6,
+      "hackerone": 11,
+      "devpost": 134
+    },
+    "IoT/Hardware": {
+      "drivendata": 1,
+      "devpost": 36
+    },
+    "Climate": {
+      "drivendata": 1,
+      "zindi": 2,
+      "hackerone": 4,
+      "devpost": 48
+    },
+    "AI/ML": {
+      "drivendata": 3,
+      "zindi": 2,
+      "codeforces": 2,
+      "hackerone": 4,
+      "devpost": 1307,
+      "k_hackathon": 5,
+      "herox": 1
+    },
+    "Finance": {
+      "zindi": 1,
+      "hackerone": 8,
+      "devpost": 60
+    },
+    "Smart City": {
+      "zindi": 2,
+      "hackerone": 2,
+      "devpost": 16
+    },
+    "Agriculture": {
+      "zindi": 7,
+      "devpost": 13
+    },
+    "Retail/E-commerce": {
+      "zindi": 1,
+      "hackerone": 8,
+      "devpost": 43,
+      "k_hackathon": 1,
+      "herox": 1
+    },
+    "Security": {
+      "zindi": 2,
+      "hackerone": 17,
+      "devpost": 34
+    },
+    "Competitive Programming": {
+      "codeforces": 2143,
+      "hackerone": 6,
+      "devpost": 16
+    },
+    "Mobile": {
+      "codeforces": 30,
+      "hackerone": 3,
+      "devpost": 78
+    },
+    "Backend/API": {
+      "codeforces": 2,
+      "hackerone": 7,
+      "devpost": 993
+    },
+    "Public/Social": {
+      "codeforces": 1,
+      "hackerone": 13,
+      "devpost": 79,
+      "herox": 2
+    },
+    "Web/Frontend": {
+      "hackerone": 5,
+      "devpost": 911
+    },
+    "DevOps": {
+      "hackerone": 1,
+      "devpost": 401
+    }
+  },
+  "category_by_phase": {
+    "open": {
+      "Competitive Programming": 1
+    },
+    "upcoming": {
+      "Competitive Programming": 4,
+      "Education": 1
+    },
+    "finished": {
+      "AI/ML": 1316,
+      "Finance": 61,
+      "Smart City": 18,
+      "Agriculture": 20,
+      "Retail/E-commerce": 45,
+      "Other": 471,
+      "Data Science": 140,
+      "Healthcare": 84,
+      "Security": 36,
+      "Climate": 50,
+      "NLP": 161,
+      "Competitive Programming": 2154,
+      "Education": 320,
+      "Mobile": 108,
+      "Backend/API": 995,
+      "Public/Social": 80,
+      "Web/Frontend": 911,
+      "Computer Vision": 135,
+      "DevOps": 401,
+      "IoT/Hardware": 36
+    },
+    "unknown": {
+      "Healthcare": 11,
+      "NLP": 5,
+      "Education": 2,
+      "Computer Vision": 7,
+      "Other": 20,
+      "Data Science": 13,
+      "IoT/Hardware": 1,
+      "Climate": 5,
+      "AI/ML": 8,
+      "Security": 17,
+      "Finance": 8,
+      "Public/Social": 15,
+      "Web/Frontend": 5,
+      "Backend/API": 7,
+      "Competitive Programming": 6,
+      "Retail/E-commerce": 9,
+      "Mobile": 3,
+      "Smart City": 2,
+      "DevOps": 1
+    }
+  },
+  "open_by_category": {
+    "Competitive Programming": 5,
+    "Education": 1
+  },
+  "prize_usd_by_category": {
+    "Other": 2097170,
+    "Healthcare": 806000,
+    "Education": 30000,
+    "Computer Vision": 355000,
+    "IoT/Hardware": 40000,
+    "Climate": 19130,
+    "AI/ML": 369100,
+    "Finance": 37800,
+    "Smart City": 14500,
+    "Agriculture": 30970,
+    "Retail/E-commerce": 8910,
+    "Data Science": 9000,
+    "Security": 3000,
+    "NLP": 1130
+  },
+  "source_category_matrix": {
+    "drivendata": {
+      "Healthcare": 6,
+      "NLP": 1,
+      "Education": 2,
+      "Computer Vision": 5,
+      "Other": 14,
+      "Data Science": 2,
+      "IoT/Hardware": 1,
+      "Climate": 1,
+      "AI/ML": 3
+    },
+    "zindi": {
+      "AI/ML": 2,
+      "Finance": 1,
+      "Smart City": 2,
+      "Agriculture": 7,
+      "Retail/E-commerce": 1,
+      "Other": 12,
+      "Data Science": 6,
+      "Healthcare": 5,
+      "Security": 2,
+      "Climate": 2,
+      "NLP": 1
+    },
+    "codeforces": {
+      "Competitive Programming": 2143,
+      "Education": 204,
+      "Mobile": 30,
+      "AI/ML": 2,
+      "Backend/API": 2,
+      "Public/Social": 1,
+      "NLP": 8
+    },
+    "hackerone": {
+      "Security": 17,
+      "AI/ML": 4,
+      "Data Science": 11,
+      "Finance": 8,
+      "Public/Social": 13,
+      "Web/Frontend": 5,
+      "Backend/API": 7,
+      "Competitive Programming": 6,
+      "Climate": 4,
+      "Retail/E-commerce": 8,
+      "NLP": 4,
+      "Mobile": 3,
+      "Healthcare": 3,
+      "Smart City": 2,
+      "Computer Vision": 2,
+      "DevOps": 1
+    },
+    "hackerearth": {
+      "Other": 1
+    },
+    "devpost": {
+      "AI/ML": 1307,
+      "NLP": 152,
+      "Backend/API": 993,
+      "Other": 459,
+      "Web/Frontend": 911,
+      "Computer Vision": 135,
+      "Public/Social": 79,
+      "Mobile": 78,
+      "Data Science": 134,
+      "Education": 117,
+      "Retail/E-commerce": 43,
+      "Smart City": 16,
+      "Security": 34,
+      "DevOps": 401,
+      "Climate": 48,
+      "IoT/Hardware": 36,
+      "Healthcare": 79,
+      "Finance": 60,
+      "Agriculture": 13,
+      "Competitive Programming": 16
+    },
+    "k_hackathon": {
+      "AI/ML": 5,
+      "Retail/E-commerce": 1
+    },
+    "herox": {
+      "Healthcare": 2,
+      "Public/Social": 2,
+      "Other": 5,
+      "Retail/E-commerce": 1,
+      "AI/ML": 1
+    }
+  },
+  "top_keywords": [
+    [
+      "devpost",
+      4803
+    ],
+    [
+      "codeforces",
+      3869
+    ],
+    [
+      "hackathon-project",
+      2400
+    ],
+    [
+      "competitive-programming",
+      2143
+    ],
+    [
+      "round",
+      1975
+    ],
+    [
+      "icpc",
+      1162
+    ],
+    [
+      "fastapi",
+      363
+    ],
+    [
+      "vite",
+      350
+    ],
+    [
+      "next",
+      326
+    ],
+    [
+      "vercel",
+      275
+    ],
+    [
+      "rated",
+      208
+    ],
+    [
+      "tailwind",
+      199
+    ],
+    [
+      "educational",
+      198
+    ],
+    [
+      "tailwindcss",
+      183
+    ],
+    [
+      "supabase",
+      180
+    ],
+    [
+      "cockroachdb",
+      171
+    ],
+    [
+      "claude",
+      122
+    ],
+    [
+      "based",
+      121
+    ],
+    [
+      "beta",
+      120
+    ],
+    [
+      "nextjs",
+      118
+    ],
+    [
+      "gemini-api",
+      111
+    ],
+    [
+      "tailwind-css",
+      103
+    ],
+    [
+      "security",
+      97
+    ],
+    [
+      "data",
+      91
+    ],
+    [
+      "rest-api",
+      91
+    ],
+    [
+      "only",
+      90
+    ],
+    [
+      "online",
+      83
+    ],
+    [
+      "scope",
+      81
+    ],
+    [
+      "streamlit",
+      81
+    ],
+    [
+      "mirror",
+      80
+    ],
+    [
+      "program",
+      78
+    ],
+    [
+      "openai",
+      78
+    ],
+    [
+      "google-gemini",
+      78
+    ],
+    [
+      "aws-lambda",
+      75
+    ],
+    [
+      "firestore",
+      75
+    ],
+    [
+      "pydantic",
+      74
+    ],
+    [
+      "rest",
+      74
+    ],
+    [
+      "with",
+      73
+    ],
+    [
+      "elimination",
+      73
+    ],
+    [
+      "report",
+      72
+    ],
+    [
+      "challenge",
+      71
+    ],
+    [
+      "that",
+      69
+    ],
+    [
+      "technocup",
+      68
+    ],
+    [
+      "render",
+      68
+    ],
+    [
+      "kotlin",
+      67
+    ],
+    [
+      "vitest",
+      67
+    ],
+    [
+      "hackerone",
+      65
+    ],
+    [
+      "vulnerabilities",
+      65
+    ],
+    [
+      "amazon-bedrock",
+      65
+    ],
+    [
+      "contest",
+      64
+    ]
+  ]
+}
