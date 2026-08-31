@@ -276,7 +276,8 @@ with psycopg.connect(DSN) as c:
             """, ['all', r['kw'], r['n'], PERIOD])
         print(f"  inserted analysis_keyword: {len(kw_rows)} rows")
 
-        persona_items = json.load(open('app/worker/src/analysis_items.json'))
+        with open('app/worker/src/analysis_items.json', encoding='utf-8') as f:
+            persona_items = json.load(f)
         for it in persona_items:
             rank = it['rank']
             # add/reduce → feature(기능 개선), pivot → market(방향 전환), watch → keyword(관망)

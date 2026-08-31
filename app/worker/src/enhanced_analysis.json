@@ -1,0 +1,593 @@
+{
+  "generated_at": "2026-08-31",
+  "total": 7810,
+  "gap_quadrant": {
+    "gl_total": 2400,
+    "themes": [
+      {
+        "theme": "데이터/대시보드",
+        "global_cnt": 924,
+        "global_share_pct": 38.5,
+        "kr_cnt": 159,
+        "kr_budget_sum": 3563495455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "AI 에이전트/MCP",
+        "global_cnt": 749,
+        "global_share_pct": 31.2,
+        "kr_cnt": 7,
+        "kr_budget_sum": 87000000,
+        "quadrant": "Q2",
+        "note": "글로벌 과열·한국 공백 — C티어 후보(진입 직전 신호)"
+      },
+      {
+        "theme": "게임/미디어",
+        "global_cnt": 710,
+        "global_share_pct": 29.6,
+        "kr_cnt": 103,
+        "kr_budget_sum": 1949627273,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "음성/콜",
+        "global_cnt": 617,
+        "global_share_pct": 25.7,
+        "kr_cnt": 38,
+        "kr_budget_sum": 888800000,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "접근성/돌봄",
+        "global_cnt": 586,
+        "global_share_pct": 24.4,
+        "kr_cnt": 38,
+        "kr_budget_sum": 733395455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "생산성/업무자동화",
+        "global_cnt": 576,
+        "global_share_pct": 24.0,
+        "kr_cnt": 248,
+        "kr_budget_sum": 4812995455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "헬스케어",
+        "global_cnt": 501,
+        "global_share_pct": 20.9,
+        "kr_cnt": 29,
+        "kr_budget_sum": 723845455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "보안/사기탐지",
+        "global_cnt": 492,
+        "global_share_pct": 20.5,
+        "kr_cnt": 145,
+        "kr_budget_sum": 3087245455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "교육/학습",
+        "global_cnt": 492,
+        "global_share_pct": 20.5,
+        "kr_cnt": 58,
+        "kr_budget_sum": 1233645455,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "챗봇/대화형",
+        "global_cnt": 308,
+        "global_share_pct": 12.8,
+        "kr_cnt": 36,
+        "kr_budget_sum": 1250181818,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "커뮤니티/소셜",
+        "global_cnt": 296,
+        "global_share_pct": 12.3,
+        "kr_cnt": 30,
+        "kr_budget_sum": 550000000,
+        "quadrant": "Q1",
+        "note": "검증된 공통 수요 — 양쪽 모두 강함"
+      },
+      {
+        "theme": "법률/IP",
+        "global_cnt": 230,
+        "global_share_pct": 9.6,
+        "kr_cnt": 18,
+        "kr_budget_sum": 261400000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "기후/에너지",
+        "global_cnt": 220,
+        "global_share_pct": 9.2,
+        "kr_cnt": 47,
+        "kr_budget_sum": 702500000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "커머스",
+        "global_cnt": 199,
+        "global_share_pct": 8.3,
+        "kr_cnt": 65,
+        "kr_budget_sum": 1423800000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "결제/정산",
+        "global_cnt": 194,
+        "global_share_pct": 8.1,
+        "kr_cnt": 113,
+        "kr_budget_sum": 2785345455,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "금융/투자",
+        "global_cnt": 171,
+        "global_share_pct": 7.1,
+        "kr_cnt": 17,
+        "kr_budget_sum": 422500000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "예약/일정",
+        "global_cnt": 154,
+        "global_share_pct": 6.4,
+        "kr_cnt": 64,
+        "kr_budget_sum": 1560100000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "채용/HR",
+        "global_cnt": 143,
+        "global_share_pct": 6.0,
+        "kr_cnt": 32,
+        "kr_budget_sum": 448500000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      },
+      {
+        "theme": "IoT/펌웨어",
+        "global_cnt": 97,
+        "global_share_pct": 4.0,
+        "kr_cnt": 30,
+        "kr_budget_sum": 481000000,
+        "quadrant": "Q3",
+        "note": "한국 특화 수요 — 로컬 웨지"
+      }
+    ],
+    "c_candidates": [
+      {
+        "theme": "AI 에이전트/MCP",
+        "global_cnt": 749,
+        "global_share_pct": 31.2,
+        "kr_cnt": 7,
+        "kr_budget_sum": 87000000,
+        "quadrant": "Q2",
+        "note": "글로벌 과열·한국 공백 — C티어 후보(진입 직전 신호)"
+      }
+    ]
+  },
+  "funding": {
+    "total_rounds": 46,
+    "by_round": {
+      "PRE_SEED": 32,
+      "SEED": 12,
+      "SERIES_A": 1,
+      "PRE_A": 1
+    },
+    "tracks": [
+      {
+        "domain": "교육/학습",
+        "cnt": 9,
+        "rounds": {
+          "PRE_SEED": 9
+        },
+        "rounds_label": "프리시드 9",
+        "examples": [
+          "트윈커스",
+          "이루리랩스",
+          "RYC"
+        ]
+      },
+      {
+        "domain": "결제/정산",
+        "cnt": 8,
+        "rounds": {
+          "PRE_A": 1,
+          "SEED": 2,
+          "PRE_SEED": 5
+        },
+        "rounds_label": "프리시드 5, 시드 2, 프리A 1",
+        "examples": [
+          "다시물결",
+          "크릭스",
+          "RYC"
+        ]
+      },
+      {
+        "domain": "데이터/대시보드",
+        "cnt": 7,
+        "rounds": {
+          "PRE_A": 1,
+          "PRE_SEED": 4,
+          "SEED": 2
+        },
+        "rounds_label": "프리시드 4, 시드 2, 프리A 1",
+        "examples": [
+          "다시물결",
+          "이루리랩스",
+          "대세에 편승하라"
+        ]
+      },
+      {
+        "domain": "생산성/업무자동화",
+        "cnt": 7,
+        "rounds": {
+          "PRE_SEED": 6,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 6, 시드 1",
+        "examples": [
+          "이루리랩스",
+          "기가링크",
+          "RYC"
+        ]
+      },
+      {
+        "domain": "게임/미디어",
+        "cnt": 6,
+        "rounds": {
+          "PRE_SEED": 5,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 5, 시드 1",
+        "examples": [
+          "RTVS",
+          "크릭스",
+          "RYC"
+        ]
+      },
+      {
+        "domain": "음성/콜",
+        "cnt": 6,
+        "rounds": {
+          "SEED": 4,
+          "PRE_SEED": 2
+        },
+        "rounds_label": "시드 4, 프리시드 2",
+        "examples": [
+          "그럼요컴퍼니",
+          "VIKA",
+          "로봇컴 주식회사"
+        ]
+      },
+      {
+        "domain": "헬스케어",
+        "cnt": 6,
+        "rounds": {
+          "PRE_SEED": 4,
+          "SEED": 2
+        },
+        "rounds_label": "프리시드 4, 시드 2",
+        "examples": [
+          "VIKA",
+          "LIFEXIS",
+          "FIND"
+        ]
+      },
+      {
+        "domain": "챗봇/대화형",
+        "cnt": 6,
+        "rounds": {
+          "PRE_SEED": 5,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 5, 시드 1",
+        "examples": [
+          "FIND",
+          "쌀의 꿈: 미몽(米夢)",
+          "마인드러닝72"
+        ]
+      },
+      {
+        "domain": "기후/에너지",
+        "cnt": 5,
+        "rounds": {
+          "PRE_SEED": 4,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 4, 시드 1",
+        "examples": [
+          "GADGET",
+          "VIKA",
+          "땡그리(Dan Grid)"
+        ]
+      },
+      {
+        "domain": "법률/IP",
+        "cnt": 3,
+        "rounds": {
+          "SEED": 1,
+          "PRE_SEED": 2
+        },
+        "rounds_label": "프리시드 2, 시드 1",
+        "examples": [
+          "크릭스",
+          "WELS",
+          "AeroPrint"
+        ]
+      },
+      {
+        "domain": "AI 에이전트/MCP",
+        "cnt": 3,
+        "rounds": {
+          "PRE_SEED": 2,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 2, 시드 1",
+        "examples": [
+          "GADGET",
+          "소방친구",
+          "그린튠즈"
+        ]
+      },
+      {
+        "domain": "커머스",
+        "cnt": 2,
+        "rounds": {
+          "SEED": 1,
+          "PRE_SEED": 1
+        },
+        "rounds_label": "시드 1, 프리시드 1",
+        "examples": [
+          "크릭스",
+          "인커럽트"
+        ]
+      },
+      {
+        "domain": "금융/투자",
+        "cnt": 2,
+        "rounds": {
+          "SEED": 1,
+          "PRE_SEED": 1
+        },
+        "rounds_label": "시드 1, 프리시드 1",
+        "examples": [
+          "대세에 편승하라",
+          "땡그리(Dan Grid)"
+        ]
+      },
+      {
+        "domain": "커뮤니티/소셜",
+        "cnt": 2,
+        "rounds": {
+          "SEED": 1,
+          "PRE_SEED": 1
+        },
+        "rounds_label": "시드 1, 프리시드 1",
+        "examples": [
+          "LIFEXIS",
+          "인커럽트"
+        ]
+      },
+      {
+        "domain": "IoT/펌웨어",
+        "cnt": 2,
+        "rounds": {
+          "PRE_SEED": 1,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 1, 시드 1",
+        "examples": [
+          "에이엠지니들",
+          "그린튠즈"
+        ]
+      },
+      {
+        "domain": "접근성/돌봄",
+        "cnt": 2,
+        "rounds": {
+          "PRE_SEED": 2
+        },
+        "rounds_label": "프리시드 2",
+        "examples": [
+          "터치드픽셀(TouchedPixel)",
+          "소방친구"
+        ]
+      },
+      {
+        "domain": "보안/사기탐지",
+        "cnt": 2,
+        "rounds": {
+          "PRE_SEED": 1,
+          "SEED": 1
+        },
+        "rounds_label": "프리시드 1, 시드 1",
+        "examples": [
+          "마인드러닝72",
+          "로봇컴 주식회사"
+        ]
+      },
+      {
+        "domain": "채용/HR",
+        "cnt": 2,
+        "rounds": {
+          "PRE_SEED": 2
+        },
+        "rounds_label": "프리시드 2",
+        "examples": [
+          "인커럽트",
+          "BAESH"
+        ]
+      }
+    ]
+  },
+  "reorder": {
+    "repeated_cnt": 9,
+    "top": [
+      {
+        "title": "교육용 솔루션 클라우드 중계 서버 구축 및 5종 클라이언트 통신망 리뉴얼",
+        "cnt": 2,
+        "budget_sum": 200000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "하이엔드 맞춤형 헬스케어 진단 및 솔루션 앱 구축",
+        "cnt": 2,
+        "budget_sum": 80000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "유아의류 자사몰 MVP 구축",
+        "cnt": 2,
+        "budget_sum": 60000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "위치기반 서비스를 활용한 특정 분야 중개 플랫폼",
+        "cnt": 2,
+        "budget_sum": 40000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "대규모 트래픽 대응 숙박(펜션) 통합 예약 반응형 웹 구축",
+        "cnt": 2,
+        "budget_sum": 30000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "Wordpress 기반 프리미엄 예술심리 브랜드 하이엔드 웹사이트 구축",
+        "cnt": 2,
+        "budget_sum": 23000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "데이터 수집(크롤링) 및 여성 커뮤니티 구축",
+        "cnt": 2,
+        "budget_sum": 10000000,
+        "channels": {
+          "wishket": 2
+        }
+      },
+      {
+        "title": "(고도화) 해외 숙박 예약 서비스 추가 개발",
+        "cnt": 2,
+        "budget_sum": 9200000,
+        "channels": {
+          "freemoa": 2
+        }
+      },
+      {
+        "title": "공공기관 내부 시스템 관리자용 동영상 매뉴얼 제작",
+        "cnt": 2,
+        "budget_sum": 6000000,
+        "channels": {
+          "wishket": 2
+        }
+      }
+    ],
+    "closure_failures": 7
+  },
+  "weekly": {
+    "note": "wishket·freemoa=게시일, devpost=제출일 기준. hackathon(행사 시작일)·u300(날짜 공백 다수) 제외.",
+    "recent_weeks": [
+      {
+        "week": "2026-W27",
+        "counts": {
+          "wishket": 24,
+          "freemoa": 4
+        }
+      },
+      {
+        "week": "2026-W28",
+        "counts": {
+          "wishket": 55,
+          "freemoa": 5
+        }
+      },
+      {
+        "week": "2026-W29",
+        "counts": {
+          "wishket": 44,
+          "freemoa": 4
+        }
+      },
+      {
+        "week": "2026-W30",
+        "counts": {
+          "wishket": 53,
+          "freemoa": 7
+        }
+      },
+      {
+        "week": "2026-W31",
+        "counts": {
+          "wishket": 43,
+          "freemoa": 3
+        }
+      },
+      {
+        "week": "2026-W32",
+        "counts": {
+          "wishket": 34,
+          "freemoa": 7
+        }
+      },
+      {
+        "week": "2026-W33",
+        "counts": {
+          "wishket": 34,
+          "freemoa": 11,
+          "devpost": 1242
+        }
+      },
+      {
+        "week": "2026-W34",
+        "counts": {
+          "wishket": 27,
+          "freemoa": 3,
+          "devpost": 1114
+        }
+      },
+      {
+        "week": "2026-W35",
+        "counts": {
+          "devpost": 1
+        }
+      }
+    ]
+  }
+}

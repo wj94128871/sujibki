@@ -2,7 +2,8 @@ import { describe, it, expect } from "vitest";
 import { MemoryDataSource } from "../src/MemoryDataSource.js";
 import analysisItemsData from "../src/analysis_items.json" with { type: "json" };
 import opportunitySpaceData from "../src/opportunity_space.json" with { type: "json" };
-import { hSummary, hAnalysis, hAnalysisItems, hAnalysisSpace, hInsights, hProjectDetail, hProjects, hRuns, hSources } from "../src/routes/handlers.js";
+import enhancedAnalysisData from "../src/enhanced_analysis.json" with { type: "json" };
+import { hSummary, hAnalysis, hAnalysisItems, hAnalysisSpace, hAnalysisEnhanced, hInsights, hProjectDetail, hProjects, hRuns, hSources } from "../src/routes/handlers.js";
 import type { SeedProject } from "../src/MemoryDataSource.js";
 
 const seed: SeedProject[] = [
@@ -115,6 +116,36 @@ describe("Worker API 계약 (MemoryDataSource)", () => {
     const spaceIds = new Set(d.map(i => i.id));
     for (const a of analysisItemsData as any[]) {
       expect(spaceIds.has(a.id)).toBe(false);
+    }
+  });
+
+  it("/api/analysis/enhanced: 고도화 분석 계약 검증 (PART 9.5)", async () => {
+    const res = await hAnalysisEnhanced();
+    expect(res.ok).toBe(true);
+    const d = res.data as any;
+    expect(d.generated_at).toBeTruthy();
+    expect(d.total).toBeGreaterThan(7000);
+    // 갭 쿼드런트: 19개 테마 전수 + Q2(C티어 후보) 서브셋 일관성
+    expect(d.gap_quadrant.themes.length).toBe(19);
+    const q2 = d.gap_quadrant.themes.filter((t: any) => t.quadrant === "Q2").map((t: any) => t.theme);
+    expect(d.gap_quadrant.c_candidates.map((t: any) => t.theme)).toEqual(q2);
+    for (const t of d.gap_quadrant.themes) {
+      expect(["Q1", "Q2", "Q3", "Q4"]).toContain(t.quadrant);
+      expect(t.global_share_pct).toBeGreaterThanOrEqual(0);
+      expect(t.kr_cnt).toBeGreaterThanOrEqual(0);
+    }
+    // 투자 검증: u300 실측 46건 — 라운드 합계와 일치
+    const roundSum = Object.values(d.funding.by_round).reduce((s: number, n: any) => s + n, 0);
+    expect(d.funding.total_rounds).toBe(46);
+    expect(roundSum).toBe(46);
+    expect(d.funding.tracks.length).toBeGreaterThan(0);
+    // 재발주 그래프: 재게시 그룹·폐업/해지 신호 실측
+    expect(d.reorder.repeated_cnt).toBeGreaterThan(0);
+    expect(d.reorder.closure_failures).toBeGreaterThan(0);
+    // 주간 추이: wishket·freemoa·devpost 한정
+    expect(d.weekly.recent_weeks.length).toBeGreaterThan(0);
+    for (const w of d.weekly.recent_weeks) {
+      expect(Object.keys(w.counts).every((s: string) => ["wishket", "freemoa", "devpost"].includes(s))).toBe(true);
     }
   });
 });

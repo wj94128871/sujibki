@@ -5,6 +5,7 @@ import type { DataSource } from "../DataSource.js";
 import type { ApiEnvelope } from "../util/error.js";
 import { ok } from "../util/error.js";
 import opportunitySpaceData from "../opportunity_space.json" with { type: "json" };
+import enhancedAnalysisData from "../enhanced_analysis.json" with { type: "json" };
 
 function asInt(v: unknown, dflt: number): number {
   const n = Number(v);
@@ -44,6 +45,10 @@ export async function hAnalysisItems(ds: DataSource): Promise<ApiEnvelope<unknow
 /** 기회 공간 지도 (Tier B·C·D) — 정적 카탈로그라 DataSource를 거치지 않고 번들 JSON 직접 제공 */
 export async function hAnalysisSpace(): Promise<ApiEnvelope<unknown>> {
   return ok(opportunitySpaceData);
+}
+/** 고도화 분석 (PART 9.5: 갭 쿼드런트·투자 검증·재발주 그래프·주간 추이) — scripts/analyze_enhanced.py 산출물 */
+export async function hAnalysisEnhanced(): Promise<ApiEnvelope<unknown>> {
+  return ok(enhancedAnalysisData);
 }
 export async function hRuns(ds: DataSource, url: URL): Promise<ApiEnvelope<unknown>> {
   const limit = asInt(url.searchParams.get("limit"), 50);

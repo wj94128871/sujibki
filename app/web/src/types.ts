@@ -49,3 +49,25 @@ export interface OpportunityItem {
   evidence: string;
   trigger?: string | null;
 }
+/** 고도화 분석 (PART 9.5) — scripts/analyze_enhanced.py 산출물 */
+export interface EnhancedAnalysis {
+  generated_at: string; total: number;
+  gap_quadrant: {
+    gl_total: number;
+    themes: { theme: string; global_cnt: number; global_share_pct: number; kr_cnt: number; kr_budget_sum: number; quadrant: "Q1" | "Q2" | "Q3" | "Q4"; note: string }[];
+    c_candidates: { theme: string }[];
+  };
+  funding: {
+    total_rounds: number;
+    by_round: Record<string, number>;
+    tracks: { domain: string; cnt: number; rounds_label: string; examples: string[] }[];
+  };
+  reorder: {
+    repeated_cnt: number; closure_failures: number;
+    top: { title: string; cnt: number; budget_sum: number; channels: Record<string, number> }[];
+  };
+  weekly: {
+    note: string;
+    recent_weeks: { week: string; counts: Record<string, number> }[];
+  };
+}
