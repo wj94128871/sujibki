@@ -1,8 +1,7 @@
 name: refresh-hackathon-channels
 on:
-  schedule:
-    # 매일 03:00 KST = 18:00 UTC (전날)
-    - cron: "0 18 * * *"
+  # 일일 자동 크롤링 제거 (2026-08-31) — 필요 시 수동 실행:
+  #   gh workflow run refresh-hackathon-channels --repo wj94128871/sujibki
   workflow_dispatch:
     inputs:
       pages:
