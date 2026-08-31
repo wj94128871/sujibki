@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { MemoryDataSource } from "../src/MemoryDataSource.js";
-import { hSummary, hAnalysis, hAnalysisItems, hProjects, hProjectDetail, hInsights } from "../src/routes/handlers.js";
+import analysisItemsData from "../src/analysis_items.json" with { type: "json" };
+import opportunitySpaceData from "../src/opportunity_space.json" with { type: "json" };
+import { hSummary, hAnalysis, hAnalysisItems, hAnalysisSpace, hInsights, hProjectDetail, hProjects, hRuns, hSources } from "../src/routes/handlers.js";
 import type { SeedProject } from "../src/MemoryDataSource.js";
 
 const seed: SeedProject[] = [
@@ -64,13 +66,14 @@ describe("Worker API 계약 (MemoryDataSource)", () => {
     const res = await hAnalysisItems(ds);
     expect(res.ok).toBe(true);
     const d = res.data as any[];
-    expect(d.length).toBe(14);
+    // 건수는 소스 JSON과 동일해야 함 (하드코딩으로 구버전 수치 고착 방지)
+    expect(d.length).toBe((analysisItemsData as any[]).length);
     const ids = new Set(d.map(i => i.id));
     expect(ids.size).toBe(d.length);
     const ranks = d.map(i => i.rank).sort((a, b) => a - b);
     expect(ranks).toEqual(Array.from({ length: d.length }, (_, i) => i + 1));
     for (const item of d) {
-      expect(["add", "pivot", "watch"]).toContain(item.action);
+      expect(["add", "reduce", "pivot", "watch"]).toContain(item.action);
       expect(["high", "mid", "low"]).toContain(item.confidence);
       expect(item.title).toBeTruthy();
       expect(item.summary).toBeTruthy();
@@ -88,6 +91,30 @@ describe("Worker API 계약 (MemoryDataSource)", () => {
         expect(e.value).toBeTruthy();
       }
       expect(item.risks.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("/api/analysis/space: 기회 공간 계약 검증", async () => {
+    const res = await hAnalysisSpace();
+    expect(res.ok).toBe(true);
+    const d = res.data as any[];
+    // 건수는 소스 JSON과 동일해야 함
+    expect(d.length).toBe((opportunitySpaceData as any[]).length);
+    expect(new Set(d.map(i => i.tier))).toEqual(new Set(["B", "C", "D"]));
+    const ids = new Set(d.map(i => i.id));
+    expect(ids.size).toBe(d.length);
+    for (const item of d) {
+      expect(["B", "C", "D"]).toContain(item.tier);
+      expect(["high", "mid", "low"]).toContain(item.priority);
+      expect(item.title).toBeTruthy();
+      expect(item.form).toBeTruthy();
+      expect(item.domain).toBeTruthy();
+      expect(item.evidence).toBeTruthy();
+    }
+    // Tier A와 아이템 id가 겹치지 않아야 함 (A는 /api/analysis/items 소관)
+    const spaceIds = new Set(d.map(i => i.id));
+    for (const a of analysisItemsData as any[]) {
+      expect(spaceIds.has(a.id)).toBe(false);
     }
   });
 });

@@ -17,6 +17,10 @@ const PERSONA_LABEL: Record<string, string> = {
   startup_pm: "스타트업 PM",
   vc: "VC 투자자",
   inhouse_pm: "인하우스 PM",
+  // 구세대 페르소나 키 (DB analysis_insights 마이그레이션 전 호환)
+  "SI-PM": "SI 영업 이사",
+  "Startup-CTO": "스타트업 CTO",
+  "Global-Researcher": "글로벌 리서처",
 };
 
 const CONSENSUS_STYLE: Record<string, string> = {
@@ -39,11 +43,11 @@ const ACTION_LABEL: Record<string, string> = {
   feature: "신규 기회", market: "방향 전환", keyword: "관망/신호",
 };
 
-/** 시장성 인사이트: 페르소나 합의 18개 카드 + sharePct + 근거 evidence */
+/** 시장성 인사이트: 페르소나 합의 시그널 카드 + sharePct/cnt + 근거 evidence */
 export function Insights({ items, error }: { items: Insight[] | null; error: string | null }) {
   return (
     <Section id="insights" title="시장성 인사이트" kicker="Market read"
-      description="4명 페르소나(SI 영업 이사·스타트업 PM·VC·인하우스 PM)가 실제 7,833건 데이터를 합의해 도출한 18개 실행 시그널. 단일 시점 데이터는 추이를 단정하지 않습니다.">
+      description={`4명 페르소나(SI 영업 이사·스타트업 PM·VC·인하우스 PM)가 실제 수집 데이터를 합의해 도출한 ${items?.length ?? 0}개 실행 시그널. 단일 시점 데이터는 추이를 단정하지 않습니다.`}>
       {error ? <ErrorBlock message={error} />
         : !items ? (
           <div role="status" aria-live="polite" className="rounded-2xl border border-line bg-surface p-6 text-ink-sub shadow-card">

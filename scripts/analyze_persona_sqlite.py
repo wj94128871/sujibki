@@ -311,7 +311,8 @@ def main():
     for it in persona_items:
         rank = it["rank"]
         action = it.get("action","add")
-        if action == "add":
+        # add/reduce → feature(기능 개선), pivot → market(방향 전환), watch → keyword(관망)
+        if action in ("add", "reduce"):
             itype = "feature"
         elif action == "pivot":
             itype = "market"

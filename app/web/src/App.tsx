@@ -58,7 +58,7 @@ export default function App() {
           )}
 
           <footer className="mt-12 border-t border-line pt-6 pb-10 text-center text-xs leading-relaxed text-ink-faint">
-            데이터 출처: 위시켓·프리모아·u300·Devpost (공개 정보 크롤링, 개인정보 미포함). 수치는 시점 기준 추정치이며 단정 금지.
+            데이터 출처: 위시켓·프리모아·u300·Devpost·Codeforces 등 10채널 (공개 정보 크롤링, 개인정보 미포함). 수치는 시점 기준 추정치이며 단정 금지.
           </footer>
         </main>
       </div>

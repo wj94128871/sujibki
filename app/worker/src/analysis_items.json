@@ -1,933 +1,254 @@
 [
   {
-    "id": "sig-01",
+    "id": "m1-office-builder",
     "rank": 1,
-    "action": "add",
-    "title": "SI 모바일 보일러플레이트 마켓 (한국 raw 217건 기반)",
-    "summary": "한국 wishket 318건 본문 grep: 모바일 83 + 앱 78 + 반응형 62 = **217건 (68.2%)**. 8/28 신규 4건(NFC 800만/유지보수 30만/소개팅앱 300만/맘캐어 1,000만)도 전부 모바일/앱 풀스택인데 매번 0부터 코딩. **'도급 1건 = 0부터 시작' 구조가 가격/속도 양쪽에서 경쟁력을 떨어뜨림**.",
-    "opportunity": "한국 도급 풀의 60%+가 모바일/앱 풀스택. 217건 raw의 title을 10개 vertical로 클러스터링하면 보일러플레이트 1세트 자동 매칭 가능. **첫 30-40%는 1주 내 시작** = 매출 전환율 급상승.",
-    "market": "한국 wishket 217 + freemoa 21 = 238건 / 362 (65.7%). 누적 1,000+건/년.",
+    "action": "reduce",
+    "title": "미들오피스 빌더 — 엑셀 파일을 자연어 업무시스템으로 바꾸는 SaaS",
+    "summary": "관리자·업무관리 안건이 2개월간 39건·6.28억(도급 1위 클러스터)으로 쌓였지만, 발주문 전부가 '엑셀·메신저 수기 운영을 웹 시스템으로'라는 동일 패턴이다. 관리자 콘솔 전체 제작이 아니라 엑셀 업로드→스키마 인식→CRUD·승인플로우·자연어 대시보드로 극단 축소한 셀프서비스 SaaS. 시장가 3,000만~1억인 결과물을 월 구독으로 공급한다.",
+    "opportunity": "5,000만 이상 대형 안건 29건 중 6건(4.6억+)이 동일 조합 — 원문 인용: '엑셀과 메신저 기반의 수기 관리로 파편화되어 있습니다'(통합 ERP 6,000만), 'AI 원가 분석 및 자연어 질의 대시보드'(제조 구매관리 7,000만), '개발사 폐업으로 유지보수 불가'(수발주 6,500만). 커스텀 개발사가 이걸 새로 짓는 이유는 제품이 없어서이고, '유료 구독형 앱' 발주(7,500만)까지 나온 만큼 발주 시장 스스로 SaaS를 원한다. LLM으로 빌드 원가를 1/10로 낮추면 도급을 못 받던 300~500만 소액 수요(위시켓에서 반복 확인)를 새로 흡수하는 시장을 만든다.",
+    "market": "5~50인 중소사업장·학원·대행사·협회(엑셀로 회원·정산·승인 관리 중). 1차 채널은 위시켓·프리모아 소액 관리자 안건 역영업 → 납품 후 구독 전환.",
     "features": [
-      {
-        "priority": "high",
-        "name": "10-vertical 보일러플레이트 마켓",
-        "desc": "NFC/키오스크, 예약/O2O, 의료 원격, 맘캐어, 펫푸드, 여행 커머스, IoT 푸시, 관리자 콘솔, 결제, 알림 — 10개 vertical 1세트"
-      },
-      {
-        "priority": "high",
-        "name": "진단 위저드",
-        "desc": "클라이언트 입력 → 추천 vertical + 견적 자동 생성"
-      },
-      {
-        "priority": "high",
-        "name": "모듈 단위 견적기",
-        "desc": "16단 견적 (1주/2주/1개월/2개월 × 500/1,000/2,000/3,000만)"
-      },
-      {
-        "priority": "mid",
-        "name": "클라이언트 포털",
-        "desc": "진행현황/납품/AS 통합"
-      },
-      {
-        "priority": "mid",
-        "name": "결제·알림·인증 공통 모듈",
-        "desc": "PG(토스/카카오) + 푸시 + SSO"
-      }
+      { "priority": "high", "name": "엑셀 업로드·스키마 자동 인식", "desc": "시트 구조→테이블·컬럼 자동 매핑, 샘플 데이터 검수 UI. 기능 빈도에서 관리자 57%의 진입점" },
+      { "priority": "high", "name": "자연어 질의 대시보드", "desc": "'이번 달 지역별 매출' 같은 질문→차트 응답. 7,000만 발주서에 명시된 그 기능" },
+      { "priority": "high", "name": "관리자 CRUD + 승인 워크플로우", "desc": "신청-검토-승인-현황 기본 흐름, 권한·감사로그. 발주 본문 등장률 57%" },
+      { "priority": "mid", "name": "문서 자동생성", "desc": "견적서·보고서·증명서 PDF 출력 — 본문 등장률 32%" },
+      { "priority": "mid", "name": "알림톡·카카오 본인인증 모듈", "desc": "한국형 표준 채널 — 알림 27%·본인인증 32% 수요" },
+      { "priority": "low", "name": "도메인 템플릿 4종", "desc": "안전보건·학원·대행사·협회 — 실제 발주 도메인 기반" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 본문 모바일+앱+반응형 grep",
-        "value": "83 + 78 + 62 = 217건 / 318 (68.2%)"
-      },
-      {
-        "metric": "한국 freemoa 모바일+앱",
-        "value": "8 + 13 = 21건 / 44 (47.7%)"
-      },
-      {
-        "metric": "한국 u300 본문 앱",
-        "value": "30건 / 429"
-      },
-      {
-        "metric": "8/28 신규 4건 raw 직접",
-        "value": "id 6672/6673/6674/6675 (모두 0부터 코딩 신호)"
-      },
-      {
-        "metric": "8/20 wishket 다수",
-        "value": "id 300/310/311/312/313 (1일 5건+ 모바일/앱)"
-      }
+      { "metric": "관리자/업무관리 클러스터", "value": "39건 / 6.28억 / 중앙값 1,000만 (위시켓+프리모아 2개월)" },
+      { "metric": "기능 등장률 (358건 본문)", "value": "관리자 57% · 통계/대시보드 38% · PDF 생성 32% · 알림 27%" },
+      { "metric": "동일 패턴 대형 발주", "value": "엑셀→통합 ERP 6,000만 · 자연어 대시보드 7,000만 · 폐업 재구축 6,500만" },
+      { "metric": "재발주 신호", "value": "동일 제목 재게시 8건(16건), '계약 해지로 재발주' 안건 실존" }
     ],
-    "direction_change": "**기존**: 도급 1건 = 기획 2주 + 코딩 1-2개월. **변경**: 도급 1건 = 보일러플레이트 60% + vertical 30% + 신규 10%. **속도 2-3배↑, 객단가 동일 유지**.",
-    "expected_effect": "217건 raw 중 30-40%(~80건)가 보일러플레이트 즉시 적용 가능. 1분기 매출 30-50건(+5-15억) 추정. **1-2주 → 1-2일 견적 응답** = 경쟁사 0인 즉시 응답.",
+    "direction_change": "기존 '관리자 콘솔 마켓플레이스' 아이템에서 — 콘솔 전체 제작이 아니라 엑셀 전환 단일 웨지로 기능 축소. 판매 방식도 SI 납품이 아니라 셀프서비스 구독으로 전환.",
+    "expected_effect": "도급 납품 10건(건당 300만, 마진 90%)으로 첫해 3천만+ 현금흐름. 구독 전환율 30% 가정 시 12개월 내 MRR 500만. 관리자 안건은 2개월 기준 월 20건 신규 유입 — 모객 채널이 이미 존재.",
     "risks": [
-      "보일러플레이트 코드 부채 — 6개월 리프레시 사이클",
-      "vertical 클러스터링 오분류 — 첫 1개월 검수 강화"
+      "Airtable·Notion 등 글로벌 노코드의 한국 진입 시 경쟁",
+      "엑셀 양식이 지나치게 다양해 자동 인식 실패율이 높을 수 있음",
+      "도급 역영업이 개발 인력을 잠식 — 템플릿 재사용 건으로 한정 필요"
     ],
     "confidence": "high",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM",
-      "Global-Researcher"
-    ],
+    "persona_origin": "si_director",
+    "agreed_by": ["si_director", "startup_pm", "vc"],
     "consensus": "high"
   },
   {
-    "id": "sig-02",
+    "id": "m2-riskguard",
     "rank": 2,
     "action": "add",
-    "title": "관리자 콘솔 마켓플레이스 (한국 raw 224건)",
-    "summary": "한국 wishket 본문 grep: 관리자 104 + 대시보드 32 + 분석 76 + 시각화 17 = **229건 (72%)**. 8/20 wishket 9건 중 6건(관리자/대시보드/분석/CRM/BI/리포트)도 같은 결. 매번 다른 회사 관리자 화면을 0부터 만듦.",
-    "opportunity": "관리자 콘솔 = 5개 모듈(권한/RBAC + 데이터 그리드 + 차트 + 인증/SSO + 알림)로 90% 표준화 가능. 1-2주 안에 클라이언트별 vertical 데이터 모델 1세트만 추가.",
-    "market": "한국 wishket 229 + freemoa 6 = 235건 / 362 (64.9%).",
+    "title": "리스크가드 — 법정 위험성평가를 공단 데이터 RAG로 자동화하는 수직 SaaS",
+    "summary": "안전보건·위험성평가 안건이 2개월간 7건·2.13억(중앙값 3,000만) 반복 발주. 산업안전보건법 위험성평가 의무화로 예산이 법정 항목인데 시장에는 커스텀 구축만 존재하고 구독형 제품은 공백. 공단 SIF 재해사례 6,000건 RAG로 서면 작성을 자동화하고 현장 모바일 점검을 결합.",
+    "opportunity": "실제 발주문에 '한국산업안전보건공단 SIF 아카이브 6,000건 기반 유사 재해사례 검색 → 위험요인·개선대책 자동 생성 RAG'(600만 고도화)가 이미 명시 — 수요처가 기능을 직접 정의해둔 상태. 1억 통합관리 발주는 '엑셀·서면·메신저로 분산'을 호소. 법정 의무는 churn 최저·예산 확정의 최적 SaaS 조건이고, 커스텀 중앙값 3,000만 대비 월 10~20만 구독은 10배 저렴해도 마진 80%+.",
+    "market": "제조·건설 중소 사업장(법정 위험성평가 대상). 진입은 발주처 4곳 레퍼런스 → 지자체·공단 협력 → 산업단지 밀집 지역 영업.",
     "features": [
-      {
-        "priority": "high",
-        "name": "권한/RBAC + SSO 보일러플레이트",
-        "desc": "SAML/OIDC/JWT, 멀티테넌시, 감사 로그"
-      },
-      {
-        "priority": "high",
-        "name": "데이터 그리드/차트 컴포넌트",
-        "desc": "TanStack Table + Recharts, 필터/세그먼트/CSV/PDF"
-      },
-      {
-        "priority": "high",
-        "name": "vertical 데이터 모델 템플릿",
-        "desc": "의료/물류/CRM/마켓 10종"
-      },
-      {
-        "priority": "mid",
-        "name": "자동 리포트 빌더",
-        "desc": "일/주/월/분기 + Slack/이메일 자동 발송"
-      },
-      {
-        "priority": "mid",
-        "name": "차트 빌더",
-        "desc": "drag-drop 차트 + 저장/공유"
-      }
+      { "priority": "high", "name": "위험성평가 서면 자동작성", "desc": "공단 SIF 6,000건 RAG로 사업장 유형별 초안 생성 — 발주서에 명시된 기능" },
+      { "priority": "high", "name": "현장 모바일 점검", "desc": "사진 촬영→AI 위험요인 태깅→개선조치 이력 관리" },
+      { "priority": "mid", "name": "통합 대장·리포트", "desc": "교육이력·서약서·건강검진 통계 — 1억 통합관리 발주 스펙" },
+      { "priority": "mid", "name": "지자체·공단 제출 포맷 출력", "desc": "법정 서식 자동 변환 — PDF 생성 수요 32%와 연결" },
+      { "priority": "low", "name": "국비지원 프로그램 연계 가이드", "desc": "도입 비용 지원 제품 매핑" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 본문 관리자 grep",
-        "value": "104건 (32.7%)"
-      },
-      {
-        "metric": "한국 wishket 분석 grep",
-        "value": "76건"
-      },
-      {
-        "metric": "한국 wishket 대시보드 grep",
-        "value": "32건"
-      },
-      {
-        "metric": "한국 wishket 시각화 grep",
-        "value": "17건"
-      },
-      {
-        "metric": "한국 1억+ '대기업 내부 시스템' 10건",
-        "value": "전부 관리자/대시보드 결"
-      }
+      { "metric": "안전보건 클러스터", "value": "7건 / 2.13억 / 중앙값 3,000만" },
+      { "metric": "RAG 발주 실존", "value": "'공단 SIF 6,000건 기반 위험요인·개선대책 자동 생성' 600만 고도화 발주" },
+      { "metric": "대형 발주 3건", "value": "통합관리 1억('엑셀·서면·메신저 분산' 원문) + 앱/관리자 2,500만 + 엑셀→웹 3,600만" },
+      { "metric": "법적 기반", "value": "산업안전보건법 위험성평가 의무화 — 수요가 법으로 보장" }
     ],
-    "direction_change": "**기존**: 매 클라이언트 관리자 = 1-2개월. **변경**: 콘솔 90% 표준 + vertical 10% = 1-2주. **속도 4-5배↑**.",
-    "expected_effect": "229건 raw 중 50%(~115건) 즉시 적용. 1분기 30-50건 수주. **권한/SSO 모듈 재사용 100회+** = TCO 1/10.",
+    "direction_change": "안전보건 '커스텀 구축 수주'(현재 시장 방식)에서 — 통합관리 전체가 아니라 위험성평가 서면+모바일 점검으로 기능을 축소하고, 매출 방식을 구축 도급에서 사업장당 구독으로 전환.",
+    "expected_effect": "중앙값 3,000만 도급 2건으로 개발비 충당 후 구독 전환. 사업장 50개·월 15만 기준 MRR 750만, 법정 의무라 이탈률 최저 가정. 공공데이터 RAG 파이프라인은 축적될수록 우위(후발 대비 2년+ 추정).",
     "risks": [
-      "대기업 보안 심사 3-6개월 — 첫 1건 손실 감수",
-      "vertical 도메인 진입장벽 — 6개월 PoC"
+      "법정 서식·지자체별 요구 양식 차이로 템플릿 분기 비용",
+      "안전 분야 AI 오판에 대한 책임 논란 가능 — 초안 생성으로 한정",
+      "SI 업체의 유사 구독 제품 후발 출시"
     ],
     "confidence": "high",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM"
-    ],
+    "persona_origin": "inhouse_pm",
+    "agreed_by": ["inhouse_pm", "si_director"],
     "consensus": "high"
   },
   {
-    "id": "sig-03",
+    "id": "m3-medibridge",
     "rank": 3,
-    "action": "add",
-    "title": "PG + SSO + KMS 통합 보일러플레이트 (한국 raw 90건 + 1억+ 10건)",
-    "summary": "한국 wishket 본문 grep: 결제 52 + PG 16 + 인증 22 + 보안 18 = **108건 (34%)**. 1억+ 대형 10건 모두 '결제/보안/O2O' 결. PG사 3사 + 인증/암호화 매번 다름 = 통합 보일러플레이트 부재.",
-    "opportunity": "PG(토스/카카오/네이버) + 인증(SAML/OIDC) + KMS를 **단일 추상화 레이어**로 묶음. 1,500-3,000만 원 SMB + 1억+ 대형 양쪽.",
-    "market": "한국 wishket 108 + 1억+ 10건. 누적 200-300건/년.",
+    "action": "reduce",
+    "title": "메디브리지 — 외국인 환자 예약·사전문진 위젯 (의료관광 클러스터 B2B)",
+    "summary": "전체 최대 안건이 O2O 의료관광 플랫폼 1.8억 — '외국인 환자가 방한 전 검색·상담·예약·결제 완료, 현장에서 코디네이터 안내' 구조를 발주문이 직접 정의. 외국인 대상 안건이 2개월간 10건·1.43억 누적. 관광 플랫폼 전체가 아니라 병원 자사몰에 심는 예약+다국어 사전문진 위젯으로 축소.",
+    "opportunity": "발주처(의료관광 클러스터 운영사)가 곧 1차 파트너 후보. u300 데이터에서 '외국인 한국 미용의료 탐색·비교' 스타트업이 PRE-SEED 투자유치 완료 — VC가 이 트랙에 이미 돈을 넣었다는 사내 데이터 확인. 글로벌 해커톤에서도 음성/콜 19.2%·챗봇 13.5%로 다국어 응대 자동화는 검증된 기술 패턴. 인바운드 회복이 도급 시장에 반영되기 시작한 첫 창.",
+    "market": "의료관광 클러스터·관광사·국제진료 인증 병원. 2차로 관광공사·지자체 의료관광 RFP.",
     "features": [
-      {
-        "priority": "high",
-        "name": "PG 3사 어댑터 (단일 인터페이스)",
-        "desc": "토스/카카오/네이버 결제 단일 호출, 정기결제/취소/환불"
-      },
-      {
-        "priority": "high",
-        "name": "SAML/OIDC + JWT SSO",
-        "desc": "SAML2 + OIDC + JWT 발급, 멀티테넌시"
-      },
-      {
-        "priority": "high",
-        "name": "KMS + PII 마스킹",
-        "desc": "AWS KMS / GCP KMS 어댑터 + 자동 PII 탐지·마스킹"
-      },
-      {
-        "priority": "mid",
-        "name": "보안 인증 가이드 (ISMS/ISO27001)",
-        "desc": "한국/글로벌 보안 인증 체크리스트"
-      },
-      {
-        "priority": "mid",
-        "name": "암호화 + 키 로테이션",
-        "desc": "전송/TLS + 저장/필드 암호화 + 키 90일 로테이션"
-      }
+      { "priority": "high", "name": "다국어 예약 + 사전문진 폼", "desc": "시술 검색→문진→예약 확정 — 1.8억 발주 스펙 재사용" },
+      { "priority": "high", "name": "외국 카드 결제/에스크로", "desc": "결제 연동(도급 수요 61%) + 환불 정책" },
+      { "priority": "mid", "name": "코디네이터 배정·일정 관리", "desc": "통역사·가이드 스케줄링 백오피스" },
+      { "priority": "mid", "name": "병원 통계 리포트", "desc": "국가별·시술별 유입 대시보드" },
+      { "priority": "low", "name": "다국어 응대 챗봇", "desc": "문진 이전 1차 상담, 음성 포함" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 본문 결제 grep",
-        "value": "52건"
-      },
-      {
-        "metric": "한국 wishket PG grep",
-        "value": "16건"
-      },
-      {
-        "metric": "한국 wishket 인증 grep",
-        "value": "22건"
-      },
-      {
-        "metric": "한국 wishket 보안 grep",
-        "value": "18건"
-      },
-      {
-        "metric": "1억+ 10건 결",
-        "value": "O2O 의료/무인세탁/스마트횡단보도/프롭테크/안전보건/지식산업센터 등"
-      }
+      { "metric": "최대 안건", "value": "O2O 의료관광 플랫폼 1.8억 (병·의원 네트워크 + 외국인 환자 원스톱)" },
+      { "metric": "외국인 대상 안건", "value": "10건 / 1.43억 (짐배송·차량가이드·웰니스 4,000만 포함)" },
+      { "metric": "VC 검증", "value": "u300 '외국인 한국 미용의료 AI 플랫폼' PRE-SEED 투자유치 완료 (417건 중 46건 투자유치)" }
     ],
-    "direction_change": "**기존**: PG사별 1-2개월 연동. **변경**: 3사 어댑터 1세트 = 1주. **보일러플레이트로 SMB 진입 + 대형은 커스텀 2주**.",
-    "expected_effect": "108건 raw 중 40%(~45건) 즉시. 1분기 20-30건 + 대형 subcontract 2-3건.",
+    "direction_change": "'관광 플랫폼 전체 구축'(발주 방식)에서 — 예약·문진 위젯 단일 기능으로 기능 축소, 병원 자사몰에 심는 B2B 형태로 전환. 진단·의료행위는 범위에서 제외(의료법 대응).",
+    "expected_effect": "클러스터 1곳 납품(수천만) + 병원당 월 구독 20~50만. 정부 의료관광 KPI 성장기라 공공 RFP 후속 수요 기대(추정). 투자유치 관점에서 시장 성장 스토리가 4개 아이템 중 가장 완결적.",
     "risks": [
-      "PG사 정책 변경 — 6개월 단위 업데이트",
-      "KMS 키 분실 — 정기 백업"
+      "의료법·의료광고 규제 — 문진·예약 범위로 한정 필요",
+      "다국어 의료 콘텐츠 품질 검수 비용",
+      "클러스터 운영사의 직접 구축 경쟁"
     ],
     "confidence": "high",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM",
-      "Global-Researcher"
-    ],
+    "persona_origin": "vc",
+    "agreed_by": ["vc", "startup_pm"],
     "consensus": "high"
   },
   {
-    "id": "sig-04",
+    "id": "m4-dogup-radar",
     "rank": 4,
-    "action": "add",
-    "title": "AI 어드바이저 SaaS (한국 raw 167건 + 글로벌 mcp 180)",
-    "summary": "한국 wishket 본문 grep: AI 55 + 자동화 36 + 분석 76 + 추천 18 + 검색 18 = **203건**. hackathon 글로벌 mcp 180 + llm 184 + claude 242 + ai-agents 84 = **690+**. **AI 도구는 표준화 단계**, 한국 도급은 아직 0-1건/월.",
-    "opportunity": "AI 어드바이저 SaaS = 추천엔진 + RAG 검색 + 프롬프트 운영 + 자동 분류 1세트. SMB 1-2주 패키지 + 6개월 운영.",
-    "market": "한국 wishket 203건 / 318 (63.8%). 글로벌 mcp 180 (표준 시그널).",
+    "action": "pivot",
+    "title": "도급레이더 — 신규 안건 알림 봇 + 예산 벤치마크 구독 (기존 파이프라인 상품화)",
+    "summary": "데이터 수집(크롤링) 대행이 2개월간 14건·0.94억(중앙값 500만) 반복 발주 — 매번 일회성 개발로 해결 중. 이미 완공된 10채널 크롤러·ETL·7,810건 DB를 상품화해, 일회성 개발을 '도메인 필터 알림 봇 + 주간 트렌드 리포트' 구독으로 방향 전환.",
+    "opportunity": "유일하게 인프라가 완공된 아이템(본 시스템 자산 전용). 위시켓의 유료 구독 모델이 '입찰 정보에 돈을 낸다'는 시장을 증명했고, 동일 제목 재게시 8건 = 수요 유지 신호. 봇 연동형 서비스는 글로벌에서 5.4% 존재하나 한국 발주 0건 — 공백. 수요 탐지기로서 후속 아이템(LLM 게이트웨이·에이전트 발주 등장 감지)의 센서 역할도 수행.",
+    "market": "외주 수주형 에이전시·프리랜서·SI 영업팀. 카톡/슬랙 알림 봇 형태로 저비용 진입.",
     "features": [
-      {
-        "priority": "high",
-        "name": "추천엔진 bolt-on",
-        "desc": "DB → 임베딩 → Top-K → UI, 1주"
-      },
-      {
-        "priority": "high",
-        "name": "RAG 검색 bolt-on",
-        "desc": "문서/매뉴얼 → 청크 → LLM 검색, 1주"
-      },
-      {
-        "priority": "high",
-        "name": "자동 분류기 (5-shot LLM)",
-        "desc": "title+brief → 카테고리 1-shot, 1$/1000건"
-      },
-      {
-        "priority": "mid",
-        "name": "프롬프트 운영 대시보드",
-        "desc": "버전관리/평가/비용 모니터링"
-      },
-      {
-        "priority": "mid",
-        "name": "MCP 서버 호스팅",
-        "desc": "사내 LLM tool 연결 표준"
-      }
+      { "priority": "high", "name": "신규 안건 실시간 알림 봇", "desc": "도메인·예산·지역 필터, 카톡/슬랙/텔레그램 채널" },
+      { "priority": "high", "name": "반복·재발주 감지", "desc": "동일 발주처·유사 안건 재게시 알림 — 재발주는 수주 확률이 높은 리드" },
+      { "priority": "mid", "name": "예산 벤치마크 검색", "desc": "유사 안건 과거 예산 조회 API" },
+      { "priority": "mid", "name": "주간 수요 트렌드 리포트", "desc": "도메인별 안건 수·예산 추이 자동 집계(본 분석 파이프라인 재사용)" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket AI grep",
-        "value": "55건"
-      },
-      {
-        "metric": "한국 wishket 자동화+분석",
-        "value": "36 + 76 = 112건"
-      },
-      {
-        "metric": "hackathon mcp 180 / llm 184",
-        "value": "글로벌 표준"
-      },
-      {
-        "metric": "hackathon claude 242 / gemini 216",
-        "value": "AI 도구 1-2위"
-      },
-      {
-        "metric": "k_hackathon 5건",
-        "value": "네이버 Claude Code 사내 도입"
-      }
+      { "metric": "크롤링 대행 시장", "value": "14건 / 0.94억 / 중앙값 500만 — 일회성 개발의 반복" },
+      { "metric": "기반 인프라", "value": "10채널 크롤러 + ETL + 7,810건 DB (본 프로젝트에서 완공)" },
+      { "metric": "수요 유지 신호", "value": "위시켓 동일 제목 재게시 8개 제목(16건)" }
     ],
-    "direction_change": "**기존**: AI 기능 = 1-2개월. **변경**: 보일러플레이트 1-2주 + 6개월 운영. **속도 4배↑, LTV 3배↑**.",
-    "expected_effect": "203건 raw 중 30%(~60건) 즉시. 1분기 15-25건 + 글로벌 SaaS 가능.",
+    "direction_change": "'데이터 수집 개발 대행'(발주 방식)에서 — 개발 납품이 아니라 정기 구독 피드·봇으로 방향 전환. 대상도 발주처가 아니라 수주 측(에이전시·프리랜서)으로 전환.",
+    "expected_effect": "개발 없이 즉시 매출화 가능 — 월 2~5만 구독. 봇 채널이 가장 저비용 모객 경로. 단독 시장은 작아 투자유치용으로는 부적합하고 현금흐름·데이터 플라이휠 용도.",
     "risks": [
-      "API 비용 변동 — 가드레일",
-      "scope creep — 1주 경계 명문화"
+      "수주 측 세그먼트의 지불 의사가 대행 수주 대비 낮을 수 있음",
+      "크롤링 대상 사이트의 정책 변경 리스크",
+      "단독 시장 규모가 작음 — 메인 아이템의 보조 수익원으로 한정"
     ],
-    "confidence": "high",
-    "persona_origin": "Global-Researcher",
-    "agreed_by": [
-      "Global-Researcher",
-      "SI-PM"
-    ],
-    "consensus": "high"
+    "confidence": "mid",
+    "persona_origin": "si_director",
+    "agreed_by": ["si_director", "startup_pm"],
+    "consensus": "mid"
   },
   {
-    "id": "sig-05",
+    "id": "s1-fortune-api",
     "rank": 5,
     "action": "pivot",
-    "title": "[방향전환] '수집+가공+추천' 3-in-1 vertical 통합 SaaS (한국 raw 90건)",
-    "summary": "한국 wishket 본문 grep: 수집 45 + 매칭 4 + 추천 18 + 검색 18 + 크롤링 5 = **90건 (28.3%)**. 매번 단일 vertical만 수주. **수집 → 정제 → 추천/매칭**이 1세트여야 매출인데 분절됨. 재발주 9그룹 중 '크롤링+여성커뮤니티'가 같은 신호.",
-    "opportunity": "수집(curl_cffi) + 정제(ETL) + 추천/매칭(RAG) 1세트. **3-in-1 vertical 통합**으로 객단가 1.5-2배. SMB 2,000-5,000만 원 풀 vertical.",
-    "market": "한국 wishket 90 + 재발주 1개 그룹 2건 + 누적 200-300건/년.",
+    "title": "미래엔진 — 운세·사주 B2B 콘텐츠 API (상담 플랫폼 발주처가 곧 고객)",
+    "summary": "운세/사주 도메인이 2개월간 9건·1.76억 — 클라이언트 4곳+가 각각 '상담사 입점형 플랫폼'(VoIP·070안심번호·정산 포함)을 독립 발주. 플랫폼은 이미 상업적으로 검증된 도메인. 플랫폼을 직접 만들지 않고 역학 DB+AI 리딩 엔진을 B2B API/위젯으로 공급하는 방향으로 전환.",
+    "opportunity": "발주 내용이 전부 '상담사 매칭·정산·통화 인프라 구축' = 시장에서 가장 비싼 부분을 건드리지 않고 콘텐츠 품질(AI 리딩)만 판매. 4개 발주처가 곧 잠재 고객 — 커스텀 개발 완료 후 콘텐츠 차별화에 직면하는 타이밍. 전화상담 CTI 재구축 2건도 동일 생태계의 확장 고객.",
+    "market": "운세·사주 플랫폼 사업자 + 커뮤니티·커머스(위젯 탑재). B2B2C.",
     "features": [
-      {
-        "priority": "high",
-        "name": "수집 모듈 (curl_cffi/Playwright)",
-        "desc": "안정형 봇우회 + LLM 분류 + 스케줄러"
-      },
-      {
-        "priority": "high",
-        "name": "ETL 정제 모듈",
-        "desc": "스키마 매핑 + 중복 제거 + 정규화"
-      },
-      {
-        "priority": "high",
-        "name": "추천/매칭 모듈 (RAG/임베딩)",
-        "desc": "OpenAI/Cohere + pgvector + 필터"
-      },
-      {
-        "priority": "mid",
-        "name": "검색 (하이브리드)",
-        "desc": "BM25 + 벡터 + 필터 + 랭킹"
-      },
-      {
-        "priority": "mid",
-        "name": "vertical 템플릿 5종",
-        "desc": "여성커뮤니티 / 펫푸드 / 의료 매칭 / 여행 / 매칭 중개"
-      }
+      { "priority": "high", "name": "역학 데이터 + AI 리딩 API", "desc": "사주·타로·궁합 텍스트 생성 엔진, 호출 과금" },
+      { "priority": "high", "name": "위젯/임베드 SDK", "desc": "플랫폼 삽입형(채팅·커뮤니티)" },
+      { "priority": "mid", "name": "상담사 보조 도구", "desc": "리딩 초안 생성 + 후편집 — 발주 스펙의 상담사 포털 보완" },
+      { "priority": "low", "name": "다국어 리딩", "desc": "인바운드 관광객 대상 확장" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 수집 grep",
-        "value": "45건"
-      },
-      {
-        "metric": "한국 wishket 추천+검색+매칭+크롤링",
-        "value": "18+18+4+5 = 45건"
-      },
-      {
-        "metric": "재발주 '크롤링+여성커뮤니티'",
-        "value": "2건 (분절 수주 신호)"
-      },
-      {
-        "metric": "u300 '에이전트' 4건",
-        "value": "8/28 신규 등장"
-      }
+      { "metric": "운세 클러스터", "value": "9건 / 1.76억 / 중앙값 1,300만" },
+      { "metric": "프리모아 4건", "value": "사주상담 2,500만 · VoIP 전화운세 5,000만 · 온라인사주 1,300만 · 역학DB AI운세 1,500만" },
+      { "metric": "위시켓", "value": "사주/타로 정액제 전화상담 5,000만('070 안심번호' 스펙) + 운세앱 유지보수" }
     ],
-    "direction_change": "**기존**: 수집 1건 / 추천 1건 별도 수주. **변경**: 3-in-1 vertical 1세트 = 객단가 1.5-2배.",
-    "expected_effect": "90건 raw 중 50%(~45건) 통합 가능. 1분기 15-20건 + LTV 2배.",
+    "direction_change": "'운세 플랫폼 자체 구축/운영'에서 — 매칭·정산·VoIP 인프라를 전부 제외(기능 축소)하고 AI 콘텐츠 엔진+역학 데이터만 B2B로 방향 전환.",
+    "expected_effect": "API 호출 과금 + 월 라이선스. 발주처 4곳 확보 시 첫해 5천만+ 가능(추정), 콘텐츠 마진 90%+. 시장이 작아 투자유치용은 아니고 현금흐름·첫 B2B 레퍼런스용.",
     "risks": [
-      "수집 약관 — 법무 검토 필수",
-      "임베딩 비용 — pgvector self-host로 절감"
+      "한국 시장 특화 — 확장성 제한",
+      "AI 리딩 품질 편차가 고객 이탈로 직결",
+      "기존 운세 콘텐츠 업체와의 경쟁"
     ],
-    "confidence": "high",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM",
-      "Global-Researcher"
-    ],
-    "consensus": "high"
+    "confidence": "mid",
+    "persona_origin": "startup_pm",
+    "agreed_by": ["startup_pm", "si_director"],
+    "consensus": "mid"
   },
   {
-    "id": "sig-06",
+    "id": "s2-llm-gateway",
     "rank": 6,
     "action": "add",
-    "title": "레거시 → Next.js 이전 자동화 (한국 raw 25건 + 1억+ 다수)",
-    "summary": "한국 wishket 본문 grep: 리뉴얼 20 + 재구축 5 = **25건**. 8/20 '여행 커머스 WordPress → Next.js' 3,000만, 1억+ '지식산업센터 프롭테크 1차 MVP 웹' 1억, '교육용 솔루션 클라우드 중계 리뉴얼' 1억. 매번 다른 회사 레거시를 0에서 분석.",
-    "opportunity": "레거시 → Next.js 마이그레이션 자동화 도구. **URL/이미지/사용자 보존 + SEO 자동 점검 + AI bolt-on 결합**. 1,500-3,000만 원 SMB + 1억+ 대형 양쪽.",
-    "market": "한국 wishket 25 + 1억+ 4건. 누적 100-200건/년.",
+    "title": "사내 LLM 게이트웨이 관리형 — API 비용 통제·감사로 시작하는 엔터프라이즈 AI",
+    "summary": "실제 발주 원문: 'Gemini API의 무분별한 호출과 비용 폭탄을 방지… API 키별 예산 통제'(LiteLLM 활용 명시). 글로벌 해커톤은 AI 에이전트 31.9%·MCP 3.8%로 멀티-LLM 운영이 표준이 된 반면 한국 발주는 에이전트 0건 — 한국 기업은 '비용 통제' 단계에 진입한 중. 이 단계를 관리형 제품으로 공급.",
+    "opportunity": "발주서가 기능을 그대로 정의(예산 통제·호출 제한·단일 엔드포인트). 글로벌 트렌드(에이전트 31.9%)가 6~12개월 내 한국 발주로 전이되면 게이트웨이 고객이 자연스럽게 에이전트 운영 고객으로 확장. 도급 AI 29건·5.44억 = 기업의 AI 지출이 이미 시작됨.",
+    "market": "100~1,000인 사업장의 개발조직·IT기획팀. SI 발주 채널을 통한 진입.",
     "features": [
-      {
-        "priority": "high",
-        "name": "WordPress → Next.js 자동 이전기",
-        "desc": "DB 매핑 + 이미지 이전 + URL 301 redirect"
-      },
-      {
-        "priority": "high",
-        "name": "ASP/JSP → Next.js 컨버터",
-        "desc": "스키마 매핑 + 인증 재구축 + JSP→TSX"
-      },
-      {
-        "priority": "high",
-        "name": "SEO 보존 검증기",
-        "desc": "메타/사이트맵/캐노니컬 자동 점검"
-      },
-      {
-        "priority": "mid",
-        "name": "AI bolt-on (추천/검색)",
-        "desc": "RAG + 임베딩 마이그레이션 단계에 자동 삽입"
-      },
-      {
-        "priority": "mid",
-        "name": "TCO 비교 리포트",
-        "desc": "레거시 유지비용 vs Next.js 이전 비용"
-      }
+      { "priority": "high", "name": "토큰 예산·호출 제한", "desc": "부서/프로젝트/키 단위 통제 — 발주서 명시 기능" },
+      { "priority": "high", "name": "감사 로그·사용 리포트", "desc": "보안·ISMS 대응 문서화(보안 수요 40%)" },
+      { "priority": "mid", "name": "모델 라우팅", "desc": "비용 대비 품질 최적화, 소형 모델 캐싱" },
+      { "priority": "mid", "name": "한국형 컴플라이언스 패키지", "desc": "개인정보 마스킹·프롬프트 정책" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 본문 리뉴얼 grep",
-        "value": "20건"
-      },
-      {
-        "metric": "한국 wishket 재구축 grep",
-        "value": "5건"
-      },
-      {
-        "metric": "8/20 wishket 'WordPress→Next.js'",
-        "value": "id 313, 3,000만"
-      },
-      {
-        "metric": "1억+ '리뉴얼' 2건",
-        "value": "id 2/105 '교육용 솔루션 리뉴얼' 1억"
-      },
-      {
-        "metric": "hackathon next.js 719건",
-        "value": "글로벌 표준"
-      }
+      { "metric": "실제 발주", "value": "'사내 통합 LLM API 게이트웨이 구축' — Gemini 비용 폭탄 방지·예산 통제·LiteLLM" },
+      { "metric": "글로벌 온도", "value": "Devpost 2,400건 중 에이전트/MCP 31.9% · Claude 5.0% · Gemini 4.5% · Bedrock 2.7%" },
+      { "metric": "한국 도급 AI", "value": "29건 / 5.44억 — 단, 에이전트 발주 0건 (진입 직전 갭)" }
     ],
-    "direction_change": "**기존**: 레거시 분석 2주 + 이전 1-2개월. **변경**: 자동 분석 1일 + 이전 2-3주. **속도 2-3배↑**.",
-    "expected_effect": "25건 raw + 1억+ 4건 = 1분기 5-10건. **1억+ 대형 1건 = 연 10억 매출**.",
+    "direction_change": "기존 'AI 챗봇·RAG 구축 수주'에서 — 모델 운영 인프라(게이트웨이)라는 새 레이어로 방향 전환. 오픈소스(LiteLLM) 위에 한국 기업용 관리·컴플라이언스를 기능 추가.",
+    "expected_effect": "도입 컨설팅 500만 → 관리형 월 구독. 고객 1곳의 LLM 지출 데이터를 축적하면 에이전트 전환 시 2차 매출. 엔터프라이즈 레퍼런스 축적용.",
     "risks": [
-      "레거시 DB 비정규화 — 데이터 정제 시간",
-      "SEO 트래픽 손실 — redirect 매핑 검증"
+      "LiteLLM 등 오픈소스 자체 운영이 어렵지 않아 관리형 수요가 제한될 수 있음",
+      "대형 클라우드(AWS Bedrock 관리기능 등)와의 경쟁",
+      "보안 컴플라이언스 검증 비용"
     ],
     "confidence": "mid",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM"
-    ],
+    "persona_origin": "inhouse_pm",
+    "agreed_by": ["inhouse_pm", "vc"],
     "consensus": "mid"
   },
   {
-    "id": "sig-07",
+    "id": "s3-auto-auction",
     "rank": 7,
-    "action": "add",
-    "title": "예약/O2O 풀스택 마켓 (한국 raw 89건 + 1억+ 4건)",
-    "summary": "한국 wishket 본문 grep: 예약 23 + 위치 18 + 배송 22 + 앱 78 = **141건**. freemoa 위치 22(50%)/예약 2/숙박 2. **freemoa의 50%가 위치 기반**. 1억+ 4건(O2O 의료 1.8억, 무인세탁 1.2억, 스마트횡단보도 1.2억, 프롭테크 1억)도 같은 결.",
-    "opportunity": "위치 + 결제 + 예약 + 알림 통합 보일러플레이트. **5개 vertical**(숙박/여행, O2O, 스마트시티, 의료 원격, 매칭 중개) 1세트.",
-    "market": "한국 wishket 141 + freemoa 26 + 1억+ 4건 = 171건. 누적 200-300건/년.",
+    "action": "reduce",
+    "title": "중고차 B2B 경매·정산 모듈 패키지 — 최고 단가 도메인의 80% 템플릿화",
+    "summary": "중고차/경매 도메인이 2개월간 7건·2.5억, 중앙값 3,700만으로 도급 최고 단가. 발주처가 다수(수출 역경매 5,500만·3,700만, B2B 경공매 통합 1억, 부품 거래 3,500만, 영업관리 2,300만) — 각자 풀 플랫폼을 새로 산다. 플랫폼 운영이 아니라 등록→입찰→낙찰→정산 코어 모듈만 패키지화해 납품 기간·가격을 재정의.",
+    "opportunity": "여러 사업자가 동일 기능에 반복 지출 = 공통 코어의 존재 증명. 1억 발주문에 3역할(관리자·출품자·입찰자)·정산·명의이전까지 상세 스펙이 명시 — 요구사항이 데이터로 완결된 드문 도메인. 납품 후 유지보수 계약(재발주 신호)이 2차 수익원.",
+    "market": "중고차 수출상사·경매장·렌터카·금융사 잔존가치 조직. 도메인 특성상 소수 대형 고객.",
     "features": [
-      {
-        "priority": "high",
-        "name": "위치+결제+예약 통합 보일러플레이트",
-        "desc": "PG(토스/카카오) + Kakao/Naver Maps + SMS 알림"
-      },
-      {
-        "priority": "high",
-        "name": "5-vertical 모듈",
-        "desc": "숙박/여행 / O2O / 스마트시티 / 의료 원격 / 매칭 중개"
-      },
-      {
-        "priority": "high",
-        "name": "고트래픽 부하 (Cloudflare)",
-        "desc": "Workers + R2 캐싱 + DB 인덱싱"
-      },
-      {
-        "priority": "mid",
-        "name": "B2B PMS/ERP 연동",
-        "desc": "Yanolja/여기어때 API + 자체 ERP"
-      },
-      {
-        "priority": "mid",
-        "name": "위치기반 푸시 + GIS",
-        "desc": "Geofencing + 푸시 + 히트맵"
-      }
+      { "priority": "high", "name": "차량 등록·성능점검 파이프라인", "desc": "차량번호 기반 등록→검사 데이터 표준화" },
+      { "priority": "high", "name": "입찰·낙찰 엔진", "desc": "역경매/경공매 양방향, 실시간 마감 처리" },
+      { "priority": "high", "name": "정산·명의이전 워크플로우", "desc": "3역할 권한 분리 — 1억 발주 스펙" },
+      { "priority": "mid", "name": "다국어 바이어 포털", "desc": "수출 대상(러시아·중동 등) 견적 인터페이스" }
     ],
     "evidence": [
-      {
-        "metric": "한국 wishket 본문 예약+위치+배송",
-        "value": "23 + 18 + 22 = 63건"
-      },
-      {
-        "metric": "한국 freemoa 위치 grep 1위",
-        "value": "22건 / 44 (50%)"
-      },
-      {
-        "metric": "1억+ 4건 (O2O/스마트)",
-        "value": "의료 1.8억, 무인세탁 1.2억, 횡단보도 1.2억, 프롭테크 1억"
-      },
-      {
-        "metric": "u300 'Lychee 여행 쇼핑'",
-        "value": "id 7081, AI·데이터"
-      }
+      { "metric": "도급 최고 단가", "value": "중앙값 3,700만, 7건 / 2.5억" },
+      { "metric": "발주처 다수", "value": "역경매 5,500만·3,700만·2,300만, 경공매 1억, 부품거래 3,500만" },
+      { "metric": "상세 스펙", "value": "'등록·입고→성능점검→경매 출품→입찰·낙찰→수납·정산→출고·명의이전'(1억 발주 원문)" }
     ],
-    "direction_change": "**기존**: 위치/결제/예약 매번 0부터. **변경**: 5-vertical 1세트 = 1-2주. **속도 3배↑**.",
-    "expected_effect": "171건 raw 중 30-40%(~60건) 즉시. 1분기 15-25건 + 1억+ subcontract 1-2건.",
+    "direction_change": "'경매 플랫폼 전체 구축 수주'에서 — 공통 코어 모듈 패키지로 기능 축소. 매출 구조도 1회 납품 → 납품+유지보수 연간 계약 조합으로.",
+    "expected_effect": "패키지 3건 납품(건당 1,500~3,000만, 기간 3주 단축)으로 첫해 1억 내외. 발주 단가가 높아 소수 고객으로도 매출 집중 가능.",
     "risks": [
-      "숙박/여행 시즌 — 안정성 SLA",
-      "해외 PG 연동"
+      "도메인 전문성(차량 거래·관련 법령) 습득 비용",
+      "시장이 좁아 제품화·투자유치는 부적합 — 수주용 패키지 한정",
+      "대형 플랫폼의 B2B 확장 가능성"
     ],
-    "confidence": "high",
-    "persona_origin": "SI-PM",
-    "agreed_by": [
-      "SI-PM",
-      "Startup-CTO"
-    ],
-    "consensus": "high"
+    "confidence": "mid",
+    "persona_origin": "si_director",
+    "agreed_by": ["si_director"],
+    "consensus": "mid"
   },
   {
-    "id": "sig-08",
+    "id": "w1-reservation",
     "rank": 8,
-    "action": "add",
-    "title": "u300 ESG/바이오 vertical 자문 + 매칭 (429건 hashTags 강신호)",
-    "summary": "u300 429건 hashTags/description 직접: AI 160 + 의료 83 + 바이오 78 + 친환경 38 + 에듀테크 28 + 에너지 19 + 로봇 13. **u300의 32% (137건)가 ESG/친환경/바이오/에너지**. 한국 도급엔 약한 vertical → **자문 + 정부 보조금 매칭** 기회.",
-    "opportunity": "u300 창업팀은 정부 보조금/인증/B2B 매칭을 모름. **자문 SaaS** = 인증 체크리스트 + 보조금 매칭 + B2B 바이어 연결. **한국 도급 vertical 다각화**.",
-    "market": "u300 137건 / 429 (32%). 누적 100-150건/년.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "ESG/바이오 인증 가이드",
-        "desc": "식약처/CE/FDA/ISO14001 체크리스트"
-      },
-      {
-        "priority": "high",
-        "name": "정부 보조금 매칭",
-        "desc": "중소벤처기업부/과기정통부/환경부 매칭"
-      },
-      {
-        "priority": "high",
-        "name": "B2B 바이어 연결 마켓",
-        "desc": "대기업 ESG 담당 + 스타트업 매칭"
-      },
-      {
-        "priority": "mid",
-        "name": "탄소배출 자동 산정",
-        "desc": "Scope 1/2/3 + 자동 리포트"
-      },
-      {
-        "priority": "mid",
-        "name": "인증 신청 자동화",
-        "desc": "서류/양식 자동 생성 + 진행 추적"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "u300 본문 친환경 grep",
-        "value": "38건"
-      },
-      {
-        "metric": "u300 본문 에너지/로봇",
-        "value": "19 + 13 = 32건"
-      },
-      {
-        "metric": "u300 ipoPart 바이오/의료 70건",
-        "value": "16% (1위 트랙)"
-      },
-      {
-        "metric": "u300 신규 8/28 ESG 4건",
-        "value": "농산물 펫푸드 / 의류 업사이클링 / FLEXO 외골격 / IV Fixwing"
-      },
-      {
-        "metric": "hackathon Climate 0",
-        "value": "글로벌 미진 = 한국 신시장"
-      }
-    ],
-    "direction_change": "**기존**: 도급은 도급만. **변경**: 자문 + 보조금 + B2B 매칭 = 1고객당 LTV 3-5배.",
-    "expected_effect": "1분기 20-30건 자문 + 5-10건 매칭. 1고객당 500-2,000만 = 1-3억.",
-    "risks": [
-      "정부 보조금 변동",
-      "인증 비용"
-    ],
-    "confidence": "mid",
-    "persona_origin": "Startup-CTO",
-    "agreed_by": [
-      "Startup-CTO",
-      "Global-Researcher"
-    ],
-    "consensus": "mid"
-  },
-  {
-    "id": "sig-09",
-    "rank": 9,
-    "action": "add",
-    "title": "MCP/LLM 도구 마켓플레이스 (k_hackathon 5건 + mcp 180)",
-    "summary": "k_hackathon 5건 본문 직접: 'SSAFY × Kakao AI Hackathon', '네이버 Claude Code 사내 도입', 'AI 도입 후기 1위', 'AI native로 일해 보는 경험'. hackathon mcp 180 / claude 242 / llm 184 / langchain 98 / langgraph 96. **MCP = 신규 표준, 한국 도급에 0-1건/월**.",
-    "opportunity": "MCP 서버/클라이언트 reference + 도메인별 MCP tool 마켓. 한국 대기업 사내 도입 컨설팅 결합.",
-    "market": "k_hackathon 5 + hackathon mcp 180. 한국 도급 0-1건/월.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "MCP reference 구현 (GitHub 공개)",
-        "desc": "MCP 표준 기반 reference, TypeScript/Python"
-      },
-      {
-        "priority": "high",
-        "name": "사내 AI 도구 도입 컨설팅",
-        "desc": "네이버 Claude Code 사례 기반 4주 PoC"
-      },
-      {
-        "priority": "high",
-        "name": "도메인별 MCP tool 10종",
-        "desc": "회계/마케팅/여행/의료/물류"
-      },
-      {
-        "priority": "mid",
-        "name": "MCP 호스팅 (관리형)",
-        "desc": "사내 MCP 서버 운영/모니터링"
-      },
-      {
-        "priority": "mid",
-        "name": "AI 워크숍 (분기 1회)",
-        "desc": "사내 해커톤 + 사례 공유"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "k_hackathon 5건 본문 직접 확인",
-        "value": "SSAFY×Kakao / 네이버 Claude Code / 우아한형제들"
-      },
-      {
-        "metric": "hackathon mcp 180",
-        "value": "글로벌 표준"
-      },
-      {
-        "metric": "hackathon claude 242 / llm 184",
-        "value": "AI 도구 1-2위"
-      },
-      {
-        "metric": "u300 '에이전트' 4건 (hashTags)",
-        "value": "8/28 신규 등장"
-      },
-      {
-        "metric": "hackathon langchain 98 / langgraph 96",
-        "value": "에이전트 프레임워크"
-      }
-    ],
-    "direction_change": "**기존**: LLM API 직접 호출. **변경**: MCP 표준 기반 tool = LLM + 도메인 결합 1주. **1고객 LTV 5배↑**.",
-    "expected_effect": "1분기 5-10건 컨설팅 + 1-3건 MCP 호스팅. 1고객당 1,000-3,000만.",
-    "risks": [
-      "MCP 표준 변경 — reference 재작성",
-      "도메인 tool 진입장벽"
-    ],
-    "confidence": "mid",
-    "persona_origin": "Global-Researcher",
-    "agreed_by": [
-      "Global-Researcher",
-      "Startup-CTO"
-    ],
-    "consensus": "mid"
-  },
-  {
-    "id": "sig-10",
-    "rank": 10,
-    "action": "add",
-    "title": "u300 'AI SaaS' 투자+엔지니어링 (u300 160 + SaaS 25 hashTags)",
-    "summary": "u300 429건 hashTags: AI 160 + SaaS 25 + 플랫폼 110. **u300의 37.3%가 'AI SaaS'로 창업**. 한국 도급엔 AI SaaS 다수 부재. **엔지니어링 파트너 + 소수 지분** 모델.",
-    "opportunity": "u300 AI SaaS 창업팀 = 기술 파트너 필요. **엔지니어링 + 옵션(지분 1-3%)** = 창업팀 1-3년 동반. **LTV 무한**.",
-    "market": "u300 160건 / 429 (37.3%). 누적 50-100건/년.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "AI SaaS 보일러플레이트",
-        "desc": "인증/구독/빌링/관리자 + Claude/GPT API"
-      },
-      {
-        "priority": "high",
-        "name": "엔지니어링 + 지분 옵션",
-        "desc": "1-3% equity, 6-12개월 동행"
-      },
-      {
-        "priority": "high",
-        "name": "PMF 멘토링",
-        "desc": "고객 개발 + 가격 정책 + 그로스"
-      },
-      {
-        "priority": "mid",
-        "name": "B2B 세일즈 보조",
-        "desc": "초기 5-10고객 리드 + CRM"
-      },
-      {
-        "priority": "mid",
-        "name": "투자 연결 (VC/액셀러레이터)",
-        "desc": "엔보이/u300 운영팀/VC 매칭"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "u300 본문 AI grep",
-        "value": "160건 / 429 (37.3%)"
-      },
-      {
-        "metric": "u300 hashTags SaaS 25",
-        "value": "AI×SaaS 신호"
-      },
-      {
-        "metric": "u300 신규 8/28 AI·데이터 4건",
-        "value": "Recova / Kilexep / Lychee / Kilexep"
-      },
-      {
-        "metric": "k_hackathon 'AI native'",
-        "value": "네이버 사례 5건"
-      }
-    ],
-    "direction_change": "**기존**: 도급 = 현금만. **변경**: 현금 50% + equity 1-3% = 1-2% 성공률 가드레일. **1건 equity 성공 = 본 계약 50건**.",
-    "expected_effect": "1분기 5-10건 onboarding. equity 1건 성공 = 5-10억. **포트폴리오 가치 30-50억 가능**.",
-    "risks": [
-      "창업팀 90% 망함 — 현금 비중 충분히",
-      "지분 협상 실패"
-    ],
-    "confidence": "mid",
-    "persona_origin": "Startup-CTO",
-    "agreed_by": [
-      "Startup-CTO",
-      "SI-PM"
-    ],
-    "consensus": "mid"
-  },
-  {
-    "id": "sig-11",
-    "rank": 11,
-    "action": "add",
-    "title": "음성/화상 AI R&D + 도급 진입 (한국 raw 21건 — low 신호)",
-    "summary": "한국 wishket 본문 grep: 음성 0 / 화상 0 (단어 검색). u300 본문: 음성 16 + 화상 5 = 21건. **한국 도급 풀에 직접 신호 약함** — R&D + 사례집만.",
-    "opportunity": "음성/화상 AI = STT + 화상회의록 + 콜봇. 한국 도급에 0-1건/월이라 R&D 투자 대비 ROI 불확실. **k_hackathon 사례** + 의료/법률 도메인 특화.",
-    "market": "u300 21건 + 한국 도급 0-1건/월. 누적 5-10건/년 추정.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "STT + 화상회의록 R&D",
-        "desc": "Zoom/Teams → 전사녹취 + 요약 + 번역"
-      },
-      {
-        "priority": "high",
-        "name": "콜봇 프로토타입",
-        "desc": "고객 인입 → 음성 AI → 상담사 연결"
-      },
-      {
-        "priority": "mid",
-        "name": "의료/법률 도메인 어휘",
-        "desc": "한국어 의료/법률 어휘 fine-tune"
-      },
-      {
-        "priority": "low",
-        "name": "도급 풀 모니터링",
-        "desc": "월 1회 신규 안건 grep"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "한국 wishket 음성/화상 grep",
-        "value": "0건 (단어 검색 한정)"
-      },
-      {
-        "metric": "u300 본문 음성 grep",
-        "value": "16건"
-      },
-      {
-        "metric": "u300 본문 화상 grep",
-        "value": "5건"
-      },
-      {
-        "metric": "k_hackathon 'AI 도입'",
-        "value": "음성 언급 없음"
-      }
-    ],
-    "direction_change": "**기존**: 음성/화상 도급 시도. **변경**: R&D + 도메인 fine-tune + 사례집 + 도급 풀 모니터링. **1분기 R&D, 2분기 도급 진입**.",
-    "expected_effect": "1분기 R&D 1건, 2-3분기 도급 1-2건. **불확실 — confidence low**.",
-    "risks": [
-      "의료/법률 컴플라이언스",
-      "STT 정확도 한국어"
-    ],
-    "confidence": "low",
-    "persona_origin": "Startup-CTO",
-    "agreed_by": [
-      "Startup-CTO"
-    ],
-    "consensus": "low"
-  },
-  {
-    "id": "sig-12",
-    "rank": 12,
-    "action": "add",
-    "title": "사회문제+AI 자문 (drivendata 30건 본문 직접 확인)",
-    "summary": "drivendata 30건 본문 직접: 'Parkinson's / Earthquake / Disease Spread / Water Table / H1N1 / Children Speech / Document Summarization'. herox 4건 (Maternal Health / NASA / Evolution AI $10M). **공공 헬스케어/환경 × AI** vertical.",
-    "opportunity": "공공 헬스케어(질병 예측/감시) + 환경(지진/수질) + 교육(음성 인식) = 정부/NGO 입찰. 한국 도급 1-2건/년, 글로벌 더 큼.",
-    "market": "drivendata 30 + herox 4 + hackathon tags computer-vision 102. 한국 도급 1-2건/년.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "공공 헬스케어 예측 모듈",
-        "desc": "시계열/이상감지 + LLM 해석"
-      },
-      {
-        "priority": "high",
-        "name": "환경 모니터링 모듈",
-        "desc": "지진/수질/기상 예측 + 시각화"
-      },
-      {
-        "priority": "mid",
-        "name": "음성 인식 (교육/접근성)",
-        "desc": "STT + 화자 식별 + 다국어"
-      },
-      {
-        "priority": "mid",
-        "name": "공공 입찰 지원",
-        "desc": "제안서/예산/일정 템플릿"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "drivendata 30건 본문 직접",
-        "value": "Parkinson's / Earthquake / Disease / Water / Speech"
-      },
-      {
-        "metric": "herox 4건",
-        "value": "Maternal Health / NASA / Evolution AI $10M"
-      },
-      {
-        "metric": "hackathon tags computer-vision 102",
-        "value": "의료 영상"
-      },
-      {
-        "metric": "k_hackathon 1건 'AI 사회문제'",
-        "value": "id 14331"
-      }
-    ],
-    "direction_change": "**기존**: 공공 입찰 = 6-12개월. **변경**: 모듈 1세트 + 입찰 지원 = 3-6개월. **속도 2배↑**.",
-    "expected_effect": "1-2건/년 수주 + 글로벌 SaaS 가능. 1건 5,000만-1억.",
-    "risks": [
-      "공공 입찰 진입장벽",
-      "데이터 라벨링 비용"
-    ],
-    "confidence": "mid",
-    "persona_origin": "Global-Researcher",
-    "agreed_by": [
-      "Global-Researcher"
-    ],
-    "consensus": "mid"
-  },
-  {
-    "id": "sig-13",
-    "rank": 13,
-    "action": "add",
-    "title": "버그바운티/Security Testing SaaS (hackerone 17건 + 한국 raw 18건)",
-    "summary": "hackerone 17건 본문: bounty 14 / vulnerability 13 / scope 13 / security 13 / RCE 9. 한국 wishket 본문 보안 18 / 암호화 5. **글로벌 표준 = 버그바운티 플랫폼**, 한국 도급엔 직접 신호 약함.",
-    "opportunity": "HackerOne/Immunefi 모델 한국형 = 모의 침투 + 인증/암호화 자문. 한국 금융/공공 sector 보안 규제 강화로 수요 증가 추정.",
-    "market": "hackerone 17 + 한국 보안 23건. 한국 도급 1-2건/년.",
-    "features": [
-      {
-        "priority": "high",
-        "name": "모의 침투 테스트 (Web/Mobile/API)",
-        "desc": "1-2개월, 1,500-3,000만"
-      },
-      {
-        "priority": "high",
-        "name": "보안 자문 (ISMS/ISO27001/SOC2)",
-        "desc": "한국/글로벌 인증 가이드"
-      },
-      {
-        "priority": "mid",
-        "name": "버그바운티 플랫폼 호스팅",
-        "desc": "HackerOne/Immunefi 표준"
-      },
-      {
-        "priority": "low",
-        "name": "도급 풀 모니터링",
-        "desc": "분기 1회 신규 grep"
-      }
-    ],
-    "evidence": [
-      {
-        "metric": "hackerone 17건 본문 grep",
-        "value": "bounty 14, vulnerability 13, RCE 9"
-      },
-      {
-        "metric": "한국 wishket 본문 보안 grep",
-        "value": "18건"
-      },
-      {
-        "metric": "한국 wishket 암호화 grep",
-        "value": "5건"
-      },
-      {
-        "metric": "hackathon tags IOI 45",
-        "value": "알고리즘/보안"
-      }
-    ],
-    "direction_change": "**기존**: 보안 컨설팅 = 1건. **변경**: 모의 침투 + 인증 + 버그바운티 패키지 = 1고객 LTV 3배.",
-    "expected_effect": "1-2건/년 + 자문 5-10건. 1건 2,000-3,000만.",
-    "risks": [
-      "공격/방어 자가책임 한계",
-      "보안 인력 진입장벽"
-    ],
-    "confidence": "mid",
-    "persona_origin": "Global-Researcher",
-    "agreed_by": [
-      "Global-Researcher",
-      "SI-PM"
-    ],
-    "consensus": "mid"
-  },
-  {
-    "id": "sig-14",
-    "rank": 14,
     "action": "watch",
-    "title": "[관망] K-해커톤 'AI 도입 후기' — 1-2분기 후 도급 시장 진입",
-    "summary": "k_hackathon 5건 본문 직접 확인: 'AI 도입 후기 1위', 'AI 시대의 인간 역할', 'AI native로 일하는 경험'. **한국 대기업 AI 도구 도입 사례가 1-2분기 안에 도급 시장으로 진입** 시그널. 한국 도급 풀 직접 신호 0건.",
-    "opportunity": "k_hackathon 5건 + u300 '에이전트' 4건. **1-2분기 대기** 후 도급 풀 신규 등장 시 즉시 진입.",
-    "market": "직접 매출 0. 1-2분기 후 5-10건 추정.",
+    "title": "예약+정산 코어 모듈 — 수요는 강하지만 경쟁 밀집, 독립 제품화는 관망",
+    "summary": "예약/티켓/정산 12건·2.19억 + 본문 정산 등장률 12% — 관리자 콘솔(39건)과 세트로 반복 등장하지만 구독형 예약 SaaS 시장이 이미 밀집. 독립 스타트업 아이템이 아니라 미들오피스 빌더의 배후 모듈로 보유하고, 경쟁 상황 변화 시 재평가.",
+    "opportunity": "재활·운동 예약+정산 2,500만('계약 해지 재발주'), 장례식장 예약 2,000만, 리조트 예약+ERP 연동 7,000만 — 수요는 확실히 검증됨. 관망 트리거: 예약 발주에서 '기존 SaaS 대체' 요구가 반복 등장하면 제품화를 재검토한다.",
+    "market": "(보유 모듈) — 미들오피스 빌더 템플릿의 일부로 공급.",
     "features": [
-      {
-        "priority": "low",
-        "name": "분기 R&D 발표",
-        "desc": "외부 세션/블로그 1회"
-      },
-      {
-        "priority": "low",
-        "name": "도급 풀 모니터링",
-        "desc": "AI 에이전트 신규 등"
-      }
+      { "priority": "mid", "name": "예약·달력 엔진", "desc": "도메인 무관 임베드형" },
+      { "priority": "mid", "name": "다자간 정산·수익배분 계산기", "desc": "총판·강사·파트너 정산 패턴" },
+      { "priority": "low", "name": "기존 SaaS 대체 요구 모니터링", "desc": "발주 트렌드 감지 시 재평가" }
     ],
     "evidence": [
-      {
-        "metric": "k_hackathon 5건 본문",
-        "value": "네이버 Claude Code / 우아한형제들 / SSAFY×Kakao"
-      },
-      {
-        "metric": "u300 '에이전트' 4건 (hashTags)",
-        "value": "신규 등장"
-      },
-      {
-        "metric": "hackathon global claude 242 / mcp 180",
-        "value": "선두 신호"
-      },
-      {
-        "metric": "한국 도급 본문 '에이전트'",
-        "value": "0건"
-      }
+      { "metric": "예약 클러스터", "value": "12건 / 2.19억 / 중앙값 2,000만" },
+      { "metric": "정산 수요", "value": "본문 '정산/수익배분' 등장 12% — 고예산 안건의 공통 뼈대" },
+      { "metric": "경쟁 상황", "value": "구독형 예약 SaaS 기존 시장 존재 — 신규 진입 마진 낮음(추정)" }
     ],
-    "direction_change": "**기존**: AI 에이전트 도급 시도. **변경**: R&D + 발표 + 모니터링. **1-2분기 대기**.",
-    "expected_effect": "1-2분기 후 5-10건 수주 가능. **불확실 — watch**.",
+    "direction_change": "독립 SaaS 신설 없이 — 미들오피스 빌더의 도메인 템플릿(예약형)으로 흡수. 경쟁 상황 변화 시 재평가.",
+    "expected_effect": "즉각 매출 목표 없음. 빌더 고객의 업셀 모듈로 공헌도 산정.",
     "risks": [
-      "도급 풀 진입 지연",
-      "해커톤-도급 결"
+      "기존 예약 SaaS 시장과의 정면 경쟁",
+      "정산 로직의 업종별 특수성으로 템플릿화 한계"
     ],
     "confidence": "mid",
-    "persona_origin": "Global-Researcher",
-    "agreed_by": [
-      "Global-Researcher"
-    ],
-    "consensus": "mid"
+    "persona_origin": "startup_pm",
+    "agreed_by": ["startup_pm", "si_director"],
+    "consensus": "low"
   }
 ]

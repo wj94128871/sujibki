@@ -1,5 +1,5 @@
 /** API fetch 래퍼 — 공통 envelope 해석 (tech-design §6.8) */
-import type { Analysis, AnalysisItem, Insight, ProjectDetail, ProjectItem, RunItem, Summary } from "../types.js";
+import type { Analysis, AnalysisItem, Insight, OpportunityItem, ProjectDetail, ProjectItem, RunItem, Summary } from "../types.js";
 const BASE = (import.meta as any).env?.VITE_API ?? "https://market-dashboard-worker.whip-mockingbird.workers.dev";
 async function get<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`);
@@ -17,4 +17,5 @@ export const api = {
   project: (id: string) => get<ProjectDetail>(`/api/projects/${id}`),
   runs: () => get<RunItem[]>("/api/runs"),
   analysisItems: () => get<AnalysisItem[]>("/api/analysis/items"),
+  analysisSpace: () => get<OpportunityItem[]>("/api/analysis/space"),
 };

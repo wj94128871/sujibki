@@ -6,7 +6,7 @@ import seedProjects from "./seed_projects.json" with { type: "json" };
 import seedRuns from "./seed_runs.json" with { type: "json" };
 import { MemoryDataSource } from "./MemoryDataSource.js";
 import { NeonDataSource } from "./NeonDataSource.js";
-import { hAnalysis, hAnalysisItems, hInsights, hProjectDetail, hProjects, hRuns, hSources, hSummary } from "./routes/handlers.js";
+import { hAnalysis, hAnalysisItems, hAnalysisSpace, hInsights, hProjectDetail, hProjects, hRuns, hSources, hSummary } from "./routes/handlers.js";
 import { httpStatus, type ApiEnvelope } from "./util/error.js";
 
 export interface Env {
@@ -41,6 +41,7 @@ export default {
       else if (path.startsWith("/api/projects/")) payload = await hProjectDetail(ds, path.split("/")[3] || "");
       else if (path === "/api/runs") payload = await hRuns(ds, url);
       else if (path === "/api/analysis/items") payload = await hAnalysisItems(ds);
+      else if (path === "/api/analysis/space") payload = await hAnalysisSpace();
       else if (path === "/api/crawl/trigger" && request.method === "POST") {
         // Phase2 Cron → 외부 러너 신호 (MVP는 on-demand+이력)
         payload = { ok: true, data: { scheduled: false, note: "Phase2" } };

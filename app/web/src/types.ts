@@ -42,3 +42,10 @@ export interface AnalysisItem {
   direction_change?: string;
   expected_effect?: string;
 }
+/** 기회 공간 지도 항목 — Tier B(도메인 수직)/C(글로벌 전이)/D(관망·기각) 롱리스트 */
+export interface OpportunityItem {
+  id: string; tier: "B" | "C" | "D"; domain: string; title: string; form: string;
+  priority: "high" | "mid" | "low";
+  evidence: string;
+  trigger?: string | null;
+}
