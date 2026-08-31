@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import type { AnalysisItem, EnhancedAnalysis, OpportunityItem, Summary } from "../types.js";
 import { api } from "../api/client.js";
 import { Section, ErrorBlock, Skeleton } from "../components/ui.js";
@@ -334,11 +334,12 @@ const SPACE_PRIORITY_BADGE: Record<string, string> = {
 };
 const SPACE_PRIORITY_LABEL: Record<string, string> = { high: "우선도 상", mid: "우선도 중", low: "우선도 하" };
 
-/** 기회 공간 지도 — Tier A 8개 외의 하위 계층(Tier B·C·D) 롱리스트, 기본 접힘 */
+/** 기회 공간 지도 — Tier A 8개 외의 하위 계층(Tier B·C·D) 롱리스트, 기본 접힘. 행 클릭 시 등급 사유·승격 조건 표시 */
 function OpportunitySpace() {
   const [space, setSpace] = useState<OpportunityItem[] | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     api.analysisSpace().then(setSpace).catch(e => setErr(String(e)));
@@ -393,23 +394,43 @@ function OpportunitySpace() {
                     </thead>
                     <tbody className="[&>tr:not(:last-child)]:border-b [&>tr]:border-line [&>tr>td]:px-4 [&>tr>td]:py-2.5">
                       {rows.map(item => (
-                        <tr key={item.id}>
-                          <td className="tnum font-extrabold text-ink-sub">{item.id}</td>
-                          <td className="text-ink-sub">{item.domain}</td>
-                          <td>
-                            <div className="flex flex-wrap items-center gap-2">
-                              <span className={`font-semibold ${tier === "D" ? "" : "text-ink"}`}>{item.title}</span>
-                              <span className="rounded bg-surface2 px-1.5 py-0.5 text-xs text-ink-sub">{item.form}</span>
-                            </div>
-                            <p className="m-0 mt-1 text-xs leading-relaxed text-ink-sub">{item.evidence}</p>
-                            {item.trigger && <p className="m-0 mt-1 text-xs font-semibold text-primary">⚡ 트리거: {item.trigger}</p>}
-                          </td>
-                          {tier !== "D" && (
-                            <td><span className={`inline-flex whitespace-nowrap rounded-full border px-2 py-0.5 text-xs font-bold ${SPACE_PRIORITY_BADGE[item.priority] ?? ""}`}>
-                              {SPACE_PRIORITY_LABEL[item.priority] ?? item.priority}
-                            </span></td>
+                        <Fragment key={item.id}>
+                          <tr className="cursor-pointer hover:bg-surface2/60" onClick={() => setExpanded(expanded === item.id ? null : item.id)}>
+                            <td className="tnum font-extrabold text-ink-sub">{item.id}</td>
+                            <td className="text-ink-sub">{item.domain}</td>
+                            <td>
+                              <div className="flex flex-wrap items-center gap-2">
+                                <span aria-hidden="true" className="text-xs text-ink-faint">{expanded === item.id ? "▾" : "▸"}</span>
+                                <span className={`font-semibold ${tier === "D" ? "" : "text-ink"}`}>{item.title}</span>
+                                <span className="rounded bg-surface2 px-1.5 py-0.5 text-xs text-ink-sub">{item.form}</span>
+                              </div>
+                              <p className="m-0 mt-1 text-xs leading-relaxed text-ink-sub">{item.evidence}</p>
+                              {item.trigger && <p className="m-0 mt-1 text-xs font-semibold text-primary">⚡ 트리거: {item.trigger}</p>}
+                            </td>
+                            {tier !== "D" && (
+                              <td><span className={`inline-flex whitespace-nowrap rounded-full border px-2 py-0.5 text-xs font-bold ${SPACE_PRIORITY_BADGE[item.priority] ?? ""}`}>
+                                {SPACE_PRIORITY_LABEL[item.priority] ?? item.priority}
+                              </span></td>
+                            )}
+                          </tr>
+                          {expanded === item.id && (
+                            <tr className="bg-surface2/40">
+                              <td colSpan={tier === "D" ? 3 : 4} className="border-t border-line">
+                                <div className="grid gap-2 py-1">
+                                  {item.summary && (
+                                    <p className="m-0 text-sm leading-relaxed text-ink"><strong className="font-extrabold">한 줄 요약: </strong>{item.summary}</p>
+                                  )}
+                                  {item.grade_reason && (
+                                    <p className="m-0 text-sm leading-relaxed text-ink"><strong className="font-extrabold text-warning">📌 왜 이 등급인가: </strong>{item.grade_reason}</p>
+                                  )}
+                                  {item.promotion && (
+                                    <p className="m-0 text-sm leading-relaxed text-ink"><strong className="font-extrabold text-primary">🚀 상위티어·출시급이 되려면: </strong>{item.promotion}</p>
+                                  )}
+                                </div>
+                              </td>
+                            </tr>
                           )}
-                        </tr>
+                        </Fragment>
                       ))}
                     </tbody>
                   </table>

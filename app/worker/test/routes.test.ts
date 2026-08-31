@@ -111,6 +111,10 @@ describe("Worker API 계약 (MemoryDataSource)", () => {
       expect(item.form).toBeTruthy();
       expect(item.domain).toBeTruthy();
       expect(item.evidence).toBeTruthy();
+      // 상세 분석 3종 — 등급 사유·승격 조건은 전 항목 필수
+      expect(item.summary).toBeTruthy();
+      expect(item.grade_reason).toBeTruthy();
+      expect(item.promotion).toBeTruthy();
     }
     // Tier A와 아이템 id가 겹치지 않아야 함 (A는 /api/analysis/items 소관)
     const spaceIds = new Set(d.map(i => i.id));

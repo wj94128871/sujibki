@@ -48,6 +48,10 @@ export interface OpportunityItem {
   priority: "high" | "mid" | "low";
   evidence: string;
   trigger?: string | null;
+  /** 상세 분석 — 한 줄 요약 / 왜 이 등급인가 / 상위티어·출시급 승격 조건 */
+  summary?: string;
+  grade_reason?: string;
+  promotion?: string;
 }
 /** 고도화 분석 (PART 9.5) — scripts/analyze_enhanced.py 산출물 */
 export interface EnhancedAnalysis {
