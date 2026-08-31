@@ -25,7 +25,7 @@ jobs:
           python -m venv venv-a
           source venv-a/bin/activate
           pip install --upgrade pip
-          pip install curl_cffi==0.16.0 lzstring==1.0.4 requests==2.34.2 playwright==1.62.0
+          pip install curl_cffi==0.16.0 lzstring==1.0.4 requests==2.34.2 playwright==1.62.0 "psycopg[binary]>=3.1"
           playwright install chromium
       - name: Adapt devpost
         run: |
@@ -53,6 +53,13 @@ jobs:
         run: |
           source venv-a/bin/activate
           python scripts/analyze_hackathons.py
+      - name: Sync persona insights to Neon
+        if: always()
+        env:
+          PG_DSN: ${{ secrets.PG_DSN }}
+        run: |
+          source venv-a/bin/activate
+          python scripts/analyze_persona.py
       - name: Run unit tests
         if: always()
         run: |

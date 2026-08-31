@@ -279,7 +279,8 @@ with psycopg.connect(DSN) as c:
         persona_items = json.load(open('app/worker/src/analysis_items.json'))
         for it in persona_items:
             rank = it['rank']
-            if it['action'] == 'add':
+            # add/reduce → feature(기능 개선), pivot → market(방향 전환), watch → keyword(관망)
+            if it['action'] in ('add', 'reduce'):
                 itype = 'feature'
             elif it['action'] == 'pivot':
                 itype = 'market'
