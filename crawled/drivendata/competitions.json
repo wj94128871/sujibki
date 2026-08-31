@@ -1,0 +1,272 @@
+[
+  {
+    "slug": "dat-parkinsons-challenge",
+    "title": "Competition: DaT Parkinson&#x27;s Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/311/dat-parkinsons-challenge/"
+  },
+  {
+    "slug": "whats-up-docs",
+    "title": "Competition: What&#x27;s Up, Docs? Document Summarization with LLMs",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/297/whats-up-docs/"
+  },
+  {
+    "slug": "flu-shot-learning",
+    "title": "Competition: Flu Shot Learning: Predict H1N1 and Seasonal Flu Vaccines",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/66/flu-shot-learning/"
+  },
+  {
+    "slug": "competition-image-classification-wildlife-conservation",
+    "title": "Competition: Conser-vision Practice Area: Image Classification",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/87/competition-image-classification-wildlife-conservation/"
+  },
+  {
+    "slug": "nepal-earthquake",
+    "title": "Competition: Richter&#x27;s Predictor: Modeling Earthquake Damage",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/57/nepal-earthquake/"
+  },
+  {
+    "slug": "dengai-predicting-disease-spread",
+    "title": "Competition: DengAI: Predicting Disease Spread",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/"
+  },
+  {
+    "slug": "pump-it-up-data-mining-the-water-table",
+    "title": "Competition: Pump it Up: Data Mining the Water Table",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/"
+  },
+  {
+    "slug": "childrens-asr-competition",
+    "title": "On Top of Pasketti: Children’s Speech Recognition Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "120,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/childrens-asr-competition/"
+  },
+  {
+    "slug": "competition-uva-aiai-challenge",
+    "title": "AIAI Challenge: Artificial Intelligence for Advancing Instruction",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "70,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/competition-uva-aiai-challenge/"
+  },
+  {
+    "slug": "nih-nia-alzheimers-adrd-competition",
+    "title": "PREPARE: Pioneering Research for Early Prediction of Alzheimer&#x27;s and Related Dementias EUREKA Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "650,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/nih-nia-alzheimers-adrd-competition/"
+  },
+  {
+    "slug": "literacy-screening",
+    "title": "Competition: Goodnight Moon, Hello Early Literacy Screening",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "30,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/298/literacy-screening/"
+  },
+  {
+    "slug": "cdc-narratives",
+    "title": "Youth Mental Health Narratives",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "70,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/cdc-narratives/"
+  },
+  {
+    "slug": "reclamation-water-supply-forecast",
+    "title": "Water Supply Forecast Rodeo",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "500,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/reclamation-water-supply-forecast/"
+  },
+  {
+    "slug": "competition-nasa-spacecraft",
+    "title": "Pose Bowl: Spacecraft Detection and Pose Estimation Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "40,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/competition-nasa-spacecraft/"
+  },
+  {
+    "slug": "competition-snomed-ct",
+    "title": "Competition: SNOMED CT Entity Linking Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "25,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/258/competition-snomed-ct/"
+  },
+  {
+    "slug": "kelp-forest-segmentation",
+    "title": "Competition: Kelp Wanted: Segmenting Kelp Forests",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "15,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/255/kelp-forest-segmentation/"
+  },
+  {
+    "slug": "pale-blue-dot",
+    "title": "Competition: Pale Blue Dot: Visualization Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/256/pale-blue-dot/"
+  },
+  {
+    "slug": "meta-video-similarity",
+    "title": "Meta AI Video Similarity Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "100,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/meta-video-similarity/"
+  },
+  {
+    "slug": "cdc-fall-narratives",
+    "title": "Competition: Unsupervised Wisdom: Explore Medical Narratives on Older Adult Falls",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "70,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/217/cdc-fall-narratives/"
+  },
+  {
+    "slug": "ai-research-assistants",
+    "title": "Competition: Research Rovers: AI Research Assistants for NASA",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "30,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/252/ai-research-assistants/"
+  },
+  {
+    "slug": "competition-nasa-airport-pushback",
+    "title": "Pushback to the Future: Predict Pushback Time at US Airports",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "50,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/competition-nasa-airport-pushback/"
+  },
+  {
+    "slug": "visiomel-melanoma",
+    "title": "Competition: VisioMel Challenge: Predicting Melanoma Relapse",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/148/visiomel-melanoma/"
+  },
+  {
+    "slug": "uk-federated-learning",
+    "title": "U.K. PETs Prize Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/uk-federated-learning/"
+  },
+  {
+    "slug": "nist-federated-learning",
+    "title": "U.S. PETs Prize Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "675,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/nist-federated-learning/"
+  },
+  {
+    "slug": "tick-tick-bloom",
+    "title": "Competition: Tick Tick Bloom: Harmful Algal Bloom Detection Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "30,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/143/tick-tick-bloom/"
+  },
+  {
+    "slug": "biomass-estimation",
+    "title": "Competition: The BioMassters",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "10,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/99/biomass-estimation/"
+  },
+  {
+    "slug": "nasa-mars-gcms",
+    "title": "Competition: Mars Spectrometry 2: Gas Chromatography",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "30,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/97/nasa-mars-gcms/"
+  },
+  {
+    "slug": "competition-reclamation-snow-water",
+    "title": "Snowcast Showdown",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "500,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/competition-reclamation-snow-water/"
+  },
+  {
+    "slug": "beluga-whales",
+    "title": "Competition: Where&#x27;s Whale-do?",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "35,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/96/beluga-whales/"
+  },
+  {
+    "slug": "image-similarity-challenge",
+    "title": "Facebook AI Image Similarity Challenge",
+    "brief": "",
+    "tags": [],
+    "prize_usd": "200,000",
+    "deadline": "",
+    "url": "https://www.drivendata.org/competitions/group/image-similarity-challenge/"
+  }
+]

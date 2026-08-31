@@ -1,0 +1,53 @@
+{
+  "sources": {
+    "kakao": {
+      "url": "https://tech.kakao.com/feed/",
+      "items": 10,
+      "matched": 1
+    },
+    "toss": {
+      "url": "https://toss.tech/rss.xml",
+      "items": 20,
+      "matched": 0
+    },
+    "naver_d2": {
+      "url": "https://d2.naver.com/d2.atom",
+      "items": 20,
+      "matched": 3
+    },
+    "naver_cloud": {
+      "url": "https://medium.com/feed/naver-cloud-platform",
+      "items": 10,
+      "matched": 0
+    },
+    "woowahan": {
+      "url": "https://techblog.woowahan.com/feed/",
+      "items": 10,
+      "matched": 1
+    },
+    "daangn": {
+      "url": "https://medium.com/feed/daangn",
+      "items": 10,
+      "matched": 0
+    },
+    "coupang": {
+      "url": "https://medium.com/feed/coupang-engineering",
+      "items": 10,
+      "matched": 0
+    },
+    "banksalad": {
+      "url": "https://medium.com/feed/banksalad",
+      "items": 10,
+      "matched": 0
+    },
+    "musinsa": {
+      "url": "https://medium.com/feed/musinsa-tech",
+      "items": 10,
+      "matched": 0
+    }
+  },
+  "items_total": 5,
+  "detail_count": 5,
+  "collected_at": "2026-08-28T16:01:37+0900",
+  "days": 365
+}

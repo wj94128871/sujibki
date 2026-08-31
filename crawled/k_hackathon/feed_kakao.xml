@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[tech.kakao.com]]></title>
+        <description><![CDATA[카카오테크, 미래의 문턱을 낮추는 기술]]></description>
+        <link>https://tech.kakao.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 28 Aug 2026 07:01:33 GMT</lastBuildDate>
+        <atom:link href="https://tech.kakao.com/feed/" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[지역 AI 생태계의 새로운 가능성, 카카오 AI 돛 Summit 26을 개최합니다!]]></title>
+            <description><![CDATA[대한민국 AI 생태계의 새로운 바람이 시작됩니다! ⛵
+카카오가 부산광역시, 카카오임팩트와 함께 지역 AI 생태계 조성과 기술 교류를 위한 '카카오 AI 돛 Summit 26’을 개최합니다!
+이번 서밋은 카카오가 4대 과학기술원(KAIST, GIST, DGIST, UNIST)과 협력하여 비수도권의 인재 양성 및 창업을 지원하는 ‘카카오 AI 돛’ 프로젝트의 핵심 행사입니다. '미래를 향해, 가능성의 항해’ 슬로건 아래, 기술과 AI 생태계가 강력하게 연결...]]></description>
+            <link>https://tech.kakao.com/posts/830</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/830</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[tj.kim]]></dc:creator>
+            <pubDate>Wed, 26 Aug 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/4227a39901a000001.png</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[개인화된 Airflow 테스트 환경 구축 및 운영 경험]]></title>
+            <description><![CDATA[안녕하세요! 데이터서비스 조직의 비오, 소나, 테라입니다.
+데이터서비스 조직은 다양한 기술로 데이터 생태계를 만들어 가며 모든 크루가 데이터로 문제를 해결할 수 있도록 돕고 있습니다. 그 과정에서 수많은 데이터 파이프라인을 다루고 있으며 이를 위해 수천 개의 Airflow DAG를 여러 하둡별 에어플로우 클러스터 위에서 운영하고 있습니다.
+이렇게 여러 파이프라인을 다루다 보니 새로운 파이프라인을 개발하거나 기존 파이프라인을 개선하는 일이 잦습니다. 하지...]]></description>
+            <link>https://tech.kakao.com/posts/829</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/829</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[beeo.wing / sona.sh / terra.ria]]></dc:creator>
+            <pubDate>Thu, 06 Aug 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/db6afd3f019f00001.png</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[Beyond AI That Speaks Well: Making Kanana-o Speak the Way Users Want]]></title>
+            <description><![CDATA[Hello, we are Martin (Daejin Jo), Abigail (Heayoung Park), and Edwin (Wooyoung Kang) from Kanana, the team responsible for developing AI models at Kakao. Our team focuses on building unified multimodal language models that can see, hear, and speak like hu...]]></description>
+            <link>https://tech.kakao.com/posts/828</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/828</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[martin.gale / abigail.r / edwin.ai]]></dc:creator>
+            <pubDate>Mon, 03 Aug 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/c628aee6019f00001.jpeg</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[잘 말하는 AI를 넘어, 원하는 대로 말하는 AI로: Kanana-o 음성 생성 고도화 과정]]></title>
+            <description><![CDATA[Intro
+안녕하세요, 카카오의 AI 모델 개발을 담당하는 카나나(Kanana) 조직의 Martin(조대진), Abigail(박혜영), Edwin(강우영)입니다. 저희 팀에서는 사람처럼 보고, 듣고, 말하는 통합 멀티모달(Multimodal) 언어모델을 중점적으로 개발하고 있습니다.
+지난 5월, 국내 최초로 공개한 통합 멀티모달 언어모델 공개 이후, 저희는 실제 서비스 환경에서 더 나은 사용자 경험을 제공하기 위해 계속해서 모델을 고도화하고 있습니다 ....]]></description>
+            <link>https://tech.kakao.com/posts/827</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/827</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[martin.gale / abigail.r / edwin.ai]]></dc:creator>
+            <pubDate>Mon, 03 Aug 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/c6286f84019f00001.jpeg</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[더 작고 강해진 Kanana SLM 개발]]></title>
+            <description><![CDATA[
+
+
+안녕하세요. 카카오의 AI 모델 개발을 담당하는 카나나 LLM 조직에서 언어모델을 개발하고 있는 Kaya, Ryan, Wavy 입니다.
+지난 “작지만 강한 Kanana Nano 효율적으로 개발하기”에서 비용 효율적으로 SLM(Small Language Model)을 개발하는 방법에 대해서 소개드렸었는데요, 이번 글에서는 더 강력해져서 돌아온 카카오의 두 번째 SLM 시리즈를 소개드리고자 합니다.
+이번에 소개해드릴 모델은 Kanana-2-3B, Ka...]]></description>
+            <link>https://tech.kakao.com/posts/826</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/826</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[kaya.butter / ryan.u / wavy.jung]]></dc:creator>
+            <pubDate>Mon, 27 Jul 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/a25fdd8f019f00001.png</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[개발을 넘어 AI로 사회문제를 해결하다]]></title>
+            <description><![CDATA[카카오와 삼성이 함께 만든 첫 번째 AI 해커톤 이야기
+지난 6월 13일부터 14일까지 경기도 용인 카카오 AI캠퍼스에서는 조금 특별한 해커톤이 열렸습니다. 바로 카카오테크 부트캠프와 삼성 청년 SW·AI 아카데미(SSAFY)가 함께한 「SSAFY X Kakao tech bootcamp AI Hackathon」입니다.
+
+
+
+이번 해커톤은 단순히 개발 역량을 겨루는 경연대회가 아니었습니다. 카카오와 삼성전자가 그동안 운영해 온 대표적인 디지털 인재 양성 ...]]></description>
+            <link>https://tech.kakao.com/posts/825</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/825</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[eddy.kim]]></dc:creator>
+            <pubDate>Tue, 23 Jun 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/f7ef8230019e00001.JPG</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[AI 에이전트로 카카오톡 추천 지표 분석 자동화하기]]></title>
+            <description><![CDATA[AI 에이전트로 카카오톡 추천 지표 분석 자동화하기: Hadoop 기반 도입 사례
+안녕하세요. 소셜추천엔진팀에서 숏폼 추천 모델을 개발하고 있는 루퍼트(rupert)입니다.
+추천 시스템을 개발하다 보면 코드를 짜는 시간만큼이나 데이터를 들여다보는 시간이 길어집니다. 지표가 조금만 움직여도 “이번 주 CTR이 왜 떨어졌지?”, “실험군 반응은 어땠지?”, “배포 이후 특정 사용자군에서 달라진 점은 없을까?” 같은 질문이 이어집니다.
+질문은 한 문장이지만,...]]></description>
+            <link>https://tech.kakao.com/posts/824</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/824</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[rupert.kim]]></dc:creator>
+            <pubDate>Mon, 15 Jun 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/cf1dad55019e00001.png</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[Vibe Coding하는 비개발자는 개발자인가(3)]]></title>
+            <description><![CDATA[2편을 쓴 뒤 시간이 꽤 지났습니다. 그 사이 AI 도구들은 더 많은 일을 하게 되었고, 저도 이전보다 훨씬 자주 AI 에이전트와 함께 일하게 되었습니다.
+처음에는 업무에 실제적으로 도움을 주는 도구를 직접 만드는 일이 신났습니다. 개선하고 싶은 기능을 설명하면 화면이 생기고, 입력값을 넣으면 일정하게 필요한 결과가 나왔습니다. 이렇게 만든 도구들을 실제 업무에 계속쓰다 보니, 관심사가 자연스럽게 다음 단계로 넘어갔습니다.
+혼자 쓰던 도구를 다른 사람에...]]></description>
+            <link>https://tech.kakao.com/posts/823</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/823</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[sue.cream]]></dc:creator>
+            <pubDate>Mon, 15 Jun 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/cf2243a2019e00001.png</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!]]></title>
+            <description><![CDATA[지난 2025년 12월 19일부터 2026년 1월 18일까지, 에이전틱(Agentic) AI 생태계의 저변을 넓히고 개발자분들에게 실용적인 개발 경험을 제공하고자 진행된 'PlayMCP 개발 공모전, MCP Player 10’이 뜨거운 관심과 참여로 마무리되었습니다.
+150여 팀이 보여주신 열정과 창의성이 가득했던 그 여정의 마침표, 시상식 현장의 생생한 스케치를 공유합니다. 아울러, 2회 대회인 'AGENTIC PLAYER 10’을 진행하오니 많은 관...]]></description>
+            <link>https://tech.kakao.com/posts/818</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/818</guid>
+            <category><![CDATA[blog]]></category>
+            <category><![CDATA[events]]></category>
+            <dc:creator><![CDATA[kakao.AI]]></dc:creator>
+            <pubDate>Mon, 08 Jun 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/51cdf2cf019d00001.jpg</thumbnail>
+        </item>
+        <item>
+            <title><![CDATA[메시징 서버의 스트레스 테스트 노하우와 AI가 덜어 준 부분]]></title>
+            <description><![CDATA[Part 1. 개요 - 안정적인 운영을 위한 노력들
+안녕하세요 저는 톡메시징플랫폼 서버개발자 쟈미(jyami)입니다. 톡메시징 개발 플랫폼팀은 카카오톡의 메시지 수발신 채팅방 목록 관리와 같은 카카오톡 채팅시스템의 개발, 운영을 담당하고 있습니다. 카카오톡의 채팅 트래픽을 담당하는 부서이기 때문에 어떤 상황에서든 안정적으로 운영하기 위한 노력을 기울이고 있습니다. (추천 글 : https://tech.kakao.com/posts/603)
+그 노력 중 하...]]></description>
+            <link>https://tech.kakao.com/posts/822</link>
+            <guid isPermaLink="false">https://tech.kakao.com/posts/822</guid>
+            <category><![CDATA[blog]]></category>
+            <dc:creator><![CDATA[jyami.kim]]></dc:creator>
+            <pubDate>Thu, 21 May 2026 15:00:00 GMT</pubDate>
+            <thumbnail>https://t1.kakaocdn.net/kakao_tech/media/51df7c44019e00001.png</thumbnail>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,10 @@
+{
+  "gym": "false",
+  "items_total": 2143,
+  "phase_count": {
+    "BEFORE": 4,
+    "FINISHED": 2138,
+    "CODING": 1
+  },
+  "collected_at": "2026-08-28T15:36:20+0900"
+}

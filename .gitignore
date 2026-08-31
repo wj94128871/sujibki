@@ -68,3 +68,6 @@ temp/
 
 # --- Windows-temp leak (literal path that ended up in repo) ---
 C:\Users\wj941\AppData\Local\Temp\devpost_refresh_test/
+
+# --- Crawled raw detail payloads (PII 원문, 공개 저장소 제외) ---
+crawled/**/detail_*
